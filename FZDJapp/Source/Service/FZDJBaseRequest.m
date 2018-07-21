@@ -31,12 +31,29 @@
     return dict;
 }
 
+- (NSDictionary *)encryptParamterDict:(NSDictionary *)parameterDict{
+    NSDictionary *dict = @{};
+    
+    NSString *jsonstr = [NSDictionary jsonToString:parameterDict];
+    NSString *encryptStr = [FSAES128 AES128Encrypt:jsonstr];
+    
+    //    NSString *openUDID = [FXSystemInfo orginalIdfa];
+    dict = @{@"secretData" : @{
+                     @"appID" : @"poFYleKURAY7Z1t6npoluob7KQnFcmy2",
+                     @"data" : encryptStr?encryptStr : @""
+                     }
+             };
+    return dict;
+}
+
 - (void)postWithURL:(NSString *)URL
                        parameters:(NSDictionary *)parameter
                           success:(void (^)(id responseObject))success
                           failure:(void (^)(NSError *error))failure{
     if (!parameter) {
         parameter = [self emptyParamterDict];
+    } else {
+        parameter = [self encryptParamterDict:parameter];
     }
     __weak typeof(self) weak_self = self;
     [FXHTTPRequest postWithURL:URL parameters:parameter success:^(id responseObject) {
@@ -51,9 +68,16 @@
     NSDictionary *dict = (NSDictionary *)responseObject;
     NSMutableDictionary *muDict = [NSMutableDictionary dictionaryWithDictionary:dict];
     NSString *encryptStr = dict[@"body"];
+    encryptStr = [encryptStr stringByReplacingOccurrencesOfString:@"-" withString:@"+"];
+    encryptStr = [encryptStr stringByReplacingOccurrencesOfString:@"_" withString:@"/"];
     NSString *decryptStr = [FSAES128 AES128Decrypt:encryptStr];
     
-    [muDict setValue:decryptStr forKey:@"body"];
+    NSData *data = [decryptStr dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary *bodyDict = @{};
+    if (data) {
+       bodyDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+    }
+    [muDict setValue:bodyDict forKey:@"body"];
     return muDict;
 }
 

@@ -36,7 +36,7 @@
     //        OMTRefreshNormalGifHeader *header = (OMTRefreshNormalGifHeader*)weak_self.tableView.omt_header;
     //        if (header.isScrollDragging) {
     //            if ([weak_self.delegate respondsToSelector:@selector(updateReloadEventSource:)]) {
-    //                [weak_self.delegate updateReloadEventSource:kOnemtEventSourceManualRefresh];
+    //                [weak_self.delegate updateReloadEventSource:kEventSourceManualRefresh];
     //            }
     //        }
     //

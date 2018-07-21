@@ -10,5 +10,4 @@
 
 @interface NSString (FXCategory)
 
-
 @end

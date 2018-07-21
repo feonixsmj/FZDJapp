@@ -51,6 +51,12 @@
 		443958742100E0BE003F7AB5 /* FZDJMainRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 443958732100E0BE003F7AB5 /* FZDJMainRequest.m */; };
 		443958772100E50A003F7AB5 /* FZDJBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 443958762100E50A003F7AB5 /* FZDJBaseRequest.m */; };
 		4439587A2100E61C003F7AB5 /* NSDictionary+FXCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 443958792100E61C003F7AB5 /* NSDictionary+FXCategory.m */; };
+		4492099721034AEE00E13120 /* XBConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 4492098921034AEE00E13120 /* XBConst.m */; };
+		4492099821034AEE00E13120 /* XBScrollPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4492098D21034AEE00E13120 /* XBScrollPageController.m */; };
+		4492099921034AEE00E13120 /* UIView+XBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4492098E21034AEE00E13120 /* UIView+XBExtension.m */; };
+		4492099A21034AEE00E13120 /* XBTagTitleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4492099121034AEE00E13120 /* XBTagTitleModel.m */; };
+		4492099B21034AEE00E13120 /* XBPageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4492099421034AEE00E13120 /* XBPageCell.m */; };
+		4492099C21034AEE00E13120 /* XBTagTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4492099621034AEE00E13120 /* XBTagTitleCell.m */; };
 		44ACA28E20EA6A9A00414E9A /* FZDJMainVCL.m in Sources */ = {isa = PBXBuildFile; fileRef = 44ACA28820EA6A9A00414E9A /* FZDJMainVCL.m */; };
 		44ACA29120EA6ABC00414E9A /* FZDJMainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 44ACA29020EA6ABC00414E9A /* FZDJMainModel.m */; };
 		44ACA29420EA6AFB00414E9A /* FXBaseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 44ACA29320EA6AFB00414E9A /* FXBaseItem.m */; };
@@ -172,6 +178,18 @@
 		443958762100E50A003F7AB5 /* FZDJBaseRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJBaseRequest.m; sourceTree = "<group>"; };
 		443958782100E61C003F7AB5 /* NSDictionary+FXCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+FXCategory.h"; sourceTree = "<group>"; };
 		443958792100E61C003F7AB5 /* NSDictionary+FXCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+FXCategory.m"; sourceTree = "<group>"; };
+		4492098721034AEE00E13120 /* UIView+XBExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XBExtension.h"; sourceTree = "<group>"; };
+		4492098921034AEE00E13120 /* XBConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBConst.m; sourceTree = "<group>"; };
+		4492098A21034AEE00E13120 /* XBConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBConst.h; sourceTree = "<group>"; };
+		4492098C21034AEE00E13120 /* XBScrollPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBScrollPageController.h; sourceTree = "<group>"; };
+		4492098D21034AEE00E13120 /* XBScrollPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBScrollPageController.m; sourceTree = "<group>"; };
+		4492098E21034AEE00E13120 /* UIView+XBExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XBExtension.m"; sourceTree = "<group>"; };
+		4492099021034AEE00E13120 /* XBTagTitleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBTagTitleModel.h; sourceTree = "<group>"; };
+		4492099121034AEE00E13120 /* XBTagTitleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBTagTitleModel.m; sourceTree = "<group>"; };
+		4492099321034AEE00E13120 /* XBTagTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBTagTitleCell.h; sourceTree = "<group>"; };
+		4492099421034AEE00E13120 /* XBPageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBPageCell.m; sourceTree = "<group>"; };
+		4492099521034AEE00E13120 /* XBPageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBPageCell.h; sourceTree = "<group>"; };
+		4492099621034AEE00E13120 /* XBTagTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBTagTitleCell.m; sourceTree = "<group>"; };
 		44ACA28820EA6A9A00414E9A /* FZDJMainVCL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FZDJMainVCL.m; sourceTree = "<group>"; };
 		44ACA28920EA6A9A00414E9A /* FZDJMainVCL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FZDJMainVCL.h; sourceTree = "<group>"; };
 		44ACA28F20EA6ABC00414E9A /* FZDJMainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJMainModel.h; sourceTree = "<group>"; };
@@ -483,6 +501,7 @@
 		4418F6E720D262450086B94E /* FZDJapp */ = {
 			isa = PBXGroup;
 			children = (
+				4492098521034ABF00E13120 /* Vendors */,
 				44DFDE1620EA5D2400A9099D /* Resource */,
 				4418F6FE20D264E40086B94E /* Source */,
 				4418F6F120D262450086B94E /* Assets.xcassets */,
@@ -546,6 +565,65 @@
 				443958762100E50A003F7AB5 /* FZDJBaseRequest.m */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		4492098521034ABF00E13120 /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				4492098621034AEE00E13120 /* XBScrollPageController */,
+			);
+			path = Vendors;
+			sourceTree = "<group>";
+		};
+		4492098621034AEE00E13120 /* XBScrollPageController */ = {
+			isa = PBXGroup;
+			children = (
+				4492098721034AEE00E13120 /* UIView+XBExtension.h */,
+				4492098E21034AEE00E13120 /* UIView+XBExtension.m */,
+				4492098821034AEE00E13120 /* XBConst */,
+				4492098B21034AEE00E13120 /* Controller */,
+				4492098F21034AEE00E13120 /* Model */,
+				4492099221034AEE00E13120 /* View */,
+			);
+			path = XBScrollPageController;
+			sourceTree = "<group>";
+		};
+		4492098821034AEE00E13120 /* XBConst */ = {
+			isa = PBXGroup;
+			children = (
+				4492098921034AEE00E13120 /* XBConst.m */,
+				4492098A21034AEE00E13120 /* XBConst.h */,
+			);
+			path = XBConst;
+			sourceTree = "<group>";
+		};
+		4492098B21034AEE00E13120 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4492098C21034AEE00E13120 /* XBScrollPageController.h */,
+				4492098D21034AEE00E13120 /* XBScrollPageController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4492098F21034AEE00E13120 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4492099021034AEE00E13120 /* XBTagTitleModel.h */,
+				4492099121034AEE00E13120 /* XBTagTitleModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4492099221034AEE00E13120 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4492099321034AEE00E13120 /* XBTagTitleCell.h */,
+				4492099421034AEE00E13120 /* XBPageCell.m */,
+				4492099521034AEE00E13120 /* XBPageCell.h */,
+				4492099621034AEE00E13120 /* XBTagTitleCell.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		44ACA28620EA6A9A00414E9A /* Main */ = {
@@ -1012,17 +1090,21 @@
 				44047EB120F2575000CFEBB3 /* FZDJMyWalletVCL.m in Sources */,
 				44ACA29F20EA6CC500414E9A /* FZDJMainView.m in Sources */,
 				44E9B5C620E2427800D00E4D /* FXHTTPRequest.m in Sources */,
+				4492099721034AEE00E13120 /* XBConst.m in Sources */,
 				44E9B5B420E1DF1000D00E4D /* FXBaseViewController.m in Sources */,
 				44E9B59520DBA8F100D00E4D /* UIView+FXExtension.m in Sources */,
 				44E9B59A20E091DD00D00E4D /* FXGuideView.m in Sources */,
+				4492099C21034AEE00E13120 /* XBTagTitleCell.m in Sources */,
 				440536FB20F511AD006C7AFB /* FZDJAmountDetailsCell.m in Sources */,
 				44CDB2F020FA28EF0011DFAA /* FZDJInvitationCodeVCL.m in Sources */,
 				44047E7120F0F96100CFEBB3 /* FZDJPersonalTaskView.m in Sources */,
+				4492099921034AEE00E13120 /* UIView+XBExtension.m in Sources */,
 				44047E8A20F1403E00CFEBB3 /* FZDJPersonalBaseCell.m in Sources */,
 				44ACA29420EA6AFB00414E9A /* FXBaseItem.m in Sources */,
 				44CD154620EA025200941CC2 /* FXBaseTableViewController.m in Sources */,
 				4412FFC920E3DDA500E7692A /* FXCaremaPhotoStrategy.m in Sources */,
 				44047E9120F14B0F00CFEBB3 /* FZDJPersonalInfoItem.m in Sources */,
+				4492099821034AEE00E13120 /* XBScrollPageController.m in Sources */,
 				4412FFC520E3DD6400E7692A /* FXBaseStrategy.m in Sources */,
 				44ACA2A720EA8B7000414E9A /* FZDJPersonalCenterVCL.m in Sources */,
 				44047E9720F14B6600CFEBB3 /* FZDJPersonalListItem.m in Sources */,
@@ -1042,6 +1124,7 @@
 				44E9B5A420E0D56700D00E4D /* FZDJLoginVCL.m in Sources */,
 				443958742100E0BE003F7AB5 /* FZDJMainRequest.m in Sources */,
 				44047EC420F2788000CFEBB3 /* FZDJPriceItem.m in Sources */,
+				4492099A21034AEE00E13120 /* XBTagTitleModel.m in Sources */,
 				44047ECA20F2789B00CFEBB3 /* FZDJDescItem.m in Sources */,
 				4439586D2100DCE2003F7AB5 /* FSAES128.m in Sources */,
 				44ACA29120EA6ABC00414E9A /* FZDJMainModel.m in Sources */,
@@ -1061,6 +1144,7 @@
 				44CDB2EB20F9E64B0011DFAA /* FZDJAboutUsVCL.m in Sources */,
 				44AEB959210219B100D2D191 /* FXSingleton.m in Sources */,
 				4418F6F820D262450086B94E /* main.m in Sources */,
+				4492099B21034AEE00E13120 /* XBPageCell.m in Sources */,
 				44E9B58F20DB9DC200D00E4D /* UIColor+FXCategory.m in Sources */,
 				44E9B5B720E1E84600D00E4D /* FXBaseModel.m in Sources */,
 				44047E9A20F2138A00CFEBB3 /* FZDJHeaderImageView.m in Sources */,

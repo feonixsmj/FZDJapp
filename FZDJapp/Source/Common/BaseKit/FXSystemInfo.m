@@ -16,7 +16,7 @@
 
 + (NSString *)orginalIdfa {
     
-    NSString *idfaKey = @"onemtOrginalIdfa";
+    NSString *idfaKey = @"fxOrginalIdfa";
     
     //先查userDefault
     NSString *mbIdfaStr = [[NSUserDefaults standardUserDefaults] stringForKey:idfaKey];

@@ -54,6 +54,20 @@
     __weak typeof(self) weak_self = self;
     NSString *url = [NSString stringWithFormat:@"%@%@",kApiDomain,kApiBanner];
     
+//    url = @"http://www.mobibounty.com/server/msg/count";
+//    NSDictionary *dict = @{@"userNo":@"LZyzPPP7iEmEtYmu0SU62Gt9bEVO2qX8"};
+//
+//    url = @"http://www.mobibounty.com/server/task/query";
+//    dict = @{@"channel":@"1",
+//             @"operaId":@"2",
+//             @"operaName":@"菜鸡",
+//             @"queryPage":@(1),
+//             @"querySize":@(1),
+//             @"refreshCache":@"1",
+//             @"userNo":@"LZyzPPP7iEmEtYmu0SU62Gt9bEVO2qX8",
+//             };
+    
+    
     [self.request requestPostURL:url parameters:nil success:^(id responseObject) {
         [weak_self wrapperItems:nil];
         success(nil);
