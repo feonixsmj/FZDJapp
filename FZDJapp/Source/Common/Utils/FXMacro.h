@@ -2,8 +2,8 @@
 //  FXMacro.h
 //  FZDJapp
 //
-//  Created by suminjie on 2018/6/25.
-//  Copyright © 2018年 FZDJ. All rights reserved.
+//  Created by autoreleasepool@163.com on 2018/6/25.
+//  Copyright © 2018年 FZYG. All rights reserved.
 //
 
 #ifndef FXMacro_h
@@ -23,6 +23,23 @@
 #define IOS9_OR_EARLIER        ( !IOS10_OR_LATER )
 #define IOS8_OR_EARLIER        ( !IOS9_OR_LATER )
 #define IOS7_OR_EARLIER        ( !IOS8_OR_LATER )
+
+//当前设备屏幕与4.7英寸屏幕的比例
+#define FX_SCREEN_SCALE_WITH_47_INCH   (FX_SCREEN_WIDTH/375.0F)
+//获取当前设备屏幕相对于4.7英寸屏幕的长度
+#define FX_SCALE_ZOOM(f)               (FX_SCREEN_SCALE_WITH_47_INCH * ((float)f))
+
+//状态栏的高度
+#define FX_STATUSBAR_SPACE             (IS_IPHONE_X ? 44.0f : 20.0f)
+//导航栏视图高度(不包含status bar的高度)
+#define FX_NAVIGATIONBAR_SPAGE         (44.0f)
+
+#define FX_NAVIGATIONBAR_TOTAL_SPAGE   (FX_STATUSBAR_SPACE + FX_NAVIGATIONBAR_SPAGE)
+//iPhone X底部栏的高度值
+#define FX_BOTTOM_SPAGE                (34.0f)
+// 普通全屏tableview高度
+#define FX_TABLE_HEIGHT                (FX_SCREEN_HEIGHT - FX_NAVIGATIONBAR_TOTAL_SPAGE)
+
 
 #define IS_IPHONE4 (IS_SCREEN_35_INCH)
 #define IS_IPHONE5 (IS_SCREEN_4_INCH)

@@ -8,7 +8,10 @@ target 'FZDJapp' do
   pod 'SDWebImage'
   pod 'MBProgressHUD'
   pod 'SDCycleScrollView','~> 1.75'
+  pod 'MJRefresh'
+  pod 'GTMBase64'
+  pod 'OpenUDID'
   
-  #pod 'PPNetworkHelper',:git => 'https://github.com/jkpang/PPNetworkHelper.git'
+  pod 'PPNetworkHelper',:git => 'https://github.com/jkpang/PPNetworkHelper.git'
 
 end

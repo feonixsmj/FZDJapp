@@ -2,13 +2,13 @@
 //  FXGuideView.m
 //  FZDJapp
 //
-//  Created by suminjie on 2018/6/25.
-//  Copyright © 2018年 FZDJ. All rights reserved.
+//  Created by autoreleasepool@163.com on 2018/6/25.
+//  Copyright © 2018年 FZYG. All rights reserved.
 //
 
 #import "FXGuideView.h"
 
-#define FXHidden_TIME   1
+#define FXHidden_TIME   0.5
 
 @interface FXGuideView()<UIScrollViewDelegate>
 @property (nonatomic, strong) NSArray *imageArray;
@@ -80,10 +80,11 @@
         
         // 设置引导页上的页面控制器
         self.imagePageControl = [[UIPageControl alloc]initWithFrame:CGRectMake(FX_SCREEN_WIDTH*0.0, FX_SCREEN_HEIGHT*0.9, FX_SCREEN_WIDTH*1.0, FX_SCREEN_HEIGHT*0.1)];
+//        self.imagePageControl.backgroundColor = [UIColor lightGrayColor];
         self.imagePageControl.currentPage = 0;
         self.imagePageControl.numberOfPages = imageNameArray.count;
-        self.imagePageControl.pageIndicatorTintColor = [UIColor grayColor];
-        self.imagePageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
+        self.imagePageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
+        self.imagePageControl.currentPageIndicatorTintColor = [UIColor blueColor];
         [self addSubview:self.imagePageControl];
     }
     

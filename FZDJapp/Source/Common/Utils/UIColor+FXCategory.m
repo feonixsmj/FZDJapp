@@ -2,8 +2,8 @@
 //  UIColor+FXCategory.m
 //  FZDJapp
 //
-//  Created by suminjie on 2018/6/21.
-//  Copyright © 2018年 FZDJ. All rights reserved.
+//  Created by autoreleasepool@163.com on 2018/6/21.
+//  Copyright © 2018年 FZYG. All rights reserved.
 //
 
 #import "UIColor+FXCategory.h"
@@ -53,6 +53,30 @@
     [[NSScanner scannerWithString:gString] scanHexInt:&g];
     [[NSScanner scannerWithString:bString] scanHexInt:&b];
     return [UIColor colorWithRed:((float)r / 255.0f) green:((float)g / 255.0f) blue:((float)b / 255.0f) alpha:1.0];
+}
+
+
+//    作者：任同学少年
+//    链接：https://www.jianshu.com/p/3018e51ba867
++ (CAGradientLayer *)setGradualChangingColor:(UIView *)view
+                                   fromColor:(NSString *)fromHexColorStr
+                                     toColor:(NSString *)toHexColorStr{
+    //    CAGradientLayer类对其绘制渐变背景颜色、填充层的形状(包括圆角)
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    gradientLayer.frame = view.bounds;
+    
+    //  创建渐变色数组，需要转换为CGColor颜色
+    gradientLayer.colors = @[(__bridge id)[UIColor fx_colorWithHexString:fromHexColorStr].CGColor,(__bridge id)[UIColor fx_colorWithHexString:toHexColorStr].CGColor];
+    
+    //  设置渐变颜色方向，左上点为(0,0), 右下点为(1,1)
+    gradientLayer.startPoint = CGPointMake(0, 0);
+    gradientLayer.endPoint = CGPointMake(1, 1);
+    
+    //  设置颜色变化点，取值范围 0.0~1.0
+    gradientLayer.locations = @[@0,@1];
+    
+    return gradientLayer;
+
 }
 
 @end

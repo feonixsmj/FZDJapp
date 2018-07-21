@@ -2,7 +2,7 @@
 //  FXBaseStrategy.h
 //  NewsDev
 //
-//  Created by suminjie on 2018/6/27.
+//  Created by autoreleasepool@163.com on 2018/6/27.
 //  Copyright © 2018年 onemt. All rights reserved.
 //
 

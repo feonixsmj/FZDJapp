@@ -2,16 +2,21 @@
 //  FXBaseViewController.h
 //  FZDJapp
 //
-//  Created by suminjie on 2018/6/26.
-//  Copyright © 2018年 FZDJ. All rights reserved.
+//  Created by autoreleasepool@163.com on 2018/6/26.
+//  Copyright © 2018年 FZYG. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
+#import "FXBaseModel.h"
 
-@class FXBaseModel;
 @interface FXBaseViewController : UIViewController
 
 @property (nonatomic, strong) FXBaseModel *model;
+@property (nonatomic, assign) BOOL hiddenNavigationBar;
+@property (nonatomic, assign) BOOL isTransparentBar;
 
+-(void)bringCloseButtonToFront;
+#pragma mark ================ 子类重写 ================
 -(void)loadItem;
+- (void)setupViews;
 @end
