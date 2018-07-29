@@ -2,7 +2,7 @@
 //  FZDJPersonalActionStrategy.m
 //  FZDJapp
 //
-//  Created by autoreleasepool@163.com on 2018/7/8.
+//  Created by FZYG on 2018/7/8.
 //  Copyright © 2018年 FZYG. All rights reserved.
 //
 
@@ -11,6 +11,8 @@
 #import "FZDJPersonalCenterVCL.h"
 #import "FZDJAboutUsVCL.h"
 #import "FZDJInvitationCodeVCL.h"
+#import "FXMyTaskContainerVCL.h"
+#import "FZDJEditInfoVCL.h"
 
 @implementation FZDJPersonalActionStrategy
 
@@ -26,9 +28,12 @@
             [target.navigationController pushViewController:vcl animated:YES];
         }
             break;
-        case FZDJCellActionTypeTask:
+        case FZDJCellActionTypeTask:{
             //任务
             NSLog(@"打开任务");
+            FXMyTaskContainerVCL *task = [[FXMyTaskContainerVCL alloc] init];
+            [target.navigationController pushViewController:task animated:YES];
+        }
             break;
         case FZDJCellActionTypeInvitationCode:{
             //邀请码
@@ -36,9 +41,12 @@
             [target.navigationController pushViewController:vcl animated:YES];
         }
             break;
-        case FZDJCellActionTypeModifyPersonalInfo:
+        case FZDJCellActionTypeModifyPersonalInfo:{
             //修改个人信息
             NSLog(@"修改个人信息");
+            FZDJEditInfoVCL *editVCL = [[FZDJEditInfoVCL alloc] initWithNibName:@"FZDJEditInfoVCL" bundle:[NSBundle mainBundle]];
+            [target.navigationController pushViewController:editVCL animated:YES];
+        }
             break;
         case FZDJCellActionTypeModifyAvatar:
             //修改头像

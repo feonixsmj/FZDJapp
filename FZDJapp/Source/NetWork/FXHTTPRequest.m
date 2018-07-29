@@ -2,7 +2,7 @@
 //  FXHTTPRequest.m
 //  FZDJapp
 //
-//  Created by autoreleasepool@163.com on 2018/6/26.
+//  Created by FZYG on 2018/6/26.
 //  Copyright © 2018年 FZYG. All rights reserved.
 //
 
@@ -20,6 +20,7 @@
     // 设置请求头
     [PPNetworkHelper setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [PPNetworkHelper setRequestSerializer:PPRequestSerializerJSON];
+    [PPNetworkHelper setResponseSerializer:PPResponseSerializerJSON];
 //    NSString *charset = (__bridge NSString *)CFStringConvertEncodingToIANACharSetName(CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding));
 //    
 //    [PPNetworkHelper setValue:[NSString stringWithFormat:@"application/json;charset=%@", charset] forHTTPHeaderField:@"Content-Type"];

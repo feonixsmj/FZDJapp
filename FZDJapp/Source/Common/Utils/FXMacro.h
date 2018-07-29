@@ -2,7 +2,7 @@
 //  FXMacro.h
 //  FZDJapp
 //
-//  Created by autoreleasepool@163.com on 2018/6/25.
+//  Created by FZYG on 2018/6/25.
 //  Copyright © 2018年 FZYG. All rights reserved.
 //
 
@@ -13,11 +13,11 @@
 #define FX_SCREEN_WIDTH               ([UIScreen mainScreen].bounds.size.width)
 #define FX_SCREEN_HEIGHT              ([UIScreen mainScreen].bounds.size.height)
 
-#define IOS11_OR_LATER       ( [OMTSystemInfo systemVersionMajorVersion] >= 11.0 )
-#define IOS10_OR_LATER       ( [OMTSystemInfo systemVersionMajorVersion] >= 10.0 )
-#define IOS9_OR_LATER        ( [OMTSystemInfo systemVersionMajorVersion] >= 9.0 )
-#define IOS8_OR_LATER        ( [OMTSystemInfo systemVersionMajorVersion] >= 8.0 )
-#define IOS7_OR_LATER        ( [OMTSystemInfo systemVersionMajorVersion] >= 7.0 )
+#define IOS11_OR_LATER       ( [ systemVersionMajorVersion] >= 11.0 )
+#define IOS10_OR_LATER       ( [ systemVersionMajorVersion] >= 10.0 )
+#define IOS9_OR_LATER        ( [ systemVersionMajorVersion] >= 9.0 )
+#define IOS8_OR_LATER        ( [ systemVersionMajorVersion] >= 8.0 )
+#define IOS7_OR_LATER        ( [ systemVersionMajorVersion] >= 7.0 )
 
 #define IOS10_OR_EARLIER    ( !IOS11_OR_LATER )
 #define IOS9_OR_EARLIER        ( !IOS10_OR_LATER )
@@ -27,7 +27,7 @@
 //当前设备屏幕与4.7英寸屏幕的比例
 #define FX_SCREEN_SCALE_WITH_47_INCH   (FX_SCREEN_WIDTH/375.0F)
 //获取当前设备屏幕相对于4.7英寸屏幕的长度
-#define FX_SCALE_ZOOM(f)               (FX_SCREEN_SCALE_WITH_47_INCH * ((float)f))
+#define FX_SCALE_ZOOM(f)               ceilf(FX_SCREEN_SCALE_WITH_47_INCH * ((float)f))
 
 //状态栏的高度
 #define FX_STATUSBAR_SPACE             (IS_IPHONE_X ? 44.0f : 20.0f)

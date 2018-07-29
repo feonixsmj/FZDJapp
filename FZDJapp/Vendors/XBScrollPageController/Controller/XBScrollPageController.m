@@ -167,8 +167,8 @@
         [self saveCachedVC:cachedViewController ByIndexPath:indexPath];
         
         if (self.params.count != 0) {
-            if (![cachedViewController valueForKeyPath:@"XBParam"]) {
-                [cachedViewController setValue:self.params[indexPath.item] forKeyPath:@"XBParam"];
+            if (![cachedViewController valueForKeyPath:@"pageIdetify"]) {
+                [cachedViewController setValue:self.params[indexPath.item] forKeyPath:@"pageIdetify"];
             }
         }
         [self addChildViewController:cachedViewController];

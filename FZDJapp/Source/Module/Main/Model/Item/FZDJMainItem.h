@@ -2,7 +2,7 @@
 //  FZDJMainItem.h
 //  FZDJapp
 //
-//  Created by autoreleasepool@163.com on 2018/7/2.
+//  Created by FZYG on 2018/7/2.
 //  Copyright © 2018年 FZYG. All rights reserved.
 //
 
@@ -17,5 +17,9 @@
 @property (nonatomic, copy) NSString *count;
 @property (nonatomic, copy) NSString *timeText;
 @property (nonatomic, assign) CGFloat persent;
-
+@property (nonatomic, assign) NSInteger taskId;
+/**
+ 任务编码
+ */
+@property (nonatomic, copy) NSString *taskNo;
 @end

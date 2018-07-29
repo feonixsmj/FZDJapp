@@ -2,7 +2,7 @@
 //  FZDJMainView.m
 //  FZDJapp
 //
-//  Created by autoreleasepool@163.com on 2018/7/2.
+//  Created by FZYG on 2018/7/2.
 //  Copyright © 2018年 FZYG. All rights reserved.
 //
 
@@ -44,8 +44,8 @@ const CGFloat FZDJMainViewProgressViewWidth = 140.0;
     self.icon.image = [UIImage imageNamed:@"clock_icon"];
     self.progressMainView.layer.cornerRadius = 4;
     self.progressMainView.backgroundColor = [[UIColor fx_colorWithHexString:@"4DB2EE"] colorWithAlphaComponent:0.3f];
-    
     self.progressView.layer.cornerRadius = 4;
+    
     self.mainImageView.image = [UIImage imageNamed:@"dj_default_image"];
     self.mainImageView.layer.cornerRadius = 4;
 }
@@ -56,7 +56,7 @@ const CGFloat FZDJMainViewProgressViewWidth = 140.0;
     }
     
     _item = item;
-    self.timeLabel.text = item.title;
+    self.title.text = item.title;
     self.subTitle.text = item.subTitle;
     self.timeLabel.text = item.timeText;
     self.price.text = item.price;

@@ -2,7 +2,7 @@
 //  FXInterfaceConst.h
 //  FZDJapp
 //
-//  Created by autoreleasepool@163.com on 2018/6/26.
+//  Created by FZYG on 2018/6/26.
 //  Copyright © 2018年 FZYG. All rights reserved.
 //
 
@@ -13,4 +13,6 @@
 UIKIT_EXTERN NSString *const kApiDomain;
 
 UIKIT_EXTERN NSString *const kApiBanner;
-
+UIKIT_EXTERN NSString *const kApiTaskQuery;
+UIKIT_EXTERN NSString *const kApiTaskInfo;
+UIKIT_EXTERN NSString *const kApiTaskTakeTask;

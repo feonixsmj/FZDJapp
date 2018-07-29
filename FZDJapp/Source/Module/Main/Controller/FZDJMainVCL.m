@@ -2,7 +2,7 @@
 //  FZDJMainVCL.m
 //  FZDJapp
 //
-//  Created by autoreleasepool@163.com on 2018/6/20.
+//  Created by FZYG on 2018/6/20.
 //  Copyright © 2018年 FZYG. All rights reserved.
 //
 
@@ -14,13 +14,15 @@
 #import "FZDJPersonalCenterVCL.h"
 #import "FZDJMessageCenterVCL.h"
 #import <SDCycleScrollView.h>
+#import <SafariServices/SafariServices.h>
+#import "FZDJTaskDetailVCL.h"
+
 
 NSString *const FZDJMainCellIBName = @"FZDJMainCell";
 
 @interface FZDJMainVCL ()<
 
 FZDJLoginVCLDelegate,
-FZDJPersonalCenterVCLDelegate,
 SDCycleScrollViewDelegate,
 UITableViewDelegate,
 UITableViewDataSource>
@@ -66,11 +68,30 @@ UITableViewDataSource>
     FZDJMainModel *model = (FZDJMainModel *)self.model;
     
     __weak typeof(self) weak_self = self;
+    
+    [model loadBannerInfo:nil success:^(NSDictionary *dict) {
+        [weak_self setBannerImageUrls];
+    } failure:^(NSError *error) {
+        
+    }];
+    
     [model loadItem:nil success:^(NSDictionary *dict) {
         [weak_self.tableView reloadData];
     } failure:^(NSError *error) {
 
     }];
+}
+
+
+- (void)setBannerImageUrls{
+    FZDJMainModel *model = (FZDJMainModel *)self.model;
+    
+    NSMutableArray *muArr = [NSMutableArray arrayWithCapacity:3];
+    for (FZDJBannerVo *vo in model.bannerArr) {
+        [muArr addObject:vo.lbimgUrl];
+    }
+    
+    self.banner.imageURLStringsGroup = muArr;
 }
 
 - (void)addLoginVCL{
@@ -138,8 +159,7 @@ UITableViewDataSource>
 
 - (void)leftBarButtonDidCliked{
     FZDJPersonalCenterVCL *personalVCL = [[FZDJPersonalCenterVCL alloc] init];
-//    personalVCL.delegate = self;
-//    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+
     [self.navigationController pushViewController:personalVCL animated:YES];
 }
 
@@ -152,17 +172,21 @@ UITableViewDataSource>
 
 - (SDCycleScrollView *)banner{
     if (!_banner) {
-//        SDCycleScrollView *cycleScrollView = [cycleScrollViewWithFrame:frame delegate:delegate placeholderImage:placeholderImage];
+//        SDCycleScrollView *cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:frame delegate:delegate placeholderImage:placeholderImage];
 //        cycleScrollView.imageURLStringsGroup = imagesURLStrings;
         
-        NSArray *imageArray = @[@"1.jpg",
-                                @"2.jpg",
-                                @"3.jpg",
-                                @"4.jpg",];
+//        NSArray *imageArray = @[@"1.jpg",
+//                                @"2.jpg",
+//                                @"3.jpg",
+//                                @"4.jpg",];
+        
+//        SDCycleScrollView *banner = [SDCycleScrollView cycleScrollViewWithFrame:rect
+//                                                                imageNamesGroup:imageArray];
         CGRect rect = CGRectMake(0, 0, FX_SCREEN_WIDTH, FX_SCALE_ZOOM(124));
-        SDCycleScrollView *banner = [SDCycleScrollView cycleScrollViewWithFrame:rect
-                                                                imageNamesGroup:imageArray];
-        banner.delegate = self;
+        
+        SDCycleScrollView *banner = [SDCycleScrollView cycleScrollViewWithFrame:rect delegate:self placeholderImage:nil];
+
+//        banner.delegate = self;
         banner.pageControlStyle = SDCycleScrollViewPageContolStyleClassic;
         banner.currentPageDotColor = [UIColor fx_colorWithHexString:@"0B9DFF"];
         banner.pageDotColor = [UIColor whiteColor];
@@ -172,11 +196,6 @@ UITableViewDataSource>
     return _banner;
 }
 
-#pragma mark ================ FZDJPersonalCenterVCLDelegate ================
-- (void)fzdjPersonalCenterVCLClosePage{
-//    [self.navigationController popViewControllerAnimated:YES];
-//    [self setNavigationBarBackgroundImage];
-}
 
 #pragma mark ================ FZDJLoginVCLDelegate ================
 - (void)closeLoginVCL{
@@ -187,8 +206,25 @@ UITableViewDataSource>
 #pragma mark - SDCycleScrollViewDelegate
 
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{
+    FZDJMainModel *model = (FZDJMainModel *)self.model;
     NSLog(@"---点击了第%ld张图片", (long)index);
-    
+    FZDJBannerVo *vo = model.bannerArr[index];
+    NSLog(@"点击链接%@",vo.lbContentUrl);
+    NSURL *url = [NSURL URLWithString:vo.lbContentUrl];
+//    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:vo.lbContentUrl]];
+    if (!url.scheme) {
+        url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@", url.absoluteString]];
+    }
+    if (@available(iOS 9.0, *)) {
+        SFSafariViewController *safariController = [[SFSafariViewController alloc] initWithURL:url];
+        [self.navigationController presentViewController:safariController animated:YES completion:^{
+            //        safariController.view.userInteractionEnabled = YES;
+        }];
+    } else {
+        // Fallback on earlier versions
+    }
+
+
 }
 
 #pragma mark ================ UITableViewDelegate ================
@@ -205,5 +241,11 @@ UITableViewDataSource>
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    FZDJMainItem *item = self.model.items[indexPath.row];
+    FZDJTaskDetailVCL *taskDetailVCL = [[FZDJTaskDetailVCL alloc] init];
+    taskDetailVCL.taskNo = item.taskNo;
+    [self.navigationController pushViewController:taskDetailVCL animated:YES];
+}
 
 @end

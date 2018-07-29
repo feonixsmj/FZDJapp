@@ -2,15 +2,21 @@
 //  FZDJMainModel.h
 //  FZDJapp
 //
-//  Created by autoreleasepool@163.com on 2018/7/2.
+//  Created by FZYG on 2018/7/2.
 //  Copyright © 2018年 FZYG. All rights reserved.
 //
 
 #import "FXBaseModel.h"
+#import "FZDJBannerListVo.h"
+#import "NSDate+FXExtention.h"
 
 @interface FZDJMainModel : FXBaseModel
 
-- (void)loadItem:(NSDictionary *)parameterDict
-                        success:(void (^)(NSDictionary *))success
-                        failure:(void (^)(NSError *))failure;
+@property (nonatomic, strong) NSArray<FZDJBannerVo *> *bannerArr;
+
+- (void)loadBannerInfo:(NSDictionary *)parameterDict
+               success:(void (^)(NSDictionary *))success
+               failure:(void (^)(NSError *))failure;
+
+
 @end

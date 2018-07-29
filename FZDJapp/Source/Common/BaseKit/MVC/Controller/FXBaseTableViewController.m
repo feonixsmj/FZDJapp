@@ -2,7 +2,7 @@
 //  FXBaseTableViewController.m
 //  FZDJapp
 //
-//  Created by autoreleasepool@163.com on 2018/7/2.
+//  Created by FZYG on 2018/7/2.
 //  Copyright © 2018年 FZYG. All rights reserved.
 //
 
@@ -30,22 +30,6 @@
     tableView.estimatedSectionFooterHeight = 0;
     tableView.estimatedSectionHeaderHeight = 0;
     
-    
-    //    _tableView.omt_header = [OMTRefreshNormalGifHeader headerWithRefreshingBlock:^{
-    //
-    //        OMTRefreshNormalGifHeader *header = (OMTRefreshNormalGifHeader*)weak_self.tableView.omt_header;
-    //        if (header.isScrollDragging) {
-    //            if ([weak_self.delegate respondsToSelector:@selector(updateReloadEventSource:)]) {
-    //                [weak_self.delegate updateReloadEventSource:kEventSourceManualRefresh];
-    //            }
-    //        }
-    //
-    //        [weak_self loadData];
-    //    }];
-    //
-    //    OMTRefreshGifFooter *footer = [OMTRefreshGifFooter footerWithRefreshingBlock:^{
-    //        [weak_self loadMoreData];
-    //    }];
     self.tableView = tableView;
     
     [self.view addSubview:self.tableView];

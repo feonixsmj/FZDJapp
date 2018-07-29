@@ -2,7 +2,7 @@
 //  FZDJBaseRequest.m
 //  FZDJapp
 //
-//  Created by autoreleasepool@163.com on 2018/7/19.
+//  Created by FZYG on 2018/7/19.
 //  Copyright © 2018年 FZYG. All rights reserved.
 //
 
@@ -57,8 +57,28 @@
     }
     __weak typeof(self) weak_self = self;
     [FXHTTPRequest postWithURL:URL parameters:parameter success:^(id responseObject) {
-        [weak_self decryptResponseToDictionary:responseObject];
-        success(responseObject);
+        NSDictionary *dict = [weak_self decryptResponseToDictionary:responseObject];
+        if ([dict[@"fail"] boolValue]) {
+            NSString *msg = dict[@"customErrorMsg"];
+            NSString *respMsg = dict[@"respMsg"];
+            NSString *errorMsg = [respMsg copy];
+            
+            if (msg.length > 0) {
+                errorMsg = [msg copy];
+            }
+            NSURL *failURL = [NSURL URLWithString:URL];
+            NSDictionary *userInfo =
+                @{NSLocalizedFailureReasonErrorKey: dict[@"respCode"],
+                        NSLocalizedDescriptionKey : errorMsg};
+            NSInteger errorcode = [dict[@"respCode"] integerValue];
+            
+            NSError *error = [NSError errorWithDomain:failURL.host
+                                                 code:errorcode
+                                             userInfo:userInfo];
+            failure(error);
+        } else{
+            success(dict);
+        }
     } failure:^(NSError *error) {
         failure(error);
     }];
@@ -67,17 +87,41 @@
 - (NSDictionary *)decryptResponseToDictionary:(id)responseObject{
     NSDictionary *dict = (NSDictionary *)responseObject;
     NSMutableDictionary *muDict = [NSMutableDictionary dictionaryWithDictionary:dict];
+    
+    NSDictionary *headDict = muDict[@"head"];
+    if ([headDict[@"respCode"] integerValue] != 0) {
+        //返回错误
+        [muDict setValue:@{} forKey:@"body"];
+        muDict[@"fail"] = @(YES);
+        return muDict;
+    }
+    
     NSString *encryptStr = dict[@"body"];
-    encryptStr = [encryptStr stringByReplacingOccurrencesOfString:@"-" withString:@"+"];
-    encryptStr = [encryptStr stringByReplacingOccurrencesOfString:@"_" withString:@"/"];
-    NSString *decryptStr = [FSAES128 AES128Decrypt:encryptStr];
+    if (encryptStr.length > 0) {
+        encryptStr = [encryptStr stringByReplacingOccurrencesOfString:@"-" withString:@"+"];
+        encryptStr = [encryptStr stringByReplacingOccurrencesOfString:@"_" withString:@"/"];
+    } else {
+        //返回错误
+        [muDict setValue:@{} forKey:@"body"];
+        muDict[@"fail"] = @(YES);
+        muDict[@"customErrorMsg"] = @"返回加密字段NULL";
+        return muDict;
+    }
+
+    NSString  *decryptStr = [FSAES128 AES128Decrypt:encryptStr];
+    
+    decryptStr = [decryptStr stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    decryptStr = [decryptStr stringByTrimmingCharactersInSet:[NSCharacterSet controlCharacterSet]];
     
     NSData *data = [decryptStr dataUsingEncoding:NSUTF8StringEncoding];
-    NSDictionary *bodyDict = @{};
-    if (data) {
-       bodyDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+    
+    NSError *error = nil;
+    id body = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
+    
+    [muDict setValue:body forKey:@"body"];
+    if (!body) {
+        muDict[@"body"] = decryptStr;
     }
-    [muDict setValue:bodyDict forKey:@"body"];
     return muDict;
 }
 

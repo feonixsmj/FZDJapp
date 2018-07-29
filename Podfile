@@ -11,6 +11,7 @@ target 'FZDJapp' do
   pod 'MJRefresh'
   pod 'GTMBase64'
   pod 'OpenUDID'
+  pod 'MJExtension'
   
   pod 'PPNetworkHelper',:git => 'https://github.com/jkpang/PPNetworkHelper.git'
 
