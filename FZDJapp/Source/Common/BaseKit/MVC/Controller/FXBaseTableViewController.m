@@ -31,10 +31,35 @@
     tableView.estimatedSectionHeaderHeight = 0;
     
     self.tableView = tableView;
+    self.dontNeedRefresh = NO;
     
     [self.view addSubview:self.tableView];
 }
 
+- (void)setDontNeedRefresh:(BOOL)dontNeedRefresh{
+    _dontNeedRefresh = dontNeedRefresh;
+    
+    if (dontNeedRefresh) {
+        self.tableView.mj_header.hidden = YES;
+        self.tableView.mj_footer.hidden = YES;
+    } else {
+        __weak typeof(self) weak_self = self;
+        self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+            [weak_self.model clean];
+            [weak_self loadItem];
+        }];
+        
+        self.tableView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingBlock:^{
+            [weak_self loadItem];
+        }];
+    }
+}
+
+
+-(void)endRefreshing {
+    [self.tableView.mj_header endRefreshing];
+    [self.tableView.mj_footer endRefreshing];
+}
 - (CGRect)tableRect{
     if (self.isTransparentBar) {
        return CGRectMake(0, FX_NAVIGATIONBAR_TOTAL_SPAGE, FX_SCREEN_WIDTH, FX_TABLE_HEIGHT);

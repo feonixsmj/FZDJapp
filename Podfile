@@ -13,6 +13,7 @@ target 'FZDJapp' do
   pod 'OpenUDID'
   pod 'MJExtension'
   
+  pod 'UITableView+FDTemplateLayoutCell'
   pod 'PPNetworkHelper',:git => 'https://github.com/jkpang/PPNetworkHelper.git'
 
 end

@@ -10,10 +10,8 @@
 
 @interface FXBaseModel : NSObject
 
-//completed:(void (^)(void))completed
-//failure:(void (^)(NSError *error))failure;
-
-
+@property (nonatomic, assign) NSInteger pageNumber;
+@property (nonatomic, assign) NSInteger pageSize;
 /**
  数据源
  */
@@ -22,4 +20,15 @@
 - (void)loadItem:(NSDictionary *)parameterDict
          success:(void (^)(NSDictionary *dict))success
          failure:(void (^)(NSError *error))failure;
+
+/**
+ 下拉刷新重置数据
+ */
+- (void)clean;
+
+
+/**
+ 上拉成功 页数+1
+ */
+- (void)plusPageNumber;
 @end

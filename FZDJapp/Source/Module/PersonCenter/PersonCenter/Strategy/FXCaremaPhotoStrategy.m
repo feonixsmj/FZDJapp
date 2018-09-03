@@ -40,6 +40,7 @@ UINavigationControllerDelegate>
 }
 
 - (void)takePhotosComplete:(FXCaremaTakePhotosBlock)complete {
+    self.takePhotosBlock = complete;
     UIViewController *vc = (UIViewController *)self.target;
     
     //选择相机时，设置UIImagePickerController对象相关属性
@@ -53,6 +54,7 @@ UINavigationControllerDelegate>
 }
 
 - (void)selectPhotoComplete:(FXSelectPhotosBlock)complete {
+    self.selectPhotosBlock = complete;
     UIViewController *vc = (UIViewController *)self.target;
     
     //选择相册时，设置UIImagePickerController对象相关属性

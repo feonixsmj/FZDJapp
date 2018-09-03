@@ -15,6 +15,15 @@
 
 @implementation FZDJBaseRequest
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.needEncrypt = YES;
+    }
+    return self;
+}
+
 - (NSDictionary *)emptyParamterDict{
     NSDictionary *dict = @{};
     
@@ -50,27 +59,40 @@
                        parameters:(NSDictionary *)parameter
                           success:(void (^)(id responseObject))success
                           failure:(void (^)(NSError *error))failure{
-    if (!parameter) {
-        parameter = [self emptyParamterDict];
-    } else {
-        parameter = [self encryptParamterDict:parameter];
+    if (self.needEncrypt) {
+        if (!parameter) {
+            parameter = [self emptyParamterDict];
+        } else {
+            parameter = [self encryptParamterDict:parameter];
+        }
     }
+
     __weak typeof(self) weak_self = self;
     [FXHTTPRequest postWithURL:URL parameters:parameter success:^(id responseObject) {
+        if (!weak_self.needEncrypt) {
+            NSDictionary *dict = (NSDictionary *)responseObject;
+            success(dict);
+            return ;
+        }
+        
         NSDictionary *dict = [weak_self decryptResponseToDictionary:responseObject];
         if ([dict[@"fail"] boolValue]) {
+            NSDictionary *headDict = dict[@"head"];
+            
             NSString *msg = dict[@"customErrorMsg"];
-            NSString *respMsg = dict[@"respMsg"];
+            NSString *respMsg = headDict[@"respMsg"];
             NSString *errorMsg = [respMsg copy];
             
             if (msg.length > 0) {
                 errorMsg = [msg copy];
             }
             NSURL *failURL = [NSURL URLWithString:URL];
+            NSInteger errorcode = [headDict[@"respCode"] integerValue];
+            
             NSDictionary *userInfo =
-                @{NSLocalizedFailureReasonErrorKey: dict[@"respCode"],
+                @{NSLocalizedFailureReasonErrorKey: @(errorcode),
                         NSLocalizedDescriptionKey : errorMsg};
-            NSInteger errorcode = [dict[@"respCode"] integerValue];
+            
             
             NSError *error = [NSError errorWithDomain:failURL.host
                                                  code:errorcode
@@ -97,7 +119,7 @@
     }
     
     NSString *encryptStr = dict[@"body"];
-    if (encryptStr.length > 0) {
+    if ([encryptStr isKindOfClass:[NSString class]] && encryptStr.length > 0) {
         encryptStr = [encryptStr stringByReplacingOccurrencesOfString:@"-" withString:@"+"];
         encryptStr = [encryptStr stringByReplacingOccurrencesOfString:@"_" withString:@"/"];
     } else {

@@ -14,18 +14,32 @@
 #import "FZDJPersonalCenterModel.h"
 #import "FZDJHeaderImageView.h"
 #import "FZDJPersonalActionStrategy.h"
+#import "FZDJLoginVCL.h"
+#import "FZDJUploadImageModel.h"
+#import "FZDJEditInfoModel.h"
+#import "FZDJMainVCL.h"
 
 const CGFloat FZDJPersonalInfoCellTotalHeight = 142.0f;
 
 @interface FZDJPersonalCenterVCL ()<UINavigationControllerDelegate,
 UITableViewDelegate,
-UITableViewDataSource>
+UITableViewDataSource,
+FZDJLoginVCLDelegate>
 
 @property (nonatomic, strong) FZDJHeaderImageView *headerImageView;
 @property (nonatomic, strong) FZDJPersonalActionStrategy *strategy;
+@property (nonatomic, strong) FZDJUploadImageModel *uploadImageModel;
+@property (nonatomic, strong) FZDJEditInfoModel *editInfoModel;
+@property (nonatomic, strong) UIButton *statusButton;
 @end
 
 @implementation FZDJPersonalCenterVCL
+
+- (void)reloadData{
+    FZDJPersonalCenterModel *model = (FZDJPersonalCenterModel *)self.model;
+    [model updateData];
+    [self.tableView reloadData];
+}
 
 - (instancetype)init
 {
@@ -33,9 +47,16 @@ UITableViewDataSource>
     if (self) {
         self.hiddenNavigationBar = YES;
         self.model = [[FZDJPersonalCenterModel alloc] init];
+        self.uploadImageModel = [[FZDJUploadImageModel alloc] init];
         self.strategy = [[FZDJPersonalActionStrategy alloc] initWithTarget:self];
+        self.editInfoModel = [[FZDJEditInfoModel alloc] init];
     }
     return self;
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self reloadData];
 }
 
 - (void)viewDidLoad {
@@ -43,7 +64,9 @@ UITableViewDataSource>
     // Do any additional setup after loading the view.
     
     self.view.backgroundColor = [UIColor fx_colorWithHexString:@"F5F5F5"];
-//    self.navigationController.delegate = self;
+    self.title = @"个人中心";
+    self.dontNeedRefresh = YES;
+    
     [self initUI];
     [self loadItem];
 }
@@ -61,17 +84,14 @@ UITableViewDataSource>
 
 
 - (void)initUI{
-//    UIBarButtonItem *rightItem =
-//        [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
-//                                                      target:self
-//                                                      action:@selector(closePage)];
-//    self.navigationItem.rightBarButtonItem = rightItem;
-    
     self.headerImageView = [[FZDJHeaderImageView alloc] init];
     [self.view addSubview:self.headerImageView];
     
     [self addTableView];
     [self bringCloseButtonToFront];
+    
+    [self.view addSubview:self.statusButton];
+    
 }
 
 - (void)addTableView{
@@ -93,21 +113,82 @@ UITableViewDataSource>
     [self.view addSubview:self.tableView];
 }
 
+#pragma mark - ================ 上传头像 ================
 
+- (void)uploadImage:(UIImage *)image{
+    __weak typeof(self) weak_self = self;
+    FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
+    
+    [self.uploadImageModel uploadImage:image success:^(NSDictionary *dict) {
+        NSString *url = dict[@"url"];
+        if (url.length > 0) {
+            dm.userInfo.avatarURL = url;
+            [weak_self reloadData];
+            [weak_self modifyAvatar];
+        }
+    } failure:^(NSError *error) {
+        
+    }];
+}
+
+- (void)modifyAvatar{
+    [self.editInfoModel modifyPersonalInfo:nil success:^(NSDictionary *dict) {
+        NSLog(@"替换成功");
+    } failure:^(NSError *error) {
+        
+    }];
+}
 
 #pragma mark - ================ LazyLoad ================
 
-#pragma mark - ================ UINavigationControllerDelegate ================
-//
-//- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
-//
-//    [self.navigationController setNavigationBarHidden:NO animated:animated];
-//}
-//
-//- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
-//
-//    [self.navigationController setNavigationBarHidden:YES animated:animated];
-//}
+- (UIButton *)statusButton{
+    if (!_statusButton) {
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [button setImage:[UIImage imageNamed:@"dj_personcenter_quit"]
+                forState:UIControlStateNormal];
+        
+        [button addTarget:self
+                   action:@selector(logoutButtonAction)
+         forControlEvents:UIControlEventTouchUpInside];;
+        
+        CGRect rect = CGRectMake(10, FX_SCREEN_HEIGHT - 10 - 37,
+                                 FX_SCREEN_WIDTH - 10 *2, 37);
+        button.frame = rect;
+        _statusButton = button;
+    }
+    return _statusButton;
+}
+
+- (void)logoutButtonAction{
+    //退出登录
+    FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
+    dm.userInfo.nickName = nil;
+    dm.userInfo.openid = nil;
+    
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"FZDJLoginVCL" bundle:nil];
+    FZDJLoginVCL *loginVCL = (FZDJLoginVCL *)[storyBoard instantiateInitialViewController];
+    
+    
+    for (UIViewController *vcl in self.navigationController.childViewControllers) {
+        if (![vcl isKindOfClass:NSClassFromString(@"FZDJMainVCL")]) {
+            [self.navigationController popViewControllerAnimated:YES];
+        } else {
+            FZDJMainVCL *mainvcl = (FZDJMainVCL *)vcl;
+            loginVCL.delegate = mainvcl;
+            [mainvcl.navigationController presentViewController:loginVCL animated:NO completion:nil];
+        }
+    }
+    
+    
+}
+
+#pragma mark ================ FZDJLoginVCLDelegate ================
+- (void)loginSuccess{
+    // 关闭登录弹窗
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    
+    [self loadItem];
+}
 
 #pragma mark - ================ UITableViewDelegate ================
 
@@ -181,6 +262,5 @@ UITableViewDataSource>
     }
     self.headerImageView.frame = newFrame;
 }
-
 
 @end

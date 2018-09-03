@@ -1,0 +1,15 @@
+
+/* Class = "UITextField"; text = "请输入手机号"; ObjectID = "D0U-g2-sSX"; */
+"D0U-g2-sSX.text" = "请输入手机号";
+
+/* Class = "UITextField"; text = "请输入验证码"; ObjectID = "RyS-sj-DcT"; */
+"RyS-sj-DcT.text" = "请输入验证码";
+
+/* Class = "UILabel"; text = "第三方登录"; ObjectID = "T00-jV-tqg"; */
+"T00-jV-tqg.text" = "第三方登录";
+
+/* Class = "UIButton"; normalTitle = "登录"; ObjectID = "h4C-WF-yuX"; */
+"h4C-WF-yuX.normalTitle" = "登录";
+
+/* Class = "UIButton"; normalTitle = "获取验证码"; ObjectID = "kmn-Ld-ePS"; */
+"kmn-Ld-ePS.normalTitle" = "获取验证码";

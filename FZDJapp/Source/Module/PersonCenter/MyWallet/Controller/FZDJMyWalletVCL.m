@@ -243,7 +243,7 @@ FZDJMyWalletCashCellDelegate>
     // Do any additional setup after loading the view.
     
     self.title = @"我的钱包";
-    
+    self.dontNeedRefresh = YES;
     [self setupView];
     [self loadItem];
 }

@@ -33,6 +33,7 @@ UITextFieldDelegate>
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.dontNeedRefresh = YES;
     [self initUI];
     [self bringCloseButtonToFront];
     [self loadItem];
@@ -58,7 +59,8 @@ UITextFieldDelegate>
     self.tableView.dataSource = self;
     self.tableView.rowHeight = 70;
     
-    [self.tableView registerNib:[UINib nibWithNibName:@"FZDJInvitationCodeCell" bundle:nil]
+    [self.tableView registerNib:
+          [UINib nibWithNibName:@"FZDJInvitationCodeCell" bundle:nil]
          forCellReuseIdentifier:@"FZDJInvitationCodeCell"];
 }
 
@@ -92,8 +94,9 @@ UITextFieldDelegate>
         btnImageView.image = [UIImage imageNamed:@"InvitationCode_btn"];
         btnImageView.userInteractionEnabled = YES;
         
+        FZDJDataModelSingleton *dm =[ FZDJDataModelSingleton sharedInstance];
         UITextField *textField = [[UITextField alloc] init];
-        textField.text = @"A2C9Q";
+        textField.text = dm.userInfo.userShareCode;
         textField.textColor = [UIColor whiteColor];
         textField.frame = CGRectMake(0, 0, 173, 38);
         textField.font = [UIFont systemFontOfSize:18];

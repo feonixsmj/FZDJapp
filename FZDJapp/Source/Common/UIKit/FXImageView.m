@@ -14,6 +14,15 @@
 @end
 @implementation FXImageView
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.userInteractionEnabled = YES;
+    }
+    return self;
+}
+
 
 - (void)setImageURL:(NSString *)imageURL{
     

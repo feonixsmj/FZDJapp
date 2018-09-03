@@ -3,7 +3,7 @@
 //  FZDJapp
 //
 //  Created by FZYG on 2018/7/25.
-//  Copyright © 2018年 FZDJ. All rights reserved.
+//  Copyright © 2018年 FZYG. All rights reserved.
 //
 
 #import "FZDJEditNickNameVCL.h"
@@ -20,18 +20,26 @@
     // Do any additional setup after loading the view from its nib.
     self.title = @"设置昵称";
 }
+
 - (IBAction)btnAction:(id)sender {
     UIButton *btn = (UIButton *)sender;
     if (btn.tag == 1) {
         //清空按钮
+        self.nickNameTextFiled.text = @"";
     } else {
         //  保存操作
         FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
         dm.userInfo.nickName = self.nickNameTextFiled.text;
         
-        if (self.saveBlock) {
-            self.saveBlock();
+        if (self.nickNameTextFiled.text.length > 0) {
+            if (self.saveBlock) {
+                self.saveBlock();
+            }
+            [self.navigationController popViewControllerAnimated:YES];
+        } else {
+            NSLog(@"未输入昵称");
         }
+
     }
 }
 

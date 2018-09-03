@@ -44,7 +44,8 @@
     if (self.hiddenNavigationBar) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = CGRectMake(0, 10, 44, 44);
-        [button setTitle:@"关闭" forState:UIControlStateNormal];
+
+        [button setImage:[UIImage imageNamed:@"navigation_close_btn"] forState:UIControlStateNormal];
         [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
         [button addTarget:self
                    action:@selector(closePage)

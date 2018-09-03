@@ -28,7 +28,6 @@ typedef NS_ENUM(NSUInteger, FZDJCellActionType) {
     
     FZDJCellActionTypeModifyAvatar = 3001,
     FZDJCellActionTypeModifyPersonalInfo = 3002,
-    FZDJCellActionTypeRealNameVerify = 3003,
     FZDJCellActionTypeWallet = 3004,
     FZDJCellActionTypeTask = 3005,
     FZDJCellActionTypeInvitationCode = 3006,

@@ -42,6 +42,19 @@
 		4418F6F220D262450086B94E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4418F6F120D262450086B94E /* Assets.xcassets */; };
 		4418F6F820D262450086B94E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4418F6F720D262450086B94E /* main.m */; };
 		4418F70320D264E40086B94E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4418F70020D264E40086B94E /* AppDelegate.m */; };
+		442276FE210F82DC006ED0C6 /* FZDJAppealTaskInfoVo.m in Sources */ = {isa = PBXBuildFile; fileRef = 442276FD210F82DC006ED0C6 /* FZDJAppealTaskInfoVo.m */; };
+		44346AB2210F390B00868FC1 /* FZDJMyTaskListVo.m in Sources */ = {isa = PBXBuildFile; fileRef = 44346AB1210F390B00868FC1 /* FZDJMyTaskListVo.m */; };
+		44346AB5210F391D00868FC1 /* FZDJMyTaskInfoVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 44346AB4210F391D00868FC1 /* FZDJMyTaskInfoVO.m */; };
+		44346ABE210F471500868FC1 /* FZDJAppealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44346ABD210F471500868FC1 /* FZDJAppealViewController.m */; };
+		44346AC1210F47D500868FC1 /* FZDJAppealModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 44346AC0210F47D500868FC1 /* FZDJAppealModel.m */; };
+		44346AC4210F480A00868FC1 /* FZDJAppealReplyItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 44346AC3210F480A00868FC1 /* FZDJAppealReplyItem.m */; };
+		44346AC7210F4B3400868FC1 /* FZDJAppealTaskInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 44346AC6210F4B3400868FC1 /* FZDJAppealTaskInfoView.m */; };
+		44346AC9210F4B3C00868FC1 /* FZDJAppealTaskInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44346AC8210F4B3C00868FC1 /* FZDJAppealTaskInfoView.xib */; };
+		44346ACC210F4DB100868FC1 /* FZDJAppealTaskInfoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 44346ACB210F4DB100868FC1 /* FZDJAppealTaskInfoItem.m */; };
+		44346ACF210F608700868FC1 /* FZDJQuestionDescView.m in Sources */ = {isa = PBXBuildFile; fileRef = 44346ACE210F608700868FC1 /* FZDJQuestionDescView.m */; };
+		44346AD1210F609200868FC1 /* FZDJQuestionDescView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44346AD0210F609200868FC1 /* FZDJQuestionDescView.xib */; };
+		44346AD9210F6CD300868FC1 /* FZDJAppealHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44346AD7210F6CD300868FC1 /* FZDJAppealHistoryCell.m */; };
+		44346ADA210F6CD300868FC1 /* FZDJAppealHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44346AD8210F6CD300868FC1 /* FZDJAppealHistoryCell.xib */; };
 		4439582520FF9AB1003F7AB5 /* FZDJInvitationCodeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4439582320FF9AB1003F7AB5 /* FZDJInvitationCodeCell.m */; };
 		4439582620FF9AB1003F7AB5 /* FZDJInvitationCodeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4439582420FF9AB1003F7AB5 /* FZDJInvitationCodeCell.xib */; };
 		4439582920FF9AE7003F7AB5 /* FZDJInvitationCodeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4439582820FF9AE7003F7AB5 /* FZDJInvitationCodeItem.m */; };
@@ -62,6 +75,12 @@
 		44455ABF210E0296008A88E6 /* FZDJTaskDetailItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 44455ABE210E0296008A88E6 /* FZDJTaskDetailItem.m */; };
 		44455AC2210E1790008A88E6 /* FZDJTaskDetaiInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 44455AC1210E1790008A88E6 /* FZDJTaskDetaiInfoView.m */; };
 		44455AC4210E179C008A88E6 /* FZDJTaskDetaiInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44455AC3210E179C008A88E6 /* FZDJTaskDetaiInfoView.xib */; };
+		446393A8213C418A00709CE2 /* WXZBasePickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 446393A2213C418A00709CE2 /* WXZBasePickView.m */; };
+		446393AA213C418A00709CE2 /* WXZCustomPickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 446393A4213C418A00709CE2 /* WXZCustomPickView.m */; };
+		446393AC213C418A00709CE2 /* WXZPickCityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 446393A7213C418A00709CE2 /* WXZPickCityView.m */; };
+		446393AF213C655700709CE2 /* FZDJBankInfoVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 446393AE213C655700709CE2 /* FZDJBankInfoVO.m */; };
+		446393B2213C665B00709CE2 /* FZDJBankInfoListVo.m in Sources */ = {isa = PBXBuildFile; fileRef = 446393B1213C665B00709CE2 /* FZDJBankInfoListVo.m */; };
+		446393B5213D7E8C00709CE2 /* FZDJBannerDetailVCL.m in Sources */ = {isa = PBXBuildFile; fileRef = 446393B4213D7E8C00709CE2 /* FZDJBannerDetailVCL.m */; };
 		447002CF21075DAE00D4E93E /* FZDJEditInfoVCL.m in Sources */ = {isa = PBXBuildFile; fileRef = 447002CD21075DAE00D4E93E /* FZDJEditInfoVCL.m */; };
 		447002D021075DAE00D4E93E /* FZDJEditInfoVCL.xib in Resources */ = {isa = PBXBuildFile; fileRef = 447002CE21075DAE00D4E93E /* FZDJEditInfoVCL.xib */; };
 		447002D32107776E00D4E93E /* FZDJEditInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 447002D22107776E00D4E93E /* FZDJEditInfoModel.m */; };
@@ -71,6 +90,36 @@
 		447002DE2107859A00D4E93E /* FZDJBindPhoneNumberVCL.xib in Resources */ = {isa = PBXBuildFile; fileRef = 447002DC2107859A00D4E93E /* FZDJBindPhoneNumberVCL.xib */; };
 		447002E221078D7C00D4E93E /* FZDJEditNickNameVCL.m in Sources */ = {isa = PBXBuildFile; fileRef = 447002E021078D7C00D4E93E /* FZDJEditNickNameVCL.m */; };
 		447002E321078D7C00D4E93E /* FZDJEditNickNameVCL.xib in Resources */ = {isa = PBXBuildFile; fileRef = 447002E121078D7C00D4E93E /* FZDJEditNickNameVCL.xib */; };
+		447D704A2114885300A08E9E /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 447D70302114885300A08E9E /* WeiboSDK.bundle */; };
+		447D704B2114885300A08E9E /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 447D70312114885300A08E9E /* libWeiboSDK.a */; };
+		447D704C2114885300A08E9E /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 447D70372114885300A08E9E /* README.txt */; };
+		447D704D2114885300A08E9E /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 447D70392114885300A08E9E /* libWeChatSDK.a */; };
+		447D704E2114885300A08E9E /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 447D703B2114885300A08E9E /* TencentOpenAPI.framework */; };
+		447D704F2114885300A08E9E /* ShareSDKConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 447D703D2114885300A08E9E /* ShareSDKConnector.framework */; };
+		447D70502114885300A08E9E /* ShareSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 447D703E2114885300A08E9E /* ShareSDK.bundle */; };
+		447D70512114885300A08E9E /* ShareSDKUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 447D70402114885300A08E9E /* ShareSDKUI.bundle */; };
+		447D70522114885300A08E9E /* ShareSDKExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 447D70412114885300A08E9E /* ShareSDKExtension.framework */; };
+		447D70532114885300A08E9E /* ShareSDKUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 447D70422114885300A08E9E /* ShareSDKUI.framework */; };
+		447D70542114885300A08E9E /* QQConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 447D70442114885300A08E9E /* QQConnector.framework */; };
+		447D70552114885300A08E9E /* WechatConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 447D70452114885300A08E9E /* WechatConnector.framework */; };
+		447D70562114885300A08E9E /* SinaWeiboConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 447D70462114885300A08E9E /* SinaWeiboConnector.framework */; };
+		447D70572114885300A08E9E /* ShareSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 447D70472114885300A08E9E /* ShareSDK.framework */; };
+		447D70582114885300A08E9E /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 447D70492114885300A08E9E /* MOBFoundation.framework */; };
+		447D705A211488D400A08E9E /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 447D7059211488D400A08E9E /* libicucore.tbd */; };
+		447D705C211488E100A08E9E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 447D705B211488E100A08E9E /* libz.tbd */; };
+		447D705E211488E900A08E9E /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 447D705D211488E900A08E9E /* libstdc++.tbd */; };
+		447D7060211488F000A08E9E /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 447D705F211488F000A08E9E /* JavaScriptCore.framework */; };
+		447D7062211488FA00A08E9E /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 447D7061211488FA00A08E9E /* ImageIO.framework */; };
+		447D70642114890500A08E9E /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 447D70632114890500A08E9E /* libsqlite3.tbd */; };
+		447D70662114892800A08E9E /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 447D70652114892800A08E9E /* Photos.framework */; };
+		44816830213441F1003722AE /* FZDJBankCardVCL.m in Sources */ = {isa = PBXBuildFile; fileRef = 4481682F213441F1003722AE /* FZDJBankCardVCL.m */; };
+		4481683621344242003722AE /* FZDJBankCardModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4481683521344242003722AE /* FZDJBankCardModel.m */; };
+		4481683A21344276003722AE /* FZDJBankCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4481683821344276003722AE /* FZDJBankCardCell.m */; };
+		4481683B21344276003722AE /* FZDJBankCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4481683921344276003722AE /* FZDJBankCardCell.xib */; };
+		44816842213445D7003722AE /* FZDJBankCardIdentityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44816840213445D7003722AE /* FZDJBankCardIdentityCell.m */; };
+		44816843213445D7003722AE /* FZDJBankCardIdentityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44816841213445D7003722AE /* FZDJBankCardIdentityCell.xib */; };
+		448168472134475F003722AE /* FZDJBankCardIdentityItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 448168462134475F003722AE /* FZDJBankCardIdentityItem.m */; };
+		4481684A21344774003722AE /* FZDJBankCardItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4481684921344774003722AE /* FZDJBankCardItem.m */; };
 		4492099721034AEE00E13120 /* XBConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 4492098921034AEE00E13120 /* XBConst.m */; };
 		4492099821034AEE00E13120 /* XBScrollPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4492098D21034AEE00E13120 /* XBScrollPageController.m */; };
 		4492099921034AEE00E13120 /* UIView+XBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4492098E21034AEE00E13120 /* UIView+XBExtension.m */; };
@@ -79,8 +128,8 @@
 		4492099C21034AEE00E13120 /* XBTagTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4492099621034AEE00E13120 /* XBTagTitleCell.m */; };
 		4492099F210369B600E13120 /* FXMyTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4492099E210369B600E13120 /* FXMyTaskViewController.m */; };
 		449209A2210369FA00E13120 /* FXMyTaskContainerVCL.m in Sources */ = {isa = PBXBuildFile; fileRef = 449209A1210369FA00E13120 /* FXMyTaskContainerVCL.m */; };
-		449209A621036F5400E13120 /* FXMyTaskModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 449209A521036F5400E13120 /* FXMyTaskModel.m */; };
-		449209A921036FF400E13120 /* FXMyTaskItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 449209A821036FF400E13120 /* FXMyTaskItem.m */; };
+		449209A621036F5400E13120 /* FZDJMyTaskModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 449209A521036F5400E13120 /* FZDJMyTaskModel.m */; };
+		449209A921036FF400E13120 /* FZDJMyTaskItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 449209A821036FF400E13120 /* FZDJMyTaskItem.m */; };
 		449209AE2103765500E13120 /* FXMyTaskListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 449209AC2103765500E13120 /* FXMyTaskListCell.m */; };
 		449209AF2103765500E13120 /* FXMyTaskListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 449209AD2103765500E13120 /* FXMyTaskListCell.xib */; };
 		44ACA28E20EA6A9A00414E9A /* FZDJMainVCL.m in Sources */ = {isa = PBXBuildFile; fileRef = 44ACA28820EA6A9A00414E9A /* FZDJMainVCL.m */; };
@@ -96,20 +145,24 @@
 		44AEB9562102197700D2D191 /* FXKeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AEB9552102197700D2D191 /* FXKeychainItemWrapper.m */; };
 		44AEB959210219B100D2D191 /* FXSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AEB958210219B100D2D191 /* FXSingleton.m */; };
 		44AEB95C2102212A00D2D191 /* FXCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AEB95B2102212A00D2D191 /* FXCrypto.m */; };
+		44B1E5042114B44B0058A4A0 /* FZDJAppealHistoryVo.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B1E5032114B44B0058A4A0 /* FZDJAppealHistoryVo.m */; };
+		44B1E5072114B63E0058A4A0 /* FZDJAppealHistoryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B1E5062114B63E0058A4A0 /* FZDJAppealHistoryItem.m */; };
+		44B1E50A2114B8690058A4A0 /* FZDJAppealHistoryListVo.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B1E5092114B8690058A4A0 /* FZDJAppealHistoryListVo.m */; };
+		44BD39712114C5B30024B228 /* FZDJLoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 44BD39702114C5B30024B228 /* FZDJLoginModel.m */; };
+		44BD39742115ADEE0024B228 /* FZDJPersonalInfoVo.m in Sources */ = {isa = PBXBuildFile; fileRef = 44BD39732115ADEE0024B228 /* FZDJPersonalInfoVo.m */; };
 		44CD154620EA025200941CC2 /* FXBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44CD154520EA025200941CC2 /* FXBaseTableViewController.m */; };
 		44CDB2EB20F9E64B0011DFAA /* FZDJAboutUsVCL.m in Sources */ = {isa = PBXBuildFile; fileRef = 44CDB2E920F9E64B0011DFAA /* FZDJAboutUsVCL.m */; };
 		44CDB2EC20F9E64B0011DFAA /* FZDJAboutUsVCL.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44CDB2EA20F9E64B0011DFAA /* FZDJAboutUsVCL.xib */; };
 		44CDB2F020FA28EF0011DFAA /* FZDJInvitationCodeVCL.m in Sources */ = {isa = PBXBuildFile; fileRef = 44CDB2EF20FA28EF0011DFAA /* FZDJInvitationCodeVCL.m */; };
-		44DFDE1B20EA5DBE00A9099D /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44DFDE1720EA5DBE00A9099D /* 3.jpg */; };
-		44DFDE1C20EA5DBE00A9099D /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44DFDE1820EA5DBE00A9099D /* 2.jpg */; };
-		44DFDE1D20EA5DBE00A9099D /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44DFDE1920EA5DBE00A9099D /* 1.jpg */; };
-		44DFDE1E20EA5DBE00A9099D /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44DFDE1A20EA5DBE00A9099D /* 4.jpg */; };
+		44D23B5F2111F09000285A40 /* FZDJSelectPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D23B5E2111F09000285A40 /* FZDJSelectPhotoView.m */; };
+		44D23B632111FDF300285A40 /* FZDJAppealSelectPhotoStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D23B622111FDF300285A40 /* FZDJAppealSelectPhotoStrategy.m */; };
+		44E56A962118992000E7AD2E /* FZDJUploadImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 44E56A952118992000E7AD2E /* FZDJUploadImageModel.m */; };
+		44E56A972118A09700E7AD2E /* FZDJLoginVCL.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44E56A992118A09700E7AD2E /* FZDJLoginVCL.storyboard */; };
 		44E9B58F20DB9DC200D00E4D /* UIColor+FXCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 44E9B58E20DB9DC200D00E4D /* UIColor+FXCategory.m */; };
 		44E9B59220DB9EB200D00E4D /* NSString+FXCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 44E9B59120DB9EB200D00E4D /* NSString+FXCategory.m */; };
 		44E9B59520DBA8F100D00E4D /* UIView+FXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 44E9B59420DBA8F100D00E4D /* UIView+FXExtension.m */; };
 		44E9B59A20E091DD00D00E4D /* FXGuideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 44E9B59920E091DD00D00E4D /* FXGuideView.m */; };
 		44E9B5A420E0D56700D00E4D /* FZDJLoginVCL.m in Sources */ = {isa = PBXBuildFile; fileRef = 44E9B5A320E0D56700D00E4D /* FZDJLoginVCL.m */; };
-		44E9B5A620E0D58C00D00E4D /* FZDJLoginVCL.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44E9B5A520E0D58C00D00E4D /* FZDJLoginVCL.storyboard */; };
 		44E9B5AB20E0D62E00D00E4D /* FXImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 44E9B5AA20E0D62E00D00E4D /* FXImageView.m */; };
 		44E9B5B420E1DF1000D00E4D /* FXBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44E9B5B320E1DF1000D00E4D /* FXBaseViewController.m */; };
 		44E9B5B720E1E84600D00E4D /* FXBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 44E9B5B620E1E84600D00E4D /* FXBaseModel.m */; };
@@ -121,6 +174,8 @@
 		44EBB81B20EBCC2600B95317 /* FZDJMessageCenterItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 44EBB81A20EBCC2600B95317 /* FZDJMessageCenterItem.m */; };
 		44EBB81E20EBCC4000B95317 /* FZDJMessageCenterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 44EBB81D20EBCC4000B95317 /* FZDJMessageCenterModel.m */; };
 		44EBB82120EBF8D000B95317 /* FXBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44EBB82020EBF8D000B95317 /* FXBaseNavigationController.m */; };
+		44F4CD652119DEE00099B583 /* FZDJMessageListVo.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F4CD642119DEE00099B583 /* FZDJMessageListVo.m */; };
+		44F4CD682119DEF70099B583 /* FZDJMessageInfoVo.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F4CD672119DEF70099B583 /* FZDJMessageInfoVo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -187,6 +242,29 @@
 		4418F6F720D262450086B94E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4418F6FF20D264E40086B94E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4418F70020D264E40086B94E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		442276FC210F82DC006ED0C6 /* FZDJAppealTaskInfoVo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJAppealTaskInfoVo.h; sourceTree = "<group>"; };
+		442276FD210F82DC006ED0C6 /* FZDJAppealTaskInfoVo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJAppealTaskInfoVo.m; sourceTree = "<group>"; };
+		44346AB0210F390B00868FC1 /* FZDJMyTaskListVo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJMyTaskListVo.h; sourceTree = "<group>"; };
+		44346AB1210F390B00868FC1 /* FZDJMyTaskListVo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJMyTaskListVo.m; sourceTree = "<group>"; };
+		44346AB3210F391D00868FC1 /* FZDJMyTaskInfoVO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJMyTaskInfoVO.h; sourceTree = "<group>"; };
+		44346AB4210F391D00868FC1 /* FZDJMyTaskInfoVO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJMyTaskInfoVO.m; sourceTree = "<group>"; };
+		44346ABC210F471500868FC1 /* FZDJAppealViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJAppealViewController.h; sourceTree = "<group>"; };
+		44346ABD210F471500868FC1 /* FZDJAppealViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJAppealViewController.m; sourceTree = "<group>"; };
+		44346ABF210F47D500868FC1 /* FZDJAppealModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJAppealModel.h; sourceTree = "<group>"; };
+		44346AC0210F47D500868FC1 /* FZDJAppealModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJAppealModel.m; sourceTree = "<group>"; };
+		44346AC2210F480A00868FC1 /* FZDJAppealReplyItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJAppealReplyItem.h; sourceTree = "<group>"; };
+		44346AC3210F480A00868FC1 /* FZDJAppealReplyItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJAppealReplyItem.m; sourceTree = "<group>"; };
+		44346AC5210F4B3400868FC1 /* FZDJAppealTaskInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJAppealTaskInfoView.h; sourceTree = "<group>"; };
+		44346AC6210F4B3400868FC1 /* FZDJAppealTaskInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJAppealTaskInfoView.m; sourceTree = "<group>"; };
+		44346AC8210F4B3C00868FC1 /* FZDJAppealTaskInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FZDJAppealTaskInfoView.xib; sourceTree = "<group>"; };
+		44346ACA210F4DB100868FC1 /* FZDJAppealTaskInfoItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJAppealTaskInfoItem.h; sourceTree = "<group>"; };
+		44346ACB210F4DB100868FC1 /* FZDJAppealTaskInfoItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJAppealTaskInfoItem.m; sourceTree = "<group>"; };
+		44346ACD210F608700868FC1 /* FZDJQuestionDescView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJQuestionDescView.h; sourceTree = "<group>"; };
+		44346ACE210F608700868FC1 /* FZDJQuestionDescView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJQuestionDescView.m; sourceTree = "<group>"; };
+		44346AD0210F609200868FC1 /* FZDJQuestionDescView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FZDJQuestionDescView.xib; sourceTree = "<group>"; };
+		44346AD6210F6CD300868FC1 /* FZDJAppealHistoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJAppealHistoryCell.h; sourceTree = "<group>"; };
+		44346AD7210F6CD300868FC1 /* FZDJAppealHistoryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJAppealHistoryCell.m; sourceTree = "<group>"; };
+		44346AD8210F6CD300868FC1 /* FZDJAppealHistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FZDJAppealHistoryCell.xib; sourceTree = "<group>"; };
 		4439582220FF9AB1003F7AB5 /* FZDJInvitationCodeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJInvitationCodeCell.h; sourceTree = "<group>"; };
 		4439582320FF9AB1003F7AB5 /* FZDJInvitationCodeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJInvitationCodeCell.m; sourceTree = "<group>"; };
 		4439582420FF9AB1003F7AB5 /* FZDJInvitationCodeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FZDJInvitationCodeCell.xib; sourceTree = "<group>"; };
@@ -225,6 +303,18 @@
 		44455AC0210E1790008A88E6 /* FZDJTaskDetaiInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJTaskDetaiInfoView.h; sourceTree = "<group>"; };
 		44455AC1210E1790008A88E6 /* FZDJTaskDetaiInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJTaskDetaiInfoView.m; sourceTree = "<group>"; };
 		44455AC3210E179C008A88E6 /* FZDJTaskDetaiInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FZDJTaskDetaiInfoView.xib; sourceTree = "<group>"; };
+		4463939E213C418A00709CE2 /* WXZCustomPickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXZCustomPickView.h; sourceTree = "<group>"; };
+		446393A1213C418A00709CE2 /* WXZPickCityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXZPickCityView.h; sourceTree = "<group>"; };
+		446393A2213C418A00709CE2 /* WXZBasePickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXZBasePickView.m; sourceTree = "<group>"; };
+		446393A4213C418A00709CE2 /* WXZCustomPickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXZCustomPickView.m; sourceTree = "<group>"; };
+		446393A6213C418A00709CE2 /* WXZBasePickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXZBasePickView.h; sourceTree = "<group>"; };
+		446393A7213C418A00709CE2 /* WXZPickCityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXZPickCityView.m; sourceTree = "<group>"; };
+		446393AD213C655700709CE2 /* FZDJBankInfoVO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJBankInfoVO.h; sourceTree = "<group>"; };
+		446393AE213C655700709CE2 /* FZDJBankInfoVO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJBankInfoVO.m; sourceTree = "<group>"; };
+		446393B0213C665B00709CE2 /* FZDJBankInfoListVo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJBankInfoListVo.h; sourceTree = "<group>"; };
+		446393B1213C665B00709CE2 /* FZDJBankInfoListVo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJBankInfoListVo.m; sourceTree = "<group>"; };
+		446393B3213D7E8C00709CE2 /* FZDJBannerDetailVCL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJBannerDetailVCL.h; sourceTree = "<group>"; };
+		446393B4213D7E8C00709CE2 /* FZDJBannerDetailVCL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJBannerDetailVCL.m; sourceTree = "<group>"; };
 		447002CC21075DAE00D4E93E /* FZDJEditInfoVCL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJEditInfoVCL.h; sourceTree = "<group>"; };
 		447002CD21075DAE00D4E93E /* FZDJEditInfoVCL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJEditInfoVCL.m; sourceTree = "<group>"; };
 		447002CE21075DAE00D4E93E /* FZDJEditInfoVCL.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FZDJEditInfoVCL.xib; sourceTree = "<group>"; };
@@ -240,6 +330,47 @@
 		447002DF21078D7C00D4E93E /* FZDJEditNickNameVCL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJEditNickNameVCL.h; sourceTree = "<group>"; };
 		447002E021078D7C00D4E93E /* FZDJEditNickNameVCL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJEditNickNameVCL.m; sourceTree = "<group>"; };
 		447002E121078D7C00D4E93E /* FZDJEditNickNameVCL.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FZDJEditNickNameVCL.xib; sourceTree = "<group>"; };
+		447D70302114885300A08E9E /* WeiboSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WeiboSDK.bundle; sourceTree = "<group>"; };
+		447D70312114885300A08E9E /* libWeiboSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeiboSDK.a; sourceTree = "<group>"; };
+		447D70322114885300A08E9E /* WBHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBHttpRequest.h; sourceTree = "<group>"; };
+		447D70332114885300A08E9E /* WeiboSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboSDK.h; sourceTree = "<group>"; };
+		447D70352114885300A08E9E /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		447D70362114885300A08E9E /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		447D70372114885300A08E9E /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		447D70382114885300A08E9E /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
+		447D70392114885300A08E9E /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		447D703B2114885300A08E9E /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
+		447D703D2114885300A08E9E /* ShareSDKConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKConnector.framework; sourceTree = "<group>"; };
+		447D703E2114885300A08E9E /* ShareSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShareSDK.bundle; sourceTree = "<group>"; };
+		447D70402114885300A08E9E /* ShareSDKUI.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShareSDKUI.bundle; sourceTree = "<group>"; };
+		447D70412114885300A08E9E /* ShareSDKExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKExtension.framework; sourceTree = "<group>"; };
+		447D70422114885300A08E9E /* ShareSDKUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKUI.framework; sourceTree = "<group>"; };
+		447D70442114885300A08E9E /* QQConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QQConnector.framework; sourceTree = "<group>"; };
+		447D70452114885300A08E9E /* WechatConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WechatConnector.framework; sourceTree = "<group>"; };
+		447D70462114885300A08E9E /* SinaWeiboConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SinaWeiboConnector.framework; sourceTree = "<group>"; };
+		447D70472114885300A08E9E /* ShareSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDK.framework; sourceTree = "<group>"; };
+		447D70492114885300A08E9E /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
+		447D7059211488D400A08E9E /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		447D705B211488E100A08E9E /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		447D705D211488E900A08E9E /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		447D705F211488F000A08E9E /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		447D7061211488FA00A08E9E /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		447D70632114890500A08E9E /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		447D70652114892800A08E9E /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		4481682E213441F1003722AE /* FZDJBankCardVCL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJBankCardVCL.h; sourceTree = "<group>"; };
+		4481682F213441F1003722AE /* FZDJBankCardVCL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJBankCardVCL.m; sourceTree = "<group>"; };
+		4481683421344242003722AE /* FZDJBankCardModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJBankCardModel.h; sourceTree = "<group>"; };
+		4481683521344242003722AE /* FZDJBankCardModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJBankCardModel.m; sourceTree = "<group>"; };
+		4481683721344276003722AE /* FZDJBankCardCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJBankCardCell.h; sourceTree = "<group>"; };
+		4481683821344276003722AE /* FZDJBankCardCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJBankCardCell.m; sourceTree = "<group>"; };
+		4481683921344276003722AE /* FZDJBankCardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FZDJBankCardCell.xib; sourceTree = "<group>"; };
+		4481683F213445D7003722AE /* FZDJBankCardIdentityCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJBankCardIdentityCell.h; sourceTree = "<group>"; };
+		44816840213445D7003722AE /* FZDJBankCardIdentityCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJBankCardIdentityCell.m; sourceTree = "<group>"; };
+		44816841213445D7003722AE /* FZDJBankCardIdentityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FZDJBankCardIdentityCell.xib; sourceTree = "<group>"; };
+		448168452134475F003722AE /* FZDJBankCardIdentityItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJBankCardIdentityItem.h; sourceTree = "<group>"; };
+		448168462134475F003722AE /* FZDJBankCardIdentityItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJBankCardIdentityItem.m; sourceTree = "<group>"; };
+		4481684821344774003722AE /* FZDJBankCardItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJBankCardItem.h; sourceTree = "<group>"; };
+		4481684921344774003722AE /* FZDJBankCardItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJBankCardItem.m; sourceTree = "<group>"; };
 		4492098721034AEE00E13120 /* UIView+XBExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XBExtension.h"; sourceTree = "<group>"; };
 		4492098921034AEE00E13120 /* XBConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBConst.m; sourceTree = "<group>"; };
 		4492098A21034AEE00E13120 /* XBConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBConst.h; sourceTree = "<group>"; };
@@ -256,10 +387,10 @@
 		4492099E210369B600E13120 /* FXMyTaskViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FXMyTaskViewController.m; sourceTree = "<group>"; };
 		449209A0210369FA00E13120 /* FXMyTaskContainerVCL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FXMyTaskContainerVCL.h; sourceTree = "<group>"; };
 		449209A1210369FA00E13120 /* FXMyTaskContainerVCL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FXMyTaskContainerVCL.m; sourceTree = "<group>"; };
-		449209A421036F5400E13120 /* FXMyTaskModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FXMyTaskModel.h; sourceTree = "<group>"; };
-		449209A521036F5400E13120 /* FXMyTaskModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FXMyTaskModel.m; sourceTree = "<group>"; };
-		449209A721036FF400E13120 /* FXMyTaskItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FXMyTaskItem.h; sourceTree = "<group>"; };
-		449209A821036FF400E13120 /* FXMyTaskItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FXMyTaskItem.m; sourceTree = "<group>"; };
+		449209A421036F5400E13120 /* FZDJMyTaskModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJMyTaskModel.h; sourceTree = "<group>"; };
+		449209A521036F5400E13120 /* FZDJMyTaskModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJMyTaskModel.m; sourceTree = "<group>"; };
+		449209A721036FF400E13120 /* FZDJMyTaskItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJMyTaskItem.h; sourceTree = "<group>"; };
+		449209A821036FF400E13120 /* FZDJMyTaskItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJMyTaskItem.m; sourceTree = "<group>"; };
 		449209AB2103765500E13120 /* FXMyTaskListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FXMyTaskListCell.h; sourceTree = "<group>"; };
 		449209AC2103765500E13120 /* FXMyTaskListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FXMyTaskListCell.m; sourceTree = "<group>"; };
 		449209AD2103765500E13120 /* FXMyTaskListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FXMyTaskListCell.xib; sourceTree = "<group>"; };
@@ -288,6 +419,16 @@
 		44AEB958210219B100D2D191 /* FXSingleton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FXSingleton.m; sourceTree = "<group>"; };
 		44AEB95A2102212A00D2D191 /* FXCrypto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FXCrypto.h; sourceTree = "<group>"; };
 		44AEB95B2102212A00D2D191 /* FXCrypto.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FXCrypto.m; sourceTree = "<group>"; };
+		44B1E5022114B44B0058A4A0 /* FZDJAppealHistoryVo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJAppealHistoryVo.h; sourceTree = "<group>"; };
+		44B1E5032114B44B0058A4A0 /* FZDJAppealHistoryVo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJAppealHistoryVo.m; sourceTree = "<group>"; };
+		44B1E5052114B63E0058A4A0 /* FZDJAppealHistoryItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJAppealHistoryItem.h; sourceTree = "<group>"; };
+		44B1E5062114B63E0058A4A0 /* FZDJAppealHistoryItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJAppealHistoryItem.m; sourceTree = "<group>"; };
+		44B1E5082114B8690058A4A0 /* FZDJAppealHistoryListVo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJAppealHistoryListVo.h; sourceTree = "<group>"; };
+		44B1E5092114B8690058A4A0 /* FZDJAppealHistoryListVo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJAppealHistoryListVo.m; sourceTree = "<group>"; };
+		44BD396F2114C5B30024B228 /* FZDJLoginModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJLoginModel.h; sourceTree = "<group>"; };
+		44BD39702114C5B30024B228 /* FZDJLoginModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJLoginModel.m; sourceTree = "<group>"; };
+		44BD39722115ADEE0024B228 /* FZDJPersonalInfoVo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJPersonalInfoVo.h; sourceTree = "<group>"; };
+		44BD39732115ADEE0024B228 /* FZDJPersonalInfoVo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJPersonalInfoVo.m; sourceTree = "<group>"; };
 		44CD154420EA025200941CC2 /* FXBaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FXBaseTableViewController.h; sourceTree = "<group>"; };
 		44CD154520EA025200941CC2 /* FXBaseTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FXBaseTableViewController.m; sourceTree = "<group>"; };
 		44CDB2E820F9E64B0011DFAA /* FZDJAboutUsVCL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJAboutUsVCL.h; sourceTree = "<group>"; };
@@ -295,10 +436,14 @@
 		44CDB2EA20F9E64B0011DFAA /* FZDJAboutUsVCL.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FZDJAboutUsVCL.xib; sourceTree = "<group>"; };
 		44CDB2EE20FA28EE0011DFAA /* FZDJInvitationCodeVCL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJInvitationCodeVCL.h; sourceTree = "<group>"; };
 		44CDB2EF20FA28EF0011DFAA /* FZDJInvitationCodeVCL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJInvitationCodeVCL.m; sourceTree = "<group>"; };
-		44DFDE1720EA5DBE00A9099D /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
-		44DFDE1820EA5DBE00A9099D /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
-		44DFDE1920EA5DBE00A9099D /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
-		44DFDE1A20EA5DBE00A9099D /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
+		44D23B5D2111F09000285A40 /* FZDJSelectPhotoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJSelectPhotoView.h; sourceTree = "<group>"; };
+		44D23B5E2111F09000285A40 /* FZDJSelectPhotoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJSelectPhotoView.m; sourceTree = "<group>"; };
+		44D23B612111FDF300285A40 /* FZDJAppealSelectPhotoStrategy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJAppealSelectPhotoStrategy.h; sourceTree = "<group>"; };
+		44D23B622111FDF300285A40 /* FZDJAppealSelectPhotoStrategy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJAppealSelectPhotoStrategy.m; sourceTree = "<group>"; };
+		44E56A942118992000E7AD2E /* FZDJUploadImageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJUploadImageModel.h; sourceTree = "<group>"; };
+		44E56A952118992000E7AD2E /* FZDJUploadImageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJUploadImageModel.m; sourceTree = "<group>"; };
+		44E56A982118A09700E7AD2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/FZDJLoginVCL.storyboard; sourceTree = "<group>"; };
+		44E56A9A2118A0AA00E7AD2E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/FZDJLoginVCL.strings"; sourceTree = "<group>"; };
 		44E9B58D20DB9DC200D00E4D /* UIColor+FXCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+FXCategory.h"; sourceTree = "<group>"; };
 		44E9B58E20DB9DC200D00E4D /* UIColor+FXCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+FXCategory.m"; sourceTree = "<group>"; };
 		44E9B59020DB9EB200D00E4D /* NSString+FXCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+FXCategory.h"; sourceTree = "<group>"; };
@@ -312,7 +457,6 @@
 		44E9B59E20E0976600D00E4D /* FXBaseKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FXBaseKit.h; sourceTree = "<group>"; };
 		44E9B5A220E0D56700D00E4D /* FZDJLoginVCL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJLoginVCL.h; sourceTree = "<group>"; };
 		44E9B5A320E0D56700D00E4D /* FZDJLoginVCL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJLoginVCL.m; sourceTree = "<group>"; };
-		44E9B5A520E0D58C00D00E4D /* FZDJLoginVCL.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FZDJLoginVCL.storyboard; sourceTree = "<group>"; };
 		44E9B5A920E0D62E00D00E4D /* FXImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FXImageView.h; sourceTree = "<group>"; };
 		44E9B5AA20E0D62E00D00E4D /* FXImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FXImageView.m; sourceTree = "<group>"; };
 		44E9B5B220E1DF1000D00E4D /* FXBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FXBaseViewController.h; sourceTree = "<group>"; };
@@ -334,6 +478,11 @@
 		44EBB81D20EBCC4000B95317 /* FZDJMessageCenterModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJMessageCenterModel.m; sourceTree = "<group>"; };
 		44EBB81F20EBF8D000B95317 /* FXBaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FXBaseNavigationController.h; sourceTree = "<group>"; };
 		44EBB82020EBF8D000B95317 /* FXBaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FXBaseNavigationController.m; sourceTree = "<group>"; };
+		44F4CD632119DEE00099B583 /* FZDJMessageListVo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJMessageListVo.h; sourceTree = "<group>"; };
+		44F4CD642119DEE00099B583 /* FZDJMessageListVo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJMessageListVo.m; sourceTree = "<group>"; };
+		44F4CD662119DEF70099B583 /* FZDJMessageInfoVo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJMessageInfoVo.h; sourceTree = "<group>"; };
+		44F4CD672119DEF70099B583 /* FZDJMessageInfoVo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJMessageInfoVo.m; sourceTree = "<group>"; };
+		83A47C29BB0E1AA9B6EE43A6 /* Pods-FZDJapp.ad hoc distribution.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FZDJapp.ad hoc distribution.xcconfig"; path = "Pods/Target Support Files/Pods-FZDJapp/Pods-FZDJapp.ad hoc distribution.xcconfig"; sourceTree = "<group>"; };
 		A99B31F162BCDD7F74A89505 /* Pods-FZDJapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FZDJapp.release.xcconfig"; path = "Pods/Target Support Files/Pods-FZDJapp/Pods-FZDJapp.release.xcconfig"; sourceTree = "<group>"; };
 		BCFEB257500CEE673AF1C34D /* libPods-FZDJapp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FZDJapp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F125775A55A2AD963859695B /* Pods-FZDJapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FZDJapp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FZDJapp/Pods-FZDJapp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -344,8 +493,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				447D70662114892800A08E9E /* Photos.framework in Frameworks */,
+				447D70642114890500A08E9E /* libsqlite3.tbd in Frameworks */,
+				447D7062211488FA00A08E9E /* ImageIO.framework in Frameworks */,
+				447D7060211488F000A08E9E /* JavaScriptCore.framework in Frameworks */,
+				447D705E211488E900A08E9E /* libstdc++.tbd in Frameworks */,
+				447D705C211488E100A08E9E /* libz.tbd in Frameworks */,
+				447D705A211488D400A08E9E /* libicucore.tbd in Frameworks */,
+				447D70562114885300A08E9E /* SinaWeiboConnector.framework in Frameworks */,
+				447D70582114885300A08E9E /* MOBFoundation.framework in Frameworks */,
+				447D70552114885300A08E9E /* WechatConnector.framework in Frameworks */,
+				447D704E2114885300A08E9E /* TencentOpenAPI.framework in Frameworks */,
+				447D70572114885300A08E9E /* ShareSDK.framework in Frameworks */,
+				447D704F2114885300A08E9E /* ShareSDKConnector.framework in Frameworks */,
 				4412FFCB20E3DE8600E7692A /* MobileCoreServices.framework in Frameworks */,
+				447D70532114885300A08E9E /* ShareSDKUI.framework in Frameworks */,
+				447D704B2114885300A08E9E /* libWeiboSDK.a in Frameworks */,
+				447D70522114885300A08E9E /* ShareSDKExtension.framework in Frameworks */,
+				447D704D2114885300A08E9E /* libWeChatSDK.a in Frameworks */,
 				39AABDFF34A4C8C240B8B5DE /* libPods-FZDJapp.a in Frameworks */,
+				447D70542114885300A08E9E /* QQConnector.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +524,7 @@
 			children = (
 				F125775A55A2AD963859695B /* Pods-FZDJapp.debug.xcconfig */,
 				A99B31F162BCDD7F74A89505 /* Pods-FZDJapp.release.xcconfig */,
+				83A47C29BB0E1AA9B6EE43A6 /* Pods-FZDJapp.ad hoc distribution.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -397,6 +565,8 @@
 				447002D821077FB300D4E93E /* FZDJUserInfo.m */,
 				44455AA8210A2D8F008A88E6 /* FZDJBaseBVO.h */,
 				44455AA9210A2D8F008A88E6 /* FZDJBaseBVO.m */,
+				44E56A942118992000E7AD2E /* FZDJUploadImageModel.h */,
+				44E56A952118992000E7AD2E /* FZDJUploadImageModel.m */,
 			);
 			path = BusinessCommon;
 			sourceTree = "<group>";
@@ -441,12 +611,9 @@
 		44047EAA20F2568200CFEBB3 /* Mytask */ = {
 			isa = PBXGroup;
 			children = (
+				44346AB6210F46BA00868FC1 /* Controller */,
 				449209AA2103761000E13120 /* Cell */,
 				449209A321036F3600E13120 /* Model */,
-				4492099D210369B600E13120 /* FXMyTaskViewController.h */,
-				4492099E210369B600E13120 /* FXMyTaskViewController.m */,
-				449209A0210369FA00E13120 /* FXMyTaskContainerVCL.h */,
-				449209A1210369FA00E13120 /* FXMyTaskContainerVCL.m */,
 			);
 			path = Mytask;
 			sourceTree = "<group>";
@@ -493,6 +660,9 @@
 		44047EAE20F256EA00CFEBB3 /* BankCard */ = {
 			isa = PBXGroup;
 			children = (
+				44816833213441FF003722AE /* View */,
+				44816832213441FB003722AE /* Model */,
+				44816831213441F5003722AE /* Controller */,
 			);
 			path = BankCard;
 			sourceTree = "<group>";
@@ -598,7 +768,6 @@
 			isa = PBXGroup;
 			children = (
 				4492098521034ABF00E13120 /* Vendors */,
-				44DFDE1620EA5D2400A9099D /* Resource */,
 				4418F6FE20D264E40086B94E /* Source */,
 				4418F6F120D262450086B94E /* Assets.xcassets */,
 				4418F6F620D262450086B94E /* Info.plist */,
@@ -620,6 +789,98 @@
 				4418F70020D264E40086B94E /* AppDelegate.m */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		44346AAF210F38E500868FC1 /* Vo */ = {
+			isa = PBXGroup;
+			children = (
+				44346AB0210F390B00868FC1 /* FZDJMyTaskListVo.h */,
+				44346AB1210F390B00868FC1 /* FZDJMyTaskListVo.m */,
+				44346AB3210F391D00868FC1 /* FZDJMyTaskInfoVO.h */,
+				44346AB4210F391D00868FC1 /* FZDJMyTaskInfoVO.m */,
+			);
+			path = Vo;
+			sourceTree = "<group>";
+		};
+		44346AB6210F46BA00868FC1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4492099D210369B600E13120 /* FXMyTaskViewController.h */,
+				4492099E210369B600E13120 /* FXMyTaskViewController.m */,
+				449209A0210369FA00E13120 /* FXMyTaskContainerVCL.h */,
+				449209A1210369FA00E13120 /* FXMyTaskContainerVCL.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		44346AB7210F46D000868FC1 /* Appeal */ = {
+			isa = PBXGroup;
+			children = (
+				44D23B602111FDA200285A40 /* Strategy */,
+				44346AB8210F46DB00868FC1 /* Controller */,
+				44346AB9210F46E000868FC1 /* Model */,
+				44346ABA210F46E400868FC1 /* View */,
+			);
+			path = Appeal;
+			sourceTree = "<group>";
+		};
+		44346AB8210F46DB00868FC1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				44346ABC210F471500868FC1 /* FZDJAppealViewController.h */,
+				44346ABD210F471500868FC1 /* FZDJAppealViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		44346AB9210F46E000868FC1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				44F4CD6A211B24810099B583 /* Vo */,
+				44346ABB210F46E900868FC1 /* Item */,
+				44346ABF210F47D500868FC1 /* FZDJAppealModel.h */,
+				44346AC0210F47D500868FC1 /* FZDJAppealModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		44346ABA210F46E400868FC1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				44346AD2210F6C7D00868FC1 /* Cell */,
+				44346AC5210F4B3400868FC1 /* FZDJAppealTaskInfoView.h */,
+				44346AC6210F4B3400868FC1 /* FZDJAppealTaskInfoView.m */,
+				44346AC8210F4B3C00868FC1 /* FZDJAppealTaskInfoView.xib */,
+				44346ACD210F608700868FC1 /* FZDJQuestionDescView.h */,
+				44346ACE210F608700868FC1 /* FZDJQuestionDescView.m */,
+				44346AD0210F609200868FC1 /* FZDJQuestionDescView.xib */,
+				44D23B5D2111F09000285A40 /* FZDJSelectPhotoView.h */,
+				44D23B5E2111F09000285A40 /* FZDJSelectPhotoView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		44346ABB210F46E900868FC1 /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				44346AC2210F480A00868FC1 /* FZDJAppealReplyItem.h */,
+				44346AC3210F480A00868FC1 /* FZDJAppealReplyItem.m */,
+				44346ACA210F4DB100868FC1 /* FZDJAppealTaskInfoItem.h */,
+				44346ACB210F4DB100868FC1 /* FZDJAppealTaskInfoItem.m */,
+				44B1E5052114B63E0058A4A0 /* FZDJAppealHistoryItem.h */,
+				44B1E5062114B63E0058A4A0 /* FZDJAppealHistoryItem.m */,
+			);
+			path = Item;
+			sourceTree = "<group>";
+		};
+		44346AD2210F6C7D00868FC1 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				44346AD6210F6CD300868FC1 /* FZDJAppealHistoryCell.h */,
+				44346AD7210F6CD300868FC1 /* FZDJAppealHistoryCell.m */,
+				44346AD8210F6CD300868FC1 /* FZDJAppealHistoryCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		4439582020FF9A57003F7AB5 /* Model */ = {
@@ -707,9 +968,178 @@
 			path = Item;
 			sourceTree = "<group>";
 		};
+		4463939D213C418A00709CE2 /* WXZCustomPickView */ = {
+			isa = PBXGroup;
+			children = (
+				446393A6213C418A00709CE2 /* WXZBasePickView.h */,
+				446393A2213C418A00709CE2 /* WXZBasePickView.m */,
+				4463939E213C418A00709CE2 /* WXZCustomPickView.h */,
+				446393A4213C418A00709CE2 /* WXZCustomPickView.m */,
+				446393A1213C418A00709CE2 /* WXZPickCityView.h */,
+				446393A7213C418A00709CE2 /* WXZPickCityView.m */,
+			);
+			path = WXZCustomPickView;
+			sourceTree = "<group>";
+		};
+		447D702B2114885300A08E9E /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				447D702C2114885300A08E9E /* ShareSDK */,
+				447D70482114885300A08E9E /* Required */,
+			);
+			path = SDK;
+			sourceTree = "<group>";
+		};
+		447D702C2114885300A08E9E /* ShareSDK */ = {
+			isa = PBXGroup;
+			children = (
+				447D702D2114885300A08E9E /* Support */,
+				447D70472114885300A08E9E /* ShareSDK.framework */,
+			);
+			path = ShareSDK;
+			sourceTree = "<group>";
+		};
+		447D702D2114885300A08E9E /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				447D702E2114885300A08E9E /* PlatformSDK */,
+				447D703C2114885300A08E9E /* Required */,
+				447D703F2114885300A08E9E /* Optional */,
+				447D70432114885300A08E9E /* PlatformConnector */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		447D702E2114885300A08E9E /* PlatformSDK */ = {
+			isa = PBXGroup;
+			children = (
+				447D702F2114885300A08E9E /* SinaWeiboSDK */,
+				447D70342114885300A08E9E /* WeChatSDK */,
+				447D703A2114885300A08E9E /* QQSDK */,
+			);
+			path = PlatformSDK;
+			sourceTree = "<group>";
+		};
+		447D702F2114885300A08E9E /* SinaWeiboSDK */ = {
+			isa = PBXGroup;
+			children = (
+				447D70302114885300A08E9E /* WeiboSDK.bundle */,
+				447D70312114885300A08E9E /* libWeiboSDK.a */,
+				447D70322114885300A08E9E /* WBHttpRequest.h */,
+				447D70332114885300A08E9E /* WeiboSDK.h */,
+			);
+			path = SinaWeiboSDK;
+			sourceTree = "<group>";
+		};
+		447D70342114885300A08E9E /* WeChatSDK */ = {
+			isa = PBXGroup;
+			children = (
+				447D70352114885300A08E9E /* WXApi.h */,
+				447D70362114885300A08E9E /* WXApiObject.h */,
+				447D70372114885300A08E9E /* README.txt */,
+				447D70382114885300A08E9E /* WechatAuthSDK.h */,
+				447D70392114885300A08E9E /* libWeChatSDK.a */,
+			);
+			path = WeChatSDK;
+			sourceTree = "<group>";
+		};
+		447D703A2114885300A08E9E /* QQSDK */ = {
+			isa = PBXGroup;
+			children = (
+				447D703B2114885300A08E9E /* TencentOpenAPI.framework */,
+			);
+			path = QQSDK;
+			sourceTree = "<group>";
+		};
+		447D703C2114885300A08E9E /* Required */ = {
+			isa = PBXGroup;
+			children = (
+				447D703D2114885300A08E9E /* ShareSDKConnector.framework */,
+				447D703E2114885300A08E9E /* ShareSDK.bundle */,
+			);
+			path = Required;
+			sourceTree = "<group>";
+		};
+		447D703F2114885300A08E9E /* Optional */ = {
+			isa = PBXGroup;
+			children = (
+				447D70402114885300A08E9E /* ShareSDKUI.bundle */,
+				447D70412114885300A08E9E /* ShareSDKExtension.framework */,
+				447D70422114885300A08E9E /* ShareSDKUI.framework */,
+			);
+			path = Optional;
+			sourceTree = "<group>";
+		};
+		447D70432114885300A08E9E /* PlatformConnector */ = {
+			isa = PBXGroup;
+			children = (
+				447D70442114885300A08E9E /* QQConnector.framework */,
+				447D70452114885300A08E9E /* WechatConnector.framework */,
+				447D70462114885300A08E9E /* SinaWeiboConnector.framework */,
+			);
+			path = PlatformConnector;
+			sourceTree = "<group>";
+		};
+		447D70482114885300A08E9E /* Required */ = {
+			isa = PBXGroup;
+			children = (
+				447D70492114885300A08E9E /* MOBFoundation.framework */,
+			);
+			path = Required;
+			sourceTree = "<group>";
+		};
+		44816831213441F5003722AE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4481682E213441F1003722AE /* FZDJBankCardVCL.h */,
+				4481682F213441F1003722AE /* FZDJBankCardVCL.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		44816832213441FB003722AE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4481684421344722003722AE /* Item */,
+				4481683421344242003722AE /* FZDJBankCardModel.h */,
+				4481683521344242003722AE /* FZDJBankCardModel.m */,
+				446393AD213C655700709CE2 /* FZDJBankInfoVO.h */,
+				446393AE213C655700709CE2 /* FZDJBankInfoVO.m */,
+				446393B0213C665B00709CE2 /* FZDJBankInfoListVo.h */,
+				446393B1213C665B00709CE2 /* FZDJBankInfoListVo.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		44816833213441FF003722AE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4481683721344276003722AE /* FZDJBankCardCell.h */,
+				4481683821344276003722AE /* FZDJBankCardCell.m */,
+				4481683921344276003722AE /* FZDJBankCardCell.xib */,
+				4481683F213445D7003722AE /* FZDJBankCardIdentityCell.h */,
+				44816840213445D7003722AE /* FZDJBankCardIdentityCell.m */,
+				44816841213445D7003722AE /* FZDJBankCardIdentityCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4481684421344722003722AE /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				448168452134475F003722AE /* FZDJBankCardIdentityItem.h */,
+				448168462134475F003722AE /* FZDJBankCardIdentityItem.m */,
+				4481684821344774003722AE /* FZDJBankCardItem.h */,
+				4481684921344774003722AE /* FZDJBankCardItem.m */,
+			);
+			path = Item;
+			sourceTree = "<group>";
+		};
 		4492098521034ABF00E13120 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				4463939D213C418A00709CE2 /* WXZCustomPickView */,
+				447D702B2114885300A08E9E /* SDK */,
 				4492098621034AEE00E13120 /* XBScrollPageController */,
 			);
 			path = Vendors;
@@ -769,10 +1199,11 @@
 		449209A321036F3600E13120 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				449209A421036F5400E13120 /* FXMyTaskModel.h */,
-				449209A521036F5400E13120 /* FXMyTaskModel.m */,
-				449209A721036FF400E13120 /* FXMyTaskItem.h */,
-				449209A821036FF400E13120 /* FXMyTaskItem.m */,
+				44346AAF210F38E500868FC1 /* Vo */,
+				449209A421036F5400E13120 /* FZDJMyTaskModel.h */,
+				449209A521036F5400E13120 /* FZDJMyTaskModel.m */,
+				449209A721036FF400E13120 /* FZDJMyTaskItem.h */,
+				449209A821036FF400E13120 /* FZDJMyTaskItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -803,6 +1234,8 @@
 			children = (
 				44ACA28920EA6A9A00414E9A /* FZDJMainVCL.h */,
 				44ACA28820EA6A9A00414E9A /* FZDJMainVCL.m */,
+				446393B3213D7E8C00709CE2 /* FZDJBannerDetailVCL.h */,
+				446393B4213D7E8C00709CE2 /* FZDJBannerDetailVCL.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -883,6 +1316,7 @@
 		44C9AC2520DA5D0200EBD6FB /* PersonCenter */ = {
 			isa = PBXGroup;
 			children = (
+				44346AB7210F46D000868FC1 /* Appeal */,
 				44047EAE20F256EA00CFEBB3 /* BankCard */,
 				44047EAD20F256D200CFEBB3 /* AboutUs */,
 				44047EAC20F256A700CFEBB3 /* InvitationCode */,
@@ -927,8 +1361,7 @@
 		44CD154920EA048600941CC2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				44EBB81920EBCC2600B95317 /* FZDJMessageCenterItem.h */,
-				44EBB81A20EBCC2600B95317 /* FZDJMessageCenterItem.m */,
+				44F4CD692119DFF90099B583 /* Item */,
 				44EBB81C20EBCC4000B95317 /* FZDJMessageCenterModel.h */,
 				44EBB81D20EBCC4000B95317 /* FZDJMessageCenterModel.m */,
 			);
@@ -945,15 +1378,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		44DFDE1620EA5D2400A9099D /* Resource */ = {
+		44D23B602111FDA200285A40 /* Strategy */ = {
 			isa = PBXGroup;
 			children = (
-				44DFDE1920EA5DBE00A9099D /* 1.jpg */,
-				44DFDE1820EA5DBE00A9099D /* 2.jpg */,
-				44DFDE1720EA5DBE00A9099D /* 3.jpg */,
-				44DFDE1A20EA5DBE00A9099D /* 4.jpg */,
+				44D23B612111FDF300285A40 /* FZDJAppealSelectPhotoStrategy.h */,
+				44D23B622111FDF300285A40 /* FZDJAppealSelectPhotoStrategy.m */,
 			);
-			path = Resource;
+			path = Strategy;
 			sourceTree = "<group>";
 		};
 		44E9B58620DB9C5600D00E4D /* Common */ = {
@@ -1003,7 +1434,9 @@
 			children = (
 				44E9B5A220E0D56700D00E4D /* FZDJLoginVCL.h */,
 				44E9B5A320E0D56700D00E4D /* FZDJLoginVCL.m */,
-				44E9B5A520E0D58C00D00E4D /* FZDJLoginVCL.storyboard */,
+				44E56A992118A09700E7AD2E /* FZDJLoginVCL.storyboard */,
+				44BD396F2114C5B30024B228 /* FZDJLoginModel.h */,
+				44BD39702114C5B30024B228 /* FZDJLoginModel.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -1110,13 +1543,48 @@
 				44047E8E20F1495900CFEBB3 /* Items */,
 				44047E8B20F1495400CFEBB3 /* FZDJPersonalCenterModel.h */,
 				44047E8C20F1495400CFEBB3 /* FZDJPersonalCenterModel.m */,
+				44BD39722115ADEE0024B228 /* FZDJPersonalInfoVo.h */,
+				44BD39732115ADEE0024B228 /* FZDJPersonalInfoVo.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		44F4CD692119DFF90099B583 /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				44F4CD632119DEE00099B583 /* FZDJMessageListVo.h */,
+				44F4CD642119DEE00099B583 /* FZDJMessageListVo.m */,
+				44F4CD662119DEF70099B583 /* FZDJMessageInfoVo.h */,
+				44F4CD672119DEF70099B583 /* FZDJMessageInfoVo.m */,
+				44EBB81920EBCC2600B95317 /* FZDJMessageCenterItem.h */,
+				44EBB81A20EBCC2600B95317 /* FZDJMessageCenterItem.m */,
+			);
+			path = Item;
+			sourceTree = "<group>";
+		};
+		44F4CD6A211B24810099B583 /* Vo */ = {
+			isa = PBXGroup;
+			children = (
+				442276FC210F82DC006ED0C6 /* FZDJAppealTaskInfoVo.h */,
+				442276FD210F82DC006ED0C6 /* FZDJAppealTaskInfoVo.m */,
+				44B1E5022114B44B0058A4A0 /* FZDJAppealHistoryVo.h */,
+				44B1E5032114B44B0058A4A0 /* FZDJAppealHistoryVo.m */,
+				44B1E5082114B8690058A4A0 /* FZDJAppealHistoryListVo.h */,
+				44B1E5092114B8690058A4A0 /* FZDJAppealHistoryListVo.m */,
+			);
+			path = Vo;
 			sourceTree = "<group>";
 		};
 		50E5DD26DBAA73410DB7D5E6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				447D70652114892800A08E9E /* Photos.framework */,
+				447D70632114890500A08E9E /* libsqlite3.tbd */,
+				447D7061211488FA00A08E9E /* ImageIO.framework */,
+				447D705F211488F000A08E9E /* JavaScriptCore.framework */,
+				447D705D211488E900A08E9E /* libstdc++.tbd */,
+				447D705B211488E100A08E9E /* libz.tbd */,
+				447D7059211488D400A08E9E /* libicucore.tbd */,
 				4412FFCA20E3DE8500E7692A /* MobileCoreServices.framework */,
 				BCFEB257500CEE673AF1C34D /* libPods-FZDJapp.a */,
 			);
@@ -1165,7 +1633,6 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
 			);
 			mainGroup = 4418F6DC20D262450086B94E;
@@ -1183,25 +1650,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44816843213445D7003722AE /* FZDJBankCardIdentityCell.xib in Resources */,
 				447002E321078D7C00D4E93E /* FZDJEditNickNameVCL.xib in Resources */,
-				44DFDE1B20EA5DBE00A9099D /* 3.jpg in Resources */,
-				44E9B5A620E0D58C00D00E4D /* FZDJLoginVCL.storyboard in Resources */,
+				44346ADA210F6CD300868FC1 /* FZDJAppealHistoryCell.xib in Resources */,
+				44E56A972118A09700E7AD2E /* FZDJLoginVCL.storyboard in Resources */,
+				447D70512114885300A08E9E /* ShareSDKUI.bundle in Resources */,
 				44047E7320F0F97300CFEBB3 /* FZDJPersonalTaskView.xib in Resources */,
+				447D70502114885300A08E9E /* ShareSDK.bundle in Resources */,
 				44CDB2EC20F9E64B0011DFAA /* FZDJAboutUsVCL.xib in Resources */,
 				44455AC4210E179C008A88E6 /* FZDJTaskDetaiInfoView.xib in Resources */,
-				44DFDE1D20EA5DBE00A9099D /* 1.jpg in Resources */,
-				44DFDE1C20EA5DBE00A9099D /* 2.jpg in Resources */,
-				44DFDE1E20EA5DBE00A9099D /* 4.jpg in Resources */,
 				4418F6F220D262450086B94E /* Assets.xcassets in Resources */,
+				4481683B21344276003722AE /* FZDJBankCardCell.xib in Resources */,
+				447D704A2114885300A08E9E /* WeiboSDK.bundle in Resources */,
 				449209AF2103765500E13120 /* FXMyTaskListCell.xib in Resources */,
 				440536FC20F511AD006C7AFB /* FZDJAmountDetailsCell.xib in Resources */,
 				447002DE2107859A00D4E93E /* FZDJBindPhoneNumberVCL.xib in Resources */,
+				44346AD1210F609200868FC1 /* FZDJQuestionDescView.xib in Resources */,
 				44EBB81820EBC5B700B95317 /* FZDJMessageCenterCell.xib in Resources */,
 				44047E8320F12EC000CFEBB3 /* FZDJPeraonalListCell.xib in Resources */,
 				44047EBD20F274D700CFEBB3 /* FZDJMyWalletCashCell.xib in Resources */,
+				44346AC9210F4B3C00868FC1 /* FZDJAppealTaskInfoView.xib in Resources */,
 				4439582620FF9AB1003F7AB5 /* FZDJInvitationCodeCell.xib in Resources */,
 				44047E7B20F12E7200CFEBB3 /* FZDJPersonalInfoCell.xib in Resources */,
 				447002D021075DAE00D4E93E /* FZDJEditInfoVCL.xib in Resources */,
+				447D704C2114885300A08E9E /* README.txt in Resources */,
 				44ACA2A120EA6CCF00414E9A /* FZDJMainView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1259,31 +1731,40 @@
 				4439582C20FF9B57003F7AB5 /* FZDJInvitationCodeModel.m in Sources */,
 				44455AAD210A3629008A88E6 /* NSDate+FXExtention.m in Sources */,
 				44047E9420F14B5200CFEBB3 /* FZDJPersonalTaskItem.m in Sources */,
+				44816842213445D7003722AE /* FZDJBankCardIdentityCell.m in Sources */,
 				44047EBC20F274D700CFEBB3 /* FZDJMyWalletCashCell.m in Sources */,
 				44E9B59220DB9EB200D00E4D /* NSString+FXCategory.m in Sources */,
 				44047EB120F2575000CFEBB3 /* FZDJMyWalletVCL.m in Sources */,
 				4492099F210369B600E13120 /* FXMyTaskViewController.m in Sources */,
 				44ACA29F20EA6CC500414E9A /* FZDJMainView.m in Sources */,
 				44E9B5C620E2427800D00E4D /* FXHTTPRequest.m in Sources */,
+				4481683A21344276003722AE /* FZDJBankCardCell.m in Sources */,
 				4492099721034AEE00E13120 /* XBConst.m in Sources */,
 				44E9B5B420E1DF1000D00E4D /* FXBaseViewController.m in Sources */,
 				44E9B59520DBA8F100D00E4D /* UIView+FXExtension.m in Sources */,
 				44E9B59A20E091DD00D00E4D /* FXGuideView.m in Sources */,
+				44BD39742115ADEE0024B228 /* FZDJPersonalInfoVo.m in Sources */,
 				449209A2210369FA00E13120 /* FXMyTaskContainerVCL.m in Sources */,
 				4492099C21034AEE00E13120 /* XBTagTitleCell.m in Sources */,
 				440536FB20F511AD006C7AFB /* FZDJAmountDetailsCell.m in Sources */,
 				44CDB2F020FA28EF0011DFAA /* FZDJInvitationCodeVCL.m in Sources */,
 				44047E7120F0F96100CFEBB3 /* FZDJPersonalTaskView.m in Sources */,
+				44816830213441F1003722AE /* FZDJBankCardVCL.m in Sources */,
 				4492099921034AEE00E13120 /* UIView+XBExtension.m in Sources */,
 				44047E8A20F1403E00CFEBB3 /* FZDJPersonalBaseCell.m in Sources */,
 				44ACA29420EA6AFB00414E9A /* FXBaseItem.m in Sources */,
 				44455AB7210DB0EA008A88E6 /* FZDJTaskDetailModel.m in Sources */,
 				44CD154620EA025200941CC2 /* FXBaseTableViewController.m in Sources */,
 				4412FFC920E3DDA500E7692A /* FXCaremaPhotoStrategy.m in Sources */,
+				448168472134475F003722AE /* FZDJBankCardIdentityItem.m in Sources */,
 				44047E9120F14B0F00CFEBB3 /* FZDJPersonalInfoItem.m in Sources */,
 				447002E221078D7C00D4E93E /* FZDJEditNickNameVCL.m in Sources */,
 				4492099821034AEE00E13120 /* XBScrollPageController.m in Sources */,
 				4412FFC520E3DD6400E7692A /* FXBaseStrategy.m in Sources */,
+				44D23B632111FDF300285A40 /* FZDJAppealSelectPhotoStrategy.m in Sources */,
+				4481683621344242003722AE /* FZDJBankCardModel.m in Sources */,
+				446393A8213C418A00709CE2 /* WXZBasePickView.m in Sources */,
+				44346ACC210F4DB100868FC1 /* FZDJAppealTaskInfoItem.m in Sources */,
 				44ACA2A720EA8B7000414E9A /* FZDJPersonalCenterVCL.m in Sources */,
 				44047E9720F14B6600CFEBB3 /* FZDJPersonalListItem.m in Sources */,
 				44EBB81E20EBCC4000B95317 /* FZDJMessageCenterModel.m in Sources */,
@@ -1294,17 +1775,22 @@
 				44047EA320F2450800CFEBB3 /* FZDJPersonalBlankItem.m in Sources */,
 				44E9B5AB20E0D62E00D00E4D /* FXImageView.m in Sources */,
 				44455AA1210A23F0008A88E6 /* FZDJBannerListVo.m in Sources */,
+				44346AC7210F4B3400868FC1 /* FZDJAppealTaskInfoView.m in Sources */,
+				446393AF213C655700709CE2 /* FZDJBankInfoVO.m in Sources */,
 				44E9B5C320E23D2F00D00E4D /* FXInterfaceConst.m in Sources */,
 				4418F70320D264E40086B94E /* AppDelegate.m in Sources */,
-				449209A921036FF400E13120 /* FXMyTaskItem.m in Sources */,
-				449209A621036F5400E13120 /* FXMyTaskModel.m in Sources */,
+				449209A921036FF400E13120 /* FZDJMyTaskItem.m in Sources */,
+				449209A621036F5400E13120 /* FZDJMyTaskModel.m in Sources */,
 				44ACA2A420EA8B2300414E9A /* FZDJMessageCenterVCL.m in Sources */,
 				44EBB82120EBF8D000B95317 /* FXBaseNavigationController.m in Sources */,
 				44047EC720F2788D00CFEBB3 /* FZDJCashItem.m in Sources */,
+				44346AC4210F480A00868FC1 /* FZDJAppealReplyItem.m in Sources */,
+				442276FE210F82DC006ED0C6 /* FZDJAppealTaskInfoVo.m in Sources */,
 				44AEB9532102192200D2D191 /* FXSystemInfo.m in Sources */,
 				443958702100DD4D003F7AB5 /* NSData+AES128.m in Sources */,
 				440536F120F510ED006C7AFB /* FZDJAmountDetailsVCL.m in Sources */,
 				44E9B5A420E0D56700D00E4D /* FZDJLoginVCL.m in Sources */,
+				4481684A21344774003722AE /* FZDJBankCardItem.m in Sources */,
 				44455AAA210A2D8F008A88E6 /* FZDJBaseBVO.m in Sources */,
 				44455ABF210E0296008A88E6 /* FZDJTaskDetailItem.m in Sources */,
 				443958742100E0BE003F7AB5 /* FZDJMainRequest.m in Sources */,
@@ -1313,9 +1799,13 @@
 				44455AB2210DAA59008A88E6 /* FZDJTaskDetailVCL.m in Sources */,
 				447002D32107776E00D4E93E /* FZDJEditInfoModel.m in Sources */,
 				4492099A21034AEE00E13120 /* XBTagTitleModel.m in Sources */,
+				44B1E5042114B44B0058A4A0 /* FZDJAppealHistoryVo.m in Sources */,
 				44047ECA20F2789B00CFEBB3 /* FZDJDescItem.m in Sources */,
+				44F4CD652119DEE00099B583 /* FZDJMessageListVo.m in Sources */,
 				4439586D2100DCE2003F7AB5 /* FSAES128.m in Sources */,
 				44ACA29120EA6ABC00414E9A /* FZDJMainModel.m in Sources */,
+				446393AC213C418A00709CE2 /* WXZPickCityView.m in Sources */,
+				44346AB2210F390B00868FC1 /* FZDJMyTaskListVo.m in Sources */,
 				44EBB81B20EBCC2600B95317 /* FZDJMessageCenterItem.m in Sources */,
 				44455AC2210E1790008A88E6 /* FZDJTaskDetaiInfoView.m in Sources */,
 				44E9B5BA20E1E85F00D00E4D /* FXBaseTableViewCell.m in Sources */,
@@ -1323,6 +1813,7 @@
 				44AEB9562102197700D2D191 /* FXKeychainItemWrapper.m in Sources */,
 				44ACA29720EA6B4600414E9A /* FZDJMainItem.m in Sources */,
 				4439587A2100E61C003F7AB5 /* NSDictionary+FXCategory.m in Sources */,
+				446393B2213C665B00709CE2 /* FZDJBankInfoListVo.m in Sources */,
 				443958772100E50A003F7AB5 /* FZDJBaseRequest.m in Sources */,
 				4439582520FF9AB1003F7AB5 /* FZDJInvitationCodeCell.m in Sources */,
 				440536F420F5116C006C7AFB /* FZDJAmountDetailsModel.m in Sources */,
@@ -1330,30 +1821,56 @@
 				447002DD2107859A00D4E93E /* FZDJBindPhoneNumberVCL.m in Sources */,
 				44047E7E20F12EA400CFEBB3 /* FZDJTaskCell.m in Sources */,
 				44ACA29A20EA6B7A00414E9A /* FZDJMainCell.m in Sources */,
+				44D23B5F2111F09000285A40 /* FZDJSelectPhotoView.m in Sources */,
+				44B1E5072114B63E0058A4A0 /* FZDJAppealHistoryItem.m in Sources */,
+				44B1E50A2114B8690058A4A0 /* FZDJAppealHistoryListVo.m in Sources */,
 				440536F720F51181006C7AFB /* FZDJAmountDetailsItem.m in Sources */,
 				44CDB2EB20F9E64B0011DFAA /* FZDJAboutUsVCL.m in Sources */,
+				44346AB5210F391D00868FC1 /* FZDJMyTaskInfoVO.m in Sources */,
+				44BD39712114C5B30024B228 /* FZDJLoginModel.m in Sources */,
 				44AEB959210219B100D2D191 /* FXSingleton.m in Sources */,
+				44346ABE210F471500868FC1 /* FZDJAppealViewController.m in Sources */,
 				449209AE2103765500E13120 /* FXMyTaskListCell.m in Sources */,
 				4418F6F820D262450086B94E /* main.m in Sources */,
+				44F4CD682119DEF70099B583 /* FZDJMessageInfoVo.m in Sources */,
+				44346AD9210F6CD300868FC1 /* FZDJAppealHistoryCell.m in Sources */,
+				44E56A962118992000E7AD2E /* FZDJUploadImageModel.m in Sources */,
+				446393AA213C418A00709CE2 /* WXZCustomPickView.m in Sources */,
+				446393B5213D7E8C00709CE2 /* FZDJBannerDetailVCL.m in Sources */,
 				4492099B21034AEE00E13120 /* XBPageCell.m in Sources */,
 				44E9B58F20DB9DC200D00E4D /* UIColor+FXCategory.m in Sources */,
 				44E9B5B720E1E84600D00E4D /* FXBaseModel.m in Sources */,
 				44047E9A20F2138A00CFEBB3 /* FZDJHeaderImageView.m in Sources */,
+				44346ACF210F608700868FC1 /* FZDJQuestionDescView.m in Sources */,
 				44EBB81720EBC5B700B95317 /* FZDJMessageCenterCell.m in Sources */,
 				447002CF21075DAE00D4E93E /* FZDJEditInfoVCL.m in Sources */,
 				44455A9E210A1AF8008A88E6 /* FZDJBannerVo.m in Sources */,
 				447002D621077DD500D4E93E /* FZDJDataModelSingleton.m in Sources */,
+				44346AC1210F47D500868FC1 /* FZDJAppealModel.m in Sources */,
 				44047E7A20F12E7200CFEBB3 /* FZDJPersonalInfoCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		44E56A992118A09700E7AD2E /* FZDJLoginVCL.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				44E56A982118A09700E7AD2E /* Base */,
+				44E56A9A2118A0AA00E7AD2E /* zh-Hans */,
+			);
+			name = FZDJLoginVCL.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		4418F6F920D262450086B94E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1398,7 +1915,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1409,6 +1926,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1447,7 +1965,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -1460,9 +1978,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FZDJapp/Vendors/SDK/ShareSDK/Support/PlatformSDK/QQSDK",
+					"$(PROJECT_DIR)/FZDJapp/Vendors/SDK/ShareSDK/Support/Required",
+					"$(PROJECT_DIR)/FZDJapp/Vendors/SDK/ShareSDK/Support/Optional",
+					"$(PROJECT_DIR)/FZDJapp/Vendors/SDK/ShareSDK/Support/PlatformConnector",
+					"$(PROJECT_DIR)/FZDJapp/Vendors/SDK/ShareSDK",
+					"$(PROJECT_DIR)/FZDJapp/Vendors/SDK/Required",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/FZDJapp/PrefixHeader.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1471,6 +1999,11 @@
 				);
 				INFOPLIST_FILE = FZDJapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FZDJapp/Vendors/SDK/ShareSDK/Support/PlatformSDK/SinaWeiboSDK",
+					"$(PROJECT_DIR)/FZDJapp/Vendors/SDK/ShareSDK/Support/PlatformSDK/WeChatSDK",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.xldm.cashbuzz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1485,9 +2018,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FZDJapp/Vendors/SDK/ShareSDK/Support/PlatformSDK/QQSDK",
+					"$(PROJECT_DIR)/FZDJapp/Vendors/SDK/ShareSDK/Support/Required",
+					"$(PROJECT_DIR)/FZDJapp/Vendors/SDK/ShareSDK/Support/Optional",
+					"$(PROJECT_DIR)/FZDJapp/Vendors/SDK/ShareSDK/Support/PlatformConnector",
+					"$(PROJECT_DIR)/FZDJapp/Vendors/SDK/ShareSDK",
+					"$(PROJECT_DIR)/FZDJapp/Vendors/SDK/Required",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/FZDJapp/PrefixHeader.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1496,6 +2039,11 @@
 				);
 				INFOPLIST_FILE = FZDJapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FZDJapp/Vendors/SDK/ShareSDK/Support/PlatformSDK/SinaWeiboSDK",
+					"$(PROJECT_DIR)/FZDJapp/Vendors/SDK/ShareSDK/Support/PlatformSDK/WeChatSDK",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.xldm.cashbuzz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1503,6 +2051,96 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
+		};
+		44E2573D2112302500ACF40C /* ad hoc distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "ad hoc distribution";
+		};
+		44E2573E2112302500ACF40C /* ad hoc distribution */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 83A47C29BB0E1AA9B6EE43A6 /* Pods-FZDJapp.ad hoc distribution.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Fuzhou XinDong Entertainment Network Polytron Technologies Inc (D2P3E37778)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = D2P3E37778;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FZDJapp/Vendors/SDK/ShareSDK/Support/PlatformSDK/QQSDK",
+					"$(PROJECT_DIR)/FZDJapp/Vendors/SDK/ShareSDK/Support/Required",
+					"$(PROJECT_DIR)/FZDJapp/Vendors/SDK/ShareSDK/Support/Optional",
+					"$(PROJECT_DIR)/FZDJapp/Vendors/SDK/ShareSDK/Support/PlatformConnector",
+					"$(PROJECT_DIR)/FZDJapp/Vendors/SDK/ShareSDK",
+					"$(PROJECT_DIR)/FZDJapp/Vendors/SDK/Required",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/FZDJapp/PrefixHeader.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+				);
+				INFOPLIST_FILE = FZDJapp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FZDJapp/Vendors/SDK/ShareSDK/Support/PlatformSDK/SinaWeiboSDK",
+					"$(PROJECT_DIR)/FZDJapp/Vendors/SDK/ShareSDK/Support/PlatformSDK/WeChatSDK",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.xldm.cashbuzz;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "c9450da5-e3a2-4487-9046-ba37b9c3fd84";
+				PROVISIONING_PROFILE_SPECIFIER = cashBuzz.adhoc;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = "ad hoc distribution";
 		};
 /* End XCBuildConfiguration section */
 
@@ -1512,6 +2150,7 @@
 			buildConfigurations = (
 				4418F6F920D262450086B94E /* Debug */,
 				4418F6FA20D262450086B94E /* Release */,
+				44E2573D2112302500ACF40C /* ad hoc distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1521,6 +2160,7 @@
 			buildConfigurations = (
 				4418F6FC20D262450086B94E /* Debug */,
 				4418F6FD20D262450086B94E /* Release */,
+				44E2573E2112302500ACF40C /* ad hoc distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

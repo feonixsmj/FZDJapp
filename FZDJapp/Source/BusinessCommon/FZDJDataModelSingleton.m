@@ -3,12 +3,18 @@
 //  FZDJapp
 //
 //  Created by FZYG on 2018/7/24.
-//  Copyright © 2018年 FZDJ. All rights reserved.
+//  Copyright © 2018年 FZYG. All rights reserved.
 //
 
 #import "FZDJDataModelSingleton.h"
 
 NSString *FZDJDataModelSingletonUserInfoKey = @"com.dj.userinfo";
+NSString *FZDJDataModelSingletonIsNewInstallKey = @"com.dj.newinstall";
+
+@interface FZDJDataModelSingleton()
+@property (nonatomic, strong) NSUserDefaults *userDefault;
+@end
+
 
 @implementation FZDJDataModelSingleton
 @def_singleton(FZDJDataModelSingleton)
@@ -18,8 +24,8 @@ NSString *FZDJDataModelSingletonUserInfoKey = @"com.dj.userinfo";
     self = [super init];
     if (self) {
         
-        NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-        NSData *userInfoData = [userDefault objectForKey:FZDJDataModelSingletonUserInfoKey];
+        self.userDefault = [NSUserDefaults standardUserDefaults];
+        NSData *userInfoData = [_userDefault objectForKey:FZDJDataModelSingletonUserInfoKey];
         FZDJUserInfo *info = [NSKeyedUnarchiver unarchiveObjectWithData:userInfoData];
         
         if (info) {
@@ -33,13 +39,37 @@ NSString *FZDJDataModelSingletonUserInfoKey = @"com.dj.userinfo";
 }
 
 
-- (void)save {
+- (BOOL)isNewIntall{
+    
+    id isNewValue = [_userDefault objectForKey:FZDJDataModelSingletonIsNewInstallKey];
+    if (isNewValue) {
+        return [isNewValue boolValue];
+    }
+    
+    [_userDefault setObject:@(0) forKey:FZDJDataModelSingletonIsNewInstallKey];
+    return YES;
+}
+
+- (void)setUserInfo:(FZDJUserInfo *)userInfo{
+    _userInfo = userInfo;
+    [self saveUserInfo];
+}
+
+
+- (void)saveData {
+    
+    if (self.userInfo) {
+        [self saveUserInfo];
+    }
+    
+    [_userDefault synchronize];
+}
+
+- (void)saveUserInfo{
     
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.userInfo];
-    
-    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-    [userDefault setObject:data forKey:FZDJDataModelSingletonUserInfoKey];
-    
-    [userDefault synchronize];
+    [_userDefault setObject:data forKey:FZDJDataModelSingletonUserInfoKey];
+    [_userDefault synchronize];
 }
+
 @end

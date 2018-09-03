@@ -42,14 +42,6 @@
     self.avatarBgImageView.image = [UIImage imageNamed:@"dj_touxiang_bg"];
 }
 
-//实名认证
-- (IBAction)realNameCodeButtonAction:(id)sender {
-    if (self.delegate && [self.delegate
-            respondsToSelector:@selector(personalCellActionForwarder:)]) {
-        [self.delegate personalCellActionForwarder:FZDJCellActionTypeRealNameVerify];
-    }
-}
-
 //修改头像
 - (IBAction)modifyAvatarMaskBtnAction:(id)sender {
     if (self.delegate && [self.delegate

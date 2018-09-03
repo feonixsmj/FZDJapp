@@ -7,7 +7,6 @@
 //
 
 #import "FZDJMainVCL.h"
-#import "FZDJLoginVCL.h"
 #import "FZDJMainCell.h"
 #import "FZDJMainItem.h"
 #import "FZDJMainModel.h"
@@ -16,13 +15,13 @@
 #import <SDCycleScrollView.h>
 #import <SafariServices/SafariServices.h>
 #import "FZDJTaskDetailVCL.h"
+#import "FZDJDataModelSingleton.h"
+#import "FZDJBannerDetailVCL.h"
 
 
 NSString *const FZDJMainCellIBName = @"FZDJMainCell";
 
 @interface FZDJMainVCL ()<
-
-FZDJLoginVCLDelegate,
 SDCycleScrollViewDelegate,
 UITableViewDelegate,
 UITableViewDataSource>
@@ -48,7 +47,9 @@ UITableViewDataSource>
     // Do any additional setup after loading the view.
     
     self.title = @"首页";
-    if (NO) {
+    FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
+    
+    if (dm.userInfo.userNo.length == 0) {
         //没有登录状态
         self.navigationController.navigationBar.hidden = YES;
          [self addLoginVCL];
@@ -59,9 +60,10 @@ UITableViewDataSource>
     } else {
         
         [self initUI];
+        [self loadItem];
     }
     
-    [self loadItem];
+    
 }
 
 - (void)loadItem{
@@ -76,9 +78,11 @@ UITableViewDataSource>
     }];
     
     [model loadItem:nil success:^(NSDictionary *dict) {
+        [weak_self endRefreshing];
         [weak_self.tableView reloadData];
     } failure:^(NSError *error) {
-
+        [weak_self endRefreshing];
+        
     }];
 }
 
@@ -108,18 +112,17 @@ UITableViewDataSource>
 - (void)initUI{
 //    [self setNavigationBarBackgroundImage];
     
-    self.view.backgroundColor = [UIColor lightGrayColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.leftBarButtonItem = self.leftBarItem;
     self.navigationItem.rightBarButtonItem = self.rightBarItem;
-    [self.view addSubview:self.banner];
+//    [self.view addSubview:self.banner];
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.rowHeight = 100.0f;
-    self.tableView.frame = CGRectMake(0,self.banner.bottom,
-                                      FX_SCREEN_WIDTH,
-                                      FX_SCREEN_HEIGHT - FX_NAVIGATIONBAR_SPAGE);
+    self.tableView.frame = CGRectMake(0,0,FX_SCREEN_WIDTH,FX_TABLE_HEIGHT);
     [self.tableView registerClass:[FZDJMainCell class] forCellReuseIdentifier:FZDJMainCellIBName];
+    self.tableView.tableHeaderView = self.banner;
 }
 
 
@@ -172,21 +175,12 @@ UITableViewDataSource>
 
 - (SDCycleScrollView *)banner{
     if (!_banner) {
-//        SDCycleScrollView *cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:frame delegate:delegate placeholderImage:placeholderImage];
-//        cycleScrollView.imageURLStringsGroup = imagesURLStrings;
-        
-//        NSArray *imageArray = @[@"1.jpg",
-//                                @"2.jpg",
-//                                @"3.jpg",
-//                                @"4.jpg",];
-        
-//        SDCycleScrollView *banner = [SDCycleScrollView cycleScrollViewWithFrame:rect
-//                                                                imageNamesGroup:imageArray];
+
         CGRect rect = CGRectMake(0, 0, FX_SCREEN_WIDTH, FX_SCALE_ZOOM(124));
         
         SDCycleScrollView *banner = [SDCycleScrollView cycleScrollViewWithFrame:rect delegate:self placeholderImage:nil];
 
-//        banner.delegate = self;
+        banner.backgroundColor = [UIColor whiteColor];
         banner.pageControlStyle = SDCycleScrollViewPageContolStyleClassic;
         banner.currentPageDotColor = [UIColor fx_colorWithHexString:@"0B9DFF"];
         banner.pageDotColor = [UIColor whiteColor];
@@ -198,9 +192,11 @@ UITableViewDataSource>
 
 
 #pragma mark ================ FZDJLoginVCLDelegate ================
-- (void)closeLoginVCL{
+- (void)loginSuccess{
+    // 关闭登录弹窗
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
-
+    
+    [self loadItem];
 }
 
 #pragma mark - SDCycleScrollViewDelegate
@@ -209,6 +205,16 @@ UITableViewDataSource>
     FZDJMainModel *model = (FZDJMainModel *)self.model;
     NSLog(@"---点击了第%ld张图片", (long)index);
     FZDJBannerVo *vo = model.bannerArr[index];
+    if ([vo.clickEvent isEqualToString:@"NB"]) {
+        //内部跳转
+        FZDJBannerDetailVCL *vcl = [[FZDJBannerDetailVCL alloc] init];
+        vcl.titleStr = vo.lbTitle;
+        vcl.htmlStr = vo.lbContent;
+        [self.navigationController pushViewController:vcl animated:YES];
+        return;
+    }
+    
+    //外部跳转
     NSLog(@"点击链接%@",vo.lbContentUrl);
     NSURL *url = [NSURL URLWithString:vo.lbContentUrl];
 //    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:vo.lbContentUrl]];

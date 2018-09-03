@@ -10,7 +10,7 @@
 
 @protocol FZDJLoginVCLDelegate <NSObject>
 
-- (void)closeLoginVCL;
+- (void)loginSuccess;
 @end
 
 @interface FZDJLoginVCL : UIViewController

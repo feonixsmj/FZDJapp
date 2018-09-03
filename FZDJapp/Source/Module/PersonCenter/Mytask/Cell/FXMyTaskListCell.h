@@ -3,13 +3,13 @@
 //  FZDJapp
 //
 //  Created by FZYG on 2018/7/21.
-//  Copyright © 2018年 FZDJ. All rights reserved.
+//  Copyright © 2018年 FZYG. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@class FXMyTaskItem;
+@class FZDJMyTaskItem;
 @interface FXMyTaskListCell : UITableViewCell
 
-@property (nonatomic, strong) FXMyTaskItem *item;
+@property (nonatomic, strong) FZDJMyTaskItem *item;
 @end

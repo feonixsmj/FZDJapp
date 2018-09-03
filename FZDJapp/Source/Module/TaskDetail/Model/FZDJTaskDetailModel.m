@@ -3,7 +3,7 @@
 //  FZDJapp
 //
 //  Created by FZYG on 2018/7/29.
-//  Copyright © 2018年 FZDJ. All rights reserved.
+//  Copyright © 2018年 FZYG. All rights reserved.
 //
 
 #import "FZDJTaskDetailModel.h"
@@ -32,13 +32,14 @@
         success:(void (^)(NSDictionary *))success
         failure:(void (^)(NSError *))failure{
     
+    FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
     __weak typeof(self) weak_self = self;
     NSString *url = [NSString stringWithFormat:@"%@%@",kApiDomain,kApiTaskTakeTask];
     
     NSMutableDictionary *paraDict = [[NSMutableDictionary alloc] init];
     NSString *openUDID = [FXSystemInfo orginalIdfa];
     paraDict[@"taskNo"] = self.taskInfo.taskNo;
-    paraDict[@"userNo"] = @"LZyzPPP7iEmEtYmu0SU62Gt9bEVO2qX8";
+    paraDict[@"userNo"] = dm.userInfo.userNo;
     paraDict[@"deviceId"] = openUDID;
     paraDict[@"deviceType"] = @"IOS";
     

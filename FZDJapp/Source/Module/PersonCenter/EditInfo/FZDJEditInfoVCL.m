@@ -3,7 +3,7 @@
 //  FZDJapp
 //
 //  Created by FZYG on 2018/7/24.
-//  Copyright © 2018年 FZDJ. All rights reserved.
+//  Copyright © 2018年 FZYG. All rights reserved.
 //
 
 #import "FZDJEditInfoVCL.h"
@@ -11,6 +11,8 @@
 #import "FZDJEditInfoModel.h"
 #import "FZDJBindPhoneNumberVCL.h"
 #import "FZDJEditNickNameVCL.h"
+#import "FZDJAppealSelectPhotoStrategy.h"
+#import "FZDJUploadImageModel.h"
 
 @interface FZDJEditInfoVCL ()
 
@@ -19,6 +21,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *nickName;
 @property (weak, nonatomic) IBOutlet FXImageView *avatarImageView;
 @property (weak, nonatomic) IBOutlet UILabel *phoneNumber;
+
+@property (nonatomic, strong) FZDJAppealSelectPhotoStrategy *strategy;
+@property (nonatomic, strong) FZDJUploadImageModel *uploadImageModel;
 @end
 
 @implementation FZDJEditInfoVCL
@@ -26,6 +31,8 @@
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
         self.model = [[FZDJEditInfoModel alloc] init];
+        self.strategy = [[FZDJAppealSelectPhotoStrategy alloc] initWithTarget:self];
+        self.uploadImageModel = [[FZDJUploadImageModel alloc] init];
     }
     
     return self;
@@ -58,8 +65,23 @@
     }
 }
 
-- (IBAction)buttonDidClicked:(id)sender {
+- (void)uploadImage:(UIImage *)image{
     
+    self.avatarImageView.image = image;
+    
+    FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
+    [self.uploadImageModel uploadImage:image success:^(NSDictionary *dict) {
+        NSString *url = dict[@"url"];
+        if (url.length > 0) {
+            dm.userInfo.avatarURL = url;
+        }
+    } failure:^(NSError *error) {
+        
+    }];
+}
+
+- (IBAction)buttonDidClicked:(id)sender {
+    FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
     FZDJEditInfoModel *model = (FZDJEditInfoModel *)self.model;
     
     UIButton *btn = (UIButton *)sender;
@@ -75,6 +97,7 @@
             break;
         case 2:{
             //头像
+            [self.strategy presentSelectPhotoAlertView];
         }
             break;
         case 3:{
@@ -99,6 +122,7 @@
             self.boyIcon.image = [UIImage imageNamed:@"dj_unselcted_btn"];
             self.girlIcon.image = [UIImage imageNamed:@"dj_selected_btn"];
             model.isBoy = NO;
+            dm.userInfo.sexInteger = 0;
             
         }
             break;
@@ -107,10 +131,18 @@
             self.boyIcon.image = [UIImage imageNamed:@"dj_selected_btn"];
             self.girlIcon.image = [UIImage imageNamed:@"dj_unselcted_btn"];
             model.isBoy = YES;
+            dm.userInfo.sexInteger = 1;
         }
             break;
         case 8:{
             //保存
+            __weak typeof(self) weak_self = self;
+            [model modifyPersonalInfo:nil success:^(NSDictionary *dict) {
+                NSLog(@"保存成功");
+                [weak_self.navigationController popViewControllerAnimated:YES];
+            } failure:^(NSError *error) {
+                NSLog(@"保存失败");
+            }];
         }
             break;
             

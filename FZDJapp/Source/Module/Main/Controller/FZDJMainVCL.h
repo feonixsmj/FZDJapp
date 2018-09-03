@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "FXBaseTableViewController.h"
+#import "FZDJLoginVCL.h"
 
-@interface FZDJMainVCL : FXBaseTableViewController
+@interface FZDJMainVCL : FXBaseTableViewController<FZDJLoginVCLDelegate>
 
 @end

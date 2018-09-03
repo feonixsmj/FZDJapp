@@ -10,6 +10,8 @@
 
 @interface FZDJBaseRequest : NSObject
 
+@property (nonatomic, assign) BOOL needEncrypt;
+
 - (NSDictionary *)emptyParamterDict;
 
 - (void) postWithURL:(NSString *)URL

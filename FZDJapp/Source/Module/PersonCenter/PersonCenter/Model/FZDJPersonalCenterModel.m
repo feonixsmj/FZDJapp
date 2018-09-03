@@ -7,22 +7,87 @@
 //
 
 #import "FZDJPersonalCenterModel.h"
+#import "FZDJMainRequest.h"
+#import "FZDJPersonalInfoVo.h"
+#import "FXSystemInfo.h"
+#import "NSString+FXCategory.h"
+
+@interface FZDJPersonalCenterModel()
+
+@property (nonatomic, strong) FZDJMainRequest *request;
+@end
 
 @implementation FZDJPersonalCenterModel
 
+- (void)updateData{
+    [self wrapperItems:nil];
+}
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.request = [[FZDJMainRequest alloc] init];
+    }
+    return self;
+}
 
 - (void)loadItem:(NSDictionary *)parameterDict success:(void (^)(NSDictionary *))success failure:(void (^)(NSError *))failure{
     
-    [self wrapperItems];
+    [self wrapperItems:nil];
     success(nil);
+    
+    __weak typeof(self) weak_self = self;
+    NSMutableDictionary *parameter = [NSMutableDictionary dictionary];
+    parameter[@"userNo"] = [FZDJDataModelSingleton sharedInstance].userInfo.userNo;
+    NSString *url = [NSString stringWithFormat:@"%@%@",kApiDomain,kApiTaskUserGet];
+    
+    [self.request requestPostURL:url parameters:parameter success:^(id responseObject) {
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            FZDJPersonalInfoVo *info = [FZDJPersonalInfoVo
+                                        mj_objectWithKeyValues:responseObject[@"body"]];
+            [weak_self wrapperItems:info];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                success(nil);
+            });
+        });
+        
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+    
 }
 
-- (void)wrapperItems{
+
+- (void)updateUserInfo:(FZDJPersonalInfoVo *)vo{
+    FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
+    FZDJUserInfo *userinfo = dm.userInfo;
+    userinfo.avatarURL = vo.headImg;
+    
+    userinfo.weixinNickName = vo.wxNickName;
+    userinfo.qqNickName = vo.qqNickName;
+    userinfo.sinaNickName = vo.wbNickName;
+    userinfo.nickName = vo.nickName;
+    
+    userinfo.sexInteger = [vo.sex isEqualToString:@"NAN"] ? 1 : 0;
+    userinfo.phoneNumber = vo.phone;
+    userinfo.cardNo = vo.cardNo;
+    userinfo.userShareCode = vo.userShareCode;
+    userinfo.parentShareCode = vo.parentShareCode;
+}
+
+- (void)wrapperItems:(FZDJPersonalInfoVo *)vo{
+    FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
+    if (vo) {
+        [self updateUserInfo:vo];
+    }
+    
     NSMutableArray *muArr = [[NSMutableArray alloc] init];
     FZDJPersonalInfoItem *infoItem = [FZDJPersonalInfoItem new];
-    infoItem.avatarUrl = @"https://timgsa.baidu.com/timg?image&quality=80&size=b10000_10000&sec=1530636122&di=b4c0d3c5fd3da960dc47595e4e0fbe49&src=http://s8.sinaimg.cn/middle/8b4624d4gab51c8fb9d97&690";
-    infoItem.isGirl = YES;
-    infoItem.nickName = @"鸡仔";
+    infoItem.avatarUrl = dm.userInfo.avatarURL;
+    infoItem.isGirl = dm.userInfo.sexInteger == 0;
+    infoItem.nickName = dm.userInfo.nickName;
     [muArr addObject:infoItem];
     
     FZDJPersonalTaskItem *taskItem = [FZDJPersonalTaskItem new];
@@ -35,6 +100,7 @@
 }
 
 - (NSArray *)getListItemArray{
+    FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
     
     FZDJPersonalListItem *bankItem = [FZDJPersonalListItem new];
     bankItem.icImageName = @"dj_yhka_icon";
@@ -46,15 +112,28 @@
     FZDJPersonalListItem *weixinItem = [FZDJPersonalListItem new];
     weixinItem.icImageName = @"dj_weixin_icon";
     weixinItem.title = @"微信";
-    weixinItem.descStr = @"鸡仔";
-    weixinItem.hiddenArrow = YES;
+    if (dm.userInfo.weixinNickName.length > 0) {
+        weixinItem.descStr = dm.userInfo.weixinNickName;
+        weixinItem.hiddenArrow = YES;
+    } else {
+        weixinItem.descStr = @"去绑定";
+        weixinItem.hiddenArrow = NO;
+    }
+
+    
     weixinItem.hiddenLine = NO;
     weixinItem.actionType = FZDJCellActionTypeWeixin;
     
     FZDJPersonalListItem *qqItem = [FZDJPersonalListItem new];
     qqItem.icImageName = @"dj_qq_icon";
     qqItem.title = @"QQ";
-    qqItem.descStr = @"去绑定";
+    if (dm.userInfo.qqNickName.length > 0) {
+        qqItem.descStr = dm.userInfo.qqNickName;
+        qqItem.hiddenArrow = YES;
+    } else {
+        qqItem.descStr = @"去绑定";
+        qqItem.hiddenArrow = NO;
+    }
     qqItem.hiddenLine = NO;
     qqItem.actionType = FZDJCellActionTypeQQ;
     
@@ -62,14 +141,20 @@
     weiboItem.icImageName = @"dj_weibo_icon";
     weiboItem.bgImageName = @"dj_card_bottom";
     weiboItem.title = @"微博";
-    weiboItem.descStr = @"去绑定";
+    if (dm.userInfo.sinaNickName.length > 0) {
+        weiboItem.descStr = dm.userInfo.sinaNickName;
+        weiboItem.hiddenArrow = YES;
+    } else {
+        weiboItem.descStr = @"去绑定";
+        weiboItem.hiddenArrow = NO;
+    }
     weiboItem.actionType = FZDJCellActionTypeWeibo;
     
     FZDJPersonalListItem *shareItem = [FZDJPersonalListItem new];
     shareItem.icImageName = @"dj_share_icon";
     shareItem.bgImageName = @"dj_card_top";
     shareItem.title = @"好友分享码";
-    shareItem.descStr = @"21312121";
+    shareItem.descStr = dm.userInfo.parentShareCode;
     shareItem.hiddenArrow = YES;
     shareItem.hiddenLine = NO;
     shareItem.actionType = FZDJCellActionTypeFriedShareCode;
@@ -104,4 +189,45 @@
     return listArr;
 }
 
+
+- (void)thirdBindWithType:(NSDictionary *)parameterDict
+                  success:(void (^)(NSDictionary *dict))success
+                  failure:(void (^)(NSError *error))failure {
+    
+    __weak typeof(self) weak_self = self;
+    
+    FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
+    NSMutableDictionary *parameter = [NSMutableDictionary dictionary];
+    parameter[@"headImg"] = dm.userInfo.avatarURL;
+    parameter[@"ip"] = [NSString getIPAddress:NO];
+    
+    parameter[@"machineCode"] = [FXSystemInfo orginalIdfa];
+    parameter[@"nickName"] = dm.userInfo.nickName;
+    parameter[@"sex"] = dm.userInfo.sexInteger == 1 ? @"NAN":@"NV";
+    parameter[@"userNo"] = dm.userInfo.userNo;
+    
+    NSString *loginType = @"";
+    if (dm.userInfo.loginType == FZDJUserInfoLoginTypeQQ) {
+        loginType = @"QQ";
+    } else if (dm.userInfo.loginType == FZDJUserInfoLoginTypeWechat){
+        loginType = @"WX";
+    } else if (dm.userInfo.loginType == FZDJUserInfoLoginTypeWeibo){
+        loginType = @"WB";
+    }
+    parameter[@"type"] = loginType;
+    
+    NSString *url = [NSString stringWithFormat:@"%@%@",kApiDomain,kApiUserBinding];
+    
+    [self.request requestPostURL:url parameters:parameter success:^(id responseObject) {
+        if ([responseObject[@"head"][@"respCode"] integerValue] == 0) {
+            success(nil);
+        } else {
+            failure(nil);
+            NSLog(@"绑定失败");
+        }
+    } failure:^(NSError *error) {
+        failure(error);
+        NSLog(@"绑定失败");
+    }];
+}
 @end

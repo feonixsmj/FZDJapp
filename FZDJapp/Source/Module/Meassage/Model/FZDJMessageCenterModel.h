@@ -7,7 +7,15 @@
 //
 
 #import "FXBaseModel.h"
+#import "FZDJMessageCenterItem.h"
 
 @interface FZDJMessageCenterModel : FXBaseModel
+
+- (void)setMsgRead:(FZDJMessageCenterItem *)item
+           success:(void (^)(FZDJMessageCenterItem *))success
+           failure:(void (^)(NSError *))failure;
+
+- (void)readAllSuccess:(void (^)(void))success
+               failure:(void (^)(NSError *))failure;
 
 @end

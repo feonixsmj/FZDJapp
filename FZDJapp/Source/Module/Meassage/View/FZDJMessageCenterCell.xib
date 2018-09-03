@@ -21,16 +21,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lTs-q4-utS">
                         <rect key="frame" x="10" y="5" width="355" height="95"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PPM-4m-smj" customClass="FXImageView">
-                                <rect key="frame" x="5" y="17" width="60" height="60"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="A0q-29-NWm"/>
-                                    <constraint firstAttribute="height" constant="60" id="aZU-mo-hNC"/>
-                                </constraints>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0FK-8z-VxK">
-                                <rect key="frame" x="79" y="17" width="39.5" height="16"/>
+                                <rect key="frame" x="12" y="16" width="39.5" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="ZA2-EQ-2P1"/>
                                 </constraints>
@@ -39,7 +31,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oGB-5F-gEB">
-                                <rect key="frame" x="309" y="18.5" width="33" height="13"/>
+                                <rect key="frame" x="309" y="17.5" width="33" height="13"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="13" id="0Wv-NE-QS9"/>
                                 </constraints>
@@ -48,15 +40,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4h1-2x-sXI">
-                                <rect key="frame" x="118.5" y="14" width="5" height="5"/>
+                                <rect key="frame" x="51.5" y="14" width="5" height="5"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="5" id="aSW-Ut-jw6"/>
                                     <constraint firstAttribute="width" constant="5" id="tEM-EM-Ave"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZx-nY-FtB">
-                                <rect key="frame" x="79" y="42" width="263" height="13.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="对方水电费是胜多负少的胜多负少东方水电费水电费是否水电费水电费水电费第三方第三方说的" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZx-nY-FtB">
+                                <rect key="frame" x="12" y="41" width="337" height="26.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -66,16 +58,14 @@
                         <constraints>
                             <constraint firstItem="oGB-5F-gEB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0FK-8z-VxK" secondAttribute="trailing" constant="10" id="2xs-fn-66E"/>
                             <constraint firstItem="DZx-nY-FtB" firstAttribute="top" secondItem="0FK-8z-VxK" secondAttribute="bottom" constant="9" id="CIv-CZ-ht6"/>
+                            <constraint firstItem="DZx-nY-FtB" firstAttribute="leading" secondItem="lTs-q4-utS" secondAttribute="leading" constant="12" id="DDy-3e-IC4"/>
                             <constraint firstAttribute="trailing" secondItem="oGB-5F-gEB" secondAttribute="trailing" constant="13" id="Ekh-2r-dqD"/>
-                            <constraint firstItem="0FK-8z-VxK" firstAttribute="top" secondItem="PPM-4m-smj" secondAttribute="top" id="Sa6-2b-SAV"/>
-                            <constraint firstItem="PPM-4m-smj" firstAttribute="leading" secondItem="lTs-q4-utS" secondAttribute="leading" constant="5" id="WHK-eu-CB3"/>
+                            <constraint firstItem="0FK-8z-VxK" firstAttribute="top" secondItem="lTs-q4-utS" secondAttribute="top" constant="16" id="S7f-6H-p3Z"/>
+                            <constraint firstItem="0FK-8z-VxK" firstAttribute="leading" secondItem="lTs-q4-utS" secondAttribute="leading" constant="12" id="aXg-lX-aZe"/>
                             <constraint firstItem="oGB-5F-gEB" firstAttribute="centerY" secondItem="0FK-8z-VxK" secondAttribute="centerY" id="cDn-Zs-d0a"/>
-                            <constraint firstItem="DZx-nY-FtB" firstAttribute="leading" secondItem="PPM-4m-smj" secondAttribute="trailing" constant="14" id="fu9-RY-KlB"/>
-                            <constraint firstAttribute="trailing" secondItem="DZx-nY-FtB" secondAttribute="trailing" constant="13" id="iws-7r-r7W"/>
-                            <constraint firstItem="0FK-8z-VxK" firstAttribute="leading" secondItem="PPM-4m-smj" secondAttribute="trailing" constant="14" id="mTY-kb-XOx"/>
+                            <constraint firstAttribute="trailing" secondItem="DZx-nY-FtB" secondAttribute="trailing" constant="6" id="iws-7r-r7W"/>
                             <constraint firstItem="4h1-2x-sXI" firstAttribute="top" secondItem="lTs-q4-utS" secondAttribute="top" constant="14" id="oJf-mV-wgg"/>
                             <constraint firstItem="4h1-2x-sXI" firstAttribute="leading" secondItem="0FK-8z-VxK" secondAttribute="trailing" id="p3S-Cb-RaW"/>
-                            <constraint firstItem="PPM-4m-smj" firstAttribute="top" secondItem="lTs-q4-utS" secondAttribute="top" constant="17" id="xOt-ao-1k7"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -89,7 +79,6 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="bgView" destination="lTs-q4-utS" id="xqq-4W-Me0"/>
-                <outlet property="mainImageView" destination="PPM-4m-smj" id="Ckh-k9-MaQ"/>
                 <outlet property="redDotView" destination="4h1-2x-sXI" id="CUS-eg-dt6"/>
                 <outlet property="subTitleLabel" destination="DZx-nY-FtB" id="3GU-jy-cBl"/>
                 <outlet property="timeLabel" destination="oGB-5F-gEB" id="V9A-jM-Izq"/>

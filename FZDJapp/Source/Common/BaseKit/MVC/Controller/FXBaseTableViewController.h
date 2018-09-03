@@ -12,5 +12,9 @@
 
 @property (nonatomic, strong) UITableView *tableView;
 
+@property (nonatomic, assign) BOOL dontNeedRefresh;
+
 - (CGRect)tableRect;
+
+- (void)endRefreshing;
 @end

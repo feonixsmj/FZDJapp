@@ -14,4 +14,10 @@
 
 @interface FZDJPersonalCenterModel : FXBaseModel
 
+- (void)updateData;
+
+//第三方绑定
+- (void)thirdBindWithType:(NSDictionary *)parameterDict
+                  success:(void (^)(NSDictionary *dict))success
+                  failure:(void (^)(NSError *error))failure;
 @end

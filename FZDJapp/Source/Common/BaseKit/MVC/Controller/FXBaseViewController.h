@@ -16,6 +16,7 @@
 @property (nonatomic, assign) BOOL isTransparentBar;
 
 -(void)bringCloseButtonToFront;
+
 #pragma mark ================ 子类重写 ================
 -(void)loadItem;
 - (void)setupViews;

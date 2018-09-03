@@ -3,7 +3,7 @@
 //  FZDJapp
 //
 //  Created by FZYG on 2018/7/24.
-//  Copyright © 2018年 FZDJ. All rights reserved.
+//  Copyright © 2018年 FZYG. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -14,6 +14,6 @@
 @singleton(FZDJDataModelSingleton)
 
 @property (nonatomic, strong) FZDJUserInfo *userInfo;
-
-- (void)save;
+@property (nonatomic, assign) BOOL isNewIntall;
+- (void)saveData;
 @end

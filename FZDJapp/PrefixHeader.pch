@@ -17,5 +17,7 @@
 #import "FZDJDataModelSingleton.h"
 #import <Masonry/Masonry.h>
 #import <MJExtension.h>
+#import <MBProgressHUD/MBProgressHUD.h>
+#import <MJRefresh/MJRefresh.h>
 
 #endif /* PrefixHeader_pch */

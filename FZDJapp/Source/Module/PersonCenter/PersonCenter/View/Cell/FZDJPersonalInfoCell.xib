@@ -23,25 +23,10 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GpK-Ae-vcY" customClass="FXImageView">
                                 <rect key="frame" x="3.6666666666666679" y="3" width="61.333333333333329" height="62"/>
-                                <color key="backgroundColor" red="1" green="0.52156862749999999" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="31"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mBf-lJ-wfn" customClass="FXImageView">
-                                <rect key="frame" x="44" y="44.000000000000007" width="24" height="23.999999999999993"/>
-                                <color key="backgroundColor" red="1" green="0.120717159" blue="0.30246463699999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="GDv-bc-8VD"/>
-                                    <constraint firstAttribute="width" constant="24" id="GWK-VE-n1h"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="12"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -52,8 +37,6 @@
                             <constraint firstAttribute="width" constant="68" id="IH2-aw-zfO"/>
                             <constraint firstAttribute="trailing" secondItem="GpK-Ae-vcY" secondAttribute="trailing" constant="3" id="JsY-4l-Xbf"/>
                             <constraint firstItem="GpK-Ae-vcY" firstAttribute="top" secondItem="lfQ-R6-DE0" secondAttribute="top" constant="3" id="PR4-IO-c7V"/>
-                            <constraint firstAttribute="bottom" secondItem="mBf-lJ-wfn" secondAttribute="bottom" id="Qyt-q4-j2q"/>
-                            <constraint firstAttribute="trailing" secondItem="mBf-lJ-wfn" secondAttribute="trailing" id="Sgl-Yh-fea"/>
                             <constraint firstAttribute="bottom" secondItem="GpK-Ae-vcY" secondAttribute="bottom" constant="3" id="gix-Gh-KeI"/>
                             <constraint firstItem="GpK-Ae-vcY" firstAttribute="centerX" secondItem="lfQ-R6-DE0" secondAttribute="centerX" id="jkJ-S6-Bhi"/>
                             <constraint firstItem="GpK-Ae-vcY" firstAttribute="centerY" secondItem="lfQ-R6-DE0" secondAttribute="centerY" id="kAe-at-0vF"/>
@@ -91,17 +74,6 @@
                             <constraint firstAttribute="height" constant="13" id="mGn-Tg-FrT"/>
                         </constraints>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FDA-mf-Bda" userLabel="renzhenButton">
-                        <rect key="frame" x="271" y="72.666666666666671" width="104" height="30"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="104" id="1BR-Ft-ggt"/>
-                            <constraint firstAttribute="height" constant="30" id="J9V-Bb-ieQ"/>
-                        </constraints>
-                        <state key="normal" backgroundImage="dj_renzhen_icon"/>
-                        <connections>
-                            <action selector="realNameCodeButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="rJX-gI-UgX"/>
-                        </connections>
-                    </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sae-eU-nxX" userLabel="avatarMaskButton">
                         <rect key="frame" x="16" y="53.666666666666657" width="68" height="68"/>
                         <constraints>
@@ -112,6 +84,19 @@
                             <action selector="modifyAvatarMaskBtnAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="V1e-du-ts5"/>
                         </connections>
                     </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mBf-lJ-wfn" customClass="FXImageView">
+                        <rect key="frame" x="60" y="98.666666666666671" width="23" height="23"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="23" id="W3k-jH-Bxl"/>
+                            <constraint firstAttribute="height" constant="23" id="wUY-wS-6sj"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="12"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bxI-hp-6dc" userLabel="modifyMaskBtn">
                         <rect key="frame" x="105" y="61.666666666666657" width="110" height="55"/>
                         <constraints>
@@ -123,7 +108,6 @@
                         </connections>
                     </button>
                 </subviews>
-                <color key="backgroundColor" red="1" green="0.70689882800000003" blue="0.7386345782" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstItem="XvD-cc-w5f" firstAttribute="top" secondItem="j3B-TG-2YB" secondAttribute="bottom" constant="14" id="5Fc-Y7-Wa4"/>
                     <constraint firstAttribute="bottom" secondItem="bxI-hp-6dc" secondAttribute="bottom" constant="25" id="67E-3w-r8y"/>
@@ -131,14 +115,14 @@
                     <constraint firstItem="bxI-hp-6dc" firstAttribute="leading" secondItem="lfQ-R6-DE0" secondAttribute="trailing" constant="21" id="9KA-qe-y6y"/>
                     <constraint firstItem="gBZ-IB-cCr" firstAttribute="bottom" secondItem="XvD-cc-w5f" secondAttribute="bottom" id="CLn-Bo-iqR"/>
                     <constraint firstAttribute="bottom" secondItem="Sae-eU-nxX" secondAttribute="bottom" constant="20" id="Kp6-Rj-Dim"/>
-                    <constraint firstAttribute="trailing" secondItem="FDA-mf-Bda" secondAttribute="trailing" id="L6v-Kh-8e8"/>
                     <constraint firstAttribute="bottom" secondItem="lfQ-R6-DE0" secondAttribute="bottom" constant="20" id="LHh-aZ-YaU"/>
+                    <constraint firstItem="mBf-lJ-wfn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="60" id="aEh-qX-shj"/>
                     <constraint firstItem="lfQ-R6-DE0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="aGd-Cf-ogV"/>
                     <constraint firstItem="gBZ-IB-cCr" firstAttribute="leading" secondItem="XvD-cc-w5f" secondAttribute="trailing" constant="5" id="fex-BD-fIJ"/>
                     <constraint firstItem="XvD-cc-w5f" firstAttribute="leading" secondItem="lfQ-R6-DE0" secondAttribute="trailing" constant="21" id="icJ-k6-1cP"/>
                     <constraint firstItem="j3B-TG-2YB" firstAttribute="leading" secondItem="lfQ-R6-DE0" secondAttribute="trailing" constant="21" id="kGH-9k-Dbw"/>
                     <constraint firstItem="Sae-eU-nxX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="qRA-dK-kWV"/>
-                    <constraint firstItem="FDA-mf-Bda" firstAttribute="centerY" secondItem="lfQ-R6-DE0" secondAttribute="centerY" id="sMu-s5-9Tb"/>
+                    <constraint firstAttribute="bottom" secondItem="mBf-lJ-wfn" secondAttribute="bottom" constant="20" id="zn3-qt-y6r"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -153,6 +137,5 @@
     </objects>
     <resources>
         <image name="dj_modify_icon" width="13" height="13"/>
-        <image name="dj_renzhen_icon" width="104" height="31"/>
     </resources>
 </document>

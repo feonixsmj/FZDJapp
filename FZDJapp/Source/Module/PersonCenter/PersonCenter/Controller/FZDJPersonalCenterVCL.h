@@ -10,4 +10,6 @@
 
 @interface FZDJPersonalCenterVCL : FXBaseTableViewController
 
+- (void)reloadData;
+- (void)uploadImage:(UIImage *)image;
 @end

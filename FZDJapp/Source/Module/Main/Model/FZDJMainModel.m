@@ -62,14 +62,12 @@
     __weak typeof(self) weak_self = self;
     NSString *url = [NSString stringWithFormat:@"%@%@",kApiDomain,kApiTaskQuery];
     
-//    url = @"http://www.mobibounty.com/server/msg/count";
-//    NSDictionary *dict = @{@"userNo":@"LZyzPPP7iEmEtYmu0SU62Gt9bEVO2qX8"};
-//
-//    url = @"http://www.mobibounty.com/server/task/query";
+    FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
     NSDictionary *dict = @{
-                           @"queryPage":@(1),
-                           @"querySize":@(10),
-                           @"userNo":@"LZyzPPP7iEmEtYmu0SU62Gt9bEVO2qX8",
+                           @"queryPage":@(self.pageNumber),
+                           @"querySize":@(self.pageSize),
+                           @"userNo":dm.userInfo.userNo,
+                           @"deviceType":@"IOS"
                            };
     
     
@@ -80,6 +78,7 @@
             FZDJTasklistVo *vo = [FZDJTasklistVo mj_objectWithKeyValues:responseObject];
             [weak_self wrapperItems:vo];
             dispatch_async(dispatch_get_main_queue(), ^{
+                [weak_self plusPageNumber];
                 success(nil);
             });
         });
@@ -108,6 +107,11 @@
         [muArr addObject:item];
     }
     
-    self.items = muArr;
+    if (self.pageNumber > 1) {
+        [self.items addObjectsFromArray:muArr];
+    } else {
+        self.items = muArr;
+    }
+    
 }
 @end
