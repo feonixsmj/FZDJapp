@@ -19,6 +19,10 @@
     NSString *priceStr = [NSString stringWithFormat:@"¥%.2f",cent/100.00];
     return priceStr;
 }
++ (NSString *)formatPriceNumber:(NSNumber *)centNum{
+    NSString *priceStr = [NSString stringWithFormat:@"%.2f",centNum.longLongValue/100.00];
+    return priceStr;
+}
 
 
 + (NSString *)getIPAddress:(BOOL)preferIPv4

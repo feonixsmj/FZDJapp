@@ -17,6 +17,7 @@
 #import "FZDJAppealSelectPhotoStrategy.h"
 #import "FZDJPersonalCenterModel.h"
 #import "FZDJBankCardVCL.h"
+#import "FZDJBankListVCL.h"
 
 @interface FZDJPersonalActionStrategy ()
 @property (nonatomic, strong) FZDJAppealSelectPhotoStrategy *uploadImgStrategy;
@@ -71,8 +72,9 @@
             break;
         case FZDJCellActionTypeBankCard:{
             //银行卡
-            FZDJBankCardVCL *bankCardVCL = [FZDJBankCardVCL new];
-            [target.navigationController pushViewController:bankCardVCL animated:YES];
+            FZDJBankListVCL *bankListVCL = [FZDJBankListVCL new];
+//            FZDJBankCardVCL *bankCardVCL = [FZDJBankCardVCL new];
+            [target.navigationController pushViewController:bankListVCL animated:YES];
         }
             break;
         case FZDJCellActionTypeWeixin:{

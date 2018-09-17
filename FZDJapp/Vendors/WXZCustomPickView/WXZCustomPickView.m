@@ -23,7 +23,7 @@
 {
     [super initPickView];
     
-    _dataArray=[NSMutableArray mutableCopy];
+    _dataArray = [NSMutableArray arrayWithCapacity:1];
 
     [self.pickerView setDelegate:self];
     [self.pickerView setDataSource:self];

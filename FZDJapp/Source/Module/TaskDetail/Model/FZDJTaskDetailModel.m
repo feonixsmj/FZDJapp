@@ -90,7 +90,7 @@
     item.endTimeText = [NSString stringWithFormat:@"截止:%@",
                           [NSDate stringFormatterWithTimeInterval:vo.taskEndTime]];
     
-    item.price = [NSString formatPrice:vo.taskTotalPrice];
+    item.price = [NSString formatPrice:vo.taskReward];
     item.persent = vo.taskGetCount / (vo.taskTotalCount*1.0) *100;
     
     NSString *countStr = [NSString stringWithFormat:@"%ld/%ld",vo.taskGetCount,vo.taskTotalCount];

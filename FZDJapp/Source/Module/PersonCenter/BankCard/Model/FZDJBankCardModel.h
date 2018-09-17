@@ -11,6 +11,7 @@
 #import "FZDJBankCardIdentityItem.h"
 #import "FZDJPersonalBlankItem.h"
 #import "FZDJBankInfoVO.h"
+#import "FZDJIDCardItem.h"
 
 typedef void(^FZDJGetProvinceCityBlock)(NSArray *proviceArr,NSArray *cityArr);
 
@@ -20,15 +21,29 @@ typedef void(^FZDJGetProvinceCityBlock)(NSArray *proviceArr,NSArray *cityArr);
 @property (nonatomic, strong) NSArray *cityArr;
 @property (nonatomic, strong) NSArray *bandArr;
 
+@property (nonatomic, strong) NSMutableArray *bankOrgStrArr;
+
 @property (nonatomic, strong) NSArray *bandAddressStrArr;
 @property (nonatomic, strong) NSArray *bandInfoArr;
 
 - (void)requestProvinceAndCity:(FZDJGetProvinceCityBlock)block;
 
+
+/**
+ 查询城市
+ */
 - (void)loadCity:(NSDictionary *)parameterDict
          success:(void (^)(NSDictionary *))success
          failure:(void (^)(NSError *))failure;
-
+/**
+ 查询总行
+ */
+- (void)loadOrgBankAddress:(NSDictionary *)parameterDict
+                   success:(void (^)(NSDictionary *))success
+                   failure:(void (^)(NSError *))failure;
+/**
+ 查询支行地址
+ */
 - (void)loadBankAddress:(NSDictionary *)parameterDict
                 success:(void (^)(NSDictionary *))success
                 failure:(void (^)(NSError *))failure;

@@ -13,4 +13,10 @@
 
 @interface FZDJMyWalletModel : FXBaseModel
 
+@property (nonatomic, copy) NSString *totalAmount;
+@property (nonatomic, copy) NSString *cashAdvanceDesc;
+
+- (void)loadCashAdvanceDesc:(NSDictionary *)parameterDict
+                    success:(void (^)(NSDictionary *))success
+                    failure:(void (^)(NSError *))failure;
 @end

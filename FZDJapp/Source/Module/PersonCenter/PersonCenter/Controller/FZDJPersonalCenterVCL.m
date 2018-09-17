@@ -80,6 +80,12 @@ FZDJLoginVCLDelegate>
     } failure:^(NSError *error) {
         
     }];
+    
+    [model loadCustomServer:nil success:^(NSDictionary *dict) {
+        [weak_self.tableView reloadData];
+    } failure:^(NSError *error) {
+        
+    }];
 }
 
 

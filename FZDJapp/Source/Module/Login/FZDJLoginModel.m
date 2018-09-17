@@ -57,9 +57,9 @@
     [self.request requestPostURL:url parameters:parameter success:^(id responseObject) {
         
         NSDictionary *dict = responseObject;
-        NSLog(@"%@",dict);
+        success(dict);
     } failure:^(NSError *error) {
-        NSLog(@"登录失败");
+        failure(error);
     }];
     
 }

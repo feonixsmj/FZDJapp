@@ -15,6 +15,7 @@
 @interface FZDJPersonalCenterModel()
 
 @property (nonatomic, strong) FZDJMainRequest *request;
+@property (nonatomic, copy) NSString *serverEmail;
 @end
 
 @implementation FZDJPersonalCenterModel
@@ -28,6 +29,7 @@
     self = [super init];
     if (self) {
         self.request = [[FZDJMainRequest alloc] init];
+        self.serverEmail = @"";
     }
     return self;
 }
@@ -170,7 +172,7 @@
     serverItem.bgImageName = @"dj_card_bottom";
     serverItem.title = @"联系客服";
     serverItem.hiddenArrow = YES;
-    serverItem.descStr = @"123123213@qq.com";
+    serverItem.descStr = self.serverEmail;
     serverItem.actionType = FZDJCellActionTypeContactUs;
     
     FZDJPersonalBlankItem *blankItem = [FZDJPersonalBlankItem new];
@@ -189,6 +191,44 @@
     return listArr;
 }
 
+- (void)loadCustomServer:(NSDictionary *)parameterDict
+                 success:(void (^)(NSDictionary *dict))success
+                 failure:(void (^)(NSError *error))failure{
+    __weak typeof(self) weak_self = self;
+
+    NSString *url = [NSString stringWithFormat:@"%@%@",kApiDomain,kApiLXKF];
+    
+    [self.request requestPostURL:url parameters:nil success:^(id responseObject) {
+    
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSDictionary *resDict = responseObject;
+            weak_self.serverEmail = resDict[@"body"];
+            
+            if (weak_self.items.count > 0) {
+                [weak_self updateContactUs];
+            }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                success(nil);
+            });
+        });
+        
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+
+- (void)updateContactUs{
+    
+    for (NSObject *obj in self.items) {
+        if ([obj isKindOfClass:[FZDJPersonalListItem class]]) {
+            FZDJPersonalListItem *item = (FZDJPersonalListItem *)obj;
+            if (item.actionType == FZDJCellActionTypeContactUs) {
+                item.descStr = self.serverEmail;
+                break;
+            }
+        }
+    }
+}
 
 - (void)thirdBindWithType:(NSDictionary *)parameterDict
                   success:(void (^)(NSDictionary *dict))success

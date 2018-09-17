@@ -23,6 +23,7 @@
     [self postWithURL:url parameters:parameterDict success:^(id responseObject) {
         success(responseObject);
     } failure:^(NSError *error) {
+        [MBProgressHUD wb_showError:error.errorMsg];
         failure(error);
     }];
     

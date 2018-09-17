@@ -57,9 +57,11 @@
 
 
 -(void)endRefreshing {
+    [MBProgressHUD wb_hideHUD];
     [self.tableView.mj_header endRefreshing];
     [self.tableView.mj_footer endRefreshing];
 }
+
 - (CGRect)tableRect{
     if (self.isTransparentBar) {
        return CGRectMake(0, FX_NAVIGATIONBAR_TOTAL_SPAGE, FX_SCREEN_WIDTH, FX_TABLE_HEIGHT);

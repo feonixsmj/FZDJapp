@@ -9,16 +9,9 @@
 #import "FXInterfaceConst.h"
 
 
-#if DEBUG == 1
-    #if DEV == 1
-        NSString *const kApiDomain = @"http://www.mobibounty.com";
-    #else
-        NSString *const kApiDomain = @"http://www.mobibounty.com";
-    #endif
 
-#else
-    NSString *const kApiDomain = @"http://www.mobibounty.com";
-#endif
+NSString *const kApiDomain = @"http://www.mobibounty.com";
+NSString *const kCashOutDomain = @"http://localhost:7002";
 
 NSString *const kApiBanner = @"/server/slider/query";
 NSString *const kApiTaskQuery = @"/server/task/query";
@@ -43,5 +36,17 @@ NSString *const kApiMsgReadALL  = @"/server/msg/readAll";
 
 NSString *const kApiQueryProvince = @"/server/user/queryProvince";
 NSString *const kApiQueryCity = @"/server/user/queryCity";
+NSString *const kApiQueryOrgBank = @"/server/user/queryOrgBank";
 NSString *const kApiQueryBank = @"/server/user/queryBank";
 NSString *const kApiAddUserBank = @"/server/user/addUserBank";
+
+NSString *const kApiGetWallet = @"/server/user/getWallet";
+NSString *const kApitxsm = @"/server/sys/txsm";
+NSString *const kApiQueryWalletDetail = @"/server/user/queryWalletDetail";
+
+NSString *const kApiQueryMyBank = @"/server/user/queryMyBank";
+NSString *const kApiDelUserBank = @"/server/user/delUserBank";
+
+NSString *const kApiUserCashOut = @"/server/user/cashOut";
+
+NSString *const kApiLXKF = @"/server/sys/lxkf";

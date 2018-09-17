@@ -39,7 +39,12 @@
     
     __weak typeof(self) weak_self = self;
     [model loadItem:nil success:^(NSDictionary *dict) {
-        [weak_self.tableView reloadData];
+        if (model.items.count > 0) {
+            [weak_self.tableView reloadData];
+        } else {
+            weak_self.dontNeedRefresh = YES;
+        }
+        
     } failure:^(NSError *error) {
         
     }];

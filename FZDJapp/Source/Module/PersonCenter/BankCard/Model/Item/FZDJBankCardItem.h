@@ -10,7 +10,8 @@
 
 typedef NS_ENUM(NSInteger,FZDJBankCardItemType){
     FZDJBankCardItemTypeProvince =1,//省市
-    FZDJBankCardItemTypeBankAddress //开户行地址
+    FZDJBankCardItemTypeOrgBankName, //开户行总行名称
+    FZDJBankCardItemTypeBankAddress  //开户行地址
 };
 
 @interface FZDJBankCardItem : NSObject

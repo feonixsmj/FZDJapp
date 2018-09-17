@@ -11,7 +11,6 @@
 #import "FZDJAppealTaskInfoVo.h"
 #import "NSDate+FXExtention.h"
 #import "FZDJAppealHistoryListVo.h"
-#import "NSDate+FXExtention.h"
 
 @interface FZDJAppealModel()
 @property (nonatomic, strong) FZDJMainRequest *request;

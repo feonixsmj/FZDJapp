@@ -9,6 +9,7 @@
 #import "FZDJBankCardModel.h"
 #import "FZDJMainRequest.h"
 #import "FZDJBankInfoListVo.h"
+#import "FZDJBankOrgVo.h"
 
 @interface FZDJBankCardModel()
 @property (nonatomic, strong) FZDJMainRequest *request;
@@ -151,6 +152,41 @@
     }];
 }
 
+- (void)loadOrgBankAddress:(NSDictionary *)parameterDict
+                   success:(void (^)(NSDictionary *))success
+                   failure:(void (^)(NSError *))failure {
+    __weak typeof(self) weak_self = self;
+    self.request.needEncrypt = NO;
+    NSString *url = [NSString stringWithFormat:@"%@%@",kApiDomain,kApiQueryOrgBank];
+    
+    [self.request requestPostURL:url parameters:parameterDict success:^(id responseObject) {
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            
+            NSDictionary *dict = responseObject;
+            NSDictionary *head = dict[@"head"];
+            
+            if (head && [head[@"respCode"] integerValue] == 0) {
+                
+                FZDJBankOrgVo *listVo = [FZDJBankOrgVo mj_objectWithKeyValues:responseObject];
+                weak_self.bankOrgStrArr = [NSMutableArray arrayWithArray:listVo.body];
+            }
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (weak_self.bankOrgStrArr.count > 0) {
+                    success(nil);
+                } else {
+                    failure(nil);
+                }
+                
+            });
+        });
+        
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+
 - (void)loadBankAddress:(NSDictionary *)parameterDict
                 success:(void (^)(NSDictionary *))success
                 failure:(void (^)(NSError *))failure{
@@ -258,11 +294,18 @@
     
     
     FZDJBankCardItem *item6 = [FZDJBankCardItem new];
-    item6.title = @"开户行：";
+    item6.title = @"开户总行：";
     item6.contentText = @"请选择";
-    item6.type = FZDJBankCardItemTypeBankAddress;
+    item6.type = FZDJBankCardItemTypeOrgBankName;
+    
+    FZDJBankCardItem *item7 = [FZDJBankCardItem new];
+    item7.title = @"开户支行：";
+    item7.contentText = @"请选择";
+    item7.type = FZDJBankCardItemTypeBankAddress;
+    
+    FZDJIDCardItem *item8 = [FZDJIDCardItem new];
     
     FZDJPersonalBlankItem *blankItem = [FZDJPersonalBlankItem new];
-    self.items = @[item1,item2,item3,blankItem,item5,item6,item4].mutableCopy;
+    self.items = @[item1,item2,item3,blankItem,item5,item6,item7,item4,blankItem,item8].mutableCopy;
 }
 @end

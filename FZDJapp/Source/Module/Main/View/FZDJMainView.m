@@ -46,7 +46,7 @@ const CGFloat FZDJMainViewProgressViewWidth = 140.0;
     self.progressMainView.backgroundColor = [[UIColor fx_colorWithHexString:@"4DB2EE"] colorWithAlphaComponent:0.3f];
     self.progressView.layer.cornerRadius = 4;
     
-    self.mainImageView.image = [UIImage imageNamed:@"dj_default_image"];
+//    self.mainImageView.image = [UIImage imageNamed:@"dj_default_image"];
     self.mainImageView.layer.cornerRadius = 4;
 }
 
@@ -56,6 +56,7 @@ const CGFloat FZDJMainViewProgressViewWidth = 140.0;
     }
     
     _item = item;
+    self.mainImageView.imageURL = item.imageURL;
     self.title.text = item.title;
     self.subTitle.text = item.subTitle;
     self.timeLabel.text = item.timeText;

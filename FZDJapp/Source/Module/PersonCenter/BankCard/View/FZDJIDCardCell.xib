@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="231" id="KGk-i7-Jjw" customClass="FZDJIDCardCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="580"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="579.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手持身份证照片" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJf-41-YvY">
+                        <rect key="frame" x="10" y="0.0" width="355" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="TyF-Cv-t0Q"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wRu-hQ-YJm">
+                        <rect key="frame" x="10" y="44" width="165" height="140"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="165" id="Z1i-vv-A2R"/>
+                            <constraint firstAttribute="width" secondItem="wRu-hQ-YJm" secondAttribute="height" multiplier="165:140" id="sUe-uq-czy"/>
+                        </constraints>
+                        <state key="normal" image="dj_mywallet_id_card1"/>
+                        <connections>
+                            <action selector="takePhotoAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="klU-Nh-t2P"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UcC-ZK-Ln9">
+                        <rect key="frame" x="200" y="44" width="165" height="140"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="165" id="TP2-e0-PXI"/>
+                            <constraint firstAttribute="width" secondItem="UcC-ZK-Ln9" secondAttribute="height" multiplier="165:140" id="ibo-H5-h7b"/>
+                        </constraints>
+                        <state key="normal" image="dj_mywallet_id_card2"/>
+                        <connections>
+                            <action selector="takePhotoAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="tXZ-sA-3ql"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ltc-vv-EOB">
+                        <rect key="frame" x="10" y="200" width="165" height="140"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="165" id="AzR-hx-GP7"/>
+                            <constraint firstAttribute="width" secondItem="ltc-vv-EOB" secondAttribute="height" multiplier="165:140" id="ixg-vI-rtO"/>
+                        </constraints>
+                        <state key="normal" image="dj_mywallet_id_card3"/>
+                        <connections>
+                            <action selector="takePhotoAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="gRZ-4W-9ry"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IrF-Ga-1Qq">
+                        <rect key="frame" x="200" y="200" width="165" height="140"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="165" id="VZL-sJ-Vs0"/>
+                            <constraint firstAttribute="width" secondItem="IrF-Ga-1Qq" secondAttribute="height" multiplier="165:140" id="k12-SU-2ao"/>
+                        </constraints>
+                        <state key="normal" image="dj_mywallet_id_card4"/>
+                        <connections>
+                            <action selector="takePhotoAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="8WM-jA-6Kl"/>
+                        </connections>
+                    </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wuv-J8-ub6">
+                        <rect key="frame" x="0.0" y="365" width="375" height="215"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dj_mywallet_bg" translatesAutoresizingMaskIntoConstraints="NO" id="ZmN-gm-xr9">
+                                <rect key="frame" x="30" y="27" width="315" height="102"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="102" id="7UB-0O-ZCN"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="拍摄照片要求" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UEE-K0-imy">
+                                <rect key="frame" x="138.5" y="19" width="98" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92156862745098034" green="0.93333333333333335" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="ZmN-gm-xr9" firstAttribute="top" secondItem="Wuv-J8-ub6" secondAttribute="top" constant="27" id="06O-8n-wdW"/>
+                            <constraint firstItem="UEE-K0-imy" firstAttribute="centerX" secondItem="Wuv-J8-ub6" secondAttribute="centerX" id="2y7-E6-7Ls"/>
+                            <constraint firstAttribute="trailing" secondItem="ZmN-gm-xr9" secondAttribute="trailing" constant="30" id="Byn-Sd-4tU"/>
+                            <constraint firstItem="UEE-K0-imy" firstAttribute="top" secondItem="Wuv-J8-ub6" secondAttribute="top" constant="19" id="KZg-TD-dwH"/>
+                            <constraint firstItem="ZmN-gm-xr9" firstAttribute="leading" secondItem="Wuv-J8-ub6" secondAttribute="leading" constant="30" id="LW3-5X-2V3"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ltc-vv-EOB" firstAttribute="top" secondItem="wRu-hQ-YJm" secondAttribute="bottom" constant="16" id="3on-DE-5vR"/>
+                    <constraint firstItem="Wuv-J8-ub6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Fib-jN-gyF"/>
+                    <constraint firstItem="IrF-Ga-1Qq" firstAttribute="top" secondItem="UcC-ZK-Ln9" secondAttribute="bottom" constant="16" id="Kj9-Cy-X3Z"/>
+                    <constraint firstAttribute="trailing" secondItem="IrF-Ga-1Qq" secondAttribute="trailing" constant="10" id="L3k-s4-VWU"/>
+                    <constraint firstAttribute="bottom" secondItem="Wuv-J8-ub6" secondAttribute="bottom" id="Sqs-hU-UQx"/>
+                    <constraint firstItem="SJf-41-YvY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="YE2-CK-WvK"/>
+                    <constraint firstAttribute="trailing" secondItem="Wuv-J8-ub6" secondAttribute="trailing" id="b9K-GY-NpL"/>
+                    <constraint firstItem="UcC-ZK-Ln9" firstAttribute="top" secondItem="SJf-41-YvY" secondAttribute="bottom" id="cXP-HF-54X"/>
+                    <constraint firstItem="ltc-vv-EOB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="fDY-23-hVY"/>
+                    <constraint firstAttribute="trailing" secondItem="UcC-ZK-Ln9" secondAttribute="trailing" constant="10" id="gRw-dB-3d6"/>
+                    <constraint firstItem="SJf-41-YvY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="oL5-i3-Jey"/>
+                    <constraint firstItem="Wuv-J8-ub6" firstAttribute="top" secondItem="ltc-vv-EOB" secondAttribute="bottom" constant="25" id="qxY-b9-Tqc"/>
+                    <constraint firstItem="wRu-hQ-YJm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="sg4-ME-GeE"/>
+                    <constraint firstAttribute="trailing" secondItem="SJf-41-YvY" secondAttribute="trailing" constant="10" id="xDn-YI-h6m"/>
+                    <constraint firstItem="wRu-hQ-YJm" firstAttribute="top" secondItem="SJf-41-YvY" secondAttribute="bottom" id="yQh-dj-Gad"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="btn1WidthConst" destination="Z1i-vv-A2R" id="cdx-3s-xK8"/>
+                <outlet property="btn2WidthConst" destination="TP2-e0-PXI" id="xiK-M3-hik"/>
+                <outlet property="btn3WidthConst" destination="AzR-hx-GP7" id="KKz-8i-Byz"/>
+                <outlet property="btn4WidthConst" destination="VZL-sJ-Vs0" id="Nvi-Wj-TsY"/>
+                <outlet property="button1" destination="wRu-hQ-YJm" id="CRZ-n2-0Fq"/>
+                <outlet property="button2" destination="UcC-ZK-Ln9" id="ezn-P0-D7e"/>
+                <outlet property="button3" destination="ltc-vv-EOB" id="EVn-Ds-6nD"/>
+                <outlet property="button4" destination="IrF-Ga-1Qq" id="9nO-JH-7ho"/>
+            </connections>
+            <point key="canvasLocation" x="61.5" y="147"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="dj_mywallet_bg" width="187" height="58"/>
+        <image name="dj_mywallet_id_card1" width="166" height="140"/>
+        <image name="dj_mywallet_id_card2" width="166" height="140"/>
+        <image name="dj_mywallet_id_card3" width="166" height="140"/>
+        <image name="dj_mywallet_id_card4" width="166" height="140"/>
+    </resources>
+</document>

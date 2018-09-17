@@ -20,4 +20,8 @@
 - (void)thirdBindWithType:(NSDictionary *)parameterDict
                   success:(void (^)(NSDictionary *dict))success
                   failure:(void (^)(NSError *error))failure;
+
+- (void)loadCustomServer:(NSDictionary *)parameterDict
+                 success:(void (^)(NSDictionary *dict))success
+                 failure:(void (^)(NSError *error))failure;
 @end

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="FZDJSelectBankCardCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oGe-iR-hvz" customClass="FXImageView">
+                        <rect key="frame" x="11" y="3.5" width="35" height="35"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="35" id="Fvr-gw-TmR"/>
+                            <constraint firstAttribute="height" constant="35" id="L2T-75-yOF"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="添加银行卡" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VKP-y3-Icn">
+                        <rect key="frame" x="56" y="12.5" width="240" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dj_advance_more_btn" translatesAutoresizingMaskIntoConstraints="NO" id="mKu-Ic-3od">
+                        <rect key="frame" x="306" y="14" width="9" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="IwC-Y8-nHa"/>
+                            <constraint firstAttribute="width" constant="9" id="sXQ-yU-FiA"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mMV-Yo-Wpg">
+                        <rect key="frame" x="0.0" y="43" width="309" height="0.5"/>
+                        <color key="backgroundColor" red="0.9137254901960784" green="0.9137254901960784" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="qf3-QC-QHU"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="mMV-Yo-Wpg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="8TG-Cf-yvc"/>
+                    <constraint firstItem="VKP-y3-Icn" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="8nA-Hz-Ehw"/>
+                    <constraint firstAttribute="trailing" secondItem="mMV-Yo-Wpg" secondAttribute="trailing" constant="11" id="9I9-g6-fPs"/>
+                    <constraint firstItem="mKu-Ic-3od" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="11" id="Huu-kL-nKT"/>
+                    <constraint firstAttribute="bottom" secondItem="mMV-Yo-Wpg" secondAttribute="bottom" id="I6F-vE-icV"/>
+                    <constraint firstItem="oGe-iR-hvz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="11" id="Lxp-cz-zZt"/>
+                    <constraint firstItem="mKu-Ic-3od" firstAttribute="leading" secondItem="VKP-y3-Icn" secondAttribute="trailing" constant="10" id="QAg-QW-7GK"/>
+                    <constraint firstItem="mKu-Ic-3od" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Xy9-3n-SvA"/>
+                    <constraint firstItem="VKP-y3-Icn" firstAttribute="leading" secondItem="oGe-iR-hvz" secondAttribute="trailing" constant="10" id="dia-Zv-wCS"/>
+                    <constraint firstItem="oGe-iR-hvz" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="jYZ-CM-cc6"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="bankNameLabel" destination="VKP-y3-Icn" id="sp6-zt-qdR"/>
+                <outlet property="iconiMAGE" destination="oGe-iR-hvz" id="7wi-P1-iev"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="dj_advance_more_btn" width="9" height="16"/>
+    </resources>
+</document>

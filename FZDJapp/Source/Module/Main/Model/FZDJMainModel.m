@@ -100,7 +100,7 @@
         item.title = vo.taskTitle;
         item.subTitle = vo.taskDesc;
         item.timeText = [[NSDate formatDate:vo.taskEndTime] remainderDaysAndHours];
-        item.price = [NSString formatPrice:vo.taskTotalPrice];
+        item.price = [NSString formatPrice:vo.taskReward];
         item.count = [NSString stringWithFormat:@"%ld/%ld",vo.taskGetCount,vo.taskTotalCount];
         item.persent = vo.taskGetCount / (vo.taskTotalCount*1.0) *100;
         

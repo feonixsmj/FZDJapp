@@ -11,6 +11,7 @@
 #import "FZDJMyWalletModel.h"
 #import "FXImageView.h"
 #import "FZDJAmountDetailsVCL.h"
+#import "FZDJCashAdvanceVCL.h"
 
 @class FZDJDescribeCell;
 
@@ -47,7 +48,7 @@
         label.font = [UIFont systemFontOfSize:11];
         label.textAlignment = NSTextAlignmentLeft;
         label.textColor = [UIColor fx_colorWithHexString:@"#333333"];
-        label.text = @"        如果圣诞节方式东方三等奖速度快放假洛杉矶快分手快乐飞机类似定金开发商两地分居深刻的积分了斯柯达尖峰时刻加时都福克斯京东方深刻的积分隆盛科技地方上岛咖啡连锁店发生了\n\n\n      世纪东方是地方是是是否水电费费地方的房贷发地方的房贷防守打法两三点积分上来的会计法螺蛳粉是发送到";
+        label.text = @"";
         label.numberOfLines = 0;
         label.lineBreakMode = NSLineBreakByWordWrapping;
         label;
@@ -223,6 +224,7 @@ FZDJMyWalletCashCellDelegate>
 
 @property (nonatomic, strong) UIImageView *headerImageView;
 @property (nonatomic, strong) UIView *tableHeaderView;
+@property (nonatomic, strong) UILabel *headerLabel;
 @property (nonatomic, strong) UIBarButtonItem *rightBarItem;
 @end
 
@@ -252,6 +254,13 @@ FZDJMyWalletCashCellDelegate>
     FZDJMyWalletModel *model = (FZDJMyWalletModel *)self.model;
     __weak typeof(self) weak_self = self;
     [model loadItem:nil success:^(NSDictionary *dict) {
+        weak_self.headerLabel.text = model.totalAmount;
+        [weak_self.tableView reloadData];
+    } failure:^(NSError *error) {
+        
+    }];
+    
+    [model loadCashAdvanceDesc:nil success:^(NSDictionary *dict) {
         [weak_self.tableView reloadData];
     } failure:^(NSError *error) {
         
@@ -290,12 +299,26 @@ FZDJMyWalletCashCellDelegate>
         _tableHeaderView = [[UIView alloc] init];
         _tableHeaderView.backgroundColor = [UIColor clearColor];
 //        _tableHeaderView.alpha = 0.8;
-        _tableHeaderView.frame = CGRectMake(0, 0, FX_SCREEN_WIDTH, FX_SCALE_ZOOM(195)-FX_NAVIGATIONBAR_TOTAL_SPAGE);
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 30, FX_SCREEN_WIDTH, 20)];
+        _tableHeaderView.frame = CGRectMake(0, 0, FX_SCREEN_WIDTH,
+                                            FX_SCALE_ZOOM(195)-FX_NAVIGATIONBAR_TOTAL_SPAGE);
+        
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 30, FX_SCREEN_WIDTH, 30)];
         label.textColor = [UIColor whiteColor];
-        label.text = @"18.50";
+        label.text = @"";
         label.textAlignment = NSTextAlignmentCenter;
+        label.font = [UIFont systemFontOfSize:35];
         [_tableHeaderView addSubview:label];
+        
+        self.headerLabel = label;
+        
+        UILabel *descLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, label.bottom + 10,
+                                                                   FX_SCREEN_WIDTH, 20)];
+        descLabel.textColor = [UIColor whiteColor];
+        descLabel.text = @"总金额(元)";
+        descLabel.textAlignment = NSTextAlignmentCenter;
+        descLabel.font = [UIFont systemFontOfSize:15];
+        [_tableHeaderView addSubview:descLabel];
+        
     }
     return _tableHeaderView;
 }
@@ -336,15 +359,16 @@ FZDJMyWalletCashCellDelegate>
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    NSObject *item = self.model.items[indexPath.row];
+    NSObject *itemObj = self.model.items[indexPath.row];
     
-    if ([item isKindOfClass:[FZDJPriceItem class]]) {
+    if ([itemObj isKindOfClass:[FZDJPriceItem class]]) {
+        FZDJPriceItem *item = (FZDJPriceItem *)itemObj;
         FZDJPriceCell *priceCell = [tableView
                         dequeueReusableCellWithIdentifier:@"FZDJPriceCell"];
-        priceCell.pricelabel1.text = @"238.30";
-        priceCell.pricelabel2.text = @"413.10";
+        priceCell.pricelabel1.text = item.validAmountStr;
+        priceCell.pricelabel2.text = item.useAmountStr;
         return priceCell;
-    } else if ([item isKindOfClass:[FZDJCashItem class]]){
+    } else if ([itemObj isKindOfClass:[FZDJCashItem class]]){
         
         FZDJMyWalletCashCell *cashCell = [tableView
                         dequeueReusableCellWithIdentifier:@"FZDJMyWalletCashCell"];
@@ -354,7 +378,8 @@ FZDJMyWalletCashCellDelegate>
         
         FZDJDescribeCell *cell = [tableView
                         dequeueReusableCellWithIdentifier:@"FZDJDescribeCell"];
-        
+        FZDJMyWalletModel *model = (FZDJMyWalletModel *)self.model;
+        cell.descLabel.text = model.cashAdvanceDesc;
         return cell;
     }
     
@@ -378,6 +403,12 @@ FZDJMyWalletCashCellDelegate>
 
 - (void)withdrawMoney{
     NSLog(@"我要提现");
+    FZDJMyWalletModel *model = (FZDJMyWalletModel *)self.model;
+    
+    FZDJCashAdvanceVCL *vcl = [[FZDJCashAdvanceVCL alloc] init];
+    vcl.totalAmount = model.totalAmount;
+    
+    [self.navigationController pushViewController:vcl animated:YES];
 }
 @end
 

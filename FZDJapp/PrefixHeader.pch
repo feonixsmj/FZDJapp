@@ -19,5 +19,6 @@
 #import <MJExtension.h>
 #import <MBProgressHUD/MBProgressHUD.h>
 #import <MJRefresh/MJRefresh.h>
+#import "MBProgressHUD+WBAddtional.h"
 
 #endif /* PrefixHeader_pch */

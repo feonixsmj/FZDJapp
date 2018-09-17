@@ -14,5 +14,6 @@
 #import "UIColor+FXCategory.h"
 #import "NSString+FXCategory.h"
 #import "FXMacro.h"
+#import "NSError+FXExtension.h"
 
 #endif /* FXBaseKit_h */

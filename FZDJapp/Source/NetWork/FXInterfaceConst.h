@@ -11,6 +11,9 @@
 #define Dev 0
 
 UIKIT_EXTERN NSString *const kApiDomain;
+UIKIT_EXTERN NSString *const kCashOutDomain;
+
+
 
 UIKIT_EXTERN NSString *const kApiBanner;
 UIKIT_EXTERN NSString *const kApiTaskQuery;
@@ -36,5 +39,16 @@ UIKIT_EXTERN NSString *const kApiMsgReadALL;    //全部已读
 
 UIKIT_EXTERN NSString *const kApiQueryProvince; //查询省
 UIKIT_EXTERN NSString *const kApiQueryCity;     //查询市
+UIKIT_EXTERN NSString *const kApiQueryOrgBank;  //查询总行
 UIKIT_EXTERN NSString *const kApiQueryBank;     //查询银行列表
 UIKIT_EXTERN NSString *const kApiAddUserBank;   //添加用户银行
+
+UIKIT_EXTERN NSString *const kApiGetWallet;     //我的钱包
+UIKIT_EXTERN NSString *const kApitxsm;          //提现说明
+UIKIT_EXTERN NSString *const kApiQueryWalletDetail;     //我的钱包明细
+
+UIKIT_EXTERN NSString *const kApiQueryMyBank;   //查询我的银行卡列表
+UIKIT_EXTERN NSString *const kApiDelUserBank;   //我的银行卡列表-解除绑定
+
+UIKIT_EXTERN NSString *const kApiUserCashOut;   //提现
+UIKIT_EXTERN NSString *const kApiLXKF; //获取客户联系方式

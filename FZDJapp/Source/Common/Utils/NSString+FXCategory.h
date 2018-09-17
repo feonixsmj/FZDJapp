@@ -16,5 +16,7 @@
 @interface NSString (FXCategory)
 
 + (NSString *)formatPrice:(NSInteger)cent;
++ (NSString *)formatPriceNumber:(NSNumber *)centNum;
+
 + (NSString *)getIPAddress:(BOOL)preferIPv4;
 @end

@@ -42,6 +42,7 @@
 		4418F6F220D262450086B94E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4418F6F120D262450086B94E /* Assets.xcassets */; };
 		4418F6F820D262450086B94E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4418F6F720D262450086B94E /* main.m */; };
 		4418F70320D264E40086B94E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4418F70020D264E40086B94E /* AppDelegate.m */; };
+		441905A6213EF4DC000A2870 /* NSError+FXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 441905A5213EF4DC000A2870 /* NSError+FXExtension.m */; };
 		442276FE210F82DC006ED0C6 /* FZDJAppealTaskInfoVo.m in Sources */ = {isa = PBXBuildFile; fileRef = 442276FD210F82DC006ED0C6 /* FZDJAppealTaskInfoVo.m */; };
 		44346AB2210F390B00868FC1 /* FZDJMyTaskListVo.m in Sources */ = {isa = PBXBuildFile; fileRef = 44346AB1210F390B00868FC1 /* FZDJMyTaskListVo.m */; };
 		44346AB5210F391D00868FC1 /* FZDJMyTaskInfoVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 44346AB4210F391D00868FC1 /* FZDJMyTaskInfoVO.m */; };
@@ -64,6 +65,28 @@
 		443958742100E0BE003F7AB5 /* FZDJMainRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 443958732100E0BE003F7AB5 /* FZDJMainRequest.m */; };
 		443958772100E50A003F7AB5 /* FZDJBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 443958762100E50A003F7AB5 /* FZDJBaseRequest.m */; };
 		4439587A2100E61C003F7AB5 /* NSDictionary+FXCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 443958792100E61C003F7AB5 /* NSDictionary+FXCategory.m */; };
+		444105D8214E79A900E18F6D /* FZDJIDCardItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 444105D7214E79A900E18F6D /* FZDJIDCardItem.m */; };
+		444105DB214E847500E18F6D /* FZDJBankOrgVo.m in Sources */ = {isa = PBXBuildFile; fileRef = 444105DA214E847500E18F6D /* FZDJBankOrgVo.m */; };
+		444105E2214E9A0900E18F6D /* FZDJBankListVCL.m in Sources */ = {isa = PBXBuildFile; fileRef = 444105E1214E9A0900E18F6D /* FZDJBankListVCL.m */; };
+		444105E5214E9A2000E18F6D /* FZDJBankListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 444105E4214E9A2000E18F6D /* FZDJBankListModel.m */; };
+		444105E9214E9A3700E18F6D /* FZDJBankListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 444105E7214E9A3700E18F6D /* FZDJBankListCell.m */; };
+		444105EA214E9A3700E18F6D /* FZDJBankListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 444105E8214E9A3700E18F6D /* FZDJBankListCell.xib */; };
+		444105ED214EA08100E18F6D /* FZDJBanklistItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 444105EC214EA08100E18F6D /* FZDJBanklistItem.m */; };
+		444105F0214EA12200E18F6D /* FZDJBankListVo.m in Sources */ = {isa = PBXBuildFile; fileRef = 444105EF214EA12200E18F6D /* FZDJBankListVo.m */; };
+		444105F3214EA13400E18F6D /* FZDJBankListInfoVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 444105F2214EA13400E18F6D /* FZDJBankListInfoVO.m */; };
+		444105F6214EB82E00E18F6D /* FZDJCashAdvanceVCL.m in Sources */ = {isa = PBXBuildFile; fileRef = 444105F5214EB82E00E18F6D /* FZDJCashAdvanceVCL.m */; };
+		444105FA214EB95B00E18F6D /* FZDJCashAdvanceAddCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 444105F8214EB95B00E18F6D /* FZDJCashAdvanceAddCardCell.m */; };
+		444105FB214EB95B00E18F6D /* FZDJCashAdvanceAddCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 444105F9214EB95B00E18F6D /* FZDJCashAdvanceAddCardCell.xib */; };
+		444105FF214EB97A00E18F6D /* FZDJCashAdvanceAmountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 444105FD214EB97A00E18F6D /* FZDJCashAdvanceAmountCell.m */; };
+		44410600214EB97B00E18F6D /* FZDJCashAdvanceAmountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 444105FE214EB97A00E18F6D /* FZDJCashAdvanceAmountCell.xib */; };
+		44410605214EBA0200E18F6D /* FZDJCashAdvanceAddCardItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 44410604214EBA0200E18F6D /* FZDJCashAdvanceAddCardItem.m */; };
+		44410608214EBA1100E18F6D /* FZDJCashAdvanceAmountItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 44410607214EBA1100E18F6D /* FZDJCashAdvanceAmountItem.m */; };
+		4441060B214EBA3B00E18F6D /* FZDJCashAdvanceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4441060A214EBA3B00E18F6D /* FZDJCashAdvanceModel.m */; };
+		4441060E214EDCF000E18F6D /* FZDJSelectBankCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4441060D214EDCF000E18F6D /* FZDJSelectBankCardView.m */; };
+		44410612214EE31500E18F6D /* FZDJSelectBankCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44410610214EE31500E18F6D /* FZDJSelectBankCardCell.m */; };
+		44410613214EE31500E18F6D /* FZDJSelectBankCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44410611214EE31500E18F6D /* FZDJSelectBankCardCell.xib */; };
+		44410616214F2A7F00E18F6D /* FZDJAmountDetailVo.m in Sources */ = {isa = PBXBuildFile; fileRef = 44410615214F2A7F00E18F6D /* FZDJAmountDetailVo.m */; };
+		44410619214F2A8F00E18F6D /* FZDJAmountDetailInfoVo.m in Sources */ = {isa = PBXBuildFile; fileRef = 44410618214F2A8F00E18F6D /* FZDJAmountDetailInfoVo.m */; };
 		44455A9E210A1AF8008A88E6 /* FZDJBannerVo.m in Sources */ = {isa = PBXBuildFile; fileRef = 44455A9D210A1AF8008A88E6 /* FZDJBannerVo.m */; };
 		44455AA1210A23F0008A88E6 /* FZDJBannerListVo.m in Sources */ = {isa = PBXBuildFile; fileRef = 44455AA0210A23F0008A88E6 /* FZDJBannerListVo.m */; };
 		44455AA4210A2C04008A88E6 /* FZDJTasklistVo.m in Sources */ = {isa = PBXBuildFile; fileRef = 44455AA3210A2C04008A88E6 /* FZDJTasklistVo.m */; };
@@ -132,6 +155,8 @@
 		449209A921036FF400E13120 /* FZDJMyTaskItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 449209A821036FF400E13120 /* FZDJMyTaskItem.m */; };
 		449209AE2103765500E13120 /* FXMyTaskListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 449209AC2103765500E13120 /* FXMyTaskListCell.m */; };
 		449209AF2103765500E13120 /* FXMyTaskListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 449209AD2103765500E13120 /* FXMyTaskListCell.xib */; };
+		44A9AD27214E500C00696035 /* FZDJIDCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A9AD25214E500C00696035 /* FZDJIDCardCell.m */; };
+		44A9AD28214E500C00696035 /* FZDJIDCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44A9AD26214E500C00696035 /* FZDJIDCardCell.xib */; };
 		44ACA28E20EA6A9A00414E9A /* FZDJMainVCL.m in Sources */ = {isa = PBXBuildFile; fileRef = 44ACA28820EA6A9A00414E9A /* FZDJMainVCL.m */; };
 		44ACA29120EA6ABC00414E9A /* FZDJMainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 44ACA29020EA6ABC00414E9A /* FZDJMainModel.m */; };
 		44ACA29420EA6AFB00414E9A /* FXBaseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 44ACA29320EA6AFB00414E9A /* FXBaseItem.m */; };
@@ -156,6 +181,7 @@
 		44CDB2F020FA28EF0011DFAA /* FZDJInvitationCodeVCL.m in Sources */ = {isa = PBXBuildFile; fileRef = 44CDB2EF20FA28EF0011DFAA /* FZDJInvitationCodeVCL.m */; };
 		44D23B5F2111F09000285A40 /* FZDJSelectPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D23B5E2111F09000285A40 /* FZDJSelectPhotoView.m */; };
 		44D23B632111FDF300285A40 /* FZDJAppealSelectPhotoStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D23B622111FDF300285A40 /* FZDJAppealSelectPhotoStrategy.m */; };
+		44D67320214555FE005AD959 /* FZDJMyWalletVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D6731F214555FE005AD959 /* FZDJMyWalletVO.m */; };
 		44E56A962118992000E7AD2E /* FZDJUploadImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 44E56A952118992000E7AD2E /* FZDJUploadImageModel.m */; };
 		44E56A972118A09700E7AD2E /* FZDJLoginVCL.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44E56A992118A09700E7AD2E /* FZDJLoginVCL.storyboard */; };
 		44E9B58F20DB9DC200D00E4D /* UIColor+FXCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 44E9B58E20DB9DC200D00E4D /* UIColor+FXCategory.m */; };
@@ -242,6 +268,8 @@
 		4418F6F720D262450086B94E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4418F6FF20D264E40086B94E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4418F70020D264E40086B94E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		441905A4213EF4DC000A2870 /* NSError+FXExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSError+FXExtension.h"; sourceTree = "<group>"; };
+		441905A5213EF4DC000A2870 /* NSError+FXExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSError+FXExtension.m"; sourceTree = "<group>"; };
 		442276FC210F82DC006ED0C6 /* FZDJAppealTaskInfoVo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJAppealTaskInfoVo.h; sourceTree = "<group>"; };
 		442276FD210F82DC006ED0C6 /* FZDJAppealTaskInfoVo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJAppealTaskInfoVo.m; sourceTree = "<group>"; };
 		44346AB0210F390B00868FC1 /* FZDJMyTaskListVo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJMyTaskListVo.h; sourceTree = "<group>"; };
@@ -282,6 +310,46 @@
 		443958762100E50A003F7AB5 /* FZDJBaseRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJBaseRequest.m; sourceTree = "<group>"; };
 		443958782100E61C003F7AB5 /* NSDictionary+FXCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+FXCategory.h"; sourceTree = "<group>"; };
 		443958792100E61C003F7AB5 /* NSDictionary+FXCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+FXCategory.m"; sourceTree = "<group>"; };
+		444105D6214E79A900E18F6D /* FZDJIDCardItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJIDCardItem.h; sourceTree = "<group>"; };
+		444105D7214E79A900E18F6D /* FZDJIDCardItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJIDCardItem.m; sourceTree = "<group>"; };
+		444105D9214E847500E18F6D /* FZDJBankOrgVo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJBankOrgVo.h; sourceTree = "<group>"; };
+		444105DA214E847500E18F6D /* FZDJBankOrgVo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJBankOrgVo.m; sourceTree = "<group>"; };
+		444105E0214E9A0900E18F6D /* FZDJBankListVCL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJBankListVCL.h; sourceTree = "<group>"; };
+		444105E1214E9A0900E18F6D /* FZDJBankListVCL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJBankListVCL.m; sourceTree = "<group>"; };
+		444105E3214E9A2000E18F6D /* FZDJBankListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJBankListModel.h; sourceTree = "<group>"; };
+		444105E4214E9A2000E18F6D /* FZDJBankListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJBankListModel.m; sourceTree = "<group>"; };
+		444105E6214E9A3700E18F6D /* FZDJBankListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJBankListCell.h; sourceTree = "<group>"; };
+		444105E7214E9A3700E18F6D /* FZDJBankListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJBankListCell.m; sourceTree = "<group>"; };
+		444105E8214E9A3700E18F6D /* FZDJBankListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FZDJBankListCell.xib; sourceTree = "<group>"; };
+		444105EB214EA08100E18F6D /* FZDJBanklistItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJBanklistItem.h; sourceTree = "<group>"; };
+		444105EC214EA08100E18F6D /* FZDJBanklistItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJBanklistItem.m; sourceTree = "<group>"; };
+		444105EE214EA12200E18F6D /* FZDJBankListVo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJBankListVo.h; sourceTree = "<group>"; };
+		444105EF214EA12200E18F6D /* FZDJBankListVo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJBankListVo.m; sourceTree = "<group>"; };
+		444105F1214EA13400E18F6D /* FZDJBankListInfoVO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJBankListInfoVO.h; sourceTree = "<group>"; };
+		444105F2214EA13400E18F6D /* FZDJBankListInfoVO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJBankListInfoVO.m; sourceTree = "<group>"; };
+		444105F4214EB82E00E18F6D /* FZDJCashAdvanceVCL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJCashAdvanceVCL.h; sourceTree = "<group>"; };
+		444105F5214EB82E00E18F6D /* FZDJCashAdvanceVCL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJCashAdvanceVCL.m; sourceTree = "<group>"; };
+		444105F7214EB95B00E18F6D /* FZDJCashAdvanceAddCardCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJCashAdvanceAddCardCell.h; sourceTree = "<group>"; };
+		444105F8214EB95B00E18F6D /* FZDJCashAdvanceAddCardCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJCashAdvanceAddCardCell.m; sourceTree = "<group>"; };
+		444105F9214EB95B00E18F6D /* FZDJCashAdvanceAddCardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FZDJCashAdvanceAddCardCell.xib; sourceTree = "<group>"; };
+		444105FC214EB97A00E18F6D /* FZDJCashAdvanceAmountCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJCashAdvanceAmountCell.h; sourceTree = "<group>"; };
+		444105FD214EB97A00E18F6D /* FZDJCashAdvanceAmountCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJCashAdvanceAmountCell.m; sourceTree = "<group>"; };
+		444105FE214EB97A00E18F6D /* FZDJCashAdvanceAmountCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FZDJCashAdvanceAmountCell.xib; sourceTree = "<group>"; };
+		44410603214EBA0200E18F6D /* FZDJCashAdvanceAddCardItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJCashAdvanceAddCardItem.h; sourceTree = "<group>"; };
+		44410604214EBA0200E18F6D /* FZDJCashAdvanceAddCardItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJCashAdvanceAddCardItem.m; sourceTree = "<group>"; };
+		44410606214EBA1100E18F6D /* FZDJCashAdvanceAmountItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJCashAdvanceAmountItem.h; sourceTree = "<group>"; };
+		44410607214EBA1100E18F6D /* FZDJCashAdvanceAmountItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJCashAdvanceAmountItem.m; sourceTree = "<group>"; };
+		44410609214EBA3B00E18F6D /* FZDJCashAdvanceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJCashAdvanceModel.h; sourceTree = "<group>"; };
+		4441060A214EBA3B00E18F6D /* FZDJCashAdvanceModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJCashAdvanceModel.m; sourceTree = "<group>"; };
+		4441060C214EDCF000E18F6D /* FZDJSelectBankCardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJSelectBankCardView.h; sourceTree = "<group>"; };
+		4441060D214EDCF000E18F6D /* FZDJSelectBankCardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJSelectBankCardView.m; sourceTree = "<group>"; };
+		4441060F214EE31500E18F6D /* FZDJSelectBankCardCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJSelectBankCardCell.h; sourceTree = "<group>"; };
+		44410610214EE31500E18F6D /* FZDJSelectBankCardCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJSelectBankCardCell.m; sourceTree = "<group>"; };
+		44410611214EE31500E18F6D /* FZDJSelectBankCardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FZDJSelectBankCardCell.xib; sourceTree = "<group>"; };
+		44410614214F2A7F00E18F6D /* FZDJAmountDetailVo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJAmountDetailVo.h; sourceTree = "<group>"; };
+		44410615214F2A7F00E18F6D /* FZDJAmountDetailVo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJAmountDetailVo.m; sourceTree = "<group>"; };
+		44410617214F2A8F00E18F6D /* FZDJAmountDetailInfoVo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJAmountDetailInfoVo.h; sourceTree = "<group>"; };
+		44410618214F2A8F00E18F6D /* FZDJAmountDetailInfoVo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJAmountDetailInfoVo.m; sourceTree = "<group>"; };
 		44455A9C210A1AF8008A88E6 /* FZDJBannerVo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJBannerVo.h; sourceTree = "<group>"; };
 		44455A9D210A1AF8008A88E6 /* FZDJBannerVo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJBannerVo.m; sourceTree = "<group>"; };
 		44455A9F210A23F0008A88E6 /* FZDJBannerListVo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJBannerListVo.h; sourceTree = "<group>"; };
@@ -394,6 +462,9 @@
 		449209AB2103765500E13120 /* FXMyTaskListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FXMyTaskListCell.h; sourceTree = "<group>"; };
 		449209AC2103765500E13120 /* FXMyTaskListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FXMyTaskListCell.m; sourceTree = "<group>"; };
 		449209AD2103765500E13120 /* FXMyTaskListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FXMyTaskListCell.xib; sourceTree = "<group>"; };
+		44A9AD24214E500C00696035 /* FZDJIDCardCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJIDCardCell.h; sourceTree = "<group>"; };
+		44A9AD25214E500C00696035 /* FZDJIDCardCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJIDCardCell.m; sourceTree = "<group>"; };
+		44A9AD26214E500C00696035 /* FZDJIDCardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FZDJIDCardCell.xib; sourceTree = "<group>"; };
 		44ACA28820EA6A9A00414E9A /* FZDJMainVCL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FZDJMainVCL.m; sourceTree = "<group>"; };
 		44ACA28920EA6A9A00414E9A /* FZDJMainVCL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FZDJMainVCL.h; sourceTree = "<group>"; };
 		44ACA28F20EA6ABC00414E9A /* FZDJMainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJMainModel.h; sourceTree = "<group>"; };
@@ -440,6 +511,8 @@
 		44D23B5E2111F09000285A40 /* FZDJSelectPhotoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJSelectPhotoView.m; sourceTree = "<group>"; };
 		44D23B612111FDF300285A40 /* FZDJAppealSelectPhotoStrategy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJAppealSelectPhotoStrategy.h; sourceTree = "<group>"; };
 		44D23B622111FDF300285A40 /* FZDJAppealSelectPhotoStrategy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJAppealSelectPhotoStrategy.m; sourceTree = "<group>"; };
+		44D6731E214555FE005AD959 /* FZDJMyWalletVO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJMyWalletVO.h; sourceTree = "<group>"; };
+		44D6731F214555FE005AD959 /* FZDJMyWalletVO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJMyWalletVO.m; sourceTree = "<group>"; };
 		44E56A942118992000E7AD2E /* FZDJUploadImageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJUploadImageModel.h; sourceTree = "<group>"; };
 		44E56A952118992000E7AD2E /* FZDJUploadImageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJUploadImageModel.m; sourceTree = "<group>"; };
 		44E56A982118A09700E7AD2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/FZDJLoginVCL.storyboard; sourceTree = "<group>"; };
@@ -601,9 +674,9 @@
 		44047EA920F2565900CFEBB3 /* MyWallet */ = {
 			isa = PBXGroup;
 			children = (
-				44047EB420F262FB00CFEBB3 /* View */,
 				44047EB320F262F500CFEBB3 /* Controller */,
 				44047EB220F262F000CFEBB3 /* Model */,
+				44047EB420F262FB00CFEBB3 /* View */,
 			);
 			path = MyWallet;
 			sourceTree = "<group>";
@@ -660,9 +733,9 @@
 		44047EAE20F256EA00CFEBB3 /* BankCard */ = {
 			isa = PBXGroup;
 			children = (
+				44816831213441F5003722AE /* Controller */,
 				44816833213441FF003722AE /* View */,
 				44816832213441FB003722AE /* Model */,
-				44816831213441F5003722AE /* Controller */,
 			);
 			path = BankCard;
 			sourceTree = "<group>";
@@ -670,11 +743,14 @@
 		44047EB220F262F000CFEBB3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				44D6731D214555CC005AD959 /* Vo */,
 				44047EC120F2786800CFEBB3 /* Item */,
 				44047EBE20F2785500CFEBB3 /* FZDJMyWalletModel.h */,
 				44047EBF20F2785500CFEBB3 /* FZDJMyWalletModel.m */,
 				440536F220F5116C006C7AFB /* FZDJAmountDetailsModel.h */,
 				440536F320F5116C006C7AFB /* FZDJAmountDetailsModel.m */,
+				44410609214EBA3B00E18F6D /* FZDJCashAdvanceModel.h */,
+				4441060A214EBA3B00E18F6D /* FZDJCashAdvanceModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -686,6 +762,8 @@
 				44047EB020F2575000CFEBB3 /* FZDJMyWalletVCL.m */,
 				440536EF20F510ED006C7AFB /* FZDJAmountDetailsVCL.h */,
 				440536F020F510ED006C7AFB /* FZDJAmountDetailsVCL.m */,
+				444105F4214EB82E00E18F6D /* FZDJCashAdvanceVCL.h */,
+				444105F5214EB82E00E18F6D /* FZDJCashAdvanceVCL.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -693,6 +771,7 @@
 		44047EB420F262FB00CFEBB3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				44410602214EB9B900E18F6D /* Advance */,
 				44047EB520F2630700CFEBB3 /* Cell */,
 			);
 			path = View;
@@ -714,6 +793,7 @@
 		44047EC120F2786800CFEBB3 /* Item */ = {
 			isa = PBXGroup;
 			children = (
+				44410601214EB9A200E18F6D /* Advance */,
 				44047EC220F2788000CFEBB3 /* FZDJPriceItem.h */,
 				44047EC320F2788000CFEBB3 /* FZDJPriceItem.m */,
 				44047EC520F2788D00CFEBB3 /* FZDJCashItem.h */,
@@ -924,6 +1004,79 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		444105DC214E99C100E18F6D /* BankList */ = {
+			isa = PBXGroup;
+			children = (
+				444105DF214E99D800E18F6D /* Controller */,
+				444105DE214E99D600E18F6D /* Model */,
+				444105DD214E99D400E18F6D /* View */,
+			);
+			path = BankList;
+			sourceTree = "<group>";
+		};
+		444105DD214E99D400E18F6D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				444105E6214E9A3700E18F6D /* FZDJBankListCell.h */,
+				444105E7214E9A3700E18F6D /* FZDJBankListCell.m */,
+				444105E8214E9A3700E18F6D /* FZDJBankListCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		444105DE214E99D600E18F6D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				444105E3214E9A2000E18F6D /* FZDJBankListModel.h */,
+				444105E4214E9A2000E18F6D /* FZDJBankListModel.m */,
+				444105EB214EA08100E18F6D /* FZDJBanklistItem.h */,
+				444105EC214EA08100E18F6D /* FZDJBanklistItem.m */,
+				444105EE214EA12200E18F6D /* FZDJBankListVo.h */,
+				444105EF214EA12200E18F6D /* FZDJBankListVo.m */,
+				444105F1214EA13400E18F6D /* FZDJBankListInfoVO.h */,
+				444105F2214EA13400E18F6D /* FZDJBankListInfoVO.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		444105DF214E99D800E18F6D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				444105E0214E9A0900E18F6D /* FZDJBankListVCL.h */,
+				444105E1214E9A0900E18F6D /* FZDJBankListVCL.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		44410601214EB9A200E18F6D /* Advance */ = {
+			isa = PBXGroup;
+			children = (
+				44410603214EBA0200E18F6D /* FZDJCashAdvanceAddCardItem.h */,
+				44410604214EBA0200E18F6D /* FZDJCashAdvanceAddCardItem.m */,
+				44410606214EBA1100E18F6D /* FZDJCashAdvanceAmountItem.h */,
+				44410607214EBA1100E18F6D /* FZDJCashAdvanceAmountItem.m */,
+			);
+			path = Advance;
+			sourceTree = "<group>";
+		};
+		44410602214EB9B900E18F6D /* Advance */ = {
+			isa = PBXGroup;
+			children = (
+				444105F7214EB95B00E18F6D /* FZDJCashAdvanceAddCardCell.h */,
+				444105F8214EB95B00E18F6D /* FZDJCashAdvanceAddCardCell.m */,
+				444105F9214EB95B00E18F6D /* FZDJCashAdvanceAddCardCell.xib */,
+				444105FC214EB97A00E18F6D /* FZDJCashAdvanceAmountCell.h */,
+				444105FD214EB97A00E18F6D /* FZDJCashAdvanceAmountCell.m */,
+				444105FE214EB97A00E18F6D /* FZDJCashAdvanceAmountCell.xib */,
+				4441060C214EDCF000E18F6D /* FZDJSelectBankCardView.h */,
+				4441060D214EDCF000E18F6D /* FZDJSelectBankCardView.m */,
+				4441060F214EE31500E18F6D /* FZDJSelectBankCardCell.h */,
+				44410610214EE31500E18F6D /* FZDJSelectBankCardCell.m */,
+				44410611214EE31500E18F6D /* FZDJSelectBankCardCell.xib */,
+			);
+			path = Advance;
+			sourceTree = "<group>";
+		};
 		44455AAF210DA567008A88E6 /* Vo */ = {
 			isa = PBXGroup;
 			children = (
@@ -1107,6 +1260,8 @@
 				446393AE213C655700709CE2 /* FZDJBankInfoVO.m */,
 				446393B0213C665B00709CE2 /* FZDJBankInfoListVo.h */,
 				446393B1213C665B00709CE2 /* FZDJBankInfoListVo.m */,
+				444105D9214E847500E18F6D /* FZDJBankOrgVo.h */,
+				444105DA214E847500E18F6D /* FZDJBankOrgVo.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1120,6 +1275,9 @@
 				4481683F213445D7003722AE /* FZDJBankCardIdentityCell.h */,
 				44816840213445D7003722AE /* FZDJBankCardIdentityCell.m */,
 				44816841213445D7003722AE /* FZDJBankCardIdentityCell.xib */,
+				44A9AD24214E500C00696035 /* FZDJIDCardCell.h */,
+				44A9AD25214E500C00696035 /* FZDJIDCardCell.m */,
+				44A9AD26214E500C00696035 /* FZDJIDCardCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1131,6 +1289,8 @@
 				448168462134475F003722AE /* FZDJBankCardIdentityItem.m */,
 				4481684821344774003722AE /* FZDJBankCardItem.h */,
 				4481684921344774003722AE /* FZDJBankCardItem.m */,
+				444105D6214E79A900E18F6D /* FZDJIDCardItem.h */,
+				444105D7214E79A900E18F6D /* FZDJIDCardItem.m */,
 			);
 			path = Item;
 			sourceTree = "<group>";
@@ -1316,6 +1476,7 @@
 		44C9AC2520DA5D0200EBD6FB /* PersonCenter */ = {
 			isa = PBXGroup;
 			children = (
+				444105DC214E99C100E18F6D /* BankList */,
 				44346AB7210F46D000868FC1 /* Appeal */,
 				44047EAE20F256EA00CFEBB3 /* BankCard */,
 				44047EAD20F256D200CFEBB3 /* AboutUs */,
@@ -1387,6 +1548,19 @@
 			path = Strategy;
 			sourceTree = "<group>";
 		};
+		44D6731D214555CC005AD959 /* Vo */ = {
+			isa = PBXGroup;
+			children = (
+				44D6731E214555FE005AD959 /* FZDJMyWalletVO.h */,
+				44D6731F214555FE005AD959 /* FZDJMyWalletVO.m */,
+				44410614214F2A7F00E18F6D /* FZDJAmountDetailVo.h */,
+				44410615214F2A7F00E18F6D /* FZDJAmountDetailVo.m */,
+				44410617214F2A8F00E18F6D /* FZDJAmountDetailInfoVo.h */,
+				44410618214F2A8F00E18F6D /* FZDJAmountDetailInfoVo.m */,
+			);
+			path = Vo;
+			sourceTree = "<group>";
+		};
 		44E9B58620DB9C5600D00E4D /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -1416,6 +1590,8 @@
 				44AEB95B2102212A00D2D191 /* FXCrypto.m */,
 				44455AAB210A3629008A88E6 /* NSDate+FXExtention.h */,
 				44455AAC210A3629008A88E6 /* NSDate+FXExtention.m */,
+				441905A4213EF4DC000A2870 /* NSError+FXExtension.h */,
+				441905A5213EF4DC000A2870 /* NSError+FXExtension.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1619,7 +1795,7 @@
 		4418F6DD20D262450086B94E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = FZDJ;
 				TargetAttributes = {
 					4418F6E420D262450086B94E = {
@@ -1651,9 +1827,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				44816843213445D7003722AE /* FZDJBankCardIdentityCell.xib in Resources */,
+				44410613214EE31500E18F6D /* FZDJSelectBankCardCell.xib in Resources */,
 				447002E321078D7C00D4E93E /* FZDJEditNickNameVCL.xib in Resources */,
+				44410600214EB97B00E18F6D /* FZDJCashAdvanceAmountCell.xib in Resources */,
 				44346ADA210F6CD300868FC1 /* FZDJAppealHistoryCell.xib in Resources */,
 				44E56A972118A09700E7AD2E /* FZDJLoginVCL.storyboard in Resources */,
+				44A9AD28214E500C00696035 /* FZDJIDCardCell.xib in Resources */,
 				447D70512114885300A08E9E /* ShareSDKUI.bundle in Resources */,
 				44047E7320F0F97300CFEBB3 /* FZDJPersonalTaskView.xib in Resources */,
 				447D70502114885300A08E9E /* ShareSDK.bundle in Resources */,
@@ -1662,6 +1841,7 @@
 				4418F6F220D262450086B94E /* Assets.xcassets in Resources */,
 				4481683B21344276003722AE /* FZDJBankCardCell.xib in Resources */,
 				447D704A2114885300A08E9E /* WeiboSDK.bundle in Resources */,
+				444105FB214EB95B00E18F6D /* FZDJCashAdvanceAddCardCell.xib in Resources */,
 				449209AF2103765500E13120 /* FXMyTaskListCell.xib in Resources */,
 				440536FC20F511AD006C7AFB /* FZDJAmountDetailsCell.xib in Resources */,
 				447002DE2107859A00D4E93E /* FZDJBindPhoneNumberVCL.xib in Resources */,
@@ -1674,6 +1854,7 @@
 				44047E7B20F12E7200CFEBB3 /* FZDJPersonalInfoCell.xib in Resources */,
 				447002D021075DAE00D4E93E /* FZDJEditInfoVCL.xib in Resources */,
 				447D704C2114885300A08E9E /* README.txt in Resources */,
+				444105EA214E9A3700E18F6D /* FZDJBankListCell.xib in Resources */,
 				44ACA2A120EA6CCF00414E9A /* FZDJMainView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1689,10 +1870,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FZDJapp/Pods-FZDJapp-resources.sh",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+				"${PODS_ROOT}/WBHUDManager/WBHUDManager/MBProgressHUDWBAddtional/MBProgressHUD.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MBProgressHUD.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1730,6 +1915,7 @@
 				44047E8D20F1495400CFEBB3 /* FZDJPersonalCenterModel.m in Sources */,
 				4439582C20FF9B57003F7AB5 /* FZDJInvitationCodeModel.m in Sources */,
 				44455AAD210A3629008A88E6 /* NSDate+FXExtention.m in Sources */,
+				444105DB214E847500E18F6D /* FZDJBankOrgVo.m in Sources */,
 				44047E9420F14B5200CFEBB3 /* FZDJPersonalTaskItem.m in Sources */,
 				44816842213445D7003722AE /* FZDJBankCardIdentityCell.m in Sources */,
 				44047EBC20F274D700CFEBB3 /* FZDJMyWalletCashCell.m in Sources */,
@@ -1747,6 +1933,8 @@
 				449209A2210369FA00E13120 /* FXMyTaskContainerVCL.m in Sources */,
 				4492099C21034AEE00E13120 /* XBTagTitleCell.m in Sources */,
 				440536FB20F511AD006C7AFB /* FZDJAmountDetailsCell.m in Sources */,
+				444105F3214EA13400E18F6D /* FZDJBankListInfoVO.m in Sources */,
+				444105ED214EA08100E18F6D /* FZDJBanklistItem.m in Sources */,
 				44CDB2F020FA28EF0011DFAA /* FZDJInvitationCodeVCL.m in Sources */,
 				44047E7120F0F96100CFEBB3 /* FZDJPersonalTaskView.m in Sources */,
 				44816830213441F1003722AE /* FZDJBankCardVCL.m in Sources */,
@@ -1770,6 +1958,7 @@
 				44EBB81E20EBCC4000B95317 /* FZDJMessageCenterModel.m in Sources */,
 				44455AA4210A2C04008A88E6 /* FZDJTasklistVo.m in Sources */,
 				44047E8220F12EC000CFEBB3 /* FZDJPeraonalListCell.m in Sources */,
+				444105E2214E9A0900E18F6D /* FZDJBankListVCL.m in Sources */,
 				4439582920FF9AE7003F7AB5 /* FZDJInvitationCodeItem.m in Sources */,
 				447002D921077FB300D4E93E /* FZDJUserInfo.m in Sources */,
 				44047EA320F2450800CFEBB3 /* FZDJPersonalBlankItem.m in Sources */,
@@ -1781,10 +1970,12 @@
 				4418F70320D264E40086B94E /* AppDelegate.m in Sources */,
 				449209A921036FF400E13120 /* FZDJMyTaskItem.m in Sources */,
 				449209A621036F5400E13120 /* FZDJMyTaskModel.m in Sources */,
+				444105E9214E9A3700E18F6D /* FZDJBankListCell.m in Sources */,
 				44ACA2A420EA8B2300414E9A /* FZDJMessageCenterVCL.m in Sources */,
 				44EBB82120EBF8D000B95317 /* FXBaseNavigationController.m in Sources */,
 				44047EC720F2788D00CFEBB3 /* FZDJCashItem.m in Sources */,
 				44346AC4210F480A00868FC1 /* FZDJAppealReplyItem.m in Sources */,
+				4441060E214EDCF000E18F6D /* FZDJSelectBankCardView.m in Sources */,
 				442276FE210F82DC006ED0C6 /* FZDJAppealTaskInfoVo.m in Sources */,
 				44AEB9532102192200D2D191 /* FXSystemInfo.m in Sources */,
 				443958702100DD4D003F7AB5 /* NSData+AES128.m in Sources */,
@@ -1793,7 +1984,9 @@
 				4481684A21344774003722AE /* FZDJBankCardItem.m in Sources */,
 				44455AAA210A2D8F008A88E6 /* FZDJBaseBVO.m in Sources */,
 				44455ABF210E0296008A88E6 /* FZDJTaskDetailItem.m in Sources */,
+				444105FA214EB95B00E18F6D /* FZDJCashAdvanceAddCardCell.m in Sources */,
 				443958742100E0BE003F7AB5 /* FZDJMainRequest.m in Sources */,
+				44410608214EBA1100E18F6D /* FZDJCashAdvanceAmountItem.m in Sources */,
 				44047EC420F2788000CFEBB3 /* FZDJPriceItem.m in Sources */,
 				44455AA7210A2C1C008A88E6 /* FZDJTaskInfoVo.m in Sources */,
 				44455AB2210DAA59008A88E6 /* FZDJTaskDetailVCL.m in Sources */,
@@ -1806,6 +1999,8 @@
 				44ACA29120EA6ABC00414E9A /* FZDJMainModel.m in Sources */,
 				446393AC213C418A00709CE2 /* WXZPickCityView.m in Sources */,
 				44346AB2210F390B00868FC1 /* FZDJMyTaskListVo.m in Sources */,
+				44410619214F2A8F00E18F6D /* FZDJAmountDetailInfoVo.m in Sources */,
+				44410605214EBA0200E18F6D /* FZDJCashAdvanceAddCardItem.m in Sources */,
 				44EBB81B20EBCC2600B95317 /* FZDJMessageCenterItem.m in Sources */,
 				44455AC2210E1790008A88E6 /* FZDJTaskDetaiInfoView.m in Sources */,
 				44E9B5BA20E1E85F00D00E4D /* FXBaseTableViewCell.m in Sources */,
@@ -1816,6 +2011,7 @@
 				446393B2213C665B00709CE2 /* FZDJBankInfoListVo.m in Sources */,
 				443958772100E50A003F7AB5 /* FZDJBaseRequest.m in Sources */,
 				4439582520FF9AB1003F7AB5 /* FZDJInvitationCodeCell.m in Sources */,
+				444105F0214EA12200E18F6D /* FZDJBankListVo.m in Sources */,
 				440536F420F5116C006C7AFB /* FZDJAmountDetailsModel.m in Sources */,
 				44ACA28E20EA6A9A00414E9A /* FZDJMainVCL.m in Sources */,
 				447002DD2107859A00D4E93E /* FZDJBindPhoneNumberVCL.m in Sources */,
@@ -1827,15 +2023,23 @@
 				440536F720F51181006C7AFB /* FZDJAmountDetailsItem.m in Sources */,
 				44CDB2EB20F9E64B0011DFAA /* FZDJAboutUsVCL.m in Sources */,
 				44346AB5210F391D00868FC1 /* FZDJMyTaskInfoVO.m in Sources */,
+				44D67320214555FE005AD959 /* FZDJMyWalletVO.m in Sources */,
 				44BD39712114C5B30024B228 /* FZDJLoginModel.m in Sources */,
 				44AEB959210219B100D2D191 /* FXSingleton.m in Sources */,
 				44346ABE210F471500868FC1 /* FZDJAppealViewController.m in Sources */,
+				44410612214EE31500E18F6D /* FZDJSelectBankCardCell.m in Sources */,
 				449209AE2103765500E13120 /* FXMyTaskListCell.m in Sources */,
 				4418F6F820D262450086B94E /* main.m in Sources */,
+				444105F6214EB82E00E18F6D /* FZDJCashAdvanceVCL.m in Sources */,
 				44F4CD682119DEF70099B583 /* FZDJMessageInfoVo.m in Sources */,
 				44346AD9210F6CD300868FC1 /* FZDJAppealHistoryCell.m in Sources */,
+				444105D8214E79A900E18F6D /* FZDJIDCardItem.m in Sources */,
 				44E56A962118992000E7AD2E /* FZDJUploadImageModel.m in Sources */,
 				446393AA213C418A00709CE2 /* WXZCustomPickView.m in Sources */,
+				441905A6213EF4DC000A2870 /* NSError+FXExtension.m in Sources */,
+				4441060B214EBA3B00E18F6D /* FZDJCashAdvanceModel.m in Sources */,
+				444105E5214E9A2000E18F6D /* FZDJBankListModel.m in Sources */,
+				44A9AD27214E500C00696035 /* FZDJIDCardCell.m in Sources */,
 				446393B5213D7E8C00709CE2 /* FZDJBannerDetailVCL.m in Sources */,
 				4492099B21034AEE00E13120 /* XBPageCell.m in Sources */,
 				44E9B58F20DB9DC200D00E4D /* UIColor+FXCategory.m in Sources */,
@@ -1843,9 +2047,11 @@
 				44047E9A20F2138A00CFEBB3 /* FZDJHeaderImageView.m in Sources */,
 				44346ACF210F608700868FC1 /* FZDJQuestionDescView.m in Sources */,
 				44EBB81720EBC5B700B95317 /* FZDJMessageCenterCell.m in Sources */,
+				44410616214F2A7F00E18F6D /* FZDJAmountDetailVo.m in Sources */,
 				447002CF21075DAE00D4E93E /* FZDJEditInfoVCL.m in Sources */,
 				44455A9E210A1AF8008A88E6 /* FZDJBannerVo.m in Sources */,
 				447002D621077DD500D4E93E /* FZDJDataModelSingleton.m in Sources */,
+				444105FF214EB97A00E18F6D /* FZDJCashAdvanceAmountCell.m in Sources */,
 				44346AC1210F47D500868FC1 /* FZDJAppealModel.m in Sources */,
 				44047E7A20F12E7200CFEBB3 /* FZDJPersonalInfoCell.m in Sources */,
 			);
@@ -1881,6 +2087,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -1888,6 +2095,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -1937,6 +2145,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -1944,6 +2153,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -2067,6 +2277,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -2074,6 +2285,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

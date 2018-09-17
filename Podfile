@@ -12,6 +12,8 @@ target 'FZDJapp' do
   pod 'GTMBase64'
   pod 'OpenUDID'
   pod 'MJExtension'
+  pod 'YYText'
+  pod 'WBHUDManager'
   
   pod 'UITableView+FDTemplateLayoutCell'
   pod 'PPNetworkHelper',:git => 'https://github.com/jkpang/PPNetworkHelper.git'

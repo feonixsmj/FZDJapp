@@ -62,11 +62,11 @@ UITableViewDataSource>
         [self initUI];
         [self loadItem];
     }
-    
-    
 }
 
 - (void)loadItem{
+    [MBProgressHUD wb_showActivity];
+    
     FZDJMainModel *model = (FZDJMainModel *)self.model;
     
     __weak typeof(self) weak_self = self;

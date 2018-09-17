@@ -30,6 +30,8 @@
 @property (weak, nonatomic) IBOutlet UIView *thirdPartLoginView;
 @property (nonatomic, strong) FZDJMainRequest *request;
 @property (nonatomic, strong) FZDJLoginModel *model;
+@property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic, assign) NSInteger time;
 @end
 
 @implementation FZDJLoginVCL
@@ -115,15 +117,49 @@
 }
 
 - (IBAction)getCodeButtonDidClicked:(id)sender {
+    
+    [self.getCodeButton setTitle:@"发送中(60s)" forState:UIControlStateNormal];
+    self.getCodeButton.userInteractionEnabled = NO;
+    
+    if (!self.timer) {
+        self.time = 60;
+        self.timer = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(timerAction) userInfo:nil repeats:YES];
+        [[NSRunLoop mainRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+    }
+    
     NSString *phoneNumber = self.phoneNumberTextField.text;
     NSMutableDictionary *parameter = [NSMutableDictionary dictionary];
     parameter[@"phone"] = phoneNumber;
     
+    __weak typeof(self) weak_self = self;
     [self.model getCodeNumber:parameter success:^(NSDictionary *dict) {
-        NSLog(@"获取成");
+        
+        [MBProgressHUD wb_showMessage:@"发送成功，请等待"];
+        
     } failure:^(NSError *error) {
         
+        [weak_self invalidateTimer];
+        [weak_self.getCodeButton setTitle:@"获取验证码" forState:UIControlStateNormal];
     }];
+}
+
+- (void)timerAction{
+    self.time --;
+    if (self.time < 0) {
+        [self.getCodeButton setTitle:@"重新发送" forState:UIControlStateNormal];
+        [self invalidateTimer];
+        return;
+    }
+    NSString *title = [NSString stringWithFormat:@"发送中(%lds)",self.time];
+    [self.getCodeButton setTitle:title forState:UIControlStateNormal];
+}
+
+- (void)invalidateTimer{
+    if (self.timer) {
+        [self.timer invalidate];
+        self.timer = nil;
+        self.getCodeButton.userInteractionEnabled = YES;
+    }
 }
 
 - (IBAction)thirdPartLoginDidClicked:(id)sender {
@@ -208,6 +244,8 @@
 }
 #pragma mark - ================ 登录成功 ================
 - (void)loginSuccess {
+    [self invalidateTimer];
+    
     if (self.delegate && [self.delegate respondsToSelector:@selector(loginSuccess)]) {
         [self.delegate loginSuccess];
     }
