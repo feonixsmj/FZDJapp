@@ -107,7 +107,7 @@ FZDJSelectBankCardViewDelegate>
     parameter[@"userNo"] = addCardItem.vo.userNo;
     parameter[@"amount"] = amountItem.advanceAmount;
     
-    __weak typeof(self) weak_self = self;
+//    __weak typeof(self) weak_self = self;
     [model addVance:parameter success:^(NSDictionary *dict) {
 //        [weak_self endRefreshing];
         [MBProgressHUD wb_showSuccess:@"操作成功"];

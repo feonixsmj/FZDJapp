@@ -28,6 +28,7 @@ UIKIT_EXTERN NSString *const kApiTaskComplaint;//提交申述
 UIKIT_EXTERN NSString *const kApiTaskOtherlogin;//第三方登录
 UIKIT_EXTERN NSString *const kApiTaskDologin;//手机登录
 UIKIT_EXTERN NSString *const kApiTaskGetLoginCode;//获取登录验证码
+UIKIT_EXTERN NSString *const kApiUpdatePhone;//绑定手机
 
 UIKIT_EXTERN NSString *const kApiTaskUserGet;//查询用户信息
 UIKIT_EXTERN NSString *const kApiUserEditInfo;//修改基本信息
@@ -52,3 +53,5 @@ UIKIT_EXTERN NSString *const kApiDelUserBank;   //我的银行卡列表-解除�
 
 UIKIT_EXTERN NSString *const kApiUserCashOut;   //提现
 UIKIT_EXTERN NSString *const kApiLXKF; //获取客户联系方式
+
+UIKIT_EXTERN NSString *const kApiqueryMyShare;// 我的邀请好友列表

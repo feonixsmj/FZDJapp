@@ -76,7 +76,7 @@ const CGFloat FXHeaderImageViewHeight = 194;
         [weak_self doTaskURL:model.item.taskUrl];
         [weak_self refreshStatusButton:FZDJTaskDetailItemStatusTaken];
     } failure:^(NSError *error) {
-#warning 失败如何处理 TODU
+
     }];
     
 }
@@ -206,21 +206,23 @@ const CGFloat FXHeaderImageViewHeight = 194;
 
 - (UIView *)headerView{
     if (!_headerView) {
-        _headerView = [[UIView alloc] initWithFrame:CGRectZero];
-        _headerView.backgroundColor = [UIColor whiteColor];
+        UIView *headerView = [[UIView alloc] initWithFrame:CGRectZero];
+        headerView.backgroundColor = [UIColor whiteColor];
         
-        [_headerView addSubview:self.headerImageView];
-        [_headerView addSubview:self.detailInfoView];
+        [headerView addSubview:self.headerImageView];
+        [headerView addSubview:self.detailInfoView];
 
         [self.detailInfoView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.headerImageView.mas_bottom);
-            make.left.right.equalTo(_headerView);
+            make.left.right.equalTo(headerView);
             make.height.mas_equalTo(115);
         }];
         
-        _headerView.width = FX_SCREEN_WIDTH;
-        _headerView.height = self.headerImageView.height +
+        headerView.width = FX_SCREEN_WIDTH;
+        headerView.height = self.headerImageView.height +
                             [FZDJTaskDetaiInfoView viewHeight];
+        
+        _headerView = headerView;
     }
     return _headerView;
 }

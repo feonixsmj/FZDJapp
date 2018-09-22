@@ -25,6 +25,7 @@ NSString *const kApiTaskComplaint = @"/server/task/complaint";
 NSString *const kApiTaskOtherlogin = @"/server/login/doOtherlogin";
 NSString *const kApiTaskDologin = @"/server/login/dologin";//手机登录
 NSString *const kApiTaskGetLoginCode = @"/server/code/getCode";//获取登录验证码
+NSString *const kApiUpdatePhone = @"/server/user/updatePhone";//绑定手机
 
 NSString *const kApiTaskUserGet = @"/server/user/get";
 NSString *const kApiUserEditInfo = @"/server/user/editInfo";
@@ -50,3 +51,4 @@ NSString *const kApiDelUserBank = @"/server/user/delUserBank";
 NSString *const kApiUserCashOut = @"/server/user/cashOut";
 
 NSString *const kApiLXKF = @"/server/sys/lxkf";
+NSString *const kApiqueryMyShare = @"/server/user/queryMyShare";

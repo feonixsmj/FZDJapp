@@ -234,7 +234,7 @@
                   success:(void (^)(NSDictionary *dict))success
                   failure:(void (^)(NSError *error))failure {
     
-    __weak typeof(self) weak_self = self;
+//    __weak typeof(self) weak_self = self;
     
     FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
     NSMutableDictionary *parameter = [NSMutableDictionary dictionary];

@@ -44,7 +44,7 @@
  *  刷新界面数据
  *
  *  @param titleArray 标题数组@[NSString]
- *  @param classNames @[[xxxVC class]]
+ *  
  */
 - (void)reloadDataWith:(NSArray *)titleArray andSubViewdisplayClasses:(NSArray *)classes;
 /**

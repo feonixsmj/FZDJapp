@@ -48,7 +48,7 @@
               success:(void (^)(NSDictionary *dict))success
               failure:(void (^)(NSError *error))failure{
     
-    __weak typeof(self) weak_self = self;
+//    __weak typeof(self) weak_self = self;
     NSMutableDictionary *parameter =
         [NSMutableDictionary dictionaryWithDictionary:parameterDict];
     parameter[@"type"] = @"DL";

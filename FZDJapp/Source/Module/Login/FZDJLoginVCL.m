@@ -190,12 +190,11 @@
     
     FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
     dm.userInfo.loginType = FZDJUserInfoLoginTypePhone;
-#warning 测试写死
     NSMutableDictionary *parameter = [NSMutableDictionary dictionary];
-    parameter[@"code"] = @"1111";
+    parameter[@"code"] = self.codeTextField.text;
     parameter[@"ip"] = [NSString getIPAddress:NO];
     parameter[@"machineCode"] = [FXSystemInfo orginalIdfa];
-    parameter[@"machineCode"] =  @"123";
+//    parameter[@"machineCode"] =  @"123";
     parameter[@"phone"] = self.phoneNumberTextField.text;
     
     __weak typeof(self) weak_self = self;
@@ -217,6 +216,7 @@
     parameter[@"machineCode"] = [FXSystemInfo orginalIdfa];
     parameter[@"nickName"] = dm.userInfo.nickName;
     parameter[@"sex"] = dm.userInfo.sexInteger == 1 ? @"NAN":@"NV";
+    parameter[@"openid"] = dm.userInfo.openid;
     
     NSString *loginType = @"";
     if (dm.userInfo.loginType == FZDJUserInfoLoginTypeQQ) {

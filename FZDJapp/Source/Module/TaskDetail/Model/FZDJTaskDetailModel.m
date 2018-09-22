@@ -63,7 +63,7 @@
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             
             FZDJTaskInfoVo *taskInfo = [FZDJTaskInfoVo mj_objectWithKeyValues:responseObject[@"body"]];
-            _taskInfo = taskInfo;
+            self->_taskInfo = taskInfo;
             [weak_self wrapperItems:taskInfo];
             
             dispatch_async(dispatch_get_main_queue(), ^{

@@ -7,8 +7,12 @@
 //
 
 #import "FZDJBindPhoneNumberVCL.h"
+#import "FZDJBindPhoneNumberModel.h"
+#import "FXSystemInfo.h"
 
 @interface FZDJBindPhoneNumberVCL ()
+@property (weak, nonatomic) IBOutlet UITextField *phoneNumTextField;
+@property (weak, nonatomic) IBOutlet UITextField *codeTextField;
 
 @end
 
@@ -16,7 +20,7 @@
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        
+        self.model = [[FZDJBindPhoneNumberModel alloc] init];
     }
     
     return self;
@@ -34,24 +38,47 @@
     NSInteger tag = button.tag;
     if (tag == 1) {
         //获取验证码
+        [self getCode];
     } else {
         //立即绑定
+        [self bindPhoneNumber];
     }
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)getCode{
+    NSString *phoneNumber = self.phoneNumTextField.text;
+    NSMutableDictionary *parameter = [NSMutableDictionary dictionary];
+    parameter[@"phone"] = phoneNumber;
+    
+    FZDJBindPhoneNumberModel *model = (FZDJBindPhoneNumberModel *)self.model;
+    
+    [model getCodeNumber:parameter success:^(NSDictionary *dict) {
+        
+        [MBProgressHUD wb_showMessage:@"发送成功，请等待"];
+        
+    } failure:^(NSError *error) {
+        
+    }];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - ================ 绑定手机号 ================
+- (void)bindPhoneNumber{
+    [self.view endEditing:YES];
+    
+    FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
+    dm.userInfo.loginType = FZDJUserInfoLoginTypePhone;
+    NSMutableDictionary *parameter = [NSMutableDictionary dictionary];
+    parameter[@"code"] = self.codeTextField.text;
+    parameter[@"userNo"] = dm.userInfo.userNo;
+    parameter[@"phone"] = self.phoneNumTextField.text;
+    
+    __weak typeof(self) weak_self = self;
+    FZDJBindPhoneNumberModel *model = (FZDJBindPhoneNumberModel *)self.model;
+    [model bindPhoneNumber:parameter success:^(NSDictionary *dict) {
+        [weak_self.navigationController popViewControllerAnimated:YES];
+    } failure:^(NSError *error) {
+        
+    }];
 }
-*/
 
 @end

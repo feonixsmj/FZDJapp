@@ -194,7 +194,7 @@ CustomPickViewDelegate>
     muDict[@"personPhoto"] = self.personPhoto;
     muDict[@"bankCardFront"] = self.bankCardFront;
     
-    __weak typeof(self) weak_self = self;
+//    __weak typeof(self) weak_self = self;
     [model bindInfo:muDict success:^(NSDictionary *dict) {
         [MBProgressHUD wb_showSuccess:@"银行卡添加成功"];
 //        [weak_self.navigationController popViewControllerAnimated:YES];
