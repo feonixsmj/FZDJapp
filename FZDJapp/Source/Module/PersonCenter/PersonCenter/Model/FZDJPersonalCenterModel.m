@@ -163,6 +163,7 @@
     
     FZDJPersonalListItem *aboutUsItem = [FZDJPersonalListItem new];
     aboutUsItem.icImageName = @"dj_us_icon";
+    aboutUsItem.bgImageName = dm.userInfo.isInReview ? @"dj_card_top" : @"dj_card_mid";
     aboutUsItem.title = @"关于我们";
     aboutUsItem.hiddenLine = NO;
     aboutUsItem.actionType = FZDJCellActionTypeAboutUs;
@@ -188,6 +189,18 @@
                          blankItem
                          ];
     
+    if (dm.userInfo.isInReview) {
+       listArr =  @[bankItem,
+                  weixinItem,
+                  qqItem,
+                  weiboItem,
+                  blankItem,
+                  
+                  aboutUsItem,
+                  serverItem,
+                  blankItem
+                  ];
+    }
     return listArr;
 }
 

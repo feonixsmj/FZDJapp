@@ -11,4 +11,5 @@
 @interface FZDJPersonalTaskView : UIView
 
 @property (nonatomic, weak) id <FZDJPersonalCellActionProtocol> delegate;
+
 @end

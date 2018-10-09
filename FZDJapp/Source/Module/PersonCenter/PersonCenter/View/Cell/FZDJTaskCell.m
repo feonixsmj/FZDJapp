@@ -12,22 +12,6 @@
 
 @implementation FZDJTaskCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
-
-//    [self customInit];
-}
-
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-//        self.selectionStyle = UITableViewCellSelectionStyleNone;
-//        self.contentView.backgroundColor = [UIColor clearColor];
-//        [self customInit];
-    }
-    return self;
-}
 
 - (void)customInit{
     self.mainView = [[NSBundle mainBundle]
@@ -43,12 +27,6 @@
         make.edges.equalTo(self.contentView).insets(UIEdgeInsetsMake(0, 5, 0, 5));
     }];
     
-//    [self.mainView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.mas_equalTo(self.contentView);
-//        make.left.mas_equalTo(self.contentView.mas_left).offset(10);
-//        make.bottom.mas_equalTo (self.contentView.mas_bottom);
-//        make.right.mas_equalTo (self.contentView.mas_right).offset(-10);
-//    }];
 }
 
 

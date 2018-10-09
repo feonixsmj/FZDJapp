@@ -19,4 +19,5 @@
                failure:(void (^)(NSError *))failure;
 
 
+- (void)loadConfigData;
 @end

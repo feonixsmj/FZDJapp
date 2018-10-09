@@ -33,6 +33,8 @@
     [aCoder encodeObject:self.parentShareCode forKey:@"parentShareCode"];
     [aCoder encodeObject:self.userShareCode forKey:@"userShareCode"];
     [aCoder encodeObject:self.customNickName forKey:@"customNickName"];
+    
+    [aCoder encodeBool:self.isInReview forKey:@"isInReview"];
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder{
@@ -55,6 +57,8 @@
         self.parentShareCode = [aDecoder decodeObjectForKey:@"parentShareCode"];
         self.userShareCode = [aDecoder decodeObjectForKey:@"userShareCode"];
         self.cardNo = [aDecoder decodeObjectForKey:@"cardNo"];
+        
+        self.isInReview = [aDecoder decodeBoolForKey:@"isInReview"];
     }
     return self;
 }

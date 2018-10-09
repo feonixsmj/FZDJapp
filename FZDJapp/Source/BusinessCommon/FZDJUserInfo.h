@@ -37,4 +37,5 @@ typedef NS_ENUM(NSInteger,FZDJUserInfoLoginType) {
 @property (nonatomic, copy) NSString *userShareCode;
 @property (nonatomic, copy) NSString *cardNo;
 
+@property (nonatomic, assign) BOOL isInReview;
 @end

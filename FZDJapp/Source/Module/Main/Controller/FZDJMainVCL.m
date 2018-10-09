@@ -29,6 +29,8 @@ UITableViewDataSource>
 @property (nonatomic, strong) UIBarButtonItem *leftBarItem;
 @property (nonatomic, strong) UIBarButtonItem *rightBarItem;
 @property (nonatomic, strong) SDCycleScrollView *banner;
+
+@property (nonatomic, assign) BOOL isFirstRequest;
 @end
 
 @implementation FZDJMainVCL
@@ -38,6 +40,7 @@ UITableViewDataSource>
     self = [super init];
     if (self) {
         self.model = [[FZDJMainModel alloc] init];
+        self.isFirstRequest = YES;
     }
     return self;
 }
@@ -80,10 +83,17 @@ UITableViewDataSource>
     [model loadItem:nil success:^(NSDictionary *dict) {
         [weak_self endRefreshing];
         [weak_self.tableView reloadData];
+        
+        if (weak_self.isFirstRequest) {
+            [model loadConfigData];
+            weak_self.isFirstRequest = NO;
+        }
     } failure:^(NSError *error) {
         [weak_self endRefreshing];
         
     }];
+    
+    
 }
 
 

@@ -52,3 +52,5 @@ NSString *const kApiUserCashOut = @"/server/user/cashOut";
 
 NSString *const kApiLXKF = @"/server/sys/lxkf";
 NSString *const kApiqueryMyShare = @"/server/user/queryMyShare";
+
+NSString *const kApiConfig = @"/server/sys/iossh";

@@ -55,3 +55,5 @@ UIKIT_EXTERN NSString *const kApiUserCashOut;   //提现
 UIKIT_EXTERN NSString *const kApiLXKF; //获取客户联系方式
 
 UIKIT_EXTERN NSString *const kApiqueryMyShare;// 我的邀请好友列表
+
+UIKIT_EXTERN NSString *const kApiConfig;//config

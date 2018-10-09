@@ -31,9 +31,13 @@
 - (void)loadBannerInfo:(NSDictionary *)parameterDict
                success:(void (^)(NSDictionary *))success
                failure:(void (^)(NSError *))failure {
+    
+    self.request.needEncrypt = YES;
+    self.request.enableShowErrorMsg = NO;
+    
     __weak typeof(self) weak_self = self;
     NSString *url = [NSString stringWithFormat:@"%@%@",kApiDomain,kApiBanner];
-    
+
     [self.request requestPostURL:url parameters:nil success:^(id responseObject) {
     
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -58,7 +62,9 @@
          success:(void (^)(NSDictionary *))success
          failure:(void (^)(NSError *))failure {
     
-
+    self.request.needEncrypt = YES;
+    self.request.enableShowErrorMsg = YES;
+    
     __weak typeof(self) weak_self = self;
     NSString *url = [NSString stringWithFormat:@"%@%@",kApiDomain,kApiTaskQuery];
     
@@ -69,7 +75,6 @@
                            @"userNo":dm.userInfo.userNo,
                            @"deviceType":@"IOS"
                            };
-    
     
     [self.request requestPostURL:url parameters:dict success:^(id responseObject) {
         
@@ -113,5 +118,32 @@
         self.items = muArr;
     }
     
+}
+
+
+- (void)loadConfigData{
+    
+    NSString *url = [NSString stringWithFormat:@"%@%@",kApiDomain,kApiConfig];
+    
+    FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
+
+    self.request.needEncrypt = NO;
+    self.request.enableShowErrorMsg = NO;
+    [self.request requestPostURL:url parameters:@{} success:^(id responseObject) {
+        
+        NSDictionary *dict = responseObject;
+        NSString *body = dict[@"body"];
+        if ([body isEqualToString:@"Y"]) {
+            dm.userInfo.isInReview = YES;
+        } else {
+            dm.userInfo.isInReview = NO;
+        }
+        
+        [dm saveData];
+        
+    } failure:^(NSError *error) {
+        [MBProgressHUD wb_hideHUD];
+    }];
+
 }
 @end

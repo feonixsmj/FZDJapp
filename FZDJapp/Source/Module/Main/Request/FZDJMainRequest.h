@@ -15,6 +15,7 @@
 //- (void)requestByPost:(NSDictionary *)parameterDict
 //              success:(void (^)(id responseObject))success
 //              failure:(void (^)(NSError *error))failure;
+@property (nonatomic, assign) BOOL enableShowErrorMsg;
 
 - (void)requestPostURL:(NSString *)url
             parameters:(NSDictionary *)parameterDict
