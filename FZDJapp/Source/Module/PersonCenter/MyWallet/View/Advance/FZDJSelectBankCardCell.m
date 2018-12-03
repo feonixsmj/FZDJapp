@@ -30,7 +30,12 @@
     }
     _item = item;
     
-    self.iconiMAGE.imageURL = item.iconUrl;
+    if ([item.iconUrl isEqualToString:@"dj_advance_weixin_icon"]) {
+        self.iconiMAGE.image = [UIImage imageNamed:@"dj_advance_weixin_icon"];
+    } else {
+        self.iconiMAGE.imageURL = item.iconUrl;
+    }
+    
     self.bankNameLabel.text = item.bankName;
 }
 @end

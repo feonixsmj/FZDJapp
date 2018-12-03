@@ -7,9 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FZDJMyTaskItem.h"
 
-@class FZDJMyTaskItem;
+@protocol FXMyTaskListCellDelegate <NSObject>
+-(void)gotoAppealDetailPage:(FZDJMyTaskItem *)item;
+
+@end
+
 @interface FXMyTaskListCell : UITableViewCell
 
 @property (nonatomic, strong) FZDJMyTaskItem *item;
+@property (nonatomic, weak) id<FXMyTaskListCellDelegate> delegate;
 @end

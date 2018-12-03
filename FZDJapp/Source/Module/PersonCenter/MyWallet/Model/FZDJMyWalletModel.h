@@ -10,8 +10,11 @@
 #import "FZDJPriceItem.h"
 #import "FZDJCashItem.h"
 #import "FZDJDescItem.h"
+#import "FZDJBanklistItem.h"
 
 @interface FZDJMyWalletModel : FXBaseModel
+
+@property (nonatomic, strong) NSArray<FZDJBanklistItem *> *bankList;
 
 @property (nonatomic, copy) NSString *totalAmount;
 @property (nonatomic, copy) NSString *cashAdvanceDesc;

@@ -72,4 +72,9 @@ NSString *FZDJDataModelSingletonIsNewInstallKey = @"com.dj.newinstall";
     [_userDefault synchronize];
 }
 
+- (void)clearUserData{
+    self.userInfo = [[FZDJUserInfo alloc] init];
+    [self saveUserInfo];
+}
+
 @end

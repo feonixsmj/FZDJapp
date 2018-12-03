@@ -10,11 +10,14 @@
 #import "FXMyTaskListCell.h"
 #import "FZDJMyTaskModel.h"
 #import "FZDJAppealViewController.h"
+#import "FZDJTaskDetailVCL.h"
 
 const NSString *FXTaskCompleted = @"YWC";
 const NSString *FXTaskNoCompleted = @"WWC";
 
-@interface FXMyTaskViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface FXMyTaskViewController ()<UITableViewDelegate,
+UITableViewDataSource,
+FXMyTaskListCellDelegate>
 
 @end
 
@@ -75,17 +78,26 @@ const NSString *FXTaskNoCompleted = @"WWC";
     
     FXMyTaskListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FXMyTaskListCell"];
     FZDJMyTaskItem *item = self.model.items[indexPath.row];
+    cell.delegate = self;
     cell.item = item;
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     FZDJMyTaskItem *item = self.model.items[indexPath.row];
+    FZDJTaskDetailVCL *taskDetailVCL = [[FZDJTaskDetailVCL alloc] init];
+    taskDetailVCL.taskInstNo = item.taskInstNo;
+    
+    [self.navigationController pushViewController:taskDetailVCL animated:YES];
+}
+
+#pragma mark - ================ FXMyTaskListCellDelegate ================
+
+-(void)gotoAppealDetailPage:(FZDJMyTaskItem *)item{
+
     FZDJAppealViewController *appealVCL = [[FZDJAppealViewController alloc] init];
     appealVCL.taskItem = item;
     
     [self.navigationController pushViewController:appealVCL animated:YES];
-    
 }
-
 @end

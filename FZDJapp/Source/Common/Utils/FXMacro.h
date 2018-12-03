@@ -36,7 +36,8 @@
 
 #define FX_NAVIGATIONBAR_TOTAL_SPAGE   (FX_STATUSBAR_SPACE + FX_NAVIGATIONBAR_SPAGE)
 //iPhone X底部栏的高度值
-#define FX_BOTTOM_SPAGE                (34.0f)
+#define FX_BOTTOM_SPAGE                (IS_IPHONE_X ? 34.0f : 0)
+
 // 普通全屏tableview高度
 #define FX_TABLE_HEIGHT                (FX_SCREEN_HEIGHT - FX_NAVIGATIONBAR_TOTAL_SPAGE)
 
@@ -45,8 +46,10 @@
 #define IS_IPHONE5 (IS_SCREEN_4_INCH)
 #define IS_IPHONE6 (IS_SCREEN_47_INCH)
 #define IS_IPHONE6_PLUS (IS_SCREEN_55_INCH)
-#define IS_IPHONE_X (IS_SCREEN_IPHONE_X_58_INCH)
+#define IS_IPHONE_X (IS_SCREEN_IPHONE_X_58_INCH || IS_SCREEN_IPHONE_X_65_INCH ||IS_SCREEN_IPHONE_X_61_INCH)
 
+#define IS_SCREEN_IPHONE_X_65_INCH      ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2688), [[UIScreen mainScreen] currentMode].size) : NO)
+#define IS_SCREEN_IPHONE_X_61_INCH      ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(828, 1792), [[UIScreen mainScreen] currentMode].size) : NO)
 #define IS_SCREEN_IPHONE_X_58_INCH      ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
 #define IS_SCREEN_55_INCH               ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? (CGSizeEqualToSize(CGSizeMake(1125, 2001), [[UIScreen mainScreen] currentMode].size) || CGSizeEqualToSize(CGSizeMake(1242, 2208), [[UIScreen mainScreen] currentMode].size)) : NO)
 #define IS_SCREEN_47_INCH               ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(750, 1334), [[UIScreen mainScreen] currentMode].size) : NO)

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FZDJFriendInvitationCodeVCL">
+            <connections>
+                <outlet property="textFiled" destination="nmu-u7-6Eo" id="qZC-Vj-Ujb"/>
+                <outlet property="view" destination="wES-iJ-IfB" id="HHu-W9-hwV"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="wES-iJ-IfB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NDa-sX-nq4">
+                    <rect key="frame" x="0.0" y="10" width="375" height="50"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dj_edit_close_btn" translatesAutoresizingMaskIntoConstraints="NO" id="3nd-me-RCN">
+                            <rect key="frame" x="349" y="17" width="16" height="16"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="16" id="GKt-z2-NXa"/>
+                                <constraint firstAttribute="height" constant="16" id="Gef-Wt-Ujn"/>
+                            </constraints>
+                        </imageView>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入好友分享码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nmu-u7-6Eo">
+                            <rect key="frame" x="10" y="0.0" width="329" height="50"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="223-on-2j4">
+                            <rect key="frame" x="329" y="0.0" width="46" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="46" id="ZHa-2J-xnh"/>
+                            </constraints>
+                            <connections>
+                                <action selector="btnAction:" destination="-1" eventType="touchUpInside" id="36r-He-pSw"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="223-on-2j4" secondAttribute="bottom" id="6v0-5h-Br1"/>
+                        <constraint firstAttribute="height" constant="50" id="Fml-yf-Wsr"/>
+                        <constraint firstItem="nmu-u7-6Eo" firstAttribute="top" secondItem="NDa-sX-nq4" secondAttribute="top" id="GCF-Sf-4nA"/>
+                        <constraint firstItem="nmu-u7-6Eo" firstAttribute="leading" secondItem="NDa-sX-nq4" secondAttribute="leading" constant="10" id="Ohr-Rx-iec"/>
+                        <constraint firstItem="3nd-me-RCN" firstAttribute="centerY" secondItem="NDa-sX-nq4" secondAttribute="centerY" id="P2O-qt-LHR"/>
+                        <constraint firstAttribute="bottom" secondItem="nmu-u7-6Eo" secondAttribute="bottom" id="ZO7-55-md1"/>
+                        <constraint firstAttribute="trailing" secondItem="3nd-me-RCN" secondAttribute="trailing" constant="10" id="aVR-Rg-sqj"/>
+                        <constraint firstItem="223-on-2j4" firstAttribute="top" secondItem="NDa-sX-nq4" secondAttribute="top" id="b0I-eS-gml"/>
+                        <constraint firstAttribute="trailing" secondItem="223-on-2j4" secondAttribute="trailing" id="iPy-QC-vJw"/>
+                        <constraint firstItem="3nd-me-RCN" firstAttribute="leading" secondItem="nmu-u7-6Eo" secondAttribute="trailing" constant="10" id="wip-Qg-eRc"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gle-Q2-bx1">
+                    <rect key="frame" x="10" y="95" width="355" height="37"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="37" id="BNB-Rq-2iL"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="dj_edit_save_btn"/>
+                    <connections>
+                        <action selector="btnAction:" destination="-1" eventType="touchUpInside" id="XjL-Tk-Mqi"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="gle-Q2-bx1" firstAttribute="leading" secondItem="wES-iJ-IfB" secondAttribute="leading" constant="10" id="8bc-yR-12d"/>
+                <constraint firstItem="NDa-sX-nq4" firstAttribute="leading" secondItem="wES-iJ-IfB" secondAttribute="leading" id="VYa-1B-C0P"/>
+                <constraint firstItem="NDa-sX-nq4" firstAttribute="top" secondItem="wES-iJ-IfB" secondAttribute="top" constant="10" id="huk-mT-Syo"/>
+                <constraint firstAttribute="trailing" secondItem="gle-Q2-bx1" secondAttribute="trailing" constant="10" id="inr-9y-smY"/>
+                <constraint firstAttribute="trailing" secondItem="NDa-sX-nq4" secondAttribute="trailing" id="jqm-Fs-nnt"/>
+                <constraint firstItem="gle-Q2-bx1" firstAttribute="top" secondItem="NDa-sX-nq4" secondAttribute="bottom" constant="35" id="lEf-TS-D9S"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="dj_edit_close_btn" width="16" height="16"/>
+        <image name="dj_edit_save_btn" width="355" height="37"/>
+    </resources>
+</document>

@@ -26,4 +26,9 @@
 - (void)getTask:(NSDictionary *)parameterDict
          success:(void (^)(NSDictionary *))success
          failure:(void (^)(NSError *))failure;
+
+
+- (void)requestMyTask:(NSDictionary *)parameterDict
+              success:(void (^)(NSDictionary *))success
+              failure:(void (^)(NSError *))failure;
 @end

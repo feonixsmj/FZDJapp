@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger, FZDJSelectBankCardViewType){
+    FZDJSelectTypeBank,
+    FZDJSelectTypeWeixin
+};
+
 @protocol FZDJSelectBankCardViewDelegate<NSObject>
 - (void)FZDJSelectBankCardViewDidSelectedIndexPath:(NSIndexPath *)indexPath;
 @end
@@ -21,6 +26,7 @@
 @property (nonatomic, assign)CGFloat contentViewHeight;
 
 @property (nonatomic, strong) NSArray *dataArray;
+@property (nonatomic, assign) FZDJSelectBankCardViewType type;
 /**
  *  pickerView的显示
  */

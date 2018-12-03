@@ -90,7 +90,8 @@
          failure:(void (^)(NSError *))failure{
 //    __weak typeof(self) weak_self = self;
     
-    NSString *url = [NSString stringWithFormat:@"%@%@",kApiDomain,kApiUserCashOut];
+    NSString *url = [NSString stringWithFormat:@"%@%@",kApiDomain,
+                     self.isWeixin ? @"/server/user/cashOutWx" : kApiUserCashOut];
     
     [self.request requestPostURL:url parameters:parameterDict success:^(id responseObject) {
         

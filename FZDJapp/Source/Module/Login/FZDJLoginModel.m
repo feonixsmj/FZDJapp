@@ -76,7 +76,10 @@
          if (state == SSDKResponseStateSuccess){
              
              dm.userInfo.avatarURL = user.icon;
-             dm.userInfo.nickName = user.nickname;
+             if (dm.userInfo.nickName.length == 0) {
+                 dm.userInfo.nickName = user.nickname;
+             }
+             dm.userInfo.customNickName = user.nickname;
              dm.userInfo.openid = user.uid;
              dm.userInfo.sexInteger = 1;
              
@@ -86,6 +89,7 @@
                      dm.userInfo.sexInteger = [dict[@"sex"] integerValue];
                      dm.userInfo.loginType = FZDJUserInfoLoginTypeWechat;
                      dm.userInfo.weixinNickName = user.nickname;
+                     dm.userInfo.weixinOpenid = user.uid;
                  }
                      break;
                  case SSDKPlatformTypeQQ:{
@@ -102,7 +106,7 @@
                  default:
                      break;
              }
-             
+             [dm saveData];
              success(nil);
              
          } else {

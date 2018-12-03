@@ -7,6 +7,7 @@
 //
 
 #import "FXBaseNavigationController.h"
+#import "UIViewController+BackButtonHandler.h"
 
 @interface FXBaseNavigationController ()
 
@@ -14,11 +15,20 @@
 
 @implementation FXBaseNavigationController
 
+- (BOOL)navigationBar:(UINavigationBar *)navigationBar shouldPopItem:(UINavigationItem *)item {
+    UIViewController *vc = [self topViewController];
+    [self popViewControllerAnimated:YES];
+    [vc backButtonAction];
+    return YES;
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self.navigationBar setShadowImage:[UIImage new]];
 }
+
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {

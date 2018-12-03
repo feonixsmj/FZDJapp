@@ -12,12 +12,15 @@
 #import "FZDJCashAdvanceModel.h"
 #import "FZDJSelectBankCardView.h"
 #import "FZDJBankCardVCL.h"
+#import "FZDJLoginModel.h"
+#import "FZDJPersonalCenterModel.h"
 
 @interface FZDJCashAdvanceVCL ()<UITableViewDelegate,
 UITableViewDataSource,
 FZDJSelectBankCardViewDelegate>
 @property (nonatomic, strong) UIButton *statusButton;
 @property (nonatomic, strong) FZDJSelectBankCardView *selectBankCardView;
+@property (nonatomic, strong) FZDJPersonalCenterModel *personalCenterModel;
 @end
 
 @implementation FZDJCashAdvanceVCL
@@ -27,6 +30,7 @@ FZDJSelectBankCardViewDelegate>
     self = [super init];
     if (self) {
         self.model = [FZDJCashAdvanceModel new];
+        self.personalCenterModel = [FZDJPersonalCenterModel new];
     }
     return self;
 }
@@ -61,10 +65,30 @@ FZDJSelectBankCardViewDelegate>
     __weak typeof(self) weak_self = self;
     [self.model loadItem:nil success:^(NSDictionary *dict) {
         [weak_self endRefreshing];
+        if (weak_self.isWeixin) {
+            [weak_self refreshWeixinData];
+        }
         [weak_self.tableView reloadData];
     } failure:^(NSError *error) {
         
     }];
+}
+
+- (void)refreshWeixinData{
+    FZDJCashAdvanceModel *model = (FZDJCashAdvanceModel*)self.model;
+    FZDJCashAdvanceAddCardItem *item = model.items[0];
+    
+    FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
+    if (dm.userInfo.weixinNickName.length > 0) {
+        item.bankDese = dm.userInfo.weixinNickName;
+        item.bankName = @" ";
+        item.isWeixin = YES;
+    } else {
+        //死去绑定
+        item.bankDese = @" ";
+        item.bankName = @"绑定微信号";
+        item.isWeixin = YES;
+    }
 }
 
 - (UIButton *)statusButton{
@@ -99,20 +123,34 @@ FZDJSelectBankCardViewDelegate>
 //    [MBProgressHUD wb_showActivity];
     
     FZDJCashAdvanceModel *model = (FZDJCashAdvanceModel *)self.model;
+    model.isWeixin = self.isWeixin;
+    
     FZDJCashAdvanceAddCardItem *addCardItem = model.items[0];
     FZDJCashAdvanceAmountItem *amountItem = model.items[1];
     
+    FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
     NSMutableDictionary *parameter = [NSMutableDictionary dictionary];
-    parameter[@"userBankNo"] = addCardItem.vo.userBankNo;
-    parameter[@"userNo"] = addCardItem.vo.userNo;
-    parameter[@"amount"] = amountItem.advanceAmount;
     
-//    __weak typeof(self) weak_self = self;
+    if (self.isWeixin) {
+        parameter[@"wxOpen"] = dm.userInfo.weixinOpenid;
+        parameter[@"userNo"] = dm.userInfo.userNo;
+    } else {
+        parameter[@"userBankNo"] = addCardItem.vo.userBankNo;
+        parameter[@"userNo"] = addCardItem.vo.userNo;
+    }
+    
+    CGFloat amount = amountItem.advanceAmount.floatValue;
+    parameter[@"amount"] = @(amount*100);
+    
+    if (amount == 0.0f) {
+        [MBProgressHUD wb_showError:@"请输入正确的金额"];
+        return;
+    }
+    __weak typeof(self) weak_self = self;
     [model addVance:parameter success:^(NSDictionary *dict) {
-//        [weak_self endRefreshing];
         [MBProgressHUD wb_showSuccess:@"操作成功"];
+        [weak_self.navigationController popViewControllerAnimated:YES];
     } failure:^(NSError *error) {
-//        [weak_self endRefreshing];
         [MBProgressHUD wb_showError:error.errorMsg];
     }];
 }
@@ -163,10 +201,42 @@ FZDJSelectBankCardViewDelegate>
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row == 0) {
-        FZDJCashAdvanceModel *model = (FZDJCashAdvanceModel *)self.model;
-        self.selectBankCardView.dataArray = model.bankList;
-        [self.selectBankCardView show];
+        if(self.isWeixin) {
+            FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
+            if (dm.userInfo.weixinNickName.length == 0) {
+                [self bindWeixin];
+            } else {
+                return;
+            }
+            
+        } else {
+            FZDJCashAdvanceModel *model = (FZDJCashAdvanceModel *)self.model;
+            self.selectBankCardView.dataArray = model.bankList;
+            [self.selectBankCardView show];
+        }
     }
+}
+
+#pragma mark - ================ 绑定微信 ================
+- (void)bindWeixin{
+    FZDJLoginModel *loginModel = [FZDJLoginModel new];
+    __weak typeof(self) weak_self = self;
+    [loginModel thirdLoginWithType:SSDKPlatformTypeWechat success:^(NSDictionary *dict) {
+        [weak_self thirdBlind];
+    } failure:^(NSError *error) {
+        
+    }];
+}
+
+- (void)thirdBlind {
+    
+    __weak typeof(self) weak_self = self;
+    [self.personalCenterModel thirdBindWithType:nil success:^(NSDictionary *dict) {
+        [weak_self refreshWeixinData];
+        [weak_self.tableView reloadData];
+    } failure:^(NSError *error) {
+        [MBProgressHUD wb_showError:error.errorMsg];
+    }];
 }
 
 #pragma mark - ================ FZDJSelectBankCardViewDelegate  ================

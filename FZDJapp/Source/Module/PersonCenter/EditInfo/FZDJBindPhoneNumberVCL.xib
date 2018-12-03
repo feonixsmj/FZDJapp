@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FZDJBindPhoneNumberVCL">
             <connections>
                 <outlet property="codeTextField" destination="czi-6g-rMl" id="k42-o0-IMo"/>
+                <outlet property="getCodeButton" destination="TNe-Jy-x7a" id="awg-2o-akx"/>
                 <outlet property="phoneNumTextField" destination="VwN-Fg-Lde" id="20E-x2-S7U"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -88,7 +89,9 @@
                                 <constraint firstAttribute="width" constant="112" id="4kX-Nx-y9i"/>
                                 <constraint firstAttribute="height" constant="30" id="xuI-Zf-4FC"/>
                             </constraints>
-                            <state key="normal" image="dj_bind_btn1"/>
+                            <state key="normal" title="获取验证码">
+                                <color key="titleColor" red="0.096766988489999997" green="0.68457586829999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
                             <connections>
                                 <action selector="buttonAction:" destination="-1" eventType="touchUpInside" id="ZXG-KK-r7a"/>
                             </connections>
@@ -137,9 +140,8 @@
         </view>
     </objects>
     <resources>
-        <image name="dj_86" width="32" height="14"/>
-        <image name="dj_bind_btn1" width="112" height="30"/>
+        <image name="dj_86" width="32.5" height="14"/>
         <image name="dj_bind_btn2" width="355" height="37"/>
-        <image name="dj_bind_btn3" width="15" height="17"/>
+        <image name="dj_bind_btn3" width="15" height="17.5"/>
     </resources>
 </document>

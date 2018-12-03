@@ -14,6 +14,7 @@
 @interface FZDJCashAdvanceModel : FXBaseModel
 
 @property (nonatomic, strong) NSArray<FZDJBanklistItem *> *bankList;
+@property (nonatomic, assign) BOOL isWeixin;
 
 - (void)addVance:(NSDictionary *)parameterDict
          success:(void (^)(NSDictionary *))success

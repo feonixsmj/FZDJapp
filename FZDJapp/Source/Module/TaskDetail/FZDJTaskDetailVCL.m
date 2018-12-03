@@ -37,6 +37,15 @@ const CGFloat FXHeaderImageViewHeight = 194;
     [self loadItem];
 }
 
+- (void)setTaskInstNo:(NSString *)taskInstNo{
+    _taskInstNo = taskInstNo;
+    
+    [self loadItem];
+    if (taskInstNo.length > 0) {
+        self.statusButton.hidden = YES;
+    }
+}
+
 - (instancetype)init
 {
     self = [super init];
@@ -56,15 +65,29 @@ const CGFloat FXHeaderImageViewHeight = 194;
 - (void)loadItem{
     __weak typeof(self) weak_self = self;
     FZDJTaskDetailModel *model = (FZDJTaskDetailModel *)self.model;
-    NSDictionary *parameterDict = @{
-                                    @"taskNo":self.taskNo.length > 0 ? self.taskNo:@""
-                                    };
-    [model loadItem:parameterDict success:^(NSDictionary *dict) {
-        [weak_self refreshView];
-    } failure:^(NSError *error) {
-        
-    }];
+    
+    if (self.taskInstNo.length > 0) {
+        NSDictionary *parameterDict = @{
+                                        @"taskInstNo":self.taskInstNo
+                                        };
+        [model requestMyTask:parameterDict success:^(NSDictionary *dict) {
+            [weak_self refreshView];
+        } failure:^(NSError *error) {
+            
+        }];
+    } else {
+        NSDictionary *parameterDict = @{
+                                        @"taskNo":self.taskNo.length > 0 ? self.taskNo:@""
+                                        };
+        [model loadItem:parameterDict success:^(NSDictionary *dict) {
+            [weak_self refreshView];
+        } failure:^(NSError *error) {
+            
+        }];
+    }
+
 }
+
 
 #pragma mark - ================ 领取任务 ================
 
@@ -193,7 +216,8 @@ const CGFloat FXHeaderImageViewHeight = 194;
     }];
     
     [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.bottom.equalTo(self.view);
+        make.left.right.equalTo(self.view);
+        make.bottom.mas_equalTo(self.view.mas_bottom).offset(-FX_BOTTOM_SPAGE);
         make.height.mas_equalTo(50);
     }];
     

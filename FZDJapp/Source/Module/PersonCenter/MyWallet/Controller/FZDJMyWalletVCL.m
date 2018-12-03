@@ -12,6 +12,7 @@
 #import "FXImageView.h"
 #import "FZDJAmountDetailsVCL.h"
 #import "FZDJCashAdvanceVCL.h"
+#import "FZDJSelectBankCardView.h"
 
 @class FZDJDescribeCell;
 
@@ -220,12 +221,14 @@
 
 @interface FZDJMyWalletVCL ()<UITableViewDelegate,
 UITableViewDataSource,
-FZDJMyWalletCashCellDelegate>
+FZDJMyWalletCashCellDelegate,
+FZDJSelectBankCardViewDelegate>
 
 @property (nonatomic, strong) UIImageView *headerImageView;
 @property (nonatomic, strong) UIView *tableHeaderView;
 @property (nonatomic, strong) UILabel *headerLabel;
 @property (nonatomic, strong) UIBarButtonItem *rightBarItem;
+@property (nonatomic, strong) FZDJSelectBankCardView *selectBankCardView;
 @end
 
 @implementation FZDJMyWalletVCL
@@ -292,6 +295,16 @@ FZDJMyWalletCashCellDelegate>
     [self.tableView registerNib:[UINib nibWithNibName:@"FZDJMyWalletCashCell" bundle:nil]
             forCellReuseIdentifier:@"FZDJMyWalletCashCell"];
     
+}
+
+- (FZDJSelectBankCardView *)selectBankCardView{
+    if (!_selectBankCardView) {
+        FZDJSelectBankCardView *selectBankCardView = [[FZDJSelectBankCardView alloc] init];
+        selectBankCardView.delegate = self;
+        selectBankCardView.type = FZDJSelectTypeWeixin;
+        _selectBankCardView = selectBankCardView;
+    }
+    return _selectBankCardView;
 }
 
 - (UIView *)tableHeaderView{
@@ -402,12 +415,26 @@ FZDJMyWalletCashCellDelegate>
 #pragma mark - ================ CashDelegate ================
 
 - (void)withdrawMoney{
-    NSLog(@"我要提现");
+//    NSLog(@"我要提现");
     FZDJMyWalletModel *model = (FZDJMyWalletModel *)self.model;
     
+//    FZDJCashAdvanceVCL *vcl = [[FZDJCashAdvanceVCL alloc] init];
+//    vcl.totalAmount = model.totalAmount;
+//
+//    [self.navigationController pushViewController:vcl animated:YES];
+    
+    self.selectBankCardView.dataArray = model.bankList;
+    [self.selectBankCardView show];
+}
+
+#pragma mark - ================ FZDJSelectBankCardViewDelegate  ================
+
+- (void)FZDJSelectBankCardViewDidSelectedIndexPath:(NSIndexPath *)indexPath{
+    FZDJMyWalletModel *model = (FZDJMyWalletModel *)self.model;
     FZDJCashAdvanceVCL *vcl = [[FZDJCashAdvanceVCL alloc] init];
     vcl.totalAmount = model.totalAmount;
-    
+    vcl.isWeixin = indexPath.row != 0;
+
     [self.navigationController pushViewController:vcl animated:YES];
 }
 @end

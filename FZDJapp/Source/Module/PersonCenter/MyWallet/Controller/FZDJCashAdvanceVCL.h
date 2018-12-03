@@ -11,4 +11,5 @@
 @interface FZDJCashAdvanceVCL : FXBaseTableViewController
 
 @property (nonatomic, copy) NSString *totalAmount;
+@property (nonatomic, assign) BOOL isWeixin;
 @end

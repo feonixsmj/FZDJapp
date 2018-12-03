@@ -12,6 +12,7 @@
 #import "FXSystemInfo.h"
 #import "NSString+FXCategory.h"
 
+
 @interface FZDJPersonalCenterModel()
 
 @property (nonatomic, strong) FZDJMainRequest *request;
@@ -77,6 +78,8 @@
     userinfo.cardNo = vo.cardNo;
     userinfo.userShareCode = vo.userShareCode;
     userinfo.parentShareCode = vo.parentShareCode;
+    
+    [dm saveData];
 }
 
 - (void)wrapperItems:(FZDJPersonalInfoVo *)vo{
@@ -157,7 +160,7 @@
     shareItem.bgImageName = @"dj_card_top";
     shareItem.title = @"好友分享码";
     shareItem.descStr = dm.userInfo.parentShareCode;
-    shareItem.hiddenArrow = YES;
+    shareItem.hiddenArrow = shareItem.descStr.length > 0 ? YES:NO;
     shareItem.hiddenLine = NO;
     shareItem.actionType = FZDJCellActionTypeFriedShareCode;
     
@@ -255,9 +258,10 @@
     parameter[@"ip"] = [NSString getIPAddress:NO];
     
     parameter[@"machineCode"] = [FXSystemInfo orginalIdfa];
-    parameter[@"nickName"] = dm.userInfo.nickName;
+    parameter[@"nickName"] = dm.userInfo.customNickName;
     parameter[@"sex"] = dm.userInfo.sexInteger == 1 ? @"NAN":@"NV";
     parameter[@"userNo"] = dm.userInfo.userNo;
+    parameter[@"openid"] = dm.userInfo.openid;
     
     NSString *loginType = @"";
     if (dm.userInfo.loginType == FZDJUserInfoLoginTypeQQ) {

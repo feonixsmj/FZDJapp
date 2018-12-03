@@ -21,7 +21,16 @@
     self = [super init];
     if (self) {
         self.request = [[FZDJMainRequest alloc] init];
-    }
+        
+        FZDJBanklistItem *item1 = [FZDJBanklistItem new];
+        item1.bankName = @"银行卡";
+        
+        FZDJBanklistItem *item2 = [FZDJBanklistItem new];
+        item2.bankName = @"微信";
+        item2.iconUrl = @"dj_advance_weixin_icon";
+        self.bankList = @[item1,item2];
+        
+    } 
     return self;
 }
 

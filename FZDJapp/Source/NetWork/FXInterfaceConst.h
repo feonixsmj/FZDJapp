@@ -13,11 +13,10 @@
 UIKIT_EXTERN NSString *const kApiDomain;
 UIKIT_EXTERN NSString *const kCashOutDomain;
 
-
-
 UIKIT_EXTERN NSString *const kApiBanner;
 UIKIT_EXTERN NSString *const kApiTaskQuery;
 UIKIT_EXTERN NSString *const kApiTaskInfo;
+UIKIT_EXTERN NSString *const kApiMyTaskInfo;
 UIKIT_EXTERN NSString *const kApiTaskTakeTask;
 UIKIT_EXTERN NSString *const kApiTaskQueryMyTask;//查询我的任务
 UIKIT_EXTERN NSString *const kApiTaskGetTaskInst;//我的任务详情
@@ -54,6 +53,7 @@ UIKIT_EXTERN NSString *const kApiDelUserBank;   //我的银行卡列表-解除�
 UIKIT_EXTERN NSString *const kApiUserCashOut;   //提现
 UIKIT_EXTERN NSString *const kApiLXKF; //获取客户联系方式
 
-UIKIT_EXTERN NSString *const kApiqueryMyShare;// 我的邀请好友列表
+UIKIT_EXTERN NSString *const kApiqueryMyShare;  //我的邀请好友列表
 
 UIKIT_EXTERN NSString *const kApiConfig;//config
+UIKIT_EXTERN NSString *const kApiEditShareCode; //更新好友分享码

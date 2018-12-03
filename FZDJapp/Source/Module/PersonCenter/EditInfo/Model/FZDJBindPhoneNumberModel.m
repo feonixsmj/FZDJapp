@@ -47,15 +47,17 @@
 - (void)bindPhoneNumber:(NSDictionary *)parameterDict
                 success:(void (^)(NSDictionary *dict))success
                 failure:(void (^)(NSError *error))failure{
-    FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
     NSString *url = [NSString stringWithFormat:@"%@%@",kApiDomain,kApiUpdatePhone];
     
     [self.request requestPostURL:url parameters:parameterDict success:^(id responseObject) {
         
         NSDictionary *dict = (NSDictionary *)responseObject;
-        NSString *userNo = dict[@"body"][@"userNo"];
-
-        success(nil);
+        if ([dict[@"head"][@"respCode"] intValue] == 0) {
+           success(nil);
+        } else {
+            failure(nil);
+        }
+        
     } failure:^(NSError *error) {
         failure(error);
     }];

@@ -30,6 +30,12 @@ typedef NS_ENUM(NSInteger,FZDJUserInfoLoginType) {
 @property (nonatomic, copy) NSString *weixinNickName;
 @property (nonatomic, copy) NSString *qqNickName;
 @property (nonatomic, copy) NSString *sinaNickName;
+
+@property (nonatomic, copy) NSString *weixinOpenid;
+
+/**
+ 临时昵称
+ */
 @property (nonatomic, copy) NSString *customNickName;
 
 

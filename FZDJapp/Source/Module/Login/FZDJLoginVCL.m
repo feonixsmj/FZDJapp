@@ -118,7 +118,14 @@
 
 - (IBAction)getCodeButtonDidClicked:(id)sender {
     
-    [self.getCodeButton setTitle:@"发送中(60s)" forState:UIControlStateNormal];
+    if (self.phoneNumberTextField.text.length == 0) {
+        [MBProgressHUD wb_showError:@"请输入手机号"];
+        return;
+    }
+    
+    [self.getCodeButton setTitle:@"(60s)后重发" forState:UIControlStateNormal];
+    self.getCodeButton.alpha = 0.5;
+//    self.getCodeButton.backgroundColor = [UIColor grayColor];
     self.getCodeButton.userInteractionEnabled = NO;
     
     if (!self.timer) {
@@ -150,7 +157,7 @@
         [self invalidateTimer];
         return;
     }
-    NSString *title = [NSString stringWithFormat:@"发送中(%lds)",self.time];
+    NSString *title = [NSString stringWithFormat:@"(%lds)后重发",self.time];
     [self.getCodeButton setTitle:title forState:UIControlStateNormal];
 }
 
@@ -158,6 +165,8 @@
     if (self.timer) {
         [self.timer invalidate];
         self.timer = nil;
+        self.getCodeButton.alpha = 1;
+//        self.getCodeButton.backgroundColor = [UIColor whiteColor];
         self.getCodeButton.userInteractionEnabled = YES;
     }
 }

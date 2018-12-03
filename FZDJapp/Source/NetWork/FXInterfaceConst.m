@@ -16,6 +16,7 @@ NSString *const kCashOutDomain = @"http://localhost:7002";
 NSString *const kApiBanner = @"/server/slider/query";
 NSString *const kApiTaskQuery = @"/server/task/query";
 NSString *const kApiTaskInfo = @"/server/task/get";
+NSString *const kApiMyTaskInfo = @"/server/task/getTaskInst";
 NSString *const kApiTaskTakeTask = @"/server/task/takeTask";
 NSString *const kApiTaskQueryMyTask = @"/server/task/queryMyTask";
 NSString *const kApiTaskGetTaskInst = @"/server/task/getTaskInst";
@@ -54,3 +55,4 @@ NSString *const kApiLXKF = @"/server/sys/lxkf";
 NSString *const kApiqueryMyShare = @"/server/user/queryMyShare";
 
 NSString *const kApiConfig = @"/server/sys/iossh";
+NSString *const kApiEditShareCode = @"/server/user/editShareCode";

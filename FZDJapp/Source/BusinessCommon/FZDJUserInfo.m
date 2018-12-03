@@ -32,7 +32,7 @@
     
     [aCoder encodeObject:self.parentShareCode forKey:@"parentShareCode"];
     [aCoder encodeObject:self.userShareCode forKey:@"userShareCode"];
-    [aCoder encodeObject:self.customNickName forKey:@"customNickName"];
+    [aCoder encodeObject:self.weixinOpenid forKey:@"weixinOpenid"];
     
     [aCoder encodeBool:self.isInReview forKey:@"isInReview"];
 }
@@ -57,6 +57,7 @@
         self.parentShareCode = [aDecoder decodeObjectForKey:@"parentShareCode"];
         self.userShareCode = [aDecoder decodeObjectForKey:@"userShareCode"];
         self.cardNo = [aDecoder decodeObjectForKey:@"cardNo"];
+        self.weixinOpenid = [aDecoder decodeObjectForKey:@"weixinOpenid"];
         
         self.isInReview = [aDecoder decodeBoolForKey:@"isInReview"];
     }

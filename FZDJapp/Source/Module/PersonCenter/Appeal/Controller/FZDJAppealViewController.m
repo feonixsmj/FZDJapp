@@ -92,7 +92,8 @@ CGFloat const FZDJAppealTaskInfoViewHeight = 111.0f;
     [self.bottomView addSubview:self.statusButton];
     
     [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.bottom.equalTo(self.view);
+        make.left.right.equalTo(self.view);
+        make.bottom.mas_equalTo(self.view.mas_bottom).offset(-FX_BOTTOM_SPAGE);
         make.height.mas_equalTo(50);
     }];
     
@@ -266,15 +267,16 @@ CGFloat const FZDJAppealTaskInfoViewHeight = 111.0f;
     
     FZDJAppealModel *model = (FZDJAppealModel *)self.model;
     
+    __weak typeof(self) weak_self = self;
     [model submitAppeal:parameterDict success:^(NSDictionary *dict) {
         
         hud.mode = MBProgressHUDModeText;
         hud.detailsLabel.text = @"申述成功!";
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)),
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)),
             dispatch_get_main_queue(), ^{
                 [hud hideAnimated:YES];
             });
-        
+        [weak_self.navigationController popViewControllerAnimated:YES];
     } failure:^(NSError *error) {
         [hud hideAnimated:YES];
         hud.detailsLabel.text = @"失败";

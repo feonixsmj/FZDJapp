@@ -18,6 +18,7 @@
 #import "FZDJUploadImageModel.h"
 #import "FZDJEditInfoModel.h"
 #import "FZDJMainVCL.h"
+#import <ShareSDK/ShareSDK.h>
 
 const CGFloat FZDJPersonalInfoCellTotalHeight = 142.0f;
 
@@ -46,6 +47,7 @@ FZDJLoginVCLDelegate>
     self = [super init];
     if (self) {
         self.hiddenNavigationBar = YES;
+//        self.isTransparentBar = YES;
         self.model = [[FZDJPersonalCenterModel alloc] init];
         self.uploadImageModel = [[FZDJUploadImageModel alloc] init];
         self.strategy = [[FZDJPersonalActionStrategy alloc] initWithTarget:self];
@@ -157,7 +159,7 @@ FZDJLoginVCLDelegate>
                    action:@selector(logoutButtonAction)
          forControlEvents:UIControlEventTouchUpInside];;
         
-        CGRect rect = CGRectMake(10, FX_SCREEN_HEIGHT - 10 - 37,
+        CGRect rect = CGRectMake(10, FX_SCREEN_HEIGHT - 10 - 37-FX_BOTTOM_SPAGE,
                                  FX_SCREEN_WIDTH - 10 *2, 37);
         button.frame = rect;
         _statusButton = button;
@@ -168,8 +170,12 @@ FZDJLoginVCLDelegate>
 - (void)logoutButtonAction{
     //退出登录
     FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
-    dm.userInfo.nickName = nil;
-    dm.userInfo.openid = nil;
+
+    [dm clearUserData];
+    
+    [ShareSDK cancelAuthorize:SSDKPlatformTypeQQ];
+    [ShareSDK cancelAuthorize:SSDKPlatformTypeWechat];
+    [ShareSDK cancelAuthorize:SSDKPlatformTypeSinaWeibo];
     
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"FZDJLoginVCL" bundle:nil];
     FZDJLoginVCL *loginVCL = (FZDJLoginVCL *)[storyBoard instantiateInitialViewController];
@@ -181,6 +187,7 @@ FZDJLoginVCLDelegate>
         } else {
             FZDJMainVCL *mainvcl = (FZDJMainVCL *)vcl;
             loginVCL.delegate = mainvcl;
+            [mainvcl.model clean];
             [mainvcl.navigationController presentViewController:loginVCL animated:NO completion:nil];
         }
     }
@@ -250,7 +257,10 @@ FZDJLoginVCLDelegate>
     NSObject *item = self.model.items[indexPath.row];
     if ([item isKindOfClass:[FZDJPersonalListItem class]]) {
         FZDJPersonalListItem *listItem = (FZDJPersonalListItem *) item;
-        [self.strategy personalCellActionForwarder:listItem.actionType];
+        if (!listItem.hiddenArrow) {
+            //隐藏箭头的就不能点
+            [self.strategy personalCellActionForwarder:listItem.actionType];
+        }
     }
 }
 

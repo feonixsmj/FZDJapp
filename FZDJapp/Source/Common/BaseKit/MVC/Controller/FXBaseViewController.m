@@ -43,10 +43,13 @@
     
     if (self.hiddenNavigationBar) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        button.frame = CGRectMake(0, 10, 44, 44);
+        
+        CGFloat x = FX_SCREEN_WIDTH - 49;
+        button.frame = CGRectMake(x, FX_STATUSBAR_SPACE, 44, 44);
 
-        [button setImage:[UIImage imageNamed:@"navigation_close_btn"] forState:UIControlStateNormal];
-        [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        [button setImage:[UIImage imageNamed:@"dj_close_image"] forState:UIControlStateNormal];
+//        button.backgroundColor = [UIColor fx_colorWithHexString:@"0xe6e6e6"];
+        
         [button addTarget:self
                    action:@selector(closePage)
          forControlEvents:UIControlEventTouchUpInside];

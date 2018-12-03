@@ -14,6 +14,7 @@
 @property (nonatomic, copy) NSString *iconUrl;
 @property (nonatomic, copy) NSString *bankName;
 @property (nonatomic, copy) NSString *bankDese;
+@property (nonatomic, assign) BOOL isWeixin;
 
 @property (nonatomic, strong) FZDJBankListInfoVO *vo;
 @end

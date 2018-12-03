@@ -51,6 +51,30 @@
     }];
 }
 
+- (void)requestMyTask:(NSDictionary *)parameterDict
+              success:(void (^)(NSDictionary *))success
+              failure:(void (^)(NSError *))failure{
+    __weak typeof(self) weak_self = self;
+    NSString *url = [NSString stringWithFormat:@"%@%@",kApiDomain,kApiMyTaskInfo];
+    
+    [self.request requestPostURL:url parameters:parameterDict success:^(id responseObject) {
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            
+            FZDJTaskInfoVo *taskInfo = [FZDJTaskInfoVo mj_objectWithKeyValues:responseObject[@"body"]];
+            self->_taskInfo = taskInfo;
+            [weak_self wrapperItems:taskInfo];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                success(nil);
+            });
+        });
+        
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+
 - (void)loadItem:(NSDictionary *)parameterDict
          success:(void (^)(NSDictionary *))success
          failure:(void (^)(NSError *))failure {

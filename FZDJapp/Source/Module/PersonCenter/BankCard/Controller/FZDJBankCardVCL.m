@@ -257,7 +257,8 @@ CustomPickViewDelegate>
                    action:@selector(buttonAction)
          forControlEvents:UIControlEventTouchUpInside];;
         
-        CGRect rect = CGRectMake(10, FX_SCREEN_HEIGHT - FX_NAVIGATIONBAR_TOTAL_SPAGE-57,
+        CGRect rect = CGRectMake(10,
+                                 FX_SCREEN_HEIGHT - FX_NAVIGATIONBAR_TOTAL_SPAGE-57-FX_BOTTOM_SPAGE,
                                  FX_SCREEN_WIDTH - 10 *2, 37);
         button.frame = rect;
         _statusButton = button;

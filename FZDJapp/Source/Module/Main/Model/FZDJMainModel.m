@@ -133,7 +133,7 @@
         
         NSDictionary *dict = responseObject;
         NSString *body = dict[@"body"];
-        if ([body isEqualToString:@"Y"]) {
+        if (![body isKindOfClass:[NSNull class]] && [body isEqualToString:@"Y"]) {
             dm.userInfo.isInReview = YES;
         } else {
             dm.userInfo.isInReview = NO;

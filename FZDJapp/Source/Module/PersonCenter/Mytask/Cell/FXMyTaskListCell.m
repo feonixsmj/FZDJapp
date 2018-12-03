@@ -8,7 +8,6 @@
 
 #import "FXMyTaskListCell.h"
 #import "FXImageView.h"
-#import "FZDJMyTaskItem.h"
 
 @interface FXMyTaskListCell()
 
@@ -82,6 +81,12 @@
             break;
     }
     return @"";
+}
+
+- (IBAction)buttonDidClicked:(id)sender {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(gotoAppealDetailPage:)]) {
+        [self.delegate gotoAppealDetailPage:self.item];
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

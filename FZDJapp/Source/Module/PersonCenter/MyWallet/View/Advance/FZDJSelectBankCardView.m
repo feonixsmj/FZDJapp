@@ -156,6 +156,13 @@
     [self.tableView reloadData];
 }
 
+- (void)setType:(FZDJSelectBankCardViewType)type{
+    if (type == FZDJSelectTypeWeixin) {
+        self.titleLabel.text = @"请选择提现方式";
+    }
+    _type = type;
+}
+
 #pragma mark - ================ UITableViewDelegate ================
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

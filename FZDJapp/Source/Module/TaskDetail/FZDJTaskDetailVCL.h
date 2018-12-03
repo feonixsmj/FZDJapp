@@ -10,5 +10,6 @@
 
 @interface FZDJTaskDetailVCL : FXBaseViewController
 
-@property (nonatomic, strong) NSString *taskNo;
+@property (nonatomic, copy) NSString *taskNo;
+@property (nonatomic, copy) NSString *taskInstNo;
 @end

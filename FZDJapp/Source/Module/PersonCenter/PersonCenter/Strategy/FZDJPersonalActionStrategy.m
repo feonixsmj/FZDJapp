@@ -18,6 +18,7 @@
 #import "FZDJPersonalCenterModel.h"
 #import "FZDJBankCardVCL.h"
 #import "FZDJBankListVCL.h"
+#import "FZDJFriendInvitationCodeVCL.h"
 
 @interface FZDJPersonalActionStrategy ()
 @property (nonatomic, strong) FZDJAppealSelectPhotoStrategy *uploadImgStrategy;
@@ -107,10 +108,21 @@
         }
 
             break;
-        case FZDJCellActionTypeFriedShareCode:
+        case FZDJCellActionTypeFriedShareCode:{
             //好友分享码
-            NSLog(@"好友分享码");
-            break;
+            
+            FZDJFriendInvitationCodeVCL *vcl =
+                [[FZDJFriendInvitationCodeVCL alloc]
+                                initWithNibName:@"FZDJFriendInvitationCodeVCL"
+                                         bundle:[NSBundle mainBundle]];
+            
+            vcl.saveBlock = ^{
+                FZDJPersonalCenterModel *personalCenterModel = (FZDJPersonalCenterModel *)target.model;
+                [personalCenterModel updateData];
+            };
+            [target.navigationController pushViewController:vcl animated:YES];
+        }
+             break;
         case FZDJCellActionTypeAboutUs:{
              //关于我们
             FZDJAboutUsVCL *vcl = [[FZDJAboutUsVCL alloc] initWithNibName:@"FZDJAboutUsVCL" bundle:[NSBundle mainBundle]];

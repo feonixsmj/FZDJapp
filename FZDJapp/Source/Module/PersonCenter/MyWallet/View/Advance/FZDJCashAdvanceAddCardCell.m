@@ -32,6 +32,9 @@
     if (item.iconUrl.length > 0) {
         self.iconImage.imageURL = item.iconUrl;
     }
+    if (item.isWeixin) {
+        self.iconImage.image = [UIImage imageNamed:@"dj_advance_weixin_icon"];
+    }
     
     if (item.bankName.length > 0) {
         self.bankNamelabel.text = item.bankName;
