@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class FZDJMainVCL;
 
 @interface FZDJTabBarController : UITabBarController
+
+- (FZDJMainVCL *)getMainViewController;
 
 @end
 

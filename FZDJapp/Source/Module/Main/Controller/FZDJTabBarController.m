@@ -32,6 +32,10 @@
     return self;
 }
 
+- (FZDJMainVCL *)getMainViewController{
+    return self.mainVCL;
+}
+
 - (void)setUpChildControllers{
     self.mainVCL = [FZDJMainVCL new];
     self.personalCenterVCL = [FZDJPersonalCenterVCL new];

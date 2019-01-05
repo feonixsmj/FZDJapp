@@ -19,6 +19,7 @@
 #import "FZDJEditInfoModel.h"
 #import "FZDJMainVCL.h"
 #import <ShareSDK/ShareSDK.h>
+#import "FZDJTabBarController.h"
 
 const CGFloat FZDJPersonalInfoCellTotalHeight = 142.0f;
 
@@ -159,7 +160,7 @@ FZDJLoginVCLDelegate>
                    action:@selector(logoutButtonAction)
          forControlEvents:UIControlEventTouchUpInside];;
         
-        CGRect rect = CGRectMake(10, FX_SCREEN_HEIGHT - 10 - 37-FX_BOTTOM_SPAGE,
+        CGRect rect = CGRectMake(10, FX_SCREEN_HEIGHT - 10 - 37-FX_BOTTOM_SPAGE - 49,
                                  FX_SCREEN_WIDTH - 10 *2, 37);
         button.frame = rect;
         _statusButton = button;
@@ -180,17 +181,27 @@ FZDJLoginVCLDelegate>
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"FZDJLoginVCL" bundle:nil];
     FZDJLoginVCL *loginVCL = (FZDJLoginVCL *)[storyBoard instantiateInitialViewController];
     
+    FZDJTabBarController *rooterController = (FZDJTabBarController *)[[UIApplication sharedApplication].keyWindow rootViewController];
     
-    for (UIViewController *vcl in self.navigationController.childViewControllers) {
-        if (![vcl isKindOfClass:NSClassFromString(@"FZDJMainVCL")]) {
-            [self.navigationController popViewControllerAnimated:YES];
-        } else {
-            FZDJMainVCL *mainvcl = (FZDJMainVCL *)vcl;
-            loginVCL.delegate = mainvcl;
-            [mainvcl.model clean];
-            [mainvcl.navigationController presentViewController:loginVCL animated:NO completion:nil];
-        }
-    }
+    [rooterController setSelectedIndex:0];
+    
+    FZDJMainVCL *mainVCL = [rooterController getMainViewController];
+    loginVCL.delegate = mainVCL;
+    [mainVCL.model clean];
+    [mainVCL.navigationController presentViewController:loginVCL animated:NO completion:nil];
+    
+    
+    
+//    for (UIViewController *vcl in self.navigationController.childViewControllers) {
+//        if (![vcl isKindOfClass:NSClassFromString(@"FZDJMainVCL")]) {
+//            [self.navigationController popViewControllerAnimated:YES];
+//        } else {
+//            FZDJMainVCL *mainvcl = (FZDJMainVCL *)vcl;
+//            loginVCL.delegate = mainvcl;
+//            [mainvcl.model clean];
+//            [mainvcl.navigationController presentViewController:loginVCL animated:NO completion:nil];
+//        }
+//    }
     
     
 }
