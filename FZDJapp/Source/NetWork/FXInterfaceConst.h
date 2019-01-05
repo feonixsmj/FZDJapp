@@ -57,3 +57,6 @@ UIKIT_EXTERN NSString *const kApiqueryMyShare;  //我的邀请好友列表
 
 UIKIT_EXTERN NSString *const kApiConfig;//config
 UIKIT_EXTERN NSString *const kApiEditShareCode; //更新好友分享码
+
+UIKIT_EXTERN NSString *const kApiShareCodeDesc; //邀请码说明
+UIKIT_EXTERN NSString *const kApiAboutUsDesc;   //关于我们描述

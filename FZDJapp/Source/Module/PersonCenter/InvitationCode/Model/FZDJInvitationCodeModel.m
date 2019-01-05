@@ -26,6 +26,28 @@
     return self;
 }
 
+- (void)loadDesc:(NSDictionary *)parameterDict
+         success:(void (^)(NSDictionary *dict))success
+         failure:(void (^)(NSError *error))failure{
+    __weak typeof(self) weak_self = self;
+    NSString *url = [NSString stringWithFormat:@"%@%@",kApiDomain,kApiShareCodeDesc];
+    
+    [self.request requestPostURL:url parameters:nil success:^(id responseObject) {
+        
+        NSDictionary *dict = (NSDictionary *)responseObject
+        ;
+        
+        NSString *htmlStr = dict[@"body"];
+        weak_self.htmlStr = htmlStr;
+        success(nil);
+        
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+
+    
+}
+
 - (void)loadItem:(NSDictionary *)parameterDict success:(void (^)(NSDictionary *))success failure:(void (^)(NSError *))failure{
     
     __weak typeof(self) weak_self = self;

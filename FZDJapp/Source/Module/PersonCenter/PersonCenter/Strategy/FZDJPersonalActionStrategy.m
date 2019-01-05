@@ -45,24 +45,28 @@
         case FZDJCellActionTypeWallet:{
             //钱包
             FZDJMyWalletVCL *vcl = [[FZDJMyWalletVCL alloc] init];
+            vcl.hidesBottomBarWhenPushed = YES;
             [target.navigationController pushViewController:vcl animated:YES];
         }
             break;
         case FZDJCellActionTypeTask:{
             //任务
             FXMyTaskContainerVCL *task = [[FXMyTaskContainerVCL alloc] init];
+            task.hidesBottomBarWhenPushed = YES;
             [target.navigationController pushViewController:task animated:YES];
         }
             break;
         case FZDJCellActionTypeInvitationCode:{
             //邀请码
             FZDJInvitationCodeVCL *vcl = [[FZDJInvitationCodeVCL alloc] init];
+            vcl.hidesBottomBarWhenPushed = YES;
             [target.navigationController pushViewController:vcl animated:YES];
         }
             break;
         case FZDJCellActionTypeModifyPersonalInfo:{
             //修改个人信息
             FZDJEditInfoVCL *editVCL = [[FZDJEditInfoVCL alloc] initWithNibName:@"FZDJEditInfoVCL" bundle:[NSBundle mainBundle]];
+            editVCL.hidesBottomBarWhenPushed = YES;
             [target.navigationController pushViewController:editVCL animated:YES];
         }
             break;
@@ -75,6 +79,7 @@
             //银行卡
             FZDJBankListVCL *bankListVCL = [FZDJBankListVCL new];
 //            FZDJBankCardVCL *bankCardVCL = [FZDJBankCardVCL new];
+            bankListVCL.hidesBottomBarWhenPushed = YES;
             [target.navigationController pushViewController:bankListVCL animated:YES];
         }
             break;
@@ -126,6 +131,7 @@
         case FZDJCellActionTypeAboutUs:{
              //关于我们
             FZDJAboutUsVCL *vcl = [[FZDJAboutUsVCL alloc] initWithNibName:@"FZDJAboutUsVCL" bundle:[NSBundle mainBundle]];
+            vcl.hidesBottomBarWhenPushed = YES;
             [target.navigationController pushViewController:vcl animated:YES];
         }
             break;

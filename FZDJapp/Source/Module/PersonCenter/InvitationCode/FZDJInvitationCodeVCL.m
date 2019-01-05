@@ -15,6 +15,9 @@ UITableViewDataSource,
 UITextFieldDelegate>
 
 @property (nonatomic, strong) UIView *headerView;
+@property (nonatomic, strong) UILabel *descLabel;
+@property (nonatomic, strong) UIImageView *btnImageView;
+@property (nonatomic, strong) UIImageView *bottomImageView;
 @end
 
 @implementation FZDJInvitationCodeVCL
@@ -48,6 +51,47 @@ UITextFieldDelegate>
     } failure:^(NSError *error) {
         
     }];
+    
+    [model loadDesc:nil success:^(NSDictionary *dict) {
+        [weak_self refreshHeaderView];
+    } failure:^(NSError *error) {
+        
+    }];
+}
+
+- (void)refreshHeaderView{
+    FZDJInvitationCodeModel *model = (FZDJInvitationCodeModel *)self.model;
+    
+    UILabel *desclabel = [[UILabel alloc] init];
+    
+    NSString *htmlStr = model.htmlStr;
+    
+    NSData *htmlData = [htmlStr dataUsingEncoding:NSUnicodeStringEncoding];
+    NSAttributedString *attrStr =
+    [[NSAttributedString alloc] initWithData:htmlData
+                                     options:@{NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType}
+                          documentAttributes:nil error:nil];
+    
+    desclabel.attributedText = attrStr;
+    
+    desclabel.textColor = [UIColor fx_colorWithHexString:@"6D3100"];
+    desclabel.numberOfLines = 0;
+    desclabel.font = [UIFont systemFontOfSize:13];
+    desclabel.top = self.btnImageView.bottom + 22;
+
+    CGFloat padding = 40;
+    CGFloat width = FX_SCREEN_WIDTH - padding;
+    CGSize size = [desclabel sizeThatFits:CGSizeMake(width, CGFLOAT_MAX)];
+    desclabel.size = size;
+    desclabel.centerX = self.btnImageView.centerX;
+    [self.headerView addSubview:desclabel];
+    
+    CGRect rect = self.headerView.frame;
+    rect.size.height = CGRectGetHeight(self.headerView.frame) + size.height + 22 - 40;
+    
+    self.headerView.frame = rect;
+    self.bottomImageView.bottom = self.headerView.bottom;
+    
 }
 
 - (void)initUI{
@@ -69,7 +113,7 @@ UITextFieldDelegate>
 - (UIView *)headerView{
     if (!_headerView) {
         UIView *view = [[UIView alloc] initWithFrame:
-                        CGRectMake(0, 0, FX_SCREEN_WIDTH, FX_SCALE_ZOOM(377))];
+                        CGRectMake(0, 0, FX_SCREEN_WIDTH, FX_SCALE_ZOOM(377-102))];
         view.backgroundColor = [UIColor whiteColor];
         
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:
@@ -94,6 +138,8 @@ UITextFieldDelegate>
         btnImageView.image = [UIImage imageNamed:@"InvitationCode_btn"];
         btnImageView.userInteractionEnabled = YES;
         
+        self.btnImageView = btnImageView;
+        
         FZDJDataModelSingleton *dm =[ FZDJDataModelSingleton sharedInstance];
         UITextField *textField = [[UITextField alloc] init];
         textField.text = dm.userInfo.userShareCode;
@@ -108,19 +154,6 @@ UITextFieldDelegate>
         
         [view addSubview:btnImageView];
         
-        UILabel *desclabel = [[UILabel alloc] init];
-        desclabel.text = @"1st. 点击下方按钮，生成您的专属二维码，分享给好友；\n2nd. 若好友通过二维码成功关注微信公众号，您即可获得相应的积分奖励；\n3rd. 若您的好友再成功邀请其他朋友关注，您还可以获得额外的积分奖励。";
-        desclabel.textColor = [UIColor fx_colorWithHexString:@"6D3100"];
-        desclabel.numberOfLines = 0;
-        desclabel.font = [UIFont systemFontOfSize:13];
-        desclabel.top = btnImageView.bottom + 22;
-        CGFloat padding = 40;
-        CGFloat width = FX_SCREEN_WIDTH - padding;
-        CGSize size = [desclabel sizeThatFits:CGSizeMake(width, CGFLOAT_MAX)];
-        desclabel.size = size;
-        desclabel.centerX = imageView.centerX;
-        [view addSubview:desclabel];
-        
         UIImageView *bottomView = [[UIImageView alloc] init];
         bottomView.image = [UIImage imageNamed:@"InvitationCode_bg2"];
         bottomView.size = CGSizeMake(FX_SCREEN_WIDTH, 19);
@@ -128,6 +161,7 @@ UITextFieldDelegate>
         bottomView.bottom = view.bottom;
         [view addSubview:bottomView];
         
+        self.bottomImageView = bottomView;
         _headerView = view;
     }
     return _headerView;

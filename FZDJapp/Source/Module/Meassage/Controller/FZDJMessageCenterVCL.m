@@ -34,7 +34,7 @@ NSString *const FZDJMessageCenterCellIBName = @"FZDJMessageCenterCell";
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.rightBarButtonItem = self.rightBarItem;
-    self.title =  @"消息中心";
+    self.title =  @"消息";
     
     self.tableView.frame = CGRectMake(0, 0, FX_SCREEN_WIDTH, FX_TABLE_HEIGHT);
     self.tableView.delegate = self;

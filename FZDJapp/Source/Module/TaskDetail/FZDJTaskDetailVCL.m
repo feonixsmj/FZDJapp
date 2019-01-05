@@ -210,9 +210,10 @@ const CGFloat FXHeaderImageViewHeight = 194;
 
 - (void)layoutView{
     [self.htmlLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.headerView.mas_bottom);
-        make.width.mas_equalTo(FX_SCREEN_WIDTH);
-        make.left.equalTo(self.scrollView);
+        make.top.equalTo(self.headerView.mas_bottom).offset(20);
+        make.left.mas_equalTo(self.scrollView.mas_left).offset(20);
+        make.width.mas_equalTo(self.scrollView.width - 40);
+        make.bottom.mas_equalTo(self.scrollView);
     }];
     
     [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -224,6 +225,7 @@ const CGFloat FXHeaderImageViewHeight = 194;
     [self.statusButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.bottomView).insets(UIEdgeInsetsMake(7, 10, 7, 10));
     }];
+    
 }
 
 #pragma mark - ================ Lazzy Load ================

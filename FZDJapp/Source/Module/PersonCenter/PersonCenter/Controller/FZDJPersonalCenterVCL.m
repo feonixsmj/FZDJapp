@@ -66,7 +66,7 @@ FZDJLoginVCLDelegate>
     // Do any additional setup after loading the view.
     
     self.view.backgroundColor = [UIColor fx_colorWithHexString:@"F5F5F5"];
-    self.title = @"个人中心";
+//    self.title = @"个人中心";
     self.dontNeedRefresh = YES;
     
     [self initUI];
@@ -96,7 +96,7 @@ FZDJLoginVCLDelegate>
     [self.view addSubview:self.headerImageView];
     
     [self addTableView];
-    [self bringCloseButtonToFront];
+//    [self bringCloseButtonToFront];
     
     [self.view addSubview:self.statusButton];
     

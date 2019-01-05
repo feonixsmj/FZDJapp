@@ -56,3 +56,5 @@ NSString *const kApiqueryMyShare = @"/server/user/queryMyShare";
 
 NSString *const kApiConfig = @"/server/sys/iossh";
 NSString *const kApiEditShareCode = @"/server/user/editShareCode";
+NSString *const kApiShareCodeDesc = @"/server/sys/yqsm";
+NSString *const kApiAboutUsDesc = @"/server/sys/gywm";

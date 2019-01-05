@@ -120,12 +120,10 @@ UITableViewDataSource>
 }
 
 - (void)initUI{
-//    [self setNavigationBarBackgroundImage];
     
     self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationItem.leftBarButtonItem = self.leftBarItem;
-    self.navigationItem.rightBarButtonItem = self.rightBarItem;
-//    [self.view addSubview:self.banner];
+//    self.navigationItem.leftBarButtonItem = self.leftBarItem;
+//    self.navigationItem.rightBarButtonItem = self.rightBarItem;
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -261,6 +259,7 @@ UITableViewDataSource>
     FZDJMainItem *item = self.model.items[indexPath.row];
     FZDJTaskDetailVCL *taskDetailVCL = [[FZDJTaskDetailVCL alloc] init];
     taskDetailVCL.taskNo = item.taskNo;
+    taskDetailVCL.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:taskDetailVCL animated:YES];
 }
 

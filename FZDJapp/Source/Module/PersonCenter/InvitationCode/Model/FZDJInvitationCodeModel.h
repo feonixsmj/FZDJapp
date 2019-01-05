@@ -11,4 +11,9 @@
 
 @interface FZDJInvitationCodeModel : FXBaseModel
 
+@property (nonatomic, copy) NSString *htmlStr;
+
+- (void)loadDesc:(NSDictionary *)parameterDict
+         success:(void (^)(NSDictionary *dict))success
+         failure:(void (^)(NSError *error))failure;
 @end

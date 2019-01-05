@@ -129,31 +129,31 @@
     weixinItem.hiddenLine = NO;
     weixinItem.actionType = FZDJCellActionTypeWeixin;
     
-    FZDJPersonalListItem *qqItem = [FZDJPersonalListItem new];
-    qqItem.icImageName = @"dj_qq_icon";
-    qqItem.title = @"QQ";
-    if (dm.userInfo.qqNickName.length > 0) {
-        qqItem.descStr = dm.userInfo.qqNickName;
-        qqItem.hiddenArrow = YES;
-    } else {
-        qqItem.descStr = @"去绑定";
-        qqItem.hiddenArrow = NO;
-    }
-    qqItem.hiddenLine = NO;
-    qqItem.actionType = FZDJCellActionTypeQQ;
+//    FZDJPersonalListItem *qqItem = [FZDJPersonalListItem new];
+//    qqItem.icImageName = @"dj_qq_icon";
+//    qqItem.title = @"QQ";
+//    if (dm.userInfo.qqNickName.length > 0) {
+//        qqItem.descStr = dm.userInfo.qqNickName;
+//        qqItem.hiddenArrow = YES;
+//    } else {
+//        qqItem.descStr = @"去绑定";
+//        qqItem.hiddenArrow = NO;
+//    }
+//    qqItem.hiddenLine = NO;
+//    qqItem.actionType = FZDJCellActionTypeQQ;
     
-    FZDJPersonalListItem *weiboItem = [FZDJPersonalListItem new];
-    weiboItem.icImageName = @"dj_weibo_icon";
-    weiboItem.bgImageName = @"dj_card_bottom";
-    weiboItem.title = @"微博";
-    if (dm.userInfo.sinaNickName.length > 0) {
-        weiboItem.descStr = dm.userInfo.sinaNickName;
-        weiboItem.hiddenArrow = YES;
-    } else {
-        weiboItem.descStr = @"去绑定";
-        weiboItem.hiddenArrow = NO;
-    }
-    weiboItem.actionType = FZDJCellActionTypeWeibo;
+//    FZDJPersonalListItem *weiboItem = [FZDJPersonalListItem new];
+//    weiboItem.icImageName = @"dj_weibo_icon";
+//    weiboItem.bgImageName = @"dj_card_bottom";
+//    weiboItem.title = @"微博";
+//    if (dm.userInfo.sinaNickName.length > 0) {
+//        weiboItem.descStr = dm.userInfo.sinaNickName;
+//        weiboItem.hiddenArrow = YES;
+//    } else {
+//        weiboItem.descStr = @"去绑定";
+//        weiboItem.hiddenArrow = NO;
+//    }
+//    weiboItem.actionType = FZDJCellActionTypeWeibo;
     
     FZDJPersonalListItem *shareItem = [FZDJPersonalListItem new];
     shareItem.icImageName = @"dj_share_icon";
@@ -183,8 +183,8 @@
 
     NSArray *listArr = @[bankItem,
                          weixinItem,
-                         qqItem,
-                         weiboItem,
+//                         qqItem,
+//                         weiboItem,
                          blankItem,
                          shareItem,
                          aboutUsItem,
@@ -195,8 +195,8 @@
     if (dm.userInfo.isInReview) {
        listArr =  @[bankItem,
                   weixinItem,
-                  qqItem,
-                  weiboItem,
+//                  qqItem,
+//                  weiboItem,
                   blankItem,
                   
                   aboutUsItem,

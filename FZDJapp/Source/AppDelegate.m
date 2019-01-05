@@ -11,6 +11,7 @@
 #import "FXBaseNavigationController.h"
 #import <PPNetworkHelper/PPNetworkHelper.h>
 #import "FZDJDataModelSingleton.h"
+#import "FZDJTabBarController.h"
 
 #import <ShareSDK/ShareSDK.h>
 #import <ShareSDKConnector/ShareSDKConnector.h>
@@ -42,7 +43,9 @@
     FXBaseNavigationController *navigationController = [[FXBaseNavigationController alloc]
         initWithRootViewController:mainVCL];
     
-    self.window.rootViewController = navigationController;
+    FZDJTabBarController *tabbarController = [FZDJTabBarController new];
+    
+    self.window.rootViewController = tabbarController;
     [self.window makeKeyAndVisible];
     return YES;
 }
