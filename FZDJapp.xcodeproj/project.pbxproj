@@ -36,6 +36,9 @@
 		440536F720F51181006C7AFB /* FZDJAmountDetailsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 440536F620F51181006C7AFB /* FZDJAmountDetailsItem.m */; };
 		440536FB20F511AD006C7AFB /* FZDJAmountDetailsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 440536F920F511AD006C7AFB /* FZDJAmountDetailsCell.m */; };
 		440536FC20F511AD006C7AFB /* FZDJAmountDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 440536FA20F511AD006C7AFB /* FZDJAmountDetailsCell.xib */; };
+		4406678E21E6658700CE51A7 /* UITabBar+FXBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 4406678D21E6658700CE51A7 /* UITabBar+FXBadge.m */; };
+		4406679121E667CD00CE51A7 /* FXBadgeImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4406679021E667CD00CE51A7 /* FXBadgeImageView.m */; };
+		4406679421E682BD00CE51A7 /* FZDJTabBarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4406679321E682BD00CE51A7 /* FZDJTabBarModel.m */; };
 		4412FFC520E3DD6400E7692A /* FXBaseStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4412FFC420E3DD6400E7692A /* FXBaseStrategy.m */; };
 		4412FFC920E3DDA500E7692A /* FXCaremaPhotoStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4412FFC820E3DDA500E7692A /* FXCaremaPhotoStrategy.m */; };
 		4412FFCB20E3DE8600E7692A /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4412FFCA20E3DE8500E7692A /* MobileCoreServices.framework */; };
@@ -269,6 +272,12 @@
 		440536F820F511AD006C7AFB /* FZDJAmountDetailsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJAmountDetailsCell.h; sourceTree = "<group>"; };
 		440536F920F511AD006C7AFB /* FZDJAmountDetailsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJAmountDetailsCell.m; sourceTree = "<group>"; };
 		440536FA20F511AD006C7AFB /* FZDJAmountDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FZDJAmountDetailsCell.xib; sourceTree = "<group>"; };
+		4406678C21E6658700CE51A7 /* UITabBar+FXBadge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITabBar+FXBadge.h"; sourceTree = "<group>"; };
+		4406678D21E6658700CE51A7 /* UITabBar+FXBadge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITabBar+FXBadge.m"; sourceTree = "<group>"; };
+		4406678F21E667CD00CE51A7 /* FXBadgeImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FXBadgeImageView.h; sourceTree = "<group>"; };
+		4406679021E667CD00CE51A7 /* FXBadgeImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FXBadgeImageView.m; sourceTree = "<group>"; };
+		4406679221E682BD00CE51A7 /* FZDJTabBarModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJTabBarModel.h; sourceTree = "<group>"; };
+		4406679321E682BD00CE51A7 /* FZDJTabBarModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJTabBarModel.m; sourceTree = "<group>"; };
 		4412FFC320E3DD6400E7692A /* FXBaseStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBaseStrategy.h; sourceTree = "<group>"; };
 		4412FFC420E3DD6400E7692A /* FXBaseStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBaseStrategy.m; sourceTree = "<group>"; };
 		4412FFC720E3DDA500E7692A /* FXCaremaPhotoStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXCaremaPhotoStrategy.h; sourceTree = "<group>"; };
@@ -1487,6 +1496,8 @@
 				44ACA28B20EA6A9A00414E9A /* Item */,
 				44ACA28F20EA6ABC00414E9A /* FZDJMainModel.h */,
 				44ACA29020EA6ABC00414E9A /* FZDJMainModel.m */,
+				4406679221E682BD00CE51A7 /* FZDJTabBarModel.h */,
+				4406679321E682BD00CE51A7 /* FZDJTabBarModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1673,6 +1684,8 @@
 				44455AAC210A3629008A88E6 /* NSDate+FXExtention.m */,
 				441905A4213EF4DC000A2870 /* NSError+FXExtension.h */,
 				441905A5213EF4DC000A2870 /* NSError+FXExtension.m */,
+				4406678C21E6658700CE51A7 /* UITabBar+FXBadge.h */,
+				4406678D21E6658700CE51A7 /* UITabBar+FXBadge.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1708,6 +1721,8 @@
 			children = (
 				44E9B5A920E0D62E00D00E4D /* FXImageView.h */,
 				44E9B5AA20E0D62E00D00E4D /* FXImageView.m */,
+				4406678F21E667CD00CE51A7 /* FXBadgeImageView.h */,
+				4406679021E667CD00CE51A7 /* FXBadgeImageView.m */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -2002,6 +2017,7 @@
 				44047EC020F2785500CFEBB3 /* FZDJMyWalletModel.m in Sources */,
 				44AEB95C2102212A00D2D191 /* FXCrypto.m in Sources */,
 				44047EA720F24F1B00CFEBB3 /* FZDJPersonalActionStrategy.m in Sources */,
+				4406678E21E6658700CE51A7 /* UITabBar+FXBadge.m in Sources */,
 				44047E8D20F1495400CFEBB3 /* FZDJPersonalCenterModel.m in Sources */,
 				4439582C20FF9B57003F7AB5 /* FZDJInvitationCodeModel.m in Sources */,
 				44455AAD210A3629008A88E6 /* NSDate+FXExtention.m in Sources */,
@@ -2059,6 +2075,7 @@
 				447002D921077FB300D4E93E /* FZDJUserInfo.m in Sources */,
 				44047EA320F2450800CFEBB3 /* FZDJPersonalBlankItem.m in Sources */,
 				44E9B5AB20E0D62E00D00E4D /* FXImageView.m in Sources */,
+				4406679421E682BD00CE51A7 /* FZDJTabBarModel.m in Sources */,
 				44455AA1210A23F0008A88E6 /* FZDJBannerListVo.m in Sources */,
 				44346AC7210F4B3400868FC1 /* FZDJAppealTaskInfoView.m in Sources */,
 				446393AF213C655700709CE2 /* FZDJBankInfoVO.m in Sources */,
@@ -2115,6 +2132,7 @@
 				44047E7E20F12EA400CFEBB3 /* FZDJTaskCell.m in Sources */,
 				44ACA29A20EA6B7A00414E9A /* FZDJMainCell.m in Sources */,
 				44D23B5F2111F09000285A40 /* FZDJSelectPhotoView.m in Sources */,
+				4406679121E667CD00CE51A7 /* FXBadgeImageView.m in Sources */,
 				44B1E5072114B63E0058A4A0 /* FZDJAppealHistoryItem.m in Sources */,
 				44B1E50A2114B8690058A4A0 /* FZDJAppealHistoryListVo.m in Sources */,
 				440536F720F51181006C7AFB /* FZDJAmountDetailsItem.m in Sources */,

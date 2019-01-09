@@ -28,6 +28,7 @@
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
         [self customInit];
     }
     return self;
@@ -96,7 +97,8 @@
     CGFloat padding = 17.0f;
     CGSize size = [label sizeThatFits:CGSizeMake(FX_SCREEN_WIDTH - padding*2,
                                                  CGFLOAT_MAX)];
-    CGFloat height = ceil(size.height + 63.0f);
+    CGFloat blankHeight = 40.0f;
+    CGFloat height = ceil(size.height + 63.0f + blankHeight);
     return height;
 }
 
@@ -315,7 +317,8 @@ FZDJSelectBankCardViewDelegate>
         _tableHeaderView.frame = CGRectMake(0, 0, FX_SCREEN_WIDTH,
                                             FX_SCALE_ZOOM(195)-FX_NAVIGATIONBAR_TOTAL_SPAGE);
         
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 30, FX_SCREEN_WIDTH, 30)];
+        CGFloat y = FX_SCREEN_WIDTH == 320 ? 10 : 30;
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, y, FX_SCREEN_WIDTH, 30)];
         label.textColor = [UIColor whiteColor];
         label.text = @"";
         label.textAlignment = NSTextAlignmentCenter;
@@ -392,7 +395,15 @@ FZDJSelectBankCardViewDelegate>
         FZDJDescribeCell *cell = [tableView
                         dequeueReusableCellWithIdentifier:@"FZDJDescribeCell"];
         FZDJMyWalletModel *model = (FZDJMyWalletModel *)self.model;
-        cell.descLabel.text = model.cashAdvanceDesc;
+        NSString *htmlStr = model.cashAdvanceDesc;
+        NSData *htmlData = [htmlStr dataUsingEncoding:NSUnicodeStringEncoding];
+        NSAttributedString *attrStr =
+        [[NSAttributedString alloc] initWithData:htmlData
+                                         options:@{NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType}
+                              documentAttributes:nil error:nil];
+        
+//        weak_self.contentLabel.attributedText = attrStr;
+        cell.descLabel.attributedText = attrStr;
         return cell;
     }
     
@@ -407,7 +418,15 @@ FZDJSelectBankCardViewDelegate>
         return 75;
     } else{
         FZDJDescribeCell *cell = (FZDJDescribeCell *)[self.tableView dequeueReusableCellWithIdentifier:@"FZDJDescribeCell"];
-        CGFloat height =  [cell getHeight];
+        FZDJMyWalletModel *model = (FZDJMyWalletModel *)self.model;
+        NSString *htmlStr = model.cashAdvanceDesc;
+        NSData *htmlData = [htmlStr dataUsingEncoding:NSUnicodeStringEncoding];
+        NSAttributedString *attrStr =
+        [[NSAttributedString alloc] initWithData:htmlData
+                                         options:@{NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType}
+                              documentAttributes:nil error:nil];
+        cell.descLabel.attributedText = attrStr;
+        CGFloat height = [cell getHeight];
         return height;
     }
 }

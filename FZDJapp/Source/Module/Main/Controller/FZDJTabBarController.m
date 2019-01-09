@@ -12,25 +12,18 @@
 #import "FZDJMessageCenterVCL.h"
 #import "FXMyTaskContainerVCL.h"
 #import "FXBaseNavigationController.h"
+#import "UITabBar+FXBadge.h"
+#import "FZDJTabBarModel.h"
 
-@interface FZDJTabBarController ()
+@interface FZDJTabBarController ()<UITabBarControllerDelegate>
 @property (nonatomic, strong) FZDJMainVCL *mainVCL;
 @property (nonatomic, strong) FZDJPersonalCenterVCL *personalCenterVCL;
 @property (nonatomic, strong) FZDJMessageCenterVCL *messageCenterVCL;
 @property (nonatomic, strong) FXMyTaskContainerVCL *myTaskVCL;
-
+@property (nonatomic, strong) FZDJTabBarModel *model;
 @end
 
 @implementation FZDJTabBarController
-
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-
-    }
-    return self;
-}
 
 - (FZDJMainVCL *)getMainViewController{
     return self.mainVCL;
@@ -72,15 +65,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
-//    self.tabBar.backgroundColor = [UIColor redColor];
+    self.delegate = self;
     [UITabBar appearance].translucent = NO;
     [[UITabBar appearance] setBackgroundColor:[UIColor fx_colorWithHexString:@"#666666"]];
     [self setUpChildControllers];
     
+    [self loadUnreadMessage];
 }
 
+
+- (void)loadUnreadMessage{
+    self.model = [FZDJTabBarModel new];
+    __weak typeof(self) weak_self = self;
+    
+    [self.model loadItem:nil success:^(NSDictionary *dict) {
+        NSNumber *count = dict[@"count"];
+        [weak_self.tabBar showBageOnItemIndex:2 number:count.integerValue];
+    } failure:^(NSError *error) {
+        
+    }];
+}
 
 
 - (void)setTabBarItem:(UITabBarItem *)tabbarItem
@@ -88,8 +93,8 @@
         selectedImage:(NSString *)selectedImage
           normalImage:(NSString *)unselectedImage{
     
-    UIColor *unselectColor = [UIColor fx_colorWithHexString:@"0x333333"];
-    UIColor *selectColor = [UIColor fx_colorWithHexString:@"0x1296DB"];
+//    UIColor *unselectColor = [UIColor fx_colorWithHexString:@"0x333333"];
+//    UIColor *selectColor = [UIColor fx_colorWithHexString:@"0x1296DB"];
     
     tabbarItem.title = title;
     tabbarItem.image = [[UIImage imageNamed:unselectedImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
@@ -107,6 +112,22 @@
 //    [tabbarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:selectColor,
 //                                            NSFontAttributeName:[UIFont systemFontOfSize:15]}
 //                                             forState:UIControlStateSelected];
+}
+
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
+    
+    UIViewController * rootViewController;
+    if ([viewController isKindOfClass:[UINavigationController class]]) {
+        UINavigationController * navigationController = (UINavigationController*)viewController;
+        rootViewController = navigationController.visibleViewController;
+    } else {
+        rootViewController = viewController;
+    }
+    
+    if ([rootViewController isEqual:self.messageCenterVCL]) {
+        [self.tabBar hideBageOnItemIndex:2];
+    }
 }
 
 @end

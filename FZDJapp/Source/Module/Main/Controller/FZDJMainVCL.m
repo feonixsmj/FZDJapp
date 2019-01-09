@@ -252,6 +252,8 @@ UITableViewDataSource>
         label.textColor = [UIColor fx_colorWithHexString:@"0xbfbfbf"];
         [nodataView addSubview:label];
         
+        nodataView.userInteractionEnabled = NO;
+        
         _nodataView = nodataView;
     }
     

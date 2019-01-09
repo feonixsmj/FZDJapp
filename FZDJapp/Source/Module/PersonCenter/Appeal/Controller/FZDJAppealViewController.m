@@ -55,6 +55,7 @@ CGFloat const FZDJAppealTaskInfoViewHeight = 111.0f;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.dontNeedRefresh = YES;
     self.title = @"申述";
     self.view.backgroundColor = [UIColor fx_colorWithHexString:@"F5F5F5"];
     [self createUI];

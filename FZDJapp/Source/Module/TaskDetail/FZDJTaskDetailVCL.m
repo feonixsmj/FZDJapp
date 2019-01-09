@@ -43,6 +43,7 @@ const CGFloat FXHeaderImageViewHeight = 194;
     [self loadItem];
     if (taskInstNo.length > 0) {
         self.statusButton.hidden = YES;
+        self.bottomView.hidden = YES;
     }
 }
 
@@ -133,7 +134,7 @@ const CGFloat FXHeaderImageViewHeight = 194;
 //    [self.webView loadHTMLString:model.item.taskContent baseURL:nil];
     
     NSString *htmlStr = model.item.taskContent;
-//    htmlStr =  @"<p><span style=\"color: #FF8503; font-family: 'microsoft yahei', simhei;font-size: 16px; line-height: 28.8px; text-indent: 30px;\">今日，GMIC 2016正式在北京开幕，开幕仪式上，中关村发展集团总经理周云帆作了致辞演讲，他表示，“据统计2015年仅在这一年里面，中关村新创办的科技型企业达到了2.1万余家，很大一部分都是“互联网+”的企业。中关村的建设目标是到2020年要建设成为具有全球影响力的科技创新中心。”</span></p>";
+    htmlStr =  @"<p><strong>任务目标：升级城堡到11级</strong></p><p><strong>任务奖励</strong>：<br/></p><p>1，完成任务自动获得奖励（立返)</p><p>2，如果未获得奖励，点击申诉按钮提交对应截图给客服申诉</p><p><strong>注意事项</strong>：<br/></p><p>1，苹果仅限WIFI下载，安卓4G和WIFI均可</p><p>2，领取任务后请立即下载游戏，下载过程中不得中断或者更换网络</p><p>3，任务期间不得卸载游戏或者更换ID</p><p><strong>任务流程</strong>：<br/></p><p>1，加入联盟可获得200水晶，花费500水晶可购买VIP5</p><p>2，城堡4级之后，左侧会出现13D任务，尽量完成，有助于加快完成速度</p><p>3，购买礼包可大大加快升级速度，建议购买6元和30元得【赢在起跑点】礼包</p>";
     
     NSData *htmlData = [htmlStr dataUsingEncoding:NSUnicodeStringEncoding];
     NSAttributedString *attrStr =
@@ -185,7 +186,8 @@ const CGFloat FXHeaderImageViewHeight = 194;
 #pragma mark - ================ 创建UI ================
 
 - (void)createWebView{
-    CGRect rect = CGRectMake(0, 0, FX_SCREEN_WIDTH, FX_TABLE_HEIGHT - 50);
+    CGFloat height = self.statusButton.hidden ? FX_TABLE_HEIGHT : FX_TABLE_HEIGHT-50;
+    CGRect rect = CGRectMake(0, 0, FX_SCREEN_WIDTH, height);
 //    UIWebView *webView = [[UIWebView alloc] initWithFrame:rect];
     
 //    NSURL *url = [NSURL URLWithString:[@"http://www.baidu.com" stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
@@ -196,6 +198,7 @@ const CGFloat FXHeaderImageViewHeight = 194;
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:rect];
     scrollView.backgroundColor = [UIColor whiteColor];
     scrollView.alwaysBounceVertical = YES;
+    scrollView.contentInset = UIEdgeInsetsMake(0, 0, 50, 0);
     
     [scrollView addSubview:self.headerView];
     self.scrollView = scrollView;

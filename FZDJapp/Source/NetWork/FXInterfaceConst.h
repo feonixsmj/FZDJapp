@@ -60,3 +60,4 @@ UIKIT_EXTERN NSString *const kApiEditShareCode; //更新好友分享码
 
 UIKIT_EXTERN NSString *const kApiShareCodeDesc; //邀请码说明
 UIKIT_EXTERN NSString *const kApiAboutUsDesc;   //关于我们描述
+UIKIT_EXTERN NSString *const kApiUnreadMessageCount;  //首页查询是否有未读消息

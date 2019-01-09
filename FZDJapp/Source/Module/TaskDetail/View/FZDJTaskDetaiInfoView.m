@@ -18,6 +18,8 @@ const CGFloat FZDJTaskDetaiProgressViewWidth = 121.0;
 
 @property (weak, nonatomic) IBOutlet UIView *progressView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *progressWidthConst;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *progressMainWidthConst;
+
 @property (weak, nonatomic) IBOutlet UILabel *countLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *beginTimeLabel;
@@ -51,7 +53,12 @@ const CGFloat FZDJTaskDetaiProgressViewWidth = 121.0;
     self.beginTimeLabel.text = item.beginTimeText;
     self.endTimeLabel.text = item.endTimeText;
     
-    self.progressWidthConst.constant = ceil(item.persent/100.0f * FZDJTaskDetaiProgressViewWidth);
+    CGFloat width = FX_SCALE_ZOOM(FZDJTaskDetaiProgressViewWidth);
+    if (FX_SCREEN_WIDTH == 320) {
+        width *= 0.8;
+    }
+    self.progressMainWidthConst.constant = width;
+    self.progressWidthConst.constant = ceil(item.persent/100.0f * width);
 }
 
 @end

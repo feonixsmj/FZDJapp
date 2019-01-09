@@ -119,6 +119,7 @@ FZDJLoginVCLDelegate>
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 49, 0);
     [self.view addSubview:self.tableView];
 }
 
