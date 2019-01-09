@@ -29,6 +29,7 @@ UITableViewDataSource>
 @property (nonatomic, strong) UIBarButtonItem *leftBarItem;
 @property (nonatomic, strong) UIBarButtonItem *rightBarItem;
 @property (nonatomic, strong) SDCycleScrollView *banner;
+@property (nonatomic, strong) UIView *nodataView;
 
 @property (nonatomic, assign) BOOL isFirstRequest;
 @end
@@ -67,6 +68,15 @@ UITableViewDataSource>
     }
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
+    if (dm.userInfo.hasTakenTask) {
+        self.tableView.tableHeaderView = nil;
+        self.tableView.tableHeaderView.height = 0;
+    }
+}
+
 - (void)loadItem{
     [MBProgressHUD wb_showActivity];
     
@@ -81,6 +91,21 @@ UITableViewDataSource>
     }];
     
     [model loadItem:nil success:^(NSDictionary *dict) {
+//        model.items = @[];
+        
+        if (model.items.count == 0) {
+            if (!weak_self.nodataView.superview) {
+                [weak_self addNodataView];
+                weak_self.tableView.mj_footer.hidden = YES;
+            }
+            
+        } else {
+            if (weak_self.nodataView.superview) {
+                [weak_self.nodataView removeFromSuperview];
+            }
+            weak_self.tableView.mj_footer.hidden = NO;
+        }
+        
         [weak_self endRefreshing];
         [weak_self.tableView reloadData];
         
@@ -93,7 +118,10 @@ UITableViewDataSource>
         
     }];
     
-    
+}
+
+- (void)addNodataView{
+    [self.view addSubview:self.nodataView];
 }
 
 
@@ -130,7 +158,12 @@ UITableViewDataSource>
     self.tableView.rowHeight = 100.0f;
     self.tableView.frame = CGRectMake(0,0,FX_SCREEN_WIDTH,FX_TABLE_HEIGHT);
     [self.tableView registerClass:[FZDJMainCell class] forCellReuseIdentifier:FZDJMainCellIBName];
-    self.tableView.tableHeaderView = self.banner;
+    
+    FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
+    if (!dm.userInfo.hasTakenTask) {
+        self.tableView.tableHeaderView = self.banner;
+    }
+    
 }
 
 
@@ -198,6 +231,32 @@ UITableViewDataSource>
     return _banner;
 }
 
+- (UIView *)nodataView{
+    if (!_nodataView) {
+        UIView *nodataView = [[UIView alloc] init];
+        nodataView.size = CGSizeMake(300, 300);
+        nodataView.center = self.view.center;
+        
+        UIImageView *imageView = [[UIImageView alloc] init];
+        imageView.image = [UIImage imageNamed:@"dj_nodata_icon"];
+        imageView.size = CGSizeMake(120, 79);
+        imageView.left = (300 - 120) /2;
+        imageView.top = (300 - 79) / 2 - 20;
+        
+        [nodataView addSubview: imageView];
+        
+        UILabel *label = [[UILabel alloc ] initWithFrame:CGRectMake(0, imageView.bottom + 10, 300, 20)];
+        label.text = @"暂无数据";
+        label.font = [UIFont systemFontOfSize:15];
+        label.textAlignment = NSTextAlignmentCenter;
+        label.textColor = [UIColor fx_colorWithHexString:@"0xbfbfbf"];
+        [nodataView addSubview:label];
+        
+        _nodataView = nodataView;
+    }
+    
+    return _nodataView;
+}
 
 #pragma mark ================ FZDJLoginVCLDelegate ================
 - (void)loginSuccess{

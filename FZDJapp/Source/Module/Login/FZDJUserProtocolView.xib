@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="FZDJUserProtocolView">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="440"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nbd-5M-Ahs">
+                    <rect key="frame" x="250" y="0.0" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="570-be-ogg"/>
+                        <constraint firstAttribute="width" constant="50" id="TzR-i8-5cX"/>
+                    </constraints>
+                    <state key="normal" image="close_btn"/>
+                    <connections>
+                        <action selector="closeBtnDidClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="ooQ-3E-nak"/>
+                    </connections>
+                </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Hfk-Ko-ijx">
+                    <rect key="frame" x="16" y="26" width="268" height="388"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <mutableString key="text">特别提示
+
+在此特别提醒您（用户）在注册成为抖金用户之前，请认真阅读本《抖金用户服务协议》（以下简称“协议”），确保您充分理解本协议中各条款。请您审慎阅读并选择接受或不接受本协议。除非您接受本协议所有条款，否则您无权注册、登录或使用本协议所涉服务。您的注册、登录、使用等行为将视为对本协议的接受，并同意接受本协议各项条款的约束。
+
+本协议约定抖金与用户之间关于“抖金”服务（以下简称“服务”）的权利义务。“用户”是指注册、登录、使用本服务的个人。本协议可由抖金随时更新，更新后的协议条款一旦公布即代替原来的协议条款，恕不再另行通知，用户可在本APP中查阅最新版协议条款。在修改协议条款后，如果用户不接受修改后的条款，请立即停止使用抖金提供的服务，用户继续使用抖金提供的服务将被视为接受修改后的协议。
+
+一、抖金服务内容 
+抖金具体服务内容由抖金根据实际情况提供，包括但不限于：
+（1）咨询服务；
+（2）服务商收入结算和用户支付费用：具体金额以抖金产生的统计数据为准。
+
+二、关于终止服务
+1、在下列情况下，抖金有权终止向用户提供服务：
+（1）在用户违反本服务协议相关规定时，抖金有权终止向该用户提供服务。如该用户再一次直接或间接或以他人名义注册为用户的，一经发现，抖金有权直接单方面终止向该用户提供服务；
+（2）如抖金通过用户提供的信息与用户联系时，发现用户在注册时填写的联系方式已不存在或无法接通，抖金以其它联系方式通知用户更改，而用户在三个工作日内仍未能提供新的联系方式，抖金有权终止向该用户提供服务；
+（3）用户不得通过程序或人工方式进行刷量或作弊，若发现用户有作弊行为，抖金将立即终止服务，并有权扣留账户内金额；
+（4）一旦抖金发现用户提供的数据或信息中含有虚假内容，抖金有权随时终止向该用户提供服务；
+（5）本服务条款终止或更新时，用户明示不愿接受新的服务条款；
+（6）其它抖金认为需终止服务的情况。
+
+2、服务终止后，抖金没有义务为用户保留原账号中或与之相关的任何信息，或转发任何未曾阅读或发送的信息给用户或第三方。 
+服务的变更、中断
+
+三、版本更新
+1、鉴于网络服务的特殊性，用户需同意抖金会变更、中断部分或全部的网络服务，并删除（不再保存）用户在使用过程中提交的任何资料，而无需通知用户，也无需对任何用户或任何第三方承担任何责任。
+
+2、抖金需要定期或不定期地对提供网络服务的平台进行检测或者更新，如因此类情况而造成网络服务在合理时间内的中断，抖金无需为此承担任何责任。 
+服务条款修改
+
+四、条款变更
+1、抖金有权随时修改本服务条款的任何内容，一旦本服务条款的任何内容发生变动，抖金将会通过适当方式向用户提示修改内容。
+
+2、如果不同意抖金对本服务条款所做的修改，用户有权停止使用网络服务。
+
+3、如果用户继续使用网络服务，则视为用户接受抖金对本服务条款所做的修改。 
+、免责与赔偿声明
+
+五、免责声明
+1、若抖金已经明示其服务提供方式发生变更并提醒用户应当注意事项，用户未按要求操作所产生的一切后果由用户自行承担。
+
+2、用户明确同意其使用抖金所存在的风险将完全由其自己承担，因其使用抖金而产生的一切后果也由其自己承担。
+
+3、用户同意保障和维护抖金及其他用户的利益，由于用户在使用抖金有违法、不真实、不正当、侵犯第三方合法权益的行为，或用户违反本协议项下的任何条款而给***及任何其他第三方造成损失，用户同意承担由此造成的损害赔偿责任。 
+</mutableString>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Hfk-Ko-ijx" secondAttribute="trailing" constant="16" id="Eno-Ar-qLf"/>
+                <constraint firstItem="Hfk-Ko-ijx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="P2t-8d-k0T"/>
+                <constraint firstItem="Nbd-5M-Ahs" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="adI-rQ-FJz"/>
+                <constraint firstItem="Nbd-5M-Ahs" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="gnl-wD-8ry"/>
+                <constraint firstItem="Hfk-Ko-ijx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="26" id="pxY-jB-1ic"/>
+                <constraint firstAttribute="bottom" secondItem="Hfk-Ko-ijx" secondAttribute="bottom" constant="26" id="s3B-Zw-Bca"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="closeBtn" destination="Nbd-5M-Ahs" id="uFJ-Ik-qv7"/>
+                <outlet property="textView" destination="Hfk-Ko-ijx" id="Rld-Gm-OAK"/>
+            </connections>
+            <point key="canvasLocation" x="124.8" y="160.11994002998503"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="close_btn" width="20" height="20"/>
+    </resources>
+</document>

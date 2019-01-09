@@ -16,6 +16,7 @@
 #import "FXSystemInfo.h"
 #import "FZDJLoginModel.h"
 #import "NSString+FXCategory.h"
+#import "FZDJUserProtocolWindow.h"
 
 @interface FZDJLoginVCL ()
 
@@ -28,10 +29,17 @@
 @property (weak, nonatomic) IBOutlet UIButton *getCodeButton;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UIView *thirdPartLoginView;
+
+@property (weak, nonatomic) IBOutlet UIButton *selectedBtn;
+@property (weak, nonatomic) IBOutlet UIButton *userProtocol;
+
 @property (nonatomic, strong) FZDJMainRequest *request;
 @property (nonatomic, strong) FZDJLoginModel *model;
 @property (nonatomic, strong) NSTimer *timer;
 @property (nonatomic, assign) NSInteger time;
+@property (nonatomic, assign) BOOL selected;
+
+@property (nonatomic, strong) FZDJUserProtocolWindow *protocolWindow;
 @end
 
 @implementation FZDJLoginVCL
@@ -80,6 +88,9 @@
                         [self getCustomPlaceholderWithStr:@"请输入验证码"];
     
     self.phoneNumberTextField.keyboardType = UIKeyboardTypeNumberPad;
+    
+    self.selectedBtn.adjustsImageWhenHighlighted = NO;
+    self.userProtocol.adjustsImageWhenHighlighted = NO;
 }
 
 - (NSMutableAttributedString *)getCustomPlaceholderWithStr:(NSString *)holderText{
@@ -111,7 +122,33 @@
     [self.codeTextField resignFirstResponder];
 }
 
+- (FZDJUserProtocolWindow *)protocolWindow{
+    if (!_protocolWindow) {
+        _protocolWindow = [[FZDJUserProtocolWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+        
+        __block FZDJUserProtocolWindow *blockWindow = _protocolWindow;
+        _protocolWindow.closeblock = ^(){
+            blockWindow = nil;
+        };
+    }
+    return _protocolWindow;
+}
+
 #pragma mark ================ ButtonClicked ================
+
+- (IBAction)selectedBtnClicked:(id)sender {
+    self.selected = !self.selected;
+    
+    NSString *imageName = self.selected ? @"icon_check" : @"icon_uncheck";
+    [self.selectedBtn setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+}
+
+- (IBAction)userProtocolClicked:(id)sender {
+//    NSLog(@"弹出用户协议");
+    [self.protocolWindow show];
+    [self.protocolWindow makeKeyWindow];
+}
+
 - (IBAction)loginBtnDidClicked:(id)sender {
     [self phoneNumberLogin];
 }
@@ -196,6 +233,19 @@
 #pragma mark - ================ 手机号登录 ================
 - (void)phoneNumberLogin{
     [self.view endEditing:YES];
+    
+    if (self.phoneNumberTextField.text.length == 0) {
+        [MBProgressHUD wb_showError:@"请输入手机号"];
+        return;
+    }
+    if (self.codeTextField.text.length == 0) {
+        [MBProgressHUD wb_showError:@"请输入验证码"];
+        return;
+    }
+    if (!self.selected) {
+        [MBProgressHUD wb_showError:@"尚未同意《用户协议》"];
+        return;
+    }
     
     FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
     dm.userInfo.loginType = FZDJUserInfoLoginTypePhone;

@@ -35,6 +35,7 @@
     [aCoder encodeObject:self.weixinOpenid forKey:@"weixinOpenid"];
     
     [aCoder encodeBool:self.isInReview forKey:@"isInReview"];
+    [aCoder encodeBool:self.hasTakenTask forKey:@"hasTakenTask"];
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder{
@@ -60,6 +61,7 @@
         self.weixinOpenid = [aDecoder decodeObjectForKey:@"weixinOpenid"];
         
         self.isInReview = [aDecoder decodeBoolForKey:@"isInReview"];
+        self.hasTakenTask = [aDecoder decodeBoolForKey:@"hasTakenTask"];
     }
     return self;
 }
