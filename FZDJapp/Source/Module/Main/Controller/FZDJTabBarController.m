@@ -63,17 +63,29 @@
     self.viewControllers = @[nav1,nav2,nav3,nav4];
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;//白色
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+//    [self preferredStatusBarStyle];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.delegate = self;
+//    self.delegate = self;
     [UITabBar appearance].translucent = NO;
     [[UITabBar appearance] setBackgroundColor:[UIColor fx_colorWithHexString:@"#666666"]];
     [self setUpChildControllers];
     
-    [self loadUnreadMessage];
+    [self requestMessageCount];
 }
 
+- (void)requestMessageCount{
+    [self loadUnreadMessage];
+}
 
 - (void)loadUnreadMessage{
     self.model = [FZDJTabBarModel new];
@@ -115,19 +127,19 @@
 }
 
 
-- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
-    
-    UIViewController * rootViewController;
-    if ([viewController isKindOfClass:[UINavigationController class]]) {
-        UINavigationController * navigationController = (UINavigationController*)viewController;
-        rootViewController = navigationController.visibleViewController;
-    } else {
-        rootViewController = viewController;
-    }
-    
-    if ([rootViewController isEqual:self.messageCenterVCL]) {
-        [self.tabBar hideBageOnItemIndex:2];
-    }
-}
+//- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
+//
+//    UIViewController * rootViewController;
+//    if ([viewController isKindOfClass:[UINavigationController class]]) {
+//        UINavigationController * navigationController = (UINavigationController*)viewController;
+//        rootViewController = navigationController.visibleViewController;
+//    } else {
+//        rootViewController = viewController;
+//    }
+//
+//    if ([rootViewController isEqual:self.messageCenterVCL]) {
+//        [self.tabBar hideBageOnItemIndex:2];
+//    }
+//}
 
 @end

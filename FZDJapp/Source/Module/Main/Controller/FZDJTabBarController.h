@@ -14,5 +14,6 @@
 
 - (FZDJMainVCL *)getMainViewController;
 
+- (void)requestMessageCount;
 @end
 

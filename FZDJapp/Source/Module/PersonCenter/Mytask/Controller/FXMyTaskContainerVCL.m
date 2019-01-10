@@ -25,6 +25,10 @@ CGFloat topBarHeight = 50.0f;
     return self;
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;//白色
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -47,10 +51,10 @@ CGFloat topBarHeight = 50.0f;
     self.gapAnimated = YES;
     self.backgroundColor = [UIColor whiteColor];
     
-    NSArray *titleArray = @[@"已完成",@"未完成"];
+    NSArray *titleArray = @[@"未完成",@"已完成"];
     NSArray *className = @[[FXMyTaskViewController class],
                            [FXMyTaskViewController class]];
-    NSArray *params = @[FXTaskCompleted,FXTaskNoCompleted];
+    NSArray *params = @[FXTaskNoCompleted,FXTaskCompleted];
     
     [self reloadDataWith:titleArray andSubViewdisplayClasses:className withParams:params];
 }

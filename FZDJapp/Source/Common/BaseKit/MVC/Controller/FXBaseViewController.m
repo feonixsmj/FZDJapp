@@ -67,8 +67,16 @@
 -(void)bringCloseButtonToFront{
     [self.view bringSubviewToFront:self.closeBtn];
 }
+
+//- (UIStatusBarStyle)preferredStatusBarStyle{
+//    return UIStatusBarStyleLightContent;//白色
+//}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+//    [self preferredStatusBarStyle];
+    
     //控制是否显示导航栏
     if (self.hiddenNavigationBar){
         [self.navigationController setNavigationBarHidden:YES animated:YES];

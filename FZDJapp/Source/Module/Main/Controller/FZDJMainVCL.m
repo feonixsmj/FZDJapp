@@ -77,6 +77,10 @@ UITableViewDataSource>
     }
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;//白色
+}
+
 - (void)loadItem{
     [MBProgressHUD wb_showActivity];
     

@@ -31,14 +31,17 @@
     FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
     
     NSString *url = [NSString stringWithFormat:@"%@%@",kApiDomain,kApiUnreadMessageCount];
+    NSMutableDictionary *mudict = [[NSMutableDictionary alloc] init];
+    mudict[@"userNo"] = dm.userInfo.userNo;
     
-    [self.request requestPostURL:url parameters:nil success:^(id responseObject) {
+    [self.request requestPostURL:url parameters:mudict success:^(id responseObject) {
         
         NSDictionary *dict = (NSDictionary *)responseObject;
         
         NSNumber *count = dict[@"body"];
         
         if (count && count.integerValue > 0) {
+            dm.userInfo.messageCount = count.integerValue;
             success(@{@"count":count});
         }
 

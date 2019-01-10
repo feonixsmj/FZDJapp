@@ -36,6 +36,8 @@
     
     [aCoder encodeBool:self.isInReview forKey:@"isInReview"];
     [aCoder encodeBool:self.hasTakenTask forKey:@"hasTakenTask"];
+    
+    [aCoder encodeInteger:self.messageCount forKey:@"messageCount"];
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder{
@@ -62,6 +64,8 @@
         
         self.isInReview = [aDecoder decodeBoolForKey:@"isInReview"];
         self.hasTakenTask = [aDecoder decodeBoolForKey:@"hasTakenTask"];
+        
+        self.messageCount = [aDecoder decodeIntegerForKey:@"messageCount"];
     }
     return self;
 }

@@ -30,6 +30,7 @@
     NSString * badgeValue = @"";
     if (count == 0) {
         badgeValue = @"";
+        return;
     }else if (count <= 99) {
         badgeValue = [NSString stringWithFormat:@"%@",@(count)];
     }else {

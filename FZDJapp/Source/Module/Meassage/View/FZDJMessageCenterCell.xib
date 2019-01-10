@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,19 +19,19 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lTs-q4-utS">
-                        <rect key="frame" x="10" y="5" width="355" height="95"/>
+                        <rect key="frame" x="10" y="5" width="355" height="95.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0FK-8z-VxK">
-                                <rect key="frame" x="12" y="16" width="39.5" height="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="圣诞节适得府君书东方时空的束带结发水电费水电费" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0FK-8z-VxK">
+                                <rect key="frame" x="12" y="16" width="214" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="ZA2-EQ-2P1"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oGB-5F-gEB">
-                                <rect key="frame" x="309" y="17.5" width="33" height="13"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="2019-01-11 01:53" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oGB-5F-gEB">
+                                <rect key="frame" x="236" y="17.5" width="106" height="13"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="13" id="0Wv-NE-QS9"/>
                                 </constraints>
@@ -40,16 +40,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4h1-2x-sXI">
-                                <rect key="frame" x="51.5" y="14" width="5" height="5"/>
+                                <rect key="frame" x="342" y="15" width="5" height="5"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="5" id="aSW-Ut-jw6"/>
-                                    <constraint firstAttribute="width" constant="5" id="tEM-EM-Ave"/>
+                                    <constraint firstAttribute="height" constant="5" id="AvM-XV-ncX"/>
+                                    <constraint firstAttribute="width" constant="5" id="QrH-KF-Yd2"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="对方水电费是胜多负少的胜多负少东方水电费水电费是否水电费水电费水电费第三方第三方说的" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZx-nY-FtB">
-                                <rect key="frame" x="12" y="41" width="337" height="26.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <rect key="frame" x="12" y="41" width="337" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -60,12 +60,12 @@
                             <constraint firstItem="DZx-nY-FtB" firstAttribute="top" secondItem="0FK-8z-VxK" secondAttribute="bottom" constant="9" id="CIv-CZ-ht6"/>
                             <constraint firstItem="DZx-nY-FtB" firstAttribute="leading" secondItem="lTs-q4-utS" secondAttribute="leading" constant="12" id="DDy-3e-IC4"/>
                             <constraint firstAttribute="trailing" secondItem="oGB-5F-gEB" secondAttribute="trailing" constant="13" id="Ekh-2r-dqD"/>
+                            <constraint firstItem="4h1-2x-sXI" firstAttribute="leading" secondItem="oGB-5F-gEB" secondAttribute="trailing" id="RMh-d3-AmX"/>
                             <constraint firstItem="0FK-8z-VxK" firstAttribute="top" secondItem="lTs-q4-utS" secondAttribute="top" constant="16" id="S7f-6H-p3Z"/>
                             <constraint firstItem="0FK-8z-VxK" firstAttribute="leading" secondItem="lTs-q4-utS" secondAttribute="leading" constant="12" id="aXg-lX-aZe"/>
                             <constraint firstItem="oGB-5F-gEB" firstAttribute="centerY" secondItem="0FK-8z-VxK" secondAttribute="centerY" id="cDn-Zs-d0a"/>
                             <constraint firstAttribute="trailing" secondItem="DZx-nY-FtB" secondAttribute="trailing" constant="6" id="iws-7r-r7W"/>
-                            <constraint firstItem="4h1-2x-sXI" firstAttribute="top" secondItem="lTs-q4-utS" secondAttribute="top" constant="14" id="oJf-mV-wgg"/>
-                            <constraint firstItem="4h1-2x-sXI" firstAttribute="leading" secondItem="0FK-8z-VxK" secondAttribute="trailing" id="p3S-Cb-RaW"/>
+                            <constraint firstItem="4h1-2x-sXI" firstAttribute="top" secondItem="lTs-q4-utS" secondAttribute="top" constant="15" id="p8G-tq-pXH"/>
                         </constraints>
                     </view>
                 </subviews>

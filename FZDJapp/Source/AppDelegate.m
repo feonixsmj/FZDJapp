@@ -38,10 +38,10 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    FZDJMainVCL *mainVCL = [[FZDJMainVCL alloc] init];
+//    FZDJMainVCL *mainVCL = [[FZDJMainVCL alloc] init];
     
-    FXBaseNavigationController *navigationController = [[FXBaseNavigationController alloc]
-        initWithRootViewController:mainVCL];
+//    FXBaseNavigationController *navigationController = [[FXBaseNavigationController alloc]
+//        initWithRootViewController:mainVCL];
     
     FZDJTabBarController *tabbarController = [FZDJTabBarController new];
     

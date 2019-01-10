@@ -10,6 +10,8 @@
 #import "FZDJMessageCenterModel.h"
 #import "FZDJMessageCenterCell.h"
 #import "FZDJMessageCenterItem.h"
+#import "FZDJTabBarController.h"
+#import "UITabBar+FXBadge.h"
 
 NSString *const FZDJMessageCenterCellIBName = @"FZDJMessageCenterCell";
 
@@ -45,7 +47,15 @@ NSString *const FZDJMessageCenterCellIBName = @"FZDJMessageCenterCell";
                                                bundle:[NSBundle mainBundle]]
                             forCellReuseIdentifier:FZDJMessageCenterCellIBName];
     [self loadItem];
+    [self refreshUnreadMessageCount];
 }
+
+- (void)refreshUnreadMessageCount{
+    FZDJTabBarController *rooterController = (FZDJTabBarController *)[[UIApplication sharedApplication].keyWindow rootViewController];
+    
+    [rooterController requestMessageCount];
+}
+
 
 - (void)loadItem{
     FZDJMessageCenterModel *model = (FZDJMessageCenterModel *)self.model;
@@ -86,7 +96,13 @@ NSString *const FZDJMessageCenterCellIBName = @"FZDJMessageCenterCell";
     __weak typeof(self) weak_self = self;
     
     [model readAllSuccess:^{
+        for (FZDJMessageCenterItem *item in model.items) {
+            item.isRead = YES;
+        }
         [weak_self.tableView reloadData];
+        
+        FZDJTabBarController *rooterController = (FZDJTabBarController *)[[UIApplication sharedApplication].keyWindow rootViewController];
+        [rooterController.tabBar hideBageOnItemIndex:2];
     } failure:^(NSError *error) {
         
     }];
@@ -115,6 +131,11 @@ NSString *const FZDJMessageCenterCellIBName = @"FZDJMessageCenterCell";
         [model setMsgRead:item success:^(FZDJMessageCenterItem *tempItem) {
             tempItem.isRead = YES;
             [weak_self.tableView reloadData];
+            
+            FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
+            FZDJTabBarController *rooterController = (FZDJTabBarController *)[[UIApplication sharedApplication].keyWindow rootViewController];
+            
+            [rooterController.tabBar showBageOnItemIndex:2 number:--dm.userInfo.messageCount];
         } failure:^(NSError *error) {
             
         }];
