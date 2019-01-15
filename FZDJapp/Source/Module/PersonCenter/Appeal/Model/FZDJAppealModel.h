@@ -26,4 +26,9 @@
 - (void)submitAppeal:(NSDictionary *)parameterDict
              success:(void (^)(NSDictionary *dict))success
              failure:(void (^)(NSError *error))failure;
+
+//获取申诉描述
+- (void)loadAppealDesc:(NSDictionary *)parameterDict
+               success:(void (^)(NSDictionary *dict))success
+               failure:(void (^)(NSError *error))failure;
 @end

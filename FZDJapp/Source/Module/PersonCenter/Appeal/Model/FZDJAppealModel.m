@@ -142,4 +142,26 @@
         failure(error);
     }];
 }
+
+- (void)loadAppealDesc:(NSDictionary *)parameterDict
+               success:(void (^)(NSDictionary *dict))success
+               failure:(void (^)(NSError *error))failure{
+    
+    NSString *url = [NSString stringWithFormat:@"%@%@",kApiDomain,kApiAppealDesc];
+    
+    [self.request requestPostURL:url parameters:nil success:^(id responseObject) {
+        
+        NSDictionary *dict = (NSDictionary *)responseObject;
+        
+        NSString *htmlStr = dict[@"body"];
+        if (htmlStr.length > 0) {
+            success(@{@"htmlStr":htmlStr});
+        } else {
+            failure(nil);
+        }
+        
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
 @end

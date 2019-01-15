@@ -63,3 +63,4 @@ UIKIT_EXTERN NSString *const kApiAboutUsDesc;   //关于我们描述
 UIKIT_EXTERN NSString *const kApiUnreadMessageCount;  //首页查询是否有未读消息
 
 UIKIT_EXTERN NSString *const kApiCheckUpdate; // 检查更新
+UIKIT_EXTERN NSString *const kApiAppealDesc; //申述描述

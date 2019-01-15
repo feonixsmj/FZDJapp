@@ -28,6 +28,7 @@ CGFloat const FZDJAppealTaskInfoViewHeight = 111.0f;
 @property (nonatomic, strong) FZDJSelectPhotoView *selectPhotoView;
 @property (nonatomic, strong) FZDJUploadImageModel *uploadImageModel;
 @property (nonatomic, strong) NSMutableArray *imageUrls;
+@property (nonatomic, strong) UIView *footerView;
 @end
 
 @implementation FZDJAppealViewController
@@ -71,7 +72,7 @@ CGFloat const FZDJAppealTaskInfoViewHeight = 111.0f;
          forCellReuseIdentifier:@"FZDJAppealHistoryCell"];
     
     self.tableView.tableHeaderView = self.headerView;
-    
+    self.tableView.tableFooterView = self.footerView;
 }
 
 
@@ -117,6 +118,13 @@ CGFloat const FZDJAppealTaskInfoViewHeight = 111.0f;
     } failure:^(NSError *error) {
         
     }];
+    
+    [model loadAppealDesc:nil success:^(NSDictionary *dict) {
+        NSString *htmlStr = dict[@"htmlStr"];
+        [weak_self updateFooterView:htmlStr];
+    } failure:^(NSError *error) {
+        
+    }];
 }
 
 - (void)loadAppealHistoryIfNeeded{
@@ -135,6 +143,39 @@ CGFloat const FZDJAppealTaskInfoViewHeight = 111.0f;
             
         }];
     }
+}
+
+- (void)updateFooterView:(NSString *)htmlStr{
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
+    label.font = [UIFont systemFontOfSize:11];
+    label.textAlignment = NSTextAlignmentLeft;
+    label.textColor = [UIColor fx_colorWithHexString:@"#333333"];
+    label.text = @"";
+    label.numberOfLines = 0;
+    label.lineBreakMode = NSLineBreakByWordWrapping;
+    
+    NSData *htmlData = [htmlStr dataUsingEncoding:NSUnicodeStringEncoding];
+    NSAttributedString *attrStr =
+    [[NSAttributedString alloc] initWithData:htmlData
+                                     options:@{NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType}
+                          documentAttributes:nil error:nil];
+    
+    label.attributedText = attrStr;
+    
+
+    CGRect rect = label.frame;
+    rect.origin.x = 20;
+    rect.origin.y = 10;
+    
+    CGSize size = [label sizeThatFits:
+                   CGSizeMake(FX_SCREEN_WIDTH - 40, CGFLOAT_MAX)];
+    rect.size = size;
+    label.frame = rect;
+    
+    self.footerView.height = label.height + 20;
+
+    [self.footerView addSubview:label];
 }
 
 - (void)refreshUI{
@@ -158,6 +199,15 @@ CGFloat const FZDJAppealTaskInfoViewHeight = 111.0f;
     }];
 }
 #pragma mark - ================ Lazy load ================
+
+- (UIView *)footerView{
+    if (!_footerView) {
+        UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, FX_SCREEN_WIDTH, 328)];
+        
+        _footerView = footerView;
+    }
+    return _footerView;
+}
 
 - (UIView *)headerView{
     if(!_headerView){

@@ -59,9 +59,7 @@
     
     NSString *url = [NSString stringWithFormat:@"%@%@",kApiDomain,kApiCheckUpdate];
     NSMutableDictionary *mudict = [[NSMutableDictionary alloc] init];
-    mudict[@"version"] = @"1.0.8";
-    
-//    dm.userInfo.currentVersion;
+    mudict[@"version"] = dm.userInfo.currentVersion;
     
     [self.request requestPostURL:url parameters:mudict success:^(id responseObject) {
         
