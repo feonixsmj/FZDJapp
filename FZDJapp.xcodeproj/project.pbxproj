@@ -39,6 +39,7 @@
 		4406678E21E6658700CE51A7 /* UITabBar+FXBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 4406678D21E6658700CE51A7 /* UITabBar+FXBadge.m */; };
 		4406679121E667CD00CE51A7 /* FXBadgeImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4406679021E667CD00CE51A7 /* FXBadgeImageView.m */; };
 		4406679421E682BD00CE51A7 /* FZDJTabBarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4406679321E682BD00CE51A7 /* FZDJTabBarModel.m */; };
+		4406679721EDB5AB00CE51A7 /* UITextView+FXCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4406679621EDB5AB00CE51A7 /* UITextView+FXCategory.m */; };
 		4412FFC520E3DD6400E7692A /* FXBaseStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4412FFC420E3DD6400E7692A /* FXBaseStrategy.m */; };
 		4412FFC920E3DDA500E7692A /* FXCaremaPhotoStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4412FFC820E3DDA500E7692A /* FXCaremaPhotoStrategy.m */; };
 		4412FFCB20E3DE8600E7692A /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4412FFCA20E3DE8500E7692A /* MobileCoreServices.framework */; };
@@ -278,6 +279,8 @@
 		4406679021E667CD00CE51A7 /* FXBadgeImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FXBadgeImageView.m; sourceTree = "<group>"; };
 		4406679221E682BD00CE51A7 /* FZDJTabBarModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJTabBarModel.h; sourceTree = "<group>"; };
 		4406679321E682BD00CE51A7 /* FZDJTabBarModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJTabBarModel.m; sourceTree = "<group>"; };
+		4406679521EDB5AB00CE51A7 /* UITextView+FXCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextView+FXCategory.h"; sourceTree = "<group>"; };
+		4406679621EDB5AB00CE51A7 /* UITextView+FXCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextView+FXCategory.m"; sourceTree = "<group>"; };
 		4412FFC320E3DD6400E7692A /* FXBaseStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBaseStrategy.h; sourceTree = "<group>"; };
 		4412FFC420E3DD6400E7692A /* FXBaseStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBaseStrategy.m; sourceTree = "<group>"; };
 		4412FFC720E3DDA500E7692A /* FXCaremaPhotoStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXCaremaPhotoStrategy.h; sourceTree = "<group>"; };
@@ -1686,6 +1689,8 @@
 				441905A5213EF4DC000A2870 /* NSError+FXExtension.m */,
 				4406678C21E6658700CE51A7 /* UITabBar+FXBadge.h */,
 				4406678D21E6658700CE51A7 /* UITabBar+FXBadge.m */,
+				4406679521EDB5AB00CE51A7 /* UITextView+FXCategory.h */,
+				4406679621EDB5AB00CE51A7 /* UITextView+FXCategory.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -2082,6 +2087,7 @@
 				44E9B5C320E23D2F00D00E4D /* FXInterfaceConst.m in Sources */,
 				4418F70320D264E40086B94E /* AppDelegate.m in Sources */,
 				449209A921036FF400E13120 /* FZDJMyTaskItem.m in Sources */,
+				4406679721EDB5AB00CE51A7 /* UITextView+FXCategory.m in Sources */,
 				449209A621036F5400E13120 /* FZDJMyTaskModel.m in Sources */,
 				444105E9214E9A3700E18F6D /* FZDJBankListCell.m in Sources */,
 				44ACA2A420EA8B2300414E9A /* FZDJMessageCenterVCL.m in Sources */,

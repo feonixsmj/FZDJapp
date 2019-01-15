@@ -71,10 +71,6 @@ UITableViewDataSource>
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
-    if (dm.userInfo.hasTakenTask) {
-        self.tableView.tableHeaderView = nil;
-        self.tableView.tableHeaderView.height = 0;
-    }
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle{
@@ -164,9 +160,6 @@ UITableViewDataSource>
     [self.tableView registerClass:[FZDJMainCell class] forCellReuseIdentifier:FZDJMainCellIBName];
     
     FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
-    if (!dm.userInfo.hasTakenTask) {
-        self.tableView.tableHeaderView = self.banner;
-    }
     
 }
 

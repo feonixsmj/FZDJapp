@@ -101,7 +101,6 @@ const CGFloat FXHeaderImageViewHeight = 194;
     [model getTask:nil success:^(NSDictionary *dict) {
         [weak_self doTaskURL:model.item.taskUrl];
         [weak_self refreshStatusButton:FZDJTaskDetailItemStatusTaken];
-        dm.userInfo.hasTakenTask = YES;
     } failure:^(NSError *error) {
 
     }];

@@ -17,6 +17,7 @@
 
 - (void)awakeFromNib{
     [super awakeFromNib];
-    
+    self.textView.fx_placeHolder = @"请填写申述描述";
+    self.textView.fx_placeHolderColor = [UIColor fx_colorWithHexString:@"999999"];
 }
 @end
