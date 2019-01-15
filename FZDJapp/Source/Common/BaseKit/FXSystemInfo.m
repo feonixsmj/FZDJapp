@@ -75,4 +75,20 @@
 #endif    // #if (TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR)
 }
 
+///应用版本号
+///e.g. @"1.0"
++ (NSString *)appVersion
+{
+#if (TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR || TARGET_OS_MAC)
+    NSString * value = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    if ( nil == value || 0 == value.length )
+    {
+        value = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+    }
+    return value;
+#else    // #if (TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR)
+    return @"";
+#endif    // #if (TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR)
+}
+
 @end

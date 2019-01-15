@@ -60,3 +60,5 @@ NSString *const kApiShareCodeDesc = @"/server/sys/yqsm";
 NSString *const kApiAboutUsDesc = @"/server/sys/gywm";
 
 NSString *const kApiUnreadMessageCount = @"/server/msg/count";
+
+NSString *const kApiCheckUpdate = @"/server/version/versionIos";

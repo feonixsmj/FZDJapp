@@ -19,6 +19,7 @@
 #import "FZDJBankCardVCL.h"
 #import "FZDJBankListVCL.h"
 #import "FZDJFriendInvitationCodeVCL.h"
+#import "FZDJCheckUpdateVo.h"
 
 @interface FZDJPersonalActionStrategy ()
 @property (nonatomic, strong) FZDJAppealSelectPhotoStrategy *uploadImgStrategy;
@@ -135,6 +136,11 @@
             [target.navigationController pushViewController:vcl animated:YES];
         }
             break;
+        case FZDJCellActionTypeCheckUpdate:{
+            //检查更新
+            [self checkUpdate];
+        }
+            break;
         case FZDJCellActionTypeContactUs:
             //联系客服
             NSLog(@"联系客服");
@@ -145,6 +151,70 @@
     }
 }
 
+- (void)checkUpdate{
+    FZDJPersonalCenterVCL *target = (FZDJPersonalCenterVCL *)self.target;
+    FZDJPersonalCenterModel *personalCenterModel =
+    (FZDJPersonalCenterModel *)target.model;
+    
+    [MBProgressHUD wb_showActivity];
+    
+    __weak typeof(self) weak_self = self;
+    [personalCenterModel loadVersion:nil success:^(NSDictionary *dict) {
+        [MBProgressHUD wb_hideHUD];
+        [weak_self showUpdateAlertIfNeeded:dict];
+    } failure:^(NSError *error) {
+        [MBProgressHUD wb_hideHUD];
+        if (!error) {
+            [MBProgressHUD wb_showError:@"检查更新失败"];
+        }
+    }];
+}
+
+
+- (void)showUpdateAlertIfNeeded:(NSDictionary *)dict{
+    FZDJCheckUpdateVo *vo = (FZDJCheckUpdateVo *)dict[@"updateVo"];
+    //    FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
+    
+    if ([vo.needUpdate isEqualToString:@"Y"] &&
+        vo.url.length > 0) {
+        
+        UIWindow *alertWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        alertWindow.rootViewController = [[UIViewController alloc] init];
+        alertWindow.windowLevel = UIWindowLevelAlert + 1;
+        [alertWindow makeKeyAndVisible];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"更新提示" message:vo.content preferredStyle:UIAlertControllerStyleAlert];
+        //显示弹出框
+        [alertWindow.rootViewController presentViewController:alert animated:YES completion:nil];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"现在更新" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:vo.url]];
+            
+            [self showUpdateAlertIfNeeded:dict];
+        }]];
+        
+        return;
+    }
+    
+    if ([vo.needUpdate isEqualToString:@"N"] && vo.url.length > 0) {
+        UIWindow *alertWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        alertWindow.rootViewController = [[UIViewController alloc] init];
+        alertWindow.windowLevel = UIWindowLevelAlert + 1;
+        [alertWindow makeKeyAndVisible];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"更新提示" message:vo.content preferredStyle:UIAlertControllerStyleAlert];
+        //显示弹出框
+        [alertWindow.rootViewController presentViewController:alert animated:YES completion:nil];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"现在更新" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:vo.url]];
+            //这里写的URL地址是该app在app store里面的下载链接地址，其中ID是该app在app store对应的唯一的ID编号。
+        }]];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"下次再说" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            
+        }]];
+    }
+    
+}
 
 - (void)thirdBlind {
     FZDJPersonalCenterVCL *target = (FZDJPersonalCenterVCL *)self.target;

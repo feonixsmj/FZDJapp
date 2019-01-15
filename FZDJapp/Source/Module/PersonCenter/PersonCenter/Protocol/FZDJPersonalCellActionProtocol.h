@@ -38,7 +38,7 @@ typedef NS_ENUM(NSUInteger, FZDJCellActionType) {
     FZDJCellActionTypeFriedShareCode = 3011,
     FZDJCellActionTypeAboutUs = 3012,
     FZDJCellActionTypeContactUs = 3013,
-    
+    FZDJCellActionTypeCheckUpdate = 3014,
 };
 
 @protocol FZDJPersonalCellActionProtocol<NSObject>

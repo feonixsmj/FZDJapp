@@ -18,6 +18,7 @@
 
 @property (nonatomic, copy) NSString *totalAmount;
 @property (nonatomic, copy) NSString *cashAdvanceDesc;
+@property (nonatomic, strong) NSNumber *validAmount;
 
 - (void)loadCashAdvanceDesc:(NSDictionary *)parameterDict
                     success:(void (^)(NSDictionary *))success

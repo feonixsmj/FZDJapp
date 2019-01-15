@@ -47,4 +47,8 @@ typedef NS_ENUM(NSInteger,FZDJUserInfoLoginType) {
 @property (nonatomic, assign) BOOL hasTakenTask;
 
 @property (nonatomic, assign) NSInteger messageCount;
+
+@property (nonatomic, copy) NSString *currentVersion;
+
+@property (nonatomic, assign) BOOL hasShowUpdateAlertView;
 @end

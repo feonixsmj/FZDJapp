@@ -11,4 +11,8 @@
 @interface FXSystemInfo : NSObject
 
 + (NSString *)orginalIdfa;
+
+///应用版本号
++ (NSString *)appVersion;
+
 @end

@@ -11,6 +11,7 @@
 #import "FZDJPersonalInfoVo.h"
 #import "FXSystemInfo.h"
 #import "NSString+FXCategory.h"
+#import "FZDJCheckUpdateVo.h"
 
 
 @interface FZDJPersonalCenterModel()
@@ -171,6 +172,14 @@
     aboutUsItem.hiddenLine = NO;
     aboutUsItem.actionType = FZDJCellActionTypeAboutUs;
     
+    FZDJPersonalListItem *checkItem = [FZDJPersonalListItem new];
+    checkItem.icImageName = @"dj_check_update_icon";
+    checkItem.bgImageName = @"dj_card_mid";
+    checkItem.title = @"检查更新";
+    checkItem.hiddenLine = NO;
+    checkItem.actionType = FZDJCellActionTypeCheckUpdate;
+    
+    
     FZDJPersonalListItem *serverItem = [FZDJPersonalListItem new];
     serverItem.icImageName = @"dj_kefu_icon";
     serverItem.bgImageName = @"dj_card_bottom";
@@ -188,6 +197,7 @@
                          blankItem,
                          shareItem,
                          aboutUsItem,
+                         checkItem,
                          serverItem,
                          blankItem
                          ];
@@ -200,6 +210,7 @@
                   blankItem,
                   
                   aboutUsItem,
+                    checkItem,
                   serverItem,
                   blankItem
                   ];
@@ -285,6 +296,34 @@
     } failure:^(NSError *error) {
         failure(error);
         NSLog(@"绑定失败");
+    }];
+}
+
+- (void)loadVersion:(NSDictionary *)parameterDict
+            success:(void (^)(NSDictionary *dict))success
+            failure:(void (^)(NSError *error))failure{
+    FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
+    
+    NSString *url = [NSString stringWithFormat:@"%@%@",kApiDomain,kApiCheckUpdate];
+    NSMutableDictionary *mudict = [[NSMutableDictionary alloc] init];
+    mudict[@"version"] = @"1.0.8";
+    
+    //    dm.userInfo.currentVersion;
+    
+    [self.request requestPostURL:url parameters:mudict success:^(id responseObject) {
+        
+        NSDictionary *dict = (NSDictionary *)responseObject;
+    
+        FZDJCheckUpdateVo *updateVo = [FZDJCheckUpdateVo mj_objectWithKeyValues:dict[@"body"]];
+        
+        if (updateVo) {
+            success(@{@"updateVo":updateVo});
+        } else {
+            failure(nil);
+        }
+        
+    } failure:^(NSError *error) {
+        failure(error);
     }];
 }
 @end

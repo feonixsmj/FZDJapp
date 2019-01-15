@@ -21,9 +21,10 @@
 
 //微信SDK头文件
 #import "WXApi.h"
-
 //新浪微博SDK头文件
 #import "WeiboSDK.h"
+
+#import "FXSystemInfo.h"
 
 @interface AppDelegate ()
 
@@ -47,6 +48,10 @@
     
     self.window.rootViewController = tabbarController;
     [self.window makeKeyAndVisible];
+    
+    FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
+    dm.userInfo.currentVersion = [FXSystemInfo appVersion];
+    
     return YES;
 }
 

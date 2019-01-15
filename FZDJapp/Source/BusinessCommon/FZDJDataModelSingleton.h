@@ -15,6 +15,8 @@
 
 @property (nonatomic, strong) FZDJUserInfo *userInfo;
 @property (nonatomic, assign) BOOL isNewIntall;
+
 - (void)saveData;
 - (void)clearUserData;
+
 @end

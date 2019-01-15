@@ -14,6 +14,7 @@
 #import "FXBaseNavigationController.h"
 #import "UITabBar+FXBadge.h"
 #import "FZDJTabBarModel.h"
+#import "FZDJCheckUpdateVo.h"
 
 @interface FZDJTabBarController ()<UITabBarControllerDelegate>
 @property (nonatomic, strong) FZDJMainVCL *mainVCL;
@@ -81,7 +82,72 @@
     [self setUpChildControllers];
     
     [self requestMessageCount];
+    [self checkUpdate];
 }
+
+- (void)checkUpdate {
+    
+    __weak typeof(self) weak_self = self;
+    [self.model loadVersion:nil success:^(NSDictionary *dict) {
+        [weak_self showUpdateAlertIfNeeded:dict];
+    } failure:^(NSError *error) {
+        
+    }];
+}
+
+- (void)showUpdateAlertIfNeeded:(NSDictionary *)dict{
+
+    FZDJCheckUpdateVo *vo = (FZDJCheckUpdateVo *)dict[@"updateVo"];
+    FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
+    
+    if ([dm.userInfo.currentVersion isEqualToString:vo.version]) {
+        dm.userInfo.hasShowUpdateAlertView = NO;
+    }
+    
+    if ([vo.needUpdate isEqualToString:@"Y"] &&
+        vo.url.length > 0) {
+        
+        UIWindow *alertWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        alertWindow.rootViewController = [[UIViewController alloc] init];
+        alertWindow.windowLevel = UIWindowLevelAlert + 1;
+        [alertWindow makeKeyAndVisible];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"更新提示" message:vo.content preferredStyle:UIAlertControllerStyleAlert];
+        //显示弹出框
+        [alertWindow.rootViewController presentViewController:alert animated:YES completion:nil];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"现在更新" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:vo.url]];
+            
+            [self showUpdateAlertIfNeeded:dict];
+        }]];
+        
+    }
+    
+    if (!dm.userInfo.hasShowUpdateAlertView &&
+        [vo.needUpdate isEqualToString:@"N"] && vo.url.length > 0) {
+        
+        dm.userInfo.hasShowUpdateAlertView = YES;
+        
+        UIWindow *alertWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        alertWindow.rootViewController = [[UIViewController alloc] init];
+        alertWindow.windowLevel = UIWindowLevelAlert + 1;
+        [alertWindow makeKeyAndVisible];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"更新提示" message:vo.content preferredStyle:UIAlertControllerStyleAlert];
+        //显示弹出框
+        [alertWindow.rootViewController presentViewController:alert animated:YES completion:nil];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"现在更新" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:vo.url]];
+            //这里写的URL地址是该app在app store里面的下载链接地址，其中ID是该app在app store对应的唯一的ID编号。
+        }]];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"下次再说" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            
+        }]];
+    }
+    
+}
+
 
 - (void)requestMessageCount{
     [self loadUnreadMessage];
@@ -104,7 +170,7 @@
                 title:(NSString *)title
         selectedImage:(NSString *)selectedImage
           normalImage:(NSString *)unselectedImage{
-    
+
 //    UIColor *unselectColor = [UIColor fx_colorWithHexString:@"0x333333"];
 //    UIColor *selectColor = [UIColor fx_colorWithHexString:@"0x1296DB"];
     

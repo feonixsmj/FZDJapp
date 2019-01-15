@@ -442,6 +442,12 @@ FZDJSelectBankCardViewDelegate>
 //
 //    [self.navigationController pushViewController:vcl animated:YES];
     
+    model.validAmount =@(0);
+    if (model.validAmount.longLongValue / 100.00 < 0.01 ) {
+        [MBProgressHUD wb_showError:@"可提现余额不足"];
+        return;
+    }
+    
     self.selectBankCardView.dataArray = model.bankList;
     [self.selectBankCardView show];
 }

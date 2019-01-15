@@ -36,8 +36,10 @@
     
     [aCoder encodeBool:self.isInReview forKey:@"isInReview"];
     [aCoder encodeBool:self.hasTakenTask forKey:@"hasTakenTask"];
-    
+
     [aCoder encodeInteger:self.messageCount forKey:@"messageCount"];
+    [aCoder encodeObject:self.currentVersion forKey:@"currentVersion"];
+    [aCoder encodeBool:self.hasShowUpdateAlertView forKey:@"hasShowUpdateAlertView"];
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder{
@@ -66,6 +68,9 @@
         self.hasTakenTask = [aDecoder decodeBoolForKey:@"hasTakenTask"];
         
         self.messageCount = [aDecoder decodeIntegerForKey:@"messageCount"];
+        self.currentVersion = [aDecoder decodeObjectForKey:@"currentVersion"];
+        
+        self.hasShowUpdateAlertView = [aDecoder decodeBoolForKey:@"hasShowUpdateAlertView"];
     }
     return self;
 }

@@ -8,6 +8,7 @@
 
 #import "FZDJTabBarModel.h"
 #import "FZDJMainRequest.h"
+#import "FZDJCheckUpdateVo.h"
 
 @interface FZDJTabBarModel()
 @property (nonatomic, strong) FZDJMainRequest *request;
@@ -51,4 +52,32 @@
     
 }
 
+- (void)loadVersion:(NSDictionary *)parameterDict
+            success:(void (^)(NSDictionary *dict))success
+            failure:(void (^)(NSError *error))failure{
+    FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
+    
+    NSString *url = [NSString stringWithFormat:@"%@%@",kApiDomain,kApiCheckUpdate];
+    NSMutableDictionary *mudict = [[NSMutableDictionary alloc] init];
+    mudict[@"version"] = @"1.0.8";
+    
+//    dm.userInfo.currentVersion;
+    
+    [self.request requestPostURL:url parameters:mudict success:^(id responseObject) {
+        
+        NSDictionary *dict = (NSDictionary *)responseObject;
+    
+        
+        FZDJCheckUpdateVo *updateVo = [FZDJCheckUpdateVo mj_objectWithKeyValues:dict[@"body"]];
+        
+        if (updateVo) {
+            success(@{@"updateVo":updateVo});
+        } else {
+            failure(nil);
+        }
+        
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
 @end

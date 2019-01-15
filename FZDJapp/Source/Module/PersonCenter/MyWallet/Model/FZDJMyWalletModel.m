@@ -68,6 +68,8 @@
     priceItem.validAmountStr = [NSString formatPriceNumber:vo.validAmount];
     priceItem.useAmountStr = [NSString formatPriceNumber:vo.useAmount];
     
+    self.validAmount = vo.validAmount;
+    
     FZDJCashItem *cashItem = [[FZDJCashItem alloc] init];
     FZDJDescItem *descItem = [[FZDJDescItem alloc] init];
     
