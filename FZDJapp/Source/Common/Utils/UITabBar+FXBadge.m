@@ -36,24 +36,37 @@
     }else {
         badgeValue = @"99+";
     }
+    
+    CGFloat sizeWidth = 20.f;
     //新建小红点
-    FXBadgeImageView *badgeView = [[FXBadgeImageView alloc] init];
-    badgeView.size = CGSizeMake(22, 18);
-    [badgeView setBackgroundImage:[UIImage imageNamed:@"icon_message_count"]];
+//    FXBadgeImageView *badgeView = [[FXBadgeImageView alloc] init];
+    UIView *badgeView = [[UIView alloc] init];
+//    badgeView.size = CGSizeMake(22, 18);
+//    [badgeView setBackgroundImage:[UIImage imageNamed:@"icon_message_count"]];
     badgeView.tag = 888 + index;
-    badgeView.backgroundColor = [UIColor clearColor];
-    badgeView.badgeValue = badgeValue;
+    badgeView.backgroundColor = [UIColor redColor];
+    badgeView.layer.cornerRadius = sizeWidth/2;
+    
     CGRect tabFrame = self.frame;
     
     CGFloat percentX = (index + 0.55) / [self.items count];
     CGFloat x = ceilf(percentX * tabFrame.size.width);
     CGFloat y = 1;
-    badgeView.frame = CGRectMake(x, y, 22.0, 18.0);//圆形大小为10'
+    badgeView.frame = CGRectMake(x, y, sizeWidth, sizeWidth);//圆形大小为10'
     
     
     badgeView.clipsToBounds = YES;
     [self addSubview:badgeView];
-
+    
+    UILabel *label = [[UILabel alloc] init];
+    label.textColor = [UIColor whiteColor];
+    label.text = badgeValue;
+    label.font = [UIFont systemFontOfSize:9.0f];
+    label.textColor = [UIColor whiteColor];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.frame = CGRectMake(1, 1, sizeWidth-2, sizeWidth-2);
+    
+    [badgeView addSubview:label];
 }
 
 - (void)hideBageOnItemIndex:(NSInteger)index{
@@ -66,6 +79,7 @@
     //按照tag值进行移除
     for (UIView *subView in self.subviews) {
         if (subView.tag == 888+index) {
+            [subView fx_removeAllSubviews];
             [subView removeFromSuperview];
         }
     }

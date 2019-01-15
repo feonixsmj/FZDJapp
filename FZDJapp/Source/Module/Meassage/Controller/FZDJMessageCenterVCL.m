@@ -38,11 +38,11 @@ NSString *const FZDJMessageCenterCellIBName = @"FZDJMessageCenterCell";
     self.navigationItem.rightBarButtonItem = self.rightBarItem;
     self.title =  @"消息";
     
-    self.tableView.frame = CGRectMake(0, 0, FX_SCREEN_WIDTH, FX_TABLE_HEIGHT);
+    self.tableView.frame = CGRectMake(0, 0, FX_SCREEN_WIDTH, FX_TABLE_HEIGHT-FX_TABBAR_HEIGHT-FX_BOTTOM_SPAGE);
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.rowHeight = 101;
-
+    
     [self.tableView registerNib:[UINib nibWithNibName:FZDJMessageCenterCellIBName
                                                bundle:[NSBundle mainBundle]]
                             forCellReuseIdentifier:FZDJMessageCenterCellIBName];
@@ -63,6 +63,7 @@ NSString *const FZDJMessageCenterCellIBName = @"FZDJMessageCenterCell";
     __weak typeof(self) weak_self = self;
     
     [model loadItem:nil success:^(NSDictionary *dict) {
+        [weak_self endRefreshing];
         if (model.items.count > 0) {
             [weak_self.tableView reloadData];
         } else {
@@ -70,7 +71,7 @@ NSString *const FZDJMessageCenterCellIBName = @"FZDJMessageCenterCell";
         }
         
     } failure:^(NSError *error) {
-        
+        [weak_self endRefreshing];
     }];
 }
 

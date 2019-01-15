@@ -41,6 +41,7 @@
 // 普通全屏tableview高度
 #define FX_TABLE_HEIGHT                (FX_SCREEN_HEIGHT - FX_NAVIGATIONBAR_TOTAL_SPAGE)
 
+#define FX_TABBAR_HEIGHT   49.0
 
 #define IS_IPHONE4 (IS_SCREEN_35_INCH)
 #define IS_IPHONE5 (IS_SCREEN_4_INCH)

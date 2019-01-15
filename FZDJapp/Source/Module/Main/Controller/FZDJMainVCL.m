@@ -70,7 +70,7 @@ UITableViewDataSource>
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
+//    FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle{
@@ -159,8 +159,8 @@ UITableViewDataSource>
     self.tableView.frame = CGRectMake(0,0,FX_SCREEN_WIDTH,FX_TABLE_HEIGHT);
     [self.tableView registerClass:[FZDJMainCell class] forCellReuseIdentifier:FZDJMainCellIBName];
     
-    FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
-    
+//    FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
+    self.tableView.tableHeaderView = self.banner;
 }
 
 
