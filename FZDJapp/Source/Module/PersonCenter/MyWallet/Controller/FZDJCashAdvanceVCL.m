@@ -14,6 +14,8 @@
 #import "FZDJBankCardVCL.h"
 #import "FZDJLoginModel.h"
 #import "FZDJPersonalCenterModel.h"
+#import "FZDJEditZhifubaoVCL.h"
+
 
 @interface FZDJCashAdvanceVCL ()<UITableViewDelegate,
 UITableViewDataSource,
@@ -67,11 +69,30 @@ FZDJSelectBankCardViewDelegate>
         [weak_self endRefreshing];
         if (weak_self.isWeixin) {
             [weak_self refreshWeixinData];
+        } else if (weak_self.iszhifubao){
+            [weak_self refreshZhifubaoData];
         }
         [weak_self.tableView reloadData];
     } failure:^(NSError *error) {
         
     }];
+}
+
+- (void)refreshZhifubaoData{
+    FZDJCashAdvanceModel *model = (FZDJCashAdvanceModel*)self.model;
+    FZDJCashAdvanceAddCardItem *item = model.items[0];
+    
+    FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
+    if (dm.userInfo.zhifubao.length > 0) {
+        item.bankDese = dm.userInfo.zhifubao;
+        item.bankName = @"支付宝账号";
+        item.isZhifubao = YES;
+    } else {
+        //死去绑定
+        item.bankDese = @" ";
+        item.bankName = @"设置支付宝";
+        item.isZhifubao = YES;
+    }
 }
 
 - (void)refreshWeixinData{
@@ -118,12 +139,11 @@ FZDJSelectBankCardViewDelegate>
 }
 
 #pragma mark - ================ 提现 ================
-- (void)advanceAction{
-    //调用提现接口
-//    [MBProgressHUD wb_showActivity];
-    
+
+- (void)confirmAdvance{
     FZDJCashAdvanceModel *model = (FZDJCashAdvanceModel *)self.model;
     model.isWeixin = self.isWeixin;
+    model.isZhifubao = self.iszhifubao;
     
     FZDJCashAdvanceAddCardItem *addCardItem = model.items[0];
     FZDJCashAdvanceAmountItem *amountItem = model.items[1];
@@ -133,6 +153,8 @@ FZDJSelectBankCardViewDelegate>
     
     if (self.isWeixin) {
         parameter[@"wxOpen"] = dm.userInfo.weixinOpenid;
+        parameter[@"userNo"] = dm.userInfo.userNo;
+    } else if(self.iszhifubao){
         parameter[@"userNo"] = dm.userInfo.userNo;
     } else {
         parameter[@"userBankNo"] = addCardItem.vo.userBankNo;
@@ -153,6 +175,33 @@ FZDJSelectBankCardViewDelegate>
     } failure:^(NSError *error) {
         [MBProgressHUD wb_showError:error.errorMsg];
     }];
+}
+- (void)advanceAction{
+    //调用提现接口
+//    [MBProgressHUD wb_showActivity];
+    FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
+    
+    if (self.iszhifubao && dm.userInfo.zhifubao.length == 0) {
+        [MBProgressHUD wb_showError:@"请先设置支付宝账号"];
+        return;
+    }
+    
+    if (self.iszhifubao && dm.userInfo.zhifubao.length > 0) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"温馨提示" message:[NSString stringWithFormat:@"确认提现到:%@的支付宝账号下吗",dm.userInfo.zhifubao] preferredStyle:UIAlertControllerStyleAlert];
+        //显示弹出框
+        [self presentViewController:alert animated:YES completion:nil];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self confirmAdvance];
+        }]];
+        [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            
+        }]];
+        
+        return;
+    }
+    
+    [self confirmAdvance];
 }
 
 - (void)setEnableAdvance:(BOOL)enable{
@@ -209,6 +258,14 @@ FZDJSelectBankCardViewDelegate>
                 return;
             }
             
+        }  else if(self.iszhifubao) {
+            FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
+            if (dm.userInfo.zhifubao.length == 0) {
+                [self bindZhifubao];
+            } else {
+                return;
+            }
+            
         } else {
             FZDJCashAdvanceModel *model = (FZDJCashAdvanceModel *)self.model;
             self.selectBankCardView.dataArray = model.bankList;
@@ -226,6 +283,22 @@ FZDJSelectBankCardViewDelegate>
     } failure:^(NSError *error) {
         
     }];
+}
+
+- (void) bindZhifubao{
+    FZDJEditZhifubaoVCL *vcl =
+            [[FZDJEditZhifubaoVCL alloc]
+                    initWithNibName:@"FZDJEditZhifubaoVCL"
+                                bundle:[NSBundle mainBundle]];
+    vcl.keepAlive = YES;
+    __weak typeof(self) weak_self = self;
+    
+    vcl.closeBlock = ^{
+        [weak_self refreshZhifubaoData];
+        [weak_self.tableView reloadData];
+    };
+    
+    [self.navigationController pushViewController:vcl animated:YES];
 }
 
 - (void)thirdBlind {

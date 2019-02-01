@@ -40,6 +40,8 @@
     [aCoder encodeInteger:self.messageCount forKey:@"messageCount"];
     [aCoder encodeObject:self.currentVersion forKey:@"currentVersion"];
     [aCoder encodeBool:self.hasShowUpdateAlertView forKey:@"hasShowUpdateAlertView"];
+    
+    [aCoder encodeObject:self.zhifubao forKey:@"zhifubao"];
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder{
@@ -71,6 +73,8 @@
         self.currentVersion = [aDecoder decodeObjectForKey:@"currentVersion"];
         
         self.hasShowUpdateAlertView = [aDecoder decodeBoolForKey:@"hasShowUpdateAlertView"];
+        
+        self.zhifubao = [aDecoder decodeObjectForKey:@"zhifubao"];
     }
     return self;
 }

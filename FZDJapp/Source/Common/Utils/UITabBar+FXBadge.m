@@ -38,6 +38,7 @@
     }
     
     CGFloat sizeWidth = 20.f;
+    
     //新建小红点
 //    FXBadgeImageView *badgeView = [[FXBadgeImageView alloc] init];
     UIView *badgeView = [[UIView alloc] init];
@@ -54,14 +55,21 @@
     CGFloat y = 1;
     badgeView.frame = CGRectMake(x, y, sizeWidth, sizeWidth);//圆形大小为10'
     
-    
     badgeView.clipsToBounds = YES;
     [self addSubview:badgeView];
     
     UILabel *label = [[UILabel alloc] init];
     label.textColor = [UIColor whiteColor];
     label.text = badgeValue;
-    label.font = [UIFont systemFontOfSize:9.0f];
+    
+    if (count > 0 && count < 10) {
+        label.font = [UIFont systemFontOfSize:12.0f];
+    } else if (count > 10 && count < 99){
+        label.font = [UIFont systemFontOfSize:10.0f];
+    } else {
+        label.font = [UIFont systemFontOfSize:9.0f];
+    }
+    
     label.textColor = [UIColor whiteColor];
     label.textAlignment = NSTextAlignmentCenter;
     label.frame = CGRectMake(1, 1, sizeWidth-2, sizeWidth-2);

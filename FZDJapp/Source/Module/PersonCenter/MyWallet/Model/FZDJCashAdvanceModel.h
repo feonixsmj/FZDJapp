@@ -15,6 +15,7 @@
 
 @property (nonatomic, strong) NSArray<FZDJBanklistItem *> *bankList;
 @property (nonatomic, assign) BOOL isWeixin;
+@property (nonatomic, assign) BOOL isZhifubao;
 
 - (void)addVance:(NSDictionary *)parameterDict
          success:(void (^)(NSDictionary *))success

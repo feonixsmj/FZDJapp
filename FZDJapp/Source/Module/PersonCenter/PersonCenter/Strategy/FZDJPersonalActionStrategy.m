@@ -20,6 +20,7 @@
 #import "FZDJBankListVCL.h"
 #import "FZDJFriendInvitationCodeVCL.h"
 #import "FZDJCheckUpdateVo.h"
+#import "FZDJEditZhifubaoVCL.h"
 
 @interface FZDJPersonalActionStrategy ()
 @property (nonatomic, strong) FZDJAppealSelectPhotoStrategy *uploadImgStrategy;
@@ -92,7 +93,20 @@
                 
             }];
         }
-
+            break;
+            
+        case FZDJCellActionTypeZhifubao:{
+            FZDJEditZhifubaoVCL *vcl =
+            [[FZDJEditZhifubaoVCL alloc]
+             initWithNibName:@"FZDJEditZhifubaoVCL"
+             bundle:[NSBundle mainBundle]];
+            
+            vcl.closeBlock = ^{
+                [target reloadData];
+            };
+            
+            [target.navigationController pushViewController:vcl animated:YES];
+        }
             break;
         case FZDJCellActionTypeQQ:{
             //qq
@@ -174,6 +188,12 @@
 - (void)showUpdateAlertIfNeeded:(NSDictionary *)dict{
     FZDJCheckUpdateVo *vo = (FZDJCheckUpdateVo *)dict[@"updateVo"];
     //    FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
+    
+    if (vo.url.length == 0) {
+        
+        [MBProgressHUD wb_showSuccess:@"当前已是最新版本"];
+        return;
+    }
     
     if ([vo.needUpdate isEqualToString:@"Y"] &&
         vo.url.length > 0) {

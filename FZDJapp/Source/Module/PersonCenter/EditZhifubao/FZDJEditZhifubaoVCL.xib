@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FZDJEditZhifubaoVCL">
+            <connections>
+                <outlet property="textFiled" destination="OIJ-De-h3H" id="oJA-EN-2iX"/>
+                <outlet property="view" destination="ch2-J5-1ou" id="X90-Jf-NXN"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="ch2-J5-1ou">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ENs-9V-NEu">
+                    <rect key="frame" x="0.0" y="10" width="375" height="50"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dj_edit_close_btn" translatesAutoresizingMaskIntoConstraints="NO" id="ELr-Iq-YTz">
+                            <rect key="frame" x="349" y="17" width="16" height="16"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="16" id="FvH-1a-cwc"/>
+                                <constraint firstAttribute="width" constant="16" id="ua5-xE-yhV"/>
+                            </constraints>
+                        </imageView>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入支付宝账号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OIJ-De-h3H">
+                            <rect key="frame" x="10" y="0.0" width="329" height="50"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9m8-4J-XAl">
+                            <rect key="frame" x="329" y="0.0" width="46" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="46" id="VEy-gu-3ib"/>
+                            </constraints>
+                            <connections>
+                                <action selector="btnAction:" destination="-1" eventType="touchUpInside" id="zzg-kq-euE"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="OIJ-De-h3H" firstAttribute="top" secondItem="ENs-9V-NEu" secondAttribute="top" id="8CS-f1-dj0"/>
+                        <constraint firstAttribute="trailing" secondItem="9m8-4J-XAl" secondAttribute="trailing" id="938-hn-5Sz"/>
+                        <constraint firstItem="OIJ-De-h3H" firstAttribute="leading" secondItem="ENs-9V-NEu" secondAttribute="leading" constant="10" id="FDf-7o-edN"/>
+                        <constraint firstAttribute="bottom" secondItem="9m8-4J-XAl" secondAttribute="bottom" id="FRS-6d-3g3"/>
+                        <constraint firstItem="ELr-Iq-YTz" firstAttribute="leading" secondItem="OIJ-De-h3H" secondAttribute="trailing" constant="10" id="NOJ-1o-WvO"/>
+                        <constraint firstAttribute="trailing" secondItem="ELr-Iq-YTz" secondAttribute="trailing" constant="10" id="RZ6-zq-x5P"/>
+                        <constraint firstAttribute="bottom" secondItem="OIJ-De-h3H" secondAttribute="bottom" id="YmS-HQ-lpD"/>
+                        <constraint firstItem="ELr-Iq-YTz" firstAttribute="centerY" secondItem="ENs-9V-NEu" secondAttribute="centerY" id="aPT-8y-WQJ"/>
+                        <constraint firstItem="9m8-4J-XAl" firstAttribute="top" secondItem="ENs-9V-NEu" secondAttribute="top" id="bt2-bH-g4M"/>
+                        <constraint firstAttribute="height" constant="50" id="yXd-Rv-TNZ"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZa-Cl-13E">
+                    <rect key="frame" x="10" y="95" width="355" height="37"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="37" id="CDq-ha-bEH"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="dj_edit_save_btn"/>
+                    <connections>
+                        <action selector="btnAction:" destination="-1" eventType="touchUpInside" id="4AS-ly-TgU"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="ENs-9V-NEu" secondAttribute="trailing" id="2oG-6P-pWL"/>
+                <constraint firstItem="CZa-Cl-13E" firstAttribute="top" secondItem="ENs-9V-NEu" secondAttribute="bottom" constant="35" id="3ey-8q-95z"/>
+                <constraint firstItem="CZa-Cl-13E" firstAttribute="leading" secondItem="ch2-J5-1ou" secondAttribute="leading" constant="10" id="ADv-Ia-IiN"/>
+                <constraint firstAttribute="trailing" secondItem="CZa-Cl-13E" secondAttribute="trailing" constant="10" id="Ef3-gu-y7d"/>
+                <constraint firstItem="ENs-9V-NEu" firstAttribute="leading" secondItem="ch2-J5-1ou" secondAttribute="leading" id="i6m-fV-ENi"/>
+                <constraint firstItem="ENs-9V-NEu" firstAttribute="top" secondItem="ch2-J5-1ou" secondAttribute="top" constant="10" id="npe-hO-Jsb"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="42d-HI-aOk"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="dj_edit_close_btn" width="16" height="16"/>
+        <image name="dj_edit_save_btn" width="355" height="37"/>
+    </resources>
+</document>

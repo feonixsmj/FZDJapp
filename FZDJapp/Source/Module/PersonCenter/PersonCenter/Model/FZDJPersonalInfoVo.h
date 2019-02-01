@@ -22,5 +22,6 @@
 @property (nonatomic, copy) NSString *phone;
 @property (nonatomic, copy) NSString *userShareCode;
 @property (nonatomic, copy) NSString *cardNo;
+@property (nonatomic, copy) NSString *zfb;
 
 @end

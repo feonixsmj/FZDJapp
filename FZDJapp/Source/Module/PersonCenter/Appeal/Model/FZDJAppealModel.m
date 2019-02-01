@@ -106,7 +106,7 @@
         FZDJAppealHistoryItem *item = [FZDJAppealHistoryItem new];
         item.time = [NSDate stringFormatterWithTimeInterval:vo.createTime];
         item.contentStr = vo.complaintContent;
-        item.replyStr = vo.complaintReplyContent;
+        item.replyStr = vo.complaintReplyContent.length > 0 ? vo.complaintReplyContent : @"  ";
         item.imageUrl1 = vo.complaintImg1;
         item.imageUrl2 = vo.complaintImg2;
         item.imageUrl3 = vo.complaintImg3;

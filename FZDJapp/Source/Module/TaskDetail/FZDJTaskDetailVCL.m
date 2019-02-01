@@ -41,10 +41,7 @@ const CGFloat FXHeaderImageViewHeight = 194;
     _taskInstNo = taskInstNo;
     
     [self loadItem];
-    if (taskInstNo.length > 0) {
-        self.statusButton.hidden = YES;
-        self.bottomView.hidden = YES;
-    }
+
 }
 
 - (instancetype)init
@@ -73,6 +70,10 @@ const CGFloat FXHeaderImageViewHeight = 194;
                                         };
         [model requestMyTask:parameterDict success:^(NSDictionary *dict) {
             [weak_self refreshView];
+            if (model.taskInfo.taskUrl.length == 0) {
+                weak_self.statusButton.hidden = YES;
+                weak_self.bottomView.hidden = YES;
+            }
         } failure:^(NSError *error) {
             
         }];

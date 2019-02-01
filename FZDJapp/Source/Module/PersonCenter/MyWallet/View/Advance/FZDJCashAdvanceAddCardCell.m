@@ -35,6 +35,9 @@
     if (item.isWeixin) {
         self.iconImage.image = [UIImage imageNamed:@"dj_advance_weixin_icon"];
     }
+    if (item.isZhifubao) {
+        self.iconImage.image = [UIImage imageNamed:@"dj_zhifubao_icon"];
+    }
     
     if (item.bankName.length > 0) {
         self.bankNamelabel.text = item.bankName;

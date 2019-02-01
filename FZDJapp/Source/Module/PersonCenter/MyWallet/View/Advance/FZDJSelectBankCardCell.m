@@ -30,8 +30,8 @@
     }
     _item = item;
     
-    if ([item.iconUrl isEqualToString:@"dj_advance_weixin_icon"]) {
-        self.iconiMAGE.image = [UIImage imageNamed:@"dj_advance_weixin_icon"];
+    if ([item.iconUrl hasPrefix:@"dj_"]) {
+        self.iconiMAGE.image = [UIImage imageNamed:item.iconUrl];
     } else {
         self.iconiMAGE.imageURL = item.iconUrl;
     }

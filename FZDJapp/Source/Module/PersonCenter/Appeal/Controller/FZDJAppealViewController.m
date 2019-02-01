@@ -65,14 +65,16 @@ CGFloat const FZDJAppealTaskInfoViewHeight = 111.0f;
 }
 
 - (void)createUI{
-    self.tableView.frame = CGRectMake(0, 0, FX_SCREEN_WIDTH, FX_TABLE_HEIGHT - 50);
+    self.tableView.frame = CGRectMake(0, 0, FX_SCREEN_WIDTH, FX_TABLE_HEIGHT - 50-10);
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.tableFooterView = self.footerView;
+    
     [self.tableView registerNib:[UINib nibWithNibName:@"FZDJAppealHistoryCell" bundle:nil]
          forCellReuseIdentifier:@"FZDJAppealHistoryCell"];
     
     self.tableView.tableHeaderView = self.headerView;
-    self.tableView.tableFooterView = self.footerView;
+    
 }
 
 
@@ -173,9 +175,11 @@ CGFloat const FZDJAppealTaskInfoViewHeight = 111.0f;
     rect.size = size;
     label.frame = rect;
     
-    self.footerView.height = label.height + 20;
+    self.footerView.height = label.height + 20+20;
 
     [self.footerView addSubview:label];
+    
+    [self.tableView reloadData];
 }
 
 - (void)refreshUI{
@@ -364,6 +368,13 @@ CGFloat const FZDJAppealTaskInfoViewHeight = 111.0f;
     FZDJAppealModel *model = (FZDJAppealModel *)self.model;
     FZDJAppealHistoryItem *item = model.historyItems[indexPath.row];
     
+    return  400;
+    
+    CGFloat height = [tableView fd_heightForCellWithIdentifier:@"FZDJAppealHistoryCell" cacheByKey:indexPath configuration:^(FZDJAppealHistoryCell *cell) {
+        cell.item = item;
+    }];
+    
+    return  height;
     return [tableView fd_heightForCellWithIdentifier:@"FZDJAppealHistoryCell" configuration:^(FZDJAppealHistoryCell *cell) {
         cell.item = item;
     }];

@@ -442,7 +442,7 @@ FZDJSelectBankCardViewDelegate>
 //
 //    [self.navigationController pushViewController:vcl animated:YES];
     
-    model.validAmount =@(0);
+//    model.validAmount =@(0);
     if (model.validAmount.longLongValue / 100.00 < 0.01 ) {
         [MBProgressHUD wb_showError:@"可提现余额不足"];
         return;
@@ -458,7 +458,12 @@ FZDJSelectBankCardViewDelegate>
     FZDJMyWalletModel *model = (FZDJMyWalletModel *)self.model;
     FZDJCashAdvanceVCL *vcl = [[FZDJCashAdvanceVCL alloc] init];
     vcl.totalAmount = model.totalAmount;
-    vcl.isWeixin = indexPath.row != 0;
+    if (indexPath.row ==1) {
+        vcl.isWeixin = YES;
+    }
+    if (indexPath.row == 2) {
+        vcl.iszhifubao = YES;
+    }
 
     [self.navigationController pushViewController:vcl animated:YES];
 }

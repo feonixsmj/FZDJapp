@@ -90,8 +90,15 @@
          failure:(void (^)(NSError *))failure{
 //    __weak typeof(self) weak_self = self;
     
+    NSString *lastUrl = kApiUserCashOut;
+    if (self.isWeixin) {
+        lastUrl = @"/server/user/cashOutWx";
+    } else if ( self.isZhifubao){
+        lastUrl = @"/server/user/cashOutZfb";
+    }
+    
     NSString *url = [NSString stringWithFormat:@"%@%@",kApiDomain,
-                     self.isWeixin ? @"/server/user/cashOutWx" : kApiUserCashOut];
+                     lastUrl];
     
     [self.request requestPostURL:url parameters:parameterDict success:^(id responseObject) {
         

@@ -12,4 +12,5 @@
 
 @property (nonatomic, copy) NSString *totalAmount;
 @property (nonatomic, assign) BOOL isWeixin;
+@property (nonatomic, assign) BOOL iszhifubao;
 @end

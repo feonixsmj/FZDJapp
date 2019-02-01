@@ -73,6 +73,7 @@
     userinfo.qqNickName = vo.qqNickName;
     userinfo.sinaNickName = vo.wbNickName;
     userinfo.nickName = vo.nickName;
+    userinfo.zhifubao = vo.zfb;
     
     userinfo.sexInteger = [vo.sex isEqualToString:@"NAN"] ? 1 : 0;
     userinfo.phoneNumber = vo.phone;
@@ -130,6 +131,16 @@
     weixinItem.hiddenLine = NO;
     weixinItem.actionType = FZDJCellActionTypeWeixin;
     
+    FZDJPersonalListItem *zhifubaoItem = [FZDJPersonalListItem new];
+    zhifubaoItem.icImageName = @"dj_zhifubao_icon";
+    zhifubaoItem.bgImageName = @"dj_card_bottom";
+    zhifubaoItem.title = @"支付宝";
+    zhifubaoItem.descStr = dm.userInfo.zhifubao;
+    zhifubaoItem.hiddenArrow = NO;
+    
+    zhifubaoItem.hiddenLine = YES;
+    zhifubaoItem.actionType = FZDJCellActionTypeZhifubao;
+    
 //    FZDJPersonalListItem *qqItem = [FZDJPersonalListItem new];
 //    qqItem.icImageName = @"dj_qq_icon";
 //    qqItem.title = @"QQ";
@@ -176,6 +187,7 @@
     checkItem.icImageName = @"dj_check_update_icon";
     checkItem.bgImageName = @"dj_card_mid";
     checkItem.title = @"检查更新";
+    checkItem.descStr = [NSString stringWithFormat:@"当前版本:%@",dm.userInfo.currentVersion];
     checkItem.hiddenLine = NO;
     checkItem.actionType = FZDJCellActionTypeCheckUpdate;
     
@@ -194,6 +206,7 @@
                          weixinItem,
 //                         qqItem,
 //                         weiboItem,
+                         zhifubaoItem,
                          blankItem,
                          shareItem,
                          aboutUsItem,
@@ -207,6 +220,7 @@
                   weixinItem,
 //                  qqItem,
 //                  weiboItem,
+                    zhifubaoItem,
                   blankItem,
                   
                   aboutUsItem,
