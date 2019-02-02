@@ -23,6 +23,9 @@
  - FZDJCellActionTypeFriedShareCode: 好用分享码
  - FZDJCellActionTypeAboutUs: 关于我们
  - FZDJCellActionTypeContactUs: 联系我们
+ - FZDJCellActionTypeCheckUpdate: 检查更新
+ - FZDJCellActionTypeZhifubao: 支付宝
+ - FZDJCellActionTypeApproved: 实名认证
  */
 typedef NS_ENUM(NSUInteger, FZDJCellActionType) {
     
@@ -39,7 +42,8 @@ typedef NS_ENUM(NSUInteger, FZDJCellActionType) {
     FZDJCellActionTypeAboutUs = 3012,
     FZDJCellActionTypeContactUs = 3013,
     FZDJCellActionTypeCheckUpdate = 3014,
-    FZDJCellActionTypeZhifubao = 3015
+    FZDJCellActionTypeZhifubao = 3015,
+    FZDJCellActionTypeApproved = 3016
 };
 
 @protocol FZDJPersonalCellActionProtocol<NSObject>

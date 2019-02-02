@@ -21,6 +21,7 @@
 #import "FZDJFriendInvitationCodeVCL.h"
 #import "FZDJCheckUpdateVo.h"
 #import "FZDJEditZhifubaoVCL.h"
+#import "FZDJApproveVCL.h"
 
 @interface FZDJPersonalActionStrategy ()
 @property (nonatomic, strong) FZDJAppealSelectPhotoStrategy *uploadImgStrategy;
@@ -104,7 +105,7 @@
             vcl.closeBlock = ^{
                 [target reloadData];
             };
-            
+            vcl.hidesBottomBarWhenPushed = YES;
             [target.navigationController pushViewController:vcl animated:YES];
         }
             break;
@@ -155,11 +156,21 @@
             [self checkUpdate];
         }
             break;
-        case FZDJCellActionTypeContactUs:
+        case FZDJCellActionTypeContactUs:{
             //联系客服
-            NSLog(@"联系客服");
+        }
             break;
+        case FZDJCellActionTypeApproved:{
+            //实名认证
+            FZDJApproveVCL *vcl = [[FZDJApproveVCL alloc] initWithNibName:@"FZDJApproveVCL" bundle:[NSBundle mainBundle]];
+            vcl.saveBlock = ^{
+                [target reloadData];
+            };
             
+            vcl.hidesBottomBarWhenPushed = YES;
+            [target.navigationController pushViewController:vcl animated:YES];
+        }
+            break;
         default:
             break;
     }

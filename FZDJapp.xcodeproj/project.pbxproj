@@ -51,6 +51,9 @@
 		441F812621F7C52E00D5BABF /* FZDJEditZhifubaoVCL.m in Sources */ = {isa = PBXBuildFile; fileRef = 441F812421F7C52E00D5BABF /* FZDJEditZhifubaoVCL.m */; };
 		441F812721F7C52E00D5BABF /* FZDJEditZhifubaoVCL.xib in Resources */ = {isa = PBXBuildFile; fileRef = 441F812521F7C52E00D5BABF /* FZDJEditZhifubaoVCL.xib */; };
 		441F812A21F7C6A400D5BABF /* FZDJEditZhifubaoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 441F812921F7C6A400D5BABF /* FZDJEditZhifubaoModel.m */; };
+		441F812F220495D200D5BABF /* FZDJApproveVCL.m in Sources */ = {isa = PBXBuildFile; fileRef = 441F812D220495D200D5BABF /* FZDJApproveVCL.m */; };
+		441F8130220495D200D5BABF /* FZDJApproveVCL.xib in Resources */ = {isa = PBXBuildFile; fileRef = 441F812E220495D200D5BABF /* FZDJApproveVCL.xib */; };
+		441F813322053C7E00D5BABF /* FZDJApproveModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 441F813222053C7E00D5BABF /* FZDJApproveModel.m */; };
 		442276FE210F82DC006ED0C6 /* FZDJAppealTaskInfoVo.m in Sources */ = {isa = PBXBuildFile; fileRef = 442276FD210F82DC006ED0C6 /* FZDJAppealTaskInfoVo.m */; };
 		442CECFD2155F04F009C6D3B /* FZDJBindPhoneNumberModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 442CECFC2155F04F009C6D3B /* FZDJBindPhoneNumberModel.m */; };
 		44346AB2210F390B00868FC1 /* FZDJMyTaskListVo.m in Sources */ = {isa = PBXBuildFile; fileRef = 44346AB1210F390B00868FC1 /* FZDJMyTaskListVo.m */; };
@@ -305,6 +308,11 @@
 		441F812521F7C52E00D5BABF /* FZDJEditZhifubaoVCL.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FZDJEditZhifubaoVCL.xib; sourceTree = "<group>"; };
 		441F812821F7C6A400D5BABF /* FZDJEditZhifubaoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJEditZhifubaoModel.h; sourceTree = "<group>"; };
 		441F812921F7C6A400D5BABF /* FZDJEditZhifubaoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJEditZhifubaoModel.m; sourceTree = "<group>"; };
+		441F812C220495D200D5BABF /* FZDJApproveVCL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJApproveVCL.h; sourceTree = "<group>"; };
+		441F812D220495D200D5BABF /* FZDJApproveVCL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJApproveVCL.m; sourceTree = "<group>"; };
+		441F812E220495D200D5BABF /* FZDJApproveVCL.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FZDJApproveVCL.xib; sourceTree = "<group>"; };
+		441F813122053C7E00D5BABF /* FZDJApproveModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJApproveModel.h; sourceTree = "<group>"; };
+		441F813222053C7E00D5BABF /* FZDJApproveModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJApproveModel.m; sourceTree = "<group>"; };
 		442276FC210F82DC006ED0C6 /* FZDJAppealTaskInfoVo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJAppealTaskInfoVo.h; sourceTree = "<group>"; };
 		442276FD210F82DC006ED0C6 /* FZDJAppealTaskInfoVo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FZDJAppealTaskInfoVo.m; sourceTree = "<group>"; };
 		442CECFB2155F04F009C6D3B /* FZDJBindPhoneNumberModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZDJBindPhoneNumberModel.h; sourceTree = "<group>"; };
@@ -943,6 +951,18 @@
 				441F812921F7C6A400D5BABF /* FZDJEditZhifubaoModel.m */,
 			);
 			path = EditZhifubao;
+			sourceTree = "<group>";
+		};
+		441F812B220494C400D5BABF /* RealNameApprove */ = {
+			isa = PBXGroup;
+			children = (
+				441F812C220495D200D5BABF /* FZDJApproveVCL.h */,
+				441F812D220495D200D5BABF /* FZDJApproveVCL.m */,
+				441F812E220495D200D5BABF /* FZDJApproveVCL.xib */,
+				441F813122053C7E00D5BABF /* FZDJApproveModel.h */,
+				441F813222053C7E00D5BABF /* FZDJApproveModel.m */,
+			);
+			path = RealNameApprove;
 			sourceTree = "<group>";
 		};
 		442CECF72155EF62009C6D3B /* Model */ = {
@@ -1595,6 +1615,7 @@
 		44C9AC2520DA5D0200EBD6FB /* PersonCenter */ = {
 			isa = PBXGroup;
 			children = (
+				441F812B220494C400D5BABF /* RealNameApprove */,
 				441F812221F7C4FB00D5BABF /* EditZhifubao */,
 				44AA2D6A21A4400F000F0767 /* FriendInvitationCode */,
 				444105DC214E99C100E18F6D /* BankList */,
@@ -1975,6 +1996,7 @@
 				44455AC4210E179C008A88E6 /* FZDJTaskDetaiInfoView.xib in Resources */,
 				4418F6F220D262450086B94E /* Assets.xcassets in Resources */,
 				4481683B21344276003722AE /* FZDJBankCardCell.xib in Resources */,
+				441F8130220495D200D5BABF /* FZDJApproveVCL.xib in Resources */,
 				447D704A2114885300A08E9E /* WeiboSDK.bundle in Resources */,
 				444105FB214EB95B00E18F6D /* FZDJCashAdvanceAddCardCell.xib in Resources */,
 				449209AF2103765500E13120 /* FXMyTaskListCell.xib in Resources */,
@@ -2051,6 +2073,7 @@
 				44047EA720F24F1B00CFEBB3 /* FZDJPersonalActionStrategy.m in Sources */,
 				4406678E21E6658700CE51A7 /* UITabBar+FXBadge.m in Sources */,
 				44047E8D20F1495400CFEBB3 /* FZDJPersonalCenterModel.m in Sources */,
+				441F813322053C7E00D5BABF /* FZDJApproveModel.m in Sources */,
 				441F812A21F7C6A400D5BABF /* FZDJEditZhifubaoModel.m in Sources */,
 				4439582C20FF9B57003F7AB5 /* FZDJInvitationCodeModel.m in Sources */,
 				44455AAD210A3629008A88E6 /* NSDate+FXExtention.m in Sources */,
@@ -2169,6 +2192,7 @@
 				44D23B5F2111F09000285A40 /* FZDJSelectPhotoView.m in Sources */,
 				4406679121E667CD00CE51A7 /* FXBadgeImageView.m in Sources */,
 				44B1E5072114B63E0058A4A0 /* FZDJAppealHistoryItem.m in Sources */,
+				441F812F220495D200D5BABF /* FZDJApproveVCL.m in Sources */,
 				44B1E50A2114B8690058A4A0 /* FZDJAppealHistoryListVo.m in Sources */,
 				440536F720F51181006C7AFB /* FZDJAmountDetailsItem.m in Sources */,
 				44AA2D7021A44125000F0767 /* FZDJFriendInvitationCodeVCL.m in Sources */,

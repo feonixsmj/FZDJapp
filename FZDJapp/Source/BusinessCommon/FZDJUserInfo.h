@@ -51,5 +51,7 @@ typedef NS_ENUM(NSInteger,FZDJUserInfoLoginType) {
 @property (nonatomic, copy) NSString *currentVersion;
 @property (nonatomic, assign) BOOL hasShowUpdateAlertView;
 
+@property (nonatomic, copy) NSString *realName;
 @property (nonatomic, copy) NSString *zhifubao;
+@property (nonatomic, assign) BOOL approved;
 @end

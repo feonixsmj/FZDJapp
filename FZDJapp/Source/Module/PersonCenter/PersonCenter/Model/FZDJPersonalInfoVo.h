@@ -23,5 +23,7 @@
 @property (nonatomic, copy) NSString *userShareCode;
 @property (nonatomic, copy) NSString *cardNo;
 @property (nonatomic, copy) NSString *zfb;
+@property (nonatomic, copy) NSString *auth;
+@property (nonatomic, copy) NSString *name;
 
 @end

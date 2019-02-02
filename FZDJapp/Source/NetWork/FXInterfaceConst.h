@@ -65,3 +65,4 @@ UIKIT_EXTERN NSString *const kApiUnreadMessageCount;  //首页查询是否有未
 UIKIT_EXTERN NSString *const kApiCheckUpdate; // 检查更新
 UIKIT_EXTERN NSString *const kApiAppealDesc; //申述描述
 UIKIT_EXTERN NSString *const kApiUpdateZFB; //更新支付宝账号
+UIKIT_EXTERN NSString *const kApiUserAuth; //实名认证

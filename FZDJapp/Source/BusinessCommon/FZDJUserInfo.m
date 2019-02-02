@@ -42,6 +42,8 @@
     [aCoder encodeBool:self.hasShowUpdateAlertView forKey:@"hasShowUpdateAlertView"];
     
     [aCoder encodeObject:self.zhifubao forKey:@"zhifubao"];
+    [aCoder encodeBool:self.approved forKey:@"approved"];
+    [aCoder encodeObject:self.realName forKey:@"realName"];
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder{
@@ -75,6 +77,8 @@
         self.hasShowUpdateAlertView = [aDecoder decodeBoolForKey:@"hasShowUpdateAlertView"];
         
         self.zhifubao = [aDecoder decodeObjectForKey:@"zhifubao"];
+        self.approved = [aDecoder decodeBoolForKey:@"approved"];
+        self.realName = [aDecoder decodeObjectForKey:@"realName"];
     }
     return self;
 }

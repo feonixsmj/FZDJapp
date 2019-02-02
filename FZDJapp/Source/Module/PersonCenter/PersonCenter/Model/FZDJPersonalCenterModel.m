@@ -73,11 +73,13 @@
     userinfo.qqNickName = vo.qqNickName;
     userinfo.sinaNickName = vo.wbNickName;
     userinfo.nickName = vo.nickName;
-    userinfo.zhifubao = vo.zfb;
+    userinfo.zhifubao = vo.zfb; //支付宝账号
+    userinfo.realName = vo.name; //真实姓名
+    userinfo.approved = [vo.auth isEqualToString:@"Y"]; //是否实名认证
     
     userinfo.sexInteger = [vo.sex isEqualToString:@"NAN"] ? 1 : 0;
     userinfo.phoneNumber = vo.phone;
-    userinfo.cardNo = vo.cardNo;
+    userinfo.cardNo = vo.cardNo; //身份证号
     userinfo.userShareCode = vo.userShareCode;
     userinfo.parentShareCode = vo.parentShareCode;
     
@@ -113,7 +115,6 @@
     bankItem.icImageName = @"dj_yhka_icon";
     bankItem.bgImageName = @"dj_card_top";
     bankItem.title = @"银行卡";
-    bankItem.hiddenLine = NO;
     bankItem.actionType = FZDJCellActionTypeBankCard;
     
     FZDJPersonalListItem *weixinItem = [FZDJPersonalListItem new];
@@ -126,20 +127,22 @@
         weixinItem.descStr = @"去绑定";
         weixinItem.hiddenArrow = NO;
     }
-
-    
-    weixinItem.hiddenLine = NO;
     weixinItem.actionType = FZDJCellActionTypeWeixin;
     
     FZDJPersonalListItem *zhifubaoItem = [FZDJPersonalListItem new];
     zhifubaoItem.icImageName = @"dj_zhifubao_icon";
-    zhifubaoItem.bgImageName = @"dj_card_bottom";
     zhifubaoItem.title = @"支付宝";
     zhifubaoItem.descStr = dm.userInfo.zhifubao;
     zhifubaoItem.hiddenArrow = NO;
-    
-    zhifubaoItem.hiddenLine = YES;
     zhifubaoItem.actionType = FZDJCellActionTypeZhifubao;
+    
+    FZDJPersonalListItem *approveItem = [FZDJPersonalListItem new];
+    approveItem.icImageName = @"dj_approve_bg";
+    approveItem.bgImageName = @"dj_card_bottom";
+    approveItem.title = @"实名认证";
+    approveItem.descStr = dm.userInfo.approved ? @"已认证" : @"去认证";
+    approveItem.hiddenArrow = NO;
+    approveItem.actionType = FZDJCellActionTypeApproved;
     
 //    FZDJPersonalListItem *qqItem = [FZDJPersonalListItem new];
 //    qqItem.icImageName = @"dj_qq_icon";
@@ -151,7 +154,6 @@
 //        qqItem.descStr = @"去绑定";
 //        qqItem.hiddenArrow = NO;
 //    }
-//    qqItem.hiddenLine = NO;
 //    qqItem.actionType = FZDJCellActionTypeQQ;
     
 //    FZDJPersonalListItem *weiboItem = [FZDJPersonalListItem new];
@@ -173,14 +175,12 @@
     shareItem.title = @"好友分享码";
     shareItem.descStr = dm.userInfo.parentShareCode;
     shareItem.hiddenArrow = shareItem.descStr.length > 0 ? YES:NO;
-    shareItem.hiddenLine = NO;
     shareItem.actionType = FZDJCellActionTypeFriedShareCode;
     
     FZDJPersonalListItem *aboutUsItem = [FZDJPersonalListItem new];
     aboutUsItem.icImageName = @"dj_us_icon";
     aboutUsItem.bgImageName = dm.userInfo.isInReview ? @"dj_card_top" : @"dj_card_mid";
     aboutUsItem.title = @"关于我们";
-    aboutUsItem.hiddenLine = NO;
     aboutUsItem.actionType = FZDJCellActionTypeAboutUs;
     
     FZDJPersonalListItem *checkItem = [FZDJPersonalListItem new];
@@ -188,7 +188,6 @@
     checkItem.bgImageName = @"dj_card_mid";
     checkItem.title = @"检查更新";
     checkItem.descStr = [NSString stringWithFormat:@"当前版本:%@",dm.userInfo.currentVersion];
-    checkItem.hiddenLine = NO;
     checkItem.actionType = FZDJCellActionTypeCheckUpdate;
     
     
@@ -207,6 +206,8 @@
 //                         qqItem,
 //                         weiboItem,
                          zhifubaoItem,
+                         approveItem,
+                         
                          blankItem,
                          shareItem,
                          aboutUsItem,
@@ -221,6 +222,8 @@
 //                  qqItem,
 //                  weiboItem,
                     zhifubaoItem,
+                    approveItem,
+                    
                   blankItem,
                   
                   aboutUsItem,
