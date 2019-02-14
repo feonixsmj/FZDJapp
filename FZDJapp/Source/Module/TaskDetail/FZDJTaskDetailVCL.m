@@ -96,9 +96,7 @@ const CGFloat FXHeaderImageViewHeight = 194;
 - (void)getTask{
     __weak typeof(self) weak_self = self;
     FZDJTaskDetailModel *model = (FZDJTaskDetailModel *)self.model;
-    
-    FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
-    
+
     [model getTask:nil success:^(NSDictionary *dict) {
         [weak_self doTaskURL:model.item.taskUrl];
         [weak_self refreshStatusButton:FZDJTaskDetailItemStatusTaken];

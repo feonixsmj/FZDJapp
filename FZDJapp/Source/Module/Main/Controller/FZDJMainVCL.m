@@ -71,7 +71,6 @@ UITableViewDataSource>
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-//    FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle{
@@ -92,8 +91,7 @@ UITableViewDataSource>
     }];
     
     [model loadItem:nil success:^(NSDictionary *dict) {
-//        model.items = @[];
-        
+
         if (model.items.count == 0) {
             if (!weak_self.nodataView.superview) {
                 [weak_self addNodataView];
@@ -109,14 +107,13 @@ UITableViewDataSource>
         
         [weak_self endRefreshing];
         [weak_self.tableView reloadData];
-        
-        if (weak_self.isFirstRequest) {
-            [model loadConfigData];
-            weak_self.isFirstRequest = NO;
-        }
+        //去除iOS 审核机制
+//        if (weak_self.isFirstRequest) {
+//            [model loadConfigData];
+//            weak_self.isFirstRequest = NO;
+//        }
     } failure:^(NSError *error) {
         [weak_self endRefreshing];
-        
     }];
     
 }
@@ -149,11 +146,9 @@ UITableViewDataSource>
     
 }
 
-
 - (void)addNodataView{
     [self.view addSubview:self.nodataView];
 }
-
 
 - (void)setBannerImageUrls{
     FZDJMainModel *model = (FZDJMainModel *)self.model;

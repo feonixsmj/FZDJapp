@@ -27,7 +27,7 @@
 
 - (void)loadItem:(NSDictionary *)parameterDict success:(void (^)(NSDictionary *))success failure:(void (^)(NSError *))failure{
     
-    __weak typeof(self) weak_self = self;
+//    __weak typeof(self) weak_self = self;
     NSString *url =
     [NSString stringWithFormat:@"%@%@",kApiDomain,kApiUpdateZFB];
     
