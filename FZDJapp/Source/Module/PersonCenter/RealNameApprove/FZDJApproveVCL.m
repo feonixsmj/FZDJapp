@@ -21,6 +21,13 @@
 
 @implementation FZDJApproveVCL
 
+- (void)dealloc
+{
+    if (self.saveBlock) {
+        self.saveBlock();
+    }
+}
+
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
         self.model = [[FZDJApproveModel alloc] init];
@@ -90,7 +97,7 @@
     self.submit = YES;
 }
 
-- (void)submitAction{
+- (void)confirmSubmit{
     FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
     FZDJApproveModel *model = (FZDJApproveModel *)self.model;
     
@@ -104,6 +111,7 @@
     
     [model loadItem:paramDict success:^(NSDictionary *dict) {
         dm.userInfo.approved = YES;
+        [dm saveData];
         if (weak_self.saveBlock) {
             weak_self.saveBlock();
         }
@@ -111,6 +119,26 @@
     } failure:^(NSError *error) {
         
     }];
+}
+
+- (void)submitAction{
+    
+    UIWindow *alertWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    alertWindow.rootViewController = [[UIViewController alloc] init];
+    alertWindow.windowLevel = UIWindowLevelAlert + 1;
+    [alertWindow makeKeyAndVisible];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"提交成功后将无法修改认证信息" preferredStyle:UIAlertControllerStyleAlert];
+    //显示弹出框
+    [alertWindow.rootViewController presentViewController:alert animated:YES completion:nil];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }]];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self confirmSubmit];
+    }]];
+    
 }
 
 /*

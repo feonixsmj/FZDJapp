@@ -65,7 +65,6 @@
         
         NSDictionary *dict = (NSDictionary *)responseObject;
     
-        
         FZDJCheckUpdateVo *updateVo = [FZDJCheckUpdateVo mj_objectWithKeyValues:dict[@"body"]];
         
         if (updateVo) {

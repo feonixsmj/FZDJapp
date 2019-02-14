@@ -75,6 +75,7 @@
     userinfo.nickName = vo.nickName;
     userinfo.zhifubao = vo.zfb; //支付宝账号
     userinfo.realName = vo.name; //真实姓名
+//    userinfo.approved = NO;
     userinfo.approved = [vo.auth isEqualToString:@"Y"]; //是否实名认证
     
     userinfo.sexInteger = [vo.sex isEqualToString:@"NAN"] ? 1 : 0;

@@ -44,13 +44,13 @@
 //    FXBaseNavigationController *navigationController = [[FXBaseNavigationController alloc]
 //        initWithRootViewController:mainVCL];
     
+    FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
+    dm.userInfo.currentVersion = [FXSystemInfo appVersion];
+    
     FZDJTabBarController *tabbarController = [FZDJTabBarController new];
     
     self.window.rootViewController = tabbarController;
     [self.window makeKeyAndVisible];
-    
-    FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
-    dm.userInfo.currentVersion = [FXSystemInfo appVersion];
     
     return YES;
 }

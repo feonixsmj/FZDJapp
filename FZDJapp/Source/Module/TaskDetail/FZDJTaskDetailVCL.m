@@ -134,7 +134,7 @@ const CGFloat FXHeaderImageViewHeight = 194;
 //    [self.webView loadHTMLString:model.item.taskContent baseURL:nil];
     
     NSString *htmlStr = model.item.taskContent;
-    htmlStr =  @"<p><strong>任务目标：升级城堡到11级</strong></p><p><strong>任务奖励</strong>：<br/></p><p>1，完成任务自动获得奖励（立返)</p><p>2，如果未获得奖励，点击申诉按钮提交对应截图给客服申诉</p><p><strong>注意事项</strong>：<br/></p><p>1，苹果仅限WIFI下载，安卓4G和WIFI均可</p><p>2，领取任务后请立即下载游戏，下载过程中不得中断或者更换网络</p><p>3，任务期间不得卸载游戏或者更换ID</p><p><strong>任务流程</strong>：<br/></p><p>1，加入联盟可获得200水晶，花费500水晶可购买VIP5</p><p>2，城堡4级之后，左侧会出现13D任务，尽量完成，有助于加快完成速度</p><p>3，购买礼包可大大加快升级速度，建议购买6元和30元得【赢在起跑点】礼包</p>";
+//    htmlStr =  @"<p><strong>任务目标：升级城堡到11级</strong></p><p><strong>任务奖励</strong>：<br/></p><p>1，完成任务自动获得奖励（立返)</p><p>2，如果未获得奖励，点击申诉按钮提交对应截图给客服申诉</p><p><strong>注意事项</strong>：<br/></p><p>1，苹果仅限WIFI下载，安卓4G和WIFI均可</p><p>2，领取任务后请立即下载游戏，下载过程中不得中断或者更换网络</p><p>3，任务期间不得卸载游戏或者更换ID</p><p><strong>任务流程</strong>：<br/></p><p>1，加入联盟可获得200水晶，花费500水晶可购买VIP5</p><p>2，城堡4级之后，左侧会出现13D任务，尽量完成，有助于加快完成速度</p><p>3，购买礼包可大大加快升级速度，建议购买6元和30元得【赢在起跑点】礼包</p>";
     
     NSData *htmlData = [htmlStr dataUsingEncoding:NSUnicodeStringEncoding];
     NSAttributedString *attrStr =

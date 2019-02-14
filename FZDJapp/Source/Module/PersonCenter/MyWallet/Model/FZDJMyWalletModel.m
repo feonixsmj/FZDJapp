@@ -25,15 +25,15 @@
         FZDJBanklistItem *item1 = [FZDJBanklistItem new];
         item1.bankName = @"银行卡";
         
-        FZDJBanklistItem *item2 = [FZDJBanklistItem new];
-        item2.bankName = @"微信";
-        item2.iconUrl = @"dj_advance_weixin_icon";
+//        FZDJBanklistItem *item2 = [FZDJBanklistItem new];
+//        item2.bankName = @"微信";
+//        item2.iconUrl = @"dj_advance_weixin_icon";
         
         FZDJBanklistItem *item3 = [FZDJBanklistItem new];
         item3.bankName = @"支付宝";
         item3.iconUrl = @"dj_zhifubao_icon";
         
-        self.bankList = @[item1,item2,item3];
+        self.bankList = @[item1,item3];
         
     } 
     return self;

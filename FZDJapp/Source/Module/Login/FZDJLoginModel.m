@@ -36,11 +36,12 @@
         NSDictionary *dict = (NSDictionary *)responseObject;
         NSString *userNo = dict[@"body"][@"userNo"];
         dm.userInfo.userNo = userNo;
+        NSString *auth = dict[@"body"][@"auth"];
+        dm.userInfo.approved = [auth isEqualToString:@"Y"];
         [dm saveData];
         success(nil);
     } failure:^(NSError *error) {
         failure(error);
-        NSLog(@"登录失败");
     }];
 }
 

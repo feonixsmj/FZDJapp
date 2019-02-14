@@ -13,6 +13,7 @@
 #import "FZDJAmountDetailsVCL.h"
 #import "FZDJCashAdvanceVCL.h"
 #import "FZDJSelectBankCardView.h"
+#import "FZDJApproveVCL.h"
 
 @class FZDJDescribeCell;
 
@@ -435,14 +436,15 @@ FZDJSelectBankCardViewDelegate>
 
 - (void)withdrawMoney{
 //    NSLog(@"我要提现");
+    
+    FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
+    if (!dm.userInfo.approved) {
+        [self realNameApprove];
+        return;
+    }
+    
     FZDJMyWalletModel *model = (FZDJMyWalletModel *)self.model;
-    
-//    FZDJCashAdvanceVCL *vcl = [[FZDJCashAdvanceVCL alloc] init];
-//    vcl.totalAmount = model.totalAmount;
-//
-//    [self.navigationController pushViewController:vcl animated:YES];
-    
-//    model.validAmount =@(0);
+
     if (model.validAmount.longLongValue / 100.00 < 0.01 ) {
         [MBProgressHUD wb_showError:@"可提现余额不足"];
         return;
@@ -452,16 +454,46 @@ FZDJSelectBankCardViewDelegate>
     [self.selectBankCardView show];
 }
 
+- (void)realNameApprove{
+    FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
+    if (dm.userInfo.approved) {
+        return;
+    }
+    
+    __weak typeof(self) weak_self = self;
+    
+    UIWindow *alertWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    alertWindow.rootViewController = [[UIViewController alloc] init];
+    alertWindow.windowLevel = UIWindowLevelAlert + 1;
+    [alertWindow makeKeyAndVisible];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"欢迎使用抖金App，为保证用户权益、账户安全，请实名认证并绑定支付宝。谢谢！" preferredStyle:UIAlertControllerStyleAlert];
+    //显示弹出框
+    [alertWindow.rootViewController presentViewController:alert animated:YES completion:nil];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"去认证" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        FZDJApproveVCL *vcl = [[FZDJApproveVCL alloc] initWithNibName:@"FZDJApproveVCL" bundle:[NSBundle mainBundle]];
+        vcl.saveBlock = ^{
+            [weak_self realNameApprove];
+        };
+        [self.navigationController pushViewController:vcl animated:YES];
+    }]];
+    
+}
+
 #pragma mark - ================ FZDJSelectBankCardViewDelegate  ================
 
 - (void)FZDJSelectBankCardViewDidSelectedIndexPath:(NSIndexPath *)indexPath{
     FZDJMyWalletModel *model = (FZDJMyWalletModel *)self.model;
     FZDJCashAdvanceVCL *vcl = [[FZDJCashAdvanceVCL alloc] init];
     vcl.totalAmount = model.totalAmount;
+//    if (indexPath.row ==1) {
+//        vcl.isWeixin = YES;
+//    }
+//    if (indexPath.row == 2) {
+//        vcl.iszhifubao = YES;
+//    }
+
     if (indexPath.row ==1) {
-        vcl.isWeixin = YES;
-    }
-    if (indexPath.row == 2) {
         vcl.iszhifubao = YES;
     }
 

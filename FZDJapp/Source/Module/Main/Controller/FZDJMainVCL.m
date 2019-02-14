@@ -17,7 +17,7 @@
 #import "FZDJTaskDetailVCL.h"
 #import "FZDJDataModelSingleton.h"
 #import "FZDJBannerDetailVCL.h"
-
+#import "FZDJApproveVCL.h"
 
 NSString *const FZDJMainCellIBName = @"FZDJMainCell";
 
@@ -65,6 +65,7 @@ UITableViewDataSource>
         
         [self initUI];
         [self loadItem];
+        [self realNameApprove];
     }
 }
 
@@ -119,6 +120,35 @@ UITableViewDataSource>
     }];
     
 }
+
+- (void)realNameApprove{
+    
+    FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
+    if (dm.userInfo.approved) {
+        return;
+    }
+    
+    __weak typeof(self) weak_self = self;
+    
+    UIWindow *alertWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    alertWindow.rootViewController = [[UIViewController alloc] init];
+    alertWindow.windowLevel = UIWindowLevelAlert + 1;
+    [alertWindow makeKeyAndVisible];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"欢迎使用抖金App，为保证用户权益、账户安全，请实名认证并绑定支付宝。谢谢！" preferredStyle:UIAlertControllerStyleAlert];
+    //显示弹出框
+    [alertWindow.rootViewController presentViewController:alert animated:YES completion:nil];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"去认证" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        FZDJApproveVCL *vcl = [[FZDJApproveVCL alloc] initWithNibName:@"FZDJApproveVCL" bundle:[NSBundle mainBundle]];
+        vcl.saveBlock = ^{
+            [weak_self realNameApprove];
+        };
+        vcl.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vcl animated:YES];
+    }]];
+    
+}
+
 
 - (void)addNodataView{
     [self.view addSubview:self.nodataView];
@@ -263,25 +293,27 @@ UITableViewDataSource>
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
     
     [self loadItem];
+    [self realNameApprove];
 }
 
 #pragma mark - SDCycleScrollViewDelegate
 
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{
     FZDJMainModel *model = (FZDJMainModel *)self.model;
-    NSLog(@"---点击了第%ld张图片", (long)index);
+    
     FZDJBannerVo *vo = model.bannerArr[index];
     if ([vo.clickEvent isEqualToString:@"NB"]) {
         //内部跳转
         FZDJBannerDetailVCL *vcl = [[FZDJBannerDetailVCL alloc] init];
         vcl.titleStr = vo.lbTitle;
         vcl.htmlStr = vo.lbContent;
+        vcl.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vcl animated:YES];
         return;
     }
     
     //外部跳转
-    NSLog(@"点击链接%@",vo.lbContentUrl);
+
     NSURL *url = [NSURL URLWithString:vo.lbContentUrl];
 //    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:vo.lbContentUrl]];
     if (!url.scheme) {
