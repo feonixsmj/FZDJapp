@@ -18,6 +18,8 @@
 #import "FZDJDataModelSingleton.h"
 #import "FZDJBannerDetailVCL.h"
 #import "FZDJApproveVCL.h"
+#import <ShareSDK/ShareSDK.h>
+#import "FZDJTabBarController.h"
 
 NSString *const FZDJMainCellIBName = @"FZDJMainCell";
 
@@ -115,6 +117,33 @@ UITableViewDataSource>
     } failure:^(NSError *error) {
         [weak_self endRefreshing];
     }];
+    
+    
+    [model checkUser:nil success:^(NSDictionary *dict) {
+        
+    } failure:^(NSError *error) {
+        [weak_self showGlobalTip:error.errorMsg];
+    }];
+    
+}
+
+- (void)showGlobalTip:(NSString *)errorMsg{
+    
+    UIWindow *alertWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    alertWindow.rootViewController = [[UIViewController alloc] init];
+    alertWindow.windowLevel = UIWindowLevelAlert + 1;
+    [alertWindow makeKeyAndVisible];
+    UIAlertController *alert =
+        [UIAlertController alertControllerWithTitle:@"提示"
+                                            message:errorMsg
+                                     preferredStyle:UIAlertControllerStyleAlert];
+    //显示弹出框
+    [alertWindow.rootViewController presentViewController:alert animated:YES completion:nil];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self logout];
+    }]];
+    
     
 }
 
@@ -234,6 +263,28 @@ UITableViewDataSource>
     
     [self.navigationController pushViewController:messageVCL animated:YES];
 }
+
+#pragma mark ================ 退出登陆 ================
+
+- (void)logout{
+    //退出登录
+    FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
+    
+    [dm clearUserData];
+    
+    [ShareSDK cancelAuthorize:SSDKPlatformTypeQQ];
+    [ShareSDK cancelAuthorize:SSDKPlatformTypeWechat];
+    [ShareSDK cancelAuthorize:SSDKPlatformTypeSinaWeibo];
+    
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"FZDJLoginVCL" bundle:nil];
+    FZDJLoginVCL *loginVCL = (FZDJLoginVCL *)[storyBoard instantiateInitialViewController];
+    loginVCL.delegate = self;
+    
+    [self.model clean];
+    [self.navigationController presentViewController:loginVCL animated:NO completion:nil];
+    
+}
+
 #pragma mark ================ Lazyload ================
 
 - (SDCycleScrollView *)banner{

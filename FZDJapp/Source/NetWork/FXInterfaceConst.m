@@ -65,3 +65,5 @@ NSString *const kApiCheckUpdate = @"/server/version/versionIos";
 NSString *const kApiAppealDesc = @"/server/sys/sstksm";
 NSString *const kApiUpdateZFB = @"/server/user/updateZfb";
 NSString *const kApiUserAuth = @"/server/user/auth";
+
+NSString *const kApiCheckUser = @"/server/user/checkUser";

@@ -120,6 +120,27 @@
     
 }
 
+- (void)checkUser:(NSDictionary *)parameterDict
+          success:(void (^)(NSDictionary *))success
+          failure:(void (^)(NSError *))failure{
+    self.request.needEncrypt = YES;
+    self.request.enableShowErrorMsg = NO;
+    
+//    __weak typeof(self) weak_self = self;
+    NSString *url = [NSString stringWithFormat:@"%@%@",kApiDomain,kApiCheckUser];
+    
+    FZDJDataModelSingleton *dm = [FZDJDataModelSingleton sharedInstance];
+    NSDictionary *dict = @{@"userNo":dm.userInfo.userNo};
+    
+    [self.request requestPostURL:url parameters:dict success:^(id responseObject) {
+        
+        success(nil);
+        
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+
+}
 
 - (void)loadConfigData{
     
