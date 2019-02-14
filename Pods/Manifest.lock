@@ -25,9 +25,9 @@ PODS:
     - YYCache (~> 1.0.4)
   - SDCycleScrollView (1.75):
     - SDWebImage (>= 4.0.0)
-  - SDWebImage (4.4.3):
-    - SDWebImage/Core (= 4.4.3)
-  - SDWebImage/Core (4.4.3)
+  - SDWebImage (4.4.5):
+    - SDWebImage/Core (= 4.4.5)
+  - SDWebImage/Core (4.4.5)
   - SVProgressHUD (2.2.5)
   - "UITableView+FDTemplateLayoutCell (1.6)"
   - WBHUDManager (1.0.1):
@@ -90,13 +90,13 @@ SPEC CHECKSUMS:
   OpenUDID: e7cb6984c7304906ad20f3a36bf087b025896b6b
   PPNetworkHelper: e893191a73665e9c496c2887fd5ceece9e930bb8
   SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
-  SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
+  SDWebImage: ecc03494e973b93b80213649d32175f8d2d17d4d
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
   WBHUDManager: 6ad61ae0fb11eaf6a0f79cb5f5a89a804e08138f
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 7008c32287d5b4b71b160a359fe866f1966b719d
+PODFILE CHECKSUM: dee8720f97209f68a1100f8edf11a1329144023d
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.0

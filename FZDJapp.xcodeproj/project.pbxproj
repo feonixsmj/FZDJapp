@@ -2027,7 +2027,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-FZDJapp/Pods-FZDJapp-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-FZDJapp/Pods-FZDJapp-resources.sh",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 				"${PODS_ROOT}/WBHUDManager/WBHUDManager/MBProgressHUDWBAddtional/MBProgressHUD.bundle",
@@ -2040,7 +2040,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FZDJapp/Pods-FZDJapp-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FZDJapp/Pods-FZDJapp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D694FB82EE4C00B3D15C9339 /* [CP] Check Pods Manifest.lock */ = {
