@@ -2,7 +2,7 @@
 //  FZDJFriendInvitationCodeModel.h
 //  FZDJapp
 //
-//  Created by suminjie on 2018/11/20.
+//  Created by FZYG on 2018/11/20.
 //  Copyright © 2018 FZDJ. All rights reserved.
 //
 

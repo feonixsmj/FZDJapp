@@ -368,17 +368,17 @@ CGFloat const FZDJAppealTaskInfoViewHeight = 111.0f;
     FZDJAppealModel *model = (FZDJAppealModel *)self.model;
     FZDJAppealHistoryItem *item = model.historyItems[indexPath.row];
     
-    return  400;
-#warning todu;
+//    return  400;
+//#warning todu;
     
     CGFloat height = [tableView fd_heightForCellWithIdentifier:@"FZDJAppealHistoryCell" cacheByKey:indexPath configuration:^(FZDJAppealHistoryCell *cell) {
         cell.item = item;
     }];
     
     return  height;
-    return [tableView fd_heightForCellWithIdentifier:@"FZDJAppealHistoryCell" configuration:^(FZDJAppealHistoryCell *cell) {
-        cell.item = item;
-    }];
+//    return [tableView fd_heightForCellWithIdentifier:@"FZDJAppealHistoryCell" configuration:^(FZDJAppealHistoryCell *cell) {
+//        cell.item = item;
+//    }];
     
 }
 @end
